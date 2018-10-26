@@ -1,6 +1,6 @@
 # Metro4Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.0-rc.3.
 
 ## Development server
 
