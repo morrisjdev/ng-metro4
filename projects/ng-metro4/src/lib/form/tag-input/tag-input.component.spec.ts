@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgMetro4Component } from './ng-metro4.component';
+import { TagInputComponent } from './tag-input.component';
 
-describe('NgMetro4Component', () => {
-  let component: NgMetro4Component;
-  let fixture: ComponentFixture<NgMetro4Component>;
+describe('TagInputComponent', () => {
+  let component: TagInputComponent;
+  let fixture: ComponentFixture<TagInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgMetro4Component ]
+      declarations: [ TagInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgMetro4Component);
+    fixture = TestBed.createComponent(TagInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

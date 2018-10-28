@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'metro4-demo';
+
+  public tagInputModel: string[] = ['test1', 'test2', 'test3'];
 }

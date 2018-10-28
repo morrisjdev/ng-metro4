@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
-import { NgMetro4Component } from './ng-metro4.component';
+import { TagInputComponent } from './form/tag-input/tag-input.component';
+
+const declarations = [
+  TagInputComponent
+];
 
 @NgModule({
   imports: [
   ],
-  declarations: [NgMetro4Component],
-  exports: [NgMetro4Component]
+  declarations: [
+    ...declarations
+  ],
+  exports: [
+    ...declarations
+  ]
 })
 export class NgMetro4Module { }
