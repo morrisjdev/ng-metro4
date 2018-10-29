@@ -1,0 +1,11 @@
+<m4-tag-input [(ngModel)]="model"></m4-tag-input>
+
+<m4-tag-input [(ngModel)]="model" [random-color]="true"></m4-tag-input>
+
+<m4-tag-input [(ngModel)]="model" [tag-trigger]="[13]"></m4-tag-input>
+
+<m4-tag-input [(ngModel)]="model" cls-tag="bg-red" cls-tag-remover="bg-blue" cls-tag-title="bg-green"></m4-tag-input>
+
+<m4-tag-input [(ngModel)]="model" [max-tags]="5"></m4-tag-input>
+
+{{model | json}}
