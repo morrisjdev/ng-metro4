@@ -1,4 +1,19 @@
-<select #input>
+<select #input [multiple]="multiple"
+        [attr.data-prepend]="prepend"
+        [attr.data-duration]="duration"
+        [attr.data-append]="append"
+        [attr.data-drop-height]="dropHeight"
+        [attr.data-filter]="filter"
+        [attr.data-filter-placeholder]="filterPlaceholder"
+
+        [attr.data-cls-select]="clsSelect"
+        [attr.data-cls-prepend]="clsPrepend"
+        [attr.data-cls-append]="clsAppend"
+        [attr.data-cls-option]="clsOption"
+        [attr.data-cls-option-group]="clsOptionGroup"
+        [attr.data-cls-drop-list]="clsDropList"
+        [attr.data-cls-selected-item]="clsSelectedItem"
+        [attr.data-cls-selected-item-remover]="clsSelectedItemRemover">
   <ng-content select="[options]"></ng-content>
 </select>
 

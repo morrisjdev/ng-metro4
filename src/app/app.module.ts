@@ -7,12 +7,14 @@ import {NgMetro4Module} from 'ng-metro4';
 import {FormsModule} from '@angular/forms';
 import { TagInputComponent } from './form/tag-input/tag-input.component';
 import { SelectComponent } from './form/select/select.component';
+import { InputComponent } from './form/input/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TagInputComponent,
     SelectComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,

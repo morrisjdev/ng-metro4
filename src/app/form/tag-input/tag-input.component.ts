@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagInputComponent implements OnInit {
 
+  tagClass = 'bg-red';
+
   model: string[] = ['test1', 'test2', 'test3'];
 
   constructor() { }

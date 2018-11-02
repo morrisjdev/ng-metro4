@@ -1,1 +1,9 @@
-<input type="text" #taginput>
+<input type="text" #input
+       [attr.data-random-color]="randomColor"
+       [attr.data-max-tags]="maxTags"
+       [attr.data-tag-separator]="tagSeparator"
+       [attr.data-tag-trigger]="tagTrigger"
+
+       [attr.data-cls-tag]="clsTag"
+       [attr.data-cls-tag-title]="clsTagTitle"
+       [attr.data-cls-tag-remover]="clsTagRemover">

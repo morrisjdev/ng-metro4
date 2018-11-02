@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectComponent implements OnInit {
 
-  model = 'test';
+  model = 't';
 
-  modelArray: string[] = ['test1'];
+  modelArray: string[] = ['test'];
+
+  data = {
+    'morrisdev': 'Morris Janatzek',
+    'test': 'Test Wert 1',
+    'test2': 'Test Wert 2',
+    'test3': {
+      'test4': 'Das ist ein test',
+      'test5': 'Das ist test5'
+    }
+  };
+
+  dataArray = [
+    't', 't2'
+  ];
 
   constructor() { }
 
