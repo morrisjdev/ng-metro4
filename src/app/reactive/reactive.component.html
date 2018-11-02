@@ -1,0 +1,6 @@
+<form [formGroup]="formGroup">
+  <m4-input formControlName="name"></m4-input>
+</form>
+
+{{ formGroup.value | json }}
+{{ formGroup.valid | json }}

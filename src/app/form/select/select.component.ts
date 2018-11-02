@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class SelectComponent implements OnInit {
 
   model = 't';
+  model2 = null;
 
   modelArray: string[] = ['test'];
+  modelArray2: string[] = ['test'];
+  modelArray3: string[] = [];
 
   data = {
     'morrisdev': 'Morris Janatzek',
@@ -22,7 +25,16 @@ export class SelectComponent implements OnInit {
   };
 
   dataArray = [
-    't', 't2'
+    't', 't2', 't3'
+  ];
+
+  complexOptionsArray = [
+    { title: 'Das ist ein test', value: 12, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1' },
+    { groupName: 'Test Gruppe',
+      options: [
+        { title: 'Das ist ein test', value: 13, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1' }
+      ]
+    }
   ];
 
   constructor() { }

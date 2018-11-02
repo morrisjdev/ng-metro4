@@ -1,3 +1,24 @@
+<h3>Input</h3>
+
 <m4-input [(ngModel)]="model"></m4-input>
 
+<m4-input type="password" [(ngModel)]="model"></m4-input>
+
+<m4-input [(ngModel)]="model" [disabled]="true"></m4-input>
+
+<m4-input [(ngModel)]="prepend" prepend="Prepend"></m4-input>
+
+<m4-input [(ngModel)]="model" [prepend]="prepend" [append]="prepend"></m4-input>
+
+<m4-input [(ngModel)]="model" [default-value]="prepend" clear-button-icon="<span class='mif-amazon'></span>"></m4-input>
+
 {{model | json}}
+
+<h3>Material Input</h3>
+
+<m4-material-input [(ngModel)]="mmodel"></m4-material-input>
+
+<m4-material-input [(ngModel)]="mmodel" placeholder="test123"
+                   icon="<span class='mif-envelop'></span>" [label]="model" informer="das ist ein test"></m4-material-input>
+
+{{mmodel | json}}

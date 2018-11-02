@@ -1,7 +1,5 @@
-import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild, ViewContainerRef} from '@angular/core';
-import {ControlValueAccessor} from '@angular/forms';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
-import {ArrayHelper} from '../../helper/array-helper';
 import {ControlBase} from '../control-base';
 
 declare var $: any;
@@ -13,7 +11,6 @@ declare var $: any;
   providers: [DefaultValueAccessor.get(TagInputComponent)]
 })
 export class TagInputComponent extends ControlBase<string[]> {
-  /* Configuration */
   @Input('random-color') randomColor: boolean;
   @Input('max-tags') maxTags: number;
   @Input('tag-separator') tagSeparator: string;
@@ -22,7 +19,6 @@ export class TagInputComponent extends ControlBase<string[]> {
   @Input('cls-tag') clsTag: string;
   @Input('cls-tag-title') clsTagTitle: string;
   @Input('cls-tag-remover') clsTagRemover: string;
-  /* End Configuration */
 
   @ViewChild('input') private input: ElementRef;
   private tagInput: any;
@@ -41,7 +37,7 @@ export class TagInputComponent extends ControlBase<string[]> {
 
     this.tagInput = this.clonedElement.taginput().data('taginput');
 
-    this.tagInput.element.next('.input-wrapper').parent('div.tag-input').on('blur', () => {
+    this.clonedElement.next('.input-wrapper').one('blur', () => {
       this.touchCallback();
     });
 

@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 
@@ -11,10 +11,24 @@ declare var $: any;
   providers: [DefaultValueAccessor.get(InputComponent)]
 })
 export class InputComponent extends ControlBase<string> {
+  @Input('type') type = 'text';
+  @Input('default-value') defaultValue: string;
+  @Input('size') size: number;
+  @Input('prepend') prepend: string;
+  @Input('append') append: string;
+  @Input('clear-button') clearButton: boolean;
+  @Input('clear-button-icon') clearButtonIcon: string;
+  @Input('reveal-button') revealButton: boolean;
+  @Input('reveal-button-icon') revealButtonIcon: string;
+  @Input('custom-buttons') customButtons: { html: string, cls: string, onclick: string }[];
 
-  /* Configuration */
-  @Input('random-color') randomColor: boolean;
-  /* End Configuration */
+  @Input('cls-component') clsComponent: string;
+  @Input('cls-input') clsInput: string;
+  @Input('cls-prepend') clsPrepend: string;
+  @Input('cls-append') clsAppend: string;
+  @Input('cls-clear-button') clsClearButton: string;
+  @Input('cls-reveal-button') clsRevealButton: string;
+  @Input('cls-custom-button') clsCustomButton: string;
 
   @ViewChild('input') private input: ElementRef;
   private inputObj: any;
@@ -33,26 +47,23 @@ export class InputComponent extends ControlBase<string> {
 
     this.inputObj = this.clonedElement.input().data('input');
 
-    // this.inputObj.element.next('.input-wrapper').parent('div.tag-input').on('blur', () => {
-    //   this.touchCallback();
-    // });
-
-    this.clonedElement.on('change', (val) => {
-      console.log(val);
+    this.clonedElement.one('blur', () => {
+      this.touchCallback();
     });
 
-    this.inputObj.options.onHistoryChange = (val, history, index) => {
-      // this.changeValue(vals.slice(0));
-      console.log(val);
-    };
+    this.clonedElement.on('keydown', (event) => {
+      setTimeout(() => {
+        this.changeValue(this.clonedElement.val());
+      }, 0);
+    });
   }
 
   disable(disabled: boolean): void {
-    // if (disabled) {
-    //   this.inputObj.element.next('.input-wrapper').parent('div.tag-input').addClass('disabled');
-    // } else {
-    //   this.inputObj.element.next('.input-wrapper').parent('div.tag-input').removeClass('disabled');
-    // }
+    if (disabled) {
+      this.inputObj.disable();
+    } else {
+      this.inputObj.enable();
+    }
   }
 
   newValue(): void {
@@ -62,7 +73,6 @@ export class InputComponent extends ControlBase<string> {
 
     this.disableUpdate = true;
     this.clonedElement.val(this.innerValue);
-    this.inputObj.setHistory(this.innerValue);
     this.disableUpdate = false;
   }
 }

@@ -1,8 +1,15 @@
-import {AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component, ElementRef, Input, OnChanges, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {instantiateDefaultStyleNormalizer} from '@angular/platform-browser/animations/src/providers';
 
 declare var $: any;
+
+interface Option {
+  title: string;
+  dataTemplate: string;
+  value: any;
+}
 
 @Component({
   selector: 'm4-select',
@@ -11,10 +18,9 @@ declare var $: any;
   providers: [DefaultValueAccessor.get(SelectComponent)]
 })
 export class SelectComponent extends ControlBase<string|string[]> implements OnChanges {
+  @Input('options') options: { [key: string]: (string | { [key: string]: string }) } |
+    (Option | { groupName: string, options: Option[] })[];
   @Input('multiple') multiple = false;
-  @Input('options') options: { [key: string]: string };
-
-  /* Configuration */
   @Input('duration') duration: number;
   @Input('prepend') prepend: string;
   @Input('append') append: string;
@@ -30,7 +36,6 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
   @Input('cls-drop-list') clsDropList: string;
   @Input('cls-selected-item') clsSelectedItem: string;
   @Input('cls-selected-item-remover') clsSelectedItemRemover: string;
-  /* End Configuration */
 
   @ViewChild('input') private input: ElementRef;
   private select: any;
@@ -50,6 +55,13 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
     this.clonedElement.html(this.clonedElement.find('[options]').html());
     this.select = this.clonedElement.select().data('select');
 
+    this.clonedElement.parent().on('mousedown', (ev: MouseEvent) => {
+      if (ev.button === 0) {
+        this.touchCallback();
+        this.clonedElement.parent().unbind('mousedown');
+      }
+    });
+
     this.select.options.onChange = (val) => {
       if (this.multiple) {
         this.changeValue(val.slice(0));
@@ -58,7 +70,7 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
       }
     };
 
-    if (this.options) {
+    if (this.options && !(this.options instanceof Array)) {
       this.select.data(this.options);
     }
   }
@@ -85,5 +97,9 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
     }
 
     this.disableUpdate = false;
+  }
+
+  renderOptions(): boolean {
+    return this.options instanceof Array;
   }
 }

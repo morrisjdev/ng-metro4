@@ -1,6 +1,6 @@
 import {ControlValueAccessor} from '@angular/forms';
 import {ArrayHelper} from '../helper/array-helper';
-import {AfterViewInit, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {AfterViewInit, OnChanges, SimpleChanges} from '@angular/core';
 
 export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewInit, OnChanges {
   public innerValue: T;

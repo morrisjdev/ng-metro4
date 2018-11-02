@@ -9,6 +9,8 @@ export class InputComponent implements OnInit {
 
   model = 'test';
 
+  mmodel = 'test2';
+
   constructor() { }
 
   ngOnInit() {

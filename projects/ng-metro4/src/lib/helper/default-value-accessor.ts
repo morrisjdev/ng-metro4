@@ -1,4 +1,4 @@
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {NG_VALUE_ACCESSOR} from '@angular/forms';
 import {forwardRef} from '@angular/core';
 
 export class DefaultValueAccessor {

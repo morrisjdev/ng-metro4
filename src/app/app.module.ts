@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {NgMetro4Module} from 'ng-metro4';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TagInputComponent } from './form/tag-input/tag-input.component';
 import { SelectComponent } from './form/select/select.component';
 import { InputComponent } from './form/input/input.component';
+import { ReactiveComponent } from './reactive/reactive.component';
+import { TextareaComponent } from './form/textarea/textarea.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,13 @@ import { InputComponent } from './form/input/input.component';
     TagInputComponent,
     SelectComponent,
     InputComponent,
+    ReactiveComponent,
+    TextareaComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     NgMetro4Module
   ],
