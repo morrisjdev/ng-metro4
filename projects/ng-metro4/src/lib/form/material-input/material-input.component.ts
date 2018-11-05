@@ -42,7 +42,7 @@ export class MaterialInputComponent extends ControlBase<string> {
       this.touchCallback();
     });
 
-    this.clonedElement.on('keydown', (event) => {
+    this.clonedElement.on('keydown change', (event) => {
       setTimeout(() => {
         this.changeValue(this.clonedElement.val());
       }, 0);
@@ -62,9 +62,7 @@ export class MaterialInputComponent extends ControlBase<string> {
       return;
     }
 
-    this.disableUpdate = true;
     this.clonedElement.val(this.innerValue);
-    this.disableUpdate = false;
   }
 
 }

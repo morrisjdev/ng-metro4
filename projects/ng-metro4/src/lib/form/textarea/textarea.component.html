@@ -1,1 +1,13 @@
-<textarea #textarea></textarea>
+<textarea #textarea
+          [attr.data-default-value]="defaultValue"
+          [attr.data-prepend]="prepend"
+          [attr.data-append]="append"
+          [attr.data-clear-button]="clearButton"
+          [attr.data-clear-button-icon]="clearButtonIcon"
+          [attr.data-auto-size]="autoSize"
+
+          [attr.data-cls-component]="clsComponent"
+          [attr.data-cls-textarea]="clsTextarea"
+          [attr.data-cls-prepend]="clsPrepend"
+          [attr.data-cls-append]="clsAppend">
+</textarea>

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextareaComponent implements OnInit {
 
+  prepend = '';
+
   model = 'test';
 
   constructor() { }

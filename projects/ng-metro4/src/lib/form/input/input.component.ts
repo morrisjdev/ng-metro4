@@ -12,7 +12,7 @@ declare var $: any;
 })
 export class InputComponent extends ControlBase<string> {
   @Input('type') type = 'text';
-  @Input('default-value') defaultValue: string;
+  @Input('default-value') defaultValue: any;
   @Input('size') size: number;
   @Input('prepend') prepend: string;
   @Input('append') append: string;
@@ -51,7 +51,7 @@ export class InputComponent extends ControlBase<string> {
       this.touchCallback();
     });
 
-    this.clonedElement.on('keydown', (event) => {
+    this.clonedElement.on('keydown change', (event) => {
       setTimeout(() => {
         this.changeValue(this.clonedElement.val());
       }, 0);
@@ -71,8 +71,6 @@ export class InputComponent extends ControlBase<string> {
       return;
     }
 
-    this.disableUpdate = true;
     this.clonedElement.val(this.innerValue);
-    this.disableUpdate = false;
   }
 }

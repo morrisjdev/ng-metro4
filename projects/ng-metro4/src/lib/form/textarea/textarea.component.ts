@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 
@@ -11,6 +11,17 @@ declare var $: any;
   providers: [DefaultValueAccessor.get(TextareaComponent)]
 })
 export class TextareaComponent extends ControlBase<string> {
+  @Input('default-value') defaultValue: string;
+  @Input('prepend') prepend: string;
+  @Input('append') append: string;
+  @Input('clear-button') clearButton: boolean;
+  @Input('clear-button-icon') clearButtonIcon: string;
+  @Input('auto-size') autoSize: boolean;
+
+  @Input('cls-component') clsComponent: string;
+  @Input('cls-textarea') clsTextarea: string;
+  @Input('cls-prepend') clsPrepend: string;
+  @Input('cls-append') clsAppend: string;
 
   @ViewChild('textarea') private textarea: ElementRef;
   private textareaObj: any;
@@ -29,15 +40,15 @@ export class TextareaComponent extends ControlBase<string> {
 
     this.textareaObj = this.clonedElement.textarea().data('textarea');
 
-    console.log(this.textareaObj);
-
     this.clonedElement.one('blur', () => {
       this.touchCallback();
     });
 
-    this.textareaObj.options.onChange = (val, length) => {
-      this.changeValue(val);
-    };
+    this.clonedElement.on('keydown change', (event) => {
+      setTimeout(() => {
+        this.changeValue(this.clonedElement.val());
+      }, 0);
+    });
   }
 
   disable(disabled: boolean): void {
@@ -53,10 +64,8 @@ export class TextareaComponent extends ControlBase<string> {
       return;
     }
 
-    this.disableUpdate = true;
     this.clonedElement.val(this.innerValue);
     this.textareaObj.resize();
-    this.disableUpdate = false;
   }
 
 }

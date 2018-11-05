@@ -1,0 +1,10 @@
+<m4-checkbox [(ngModel)]="model"></m4-checkbox>
+
+<m4-checkbox [(ngModel)]="model" [disabled]="true"></m4-checkbox>
+
+<m4-checkbox [ngModel]="true" [disabled]="model"></m4-checkbox>
+
+<m4-checkbox [ngModel]="false" [disabled]="model"></m4-checkbox>
+
+
+{{model | json}}

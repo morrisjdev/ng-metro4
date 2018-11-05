@@ -10,6 +10,7 @@ import { SelectComponent } from './form/select/select.component';
 import { InputComponent } from './form/input/input.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { TextareaComponent } from './form/textarea/textarea.component';
+import { CheckboxComponent } from './form/checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TextareaComponent } from './form/textarea/textarea.component';
     InputComponent,
     ReactiveComponent,
     TextareaComponent,
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,

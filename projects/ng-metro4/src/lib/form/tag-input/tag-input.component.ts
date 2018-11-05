@@ -59,14 +59,10 @@ export class TagInputComponent extends ControlBase<string[]> {
       return;
     }
 
-    this.disableUpdate = true;
-
     this.tagInput.clear();
 
     if (this.innerValue && this.innerValue.length > 0) {
       this.tagInput.val(this.innerValue);
     }
-
-    this.disableUpdate = false;
   }
 }

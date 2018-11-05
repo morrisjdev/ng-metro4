@@ -88,15 +88,11 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
       return;
     }
 
-    this.disableUpdate = true;
-
     if (this.multiple) {
       this.select.val(this.innerValue);
     } else {
       this.select.val([this.innerValue]);
     }
-
-    this.disableUpdate = false;
   }
 
   renderOptions(): boolean {
