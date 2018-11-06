@@ -6,5 +6,14 @@
 
 <m4-checkbox [ngModel]="false" [disabled]="model"></m4-checkbox>
 
+<m4-checkbox [ngModel]="model" [style]="1"></m4-checkbox>
+
+<m4-checkbox [ngModel]="model" [style]="2"></m4-checkbox><br>
+
+<m4-checkbox [ngModel]="model" caption="Test"></m4-checkbox><br>
+
+<m4-checkbox [ngModel]="model" caption="Test" caption-position="left"></m4-checkbox><br>
+
+<m4-checkbox [ngModel]="model" [indeterminate]="true"></m4-checkbox><br>
 
 {{model | json}}

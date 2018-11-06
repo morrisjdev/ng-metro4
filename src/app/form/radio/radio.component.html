@@ -1,0 +1,29 @@
+<m4-radio [(ngModel)]="model" name="test" value="t"></m4-radio>
+
+<m4-radio [(ngModel)]="model" name="test" value="s"></m4-radio>
+
+<m4-radio [(ngModel)]="model" name="test" value="x"></m4-radio>
+
+<br>
+
+<m4-radio [(ngModel)]="model" name="test2" value="t"></m4-radio>
+
+<m4-radio [(ngModel)]="model" name="test2" value="s" [disabled]="true"></m4-radio>
+
+<m4-radio [(ngModel)]="model" name="test2" value="x"></m4-radio>
+
+<br>
+
+<m4-radio value="t"></m4-radio>
+
+<br>
+
+<m4-radio-group [(ngModel)]="model">
+  <m4-radio value="s"></m4-radio>
+  <m4-radio value="t"></m4-radio>
+  <m4-radio value="x"></m4-radio>
+</m4-radio-group>
+
+<br>
+
+{{model | json}}

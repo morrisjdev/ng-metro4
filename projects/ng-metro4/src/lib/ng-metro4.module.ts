@@ -8,6 +8,8 @@ import { InputComponent } from './form/input/input.component';
 import { MaterialInputComponent } from './form/material-input/material-input.component';
 import { TextareaComponent } from './form/textarea/textarea.component';
 import { CheckboxComponent } from './form/checkbox/checkbox.component';
+import { RadioComponent } from './form/radio/radio.component';
+import { RadioGroupComponent } from './form/radio-group/radio-group.component';
 
 const declarations = [
   TagInputComponent,
@@ -15,7 +17,9 @@ const declarations = [
   InputComponent,
   MaterialInputComponent,
   TextareaComponent,
-  CheckboxComponent
+  CheckboxComponent,
+  RadioComponent,
+  RadioGroupComponent,
 ];
 
 @NgModule({

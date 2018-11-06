@@ -11,6 +11,7 @@ import { InputComponent } from './form/input/input.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { TextareaComponent } from './form/textarea/textarea.component';
 import { CheckboxComponent } from './form/checkbox/checkbox.component';
+import { RadioComponent } from './form/radio/radio.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CheckboxComponent } from './form/checkbox/checkbox.component';
     ReactiveComponent,
     TextareaComponent,
     CheckboxComponent,
+    RadioComponent,
   ],
   imports: [
     BrowserModule,
