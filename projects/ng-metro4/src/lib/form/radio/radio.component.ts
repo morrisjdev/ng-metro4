@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 
@@ -10,9 +10,17 @@ declare var $: any;
   styleUrls: ['./radio.component.css'],
   providers: [DefaultValueAccessor.get(RadioComponent)]
 })
-export class RadioComponent extends ControlBase<string> {
+export class RadioComponent extends ControlBase<any> {
   @Input('name') name: string;
-  @Input('value') value: string;
+  @Input('value') value: any;
+
+  @Input('style') style: 1|2;
+  @Input('caption') caption: string;
+  @Input('caption-position') captionPosition: 'left'|'right';
+
+  @Input('cls-radio') clsRadio: string;
+  @Input('cls-caption') clsCaption: string;
+  @Input('cls-check') clsCheck: string;
 
   @ViewChild('input') private input: ElementRef;
   private clonedElement: any;
@@ -36,7 +44,7 @@ export class RadioComponent extends ControlBase<string> {
     });
 
     this.clonedElement.on('change', (event) => {
-      this.changeValue(this.clonedElement.val());
+      this.changeCallback(this.value);
     });
   }
 

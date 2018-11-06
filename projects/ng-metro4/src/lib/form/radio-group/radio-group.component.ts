@@ -1,4 +1,4 @@
-import {Component, ContentChildren, ElementRef, forwardRef, Input, OnInit, QueryList, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ContentChildren, ElementRef, forwardRef, Input, OnInit, QueryList, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {RadioComponent} from '../radio/radio.component';
@@ -12,76 +12,47 @@ declare var $: any;
   styleUrls: ['./radio-group.component.css'],
   providers: [DefaultValueAccessor.get(RadioGroupComponent)]
 })
-export class RadioGroupComponent extends ControlBase<string> {
+export class RadioGroupComponent extends ControlBase<any> {
   @ContentChildren(forwardRef(() => RadioComponent), { descendants: true }) radios: QueryList<RadioComponent>;
 
   private name: string;
 
   constructor() {
     super();
-
     this.name = StringHelper.guid();
   }
 
-  // @ViewChild('input') private input: ElementRef;
-  // private clonedElement: any;
-  // private radio: any;
-
   createControl() {
-    this.radios.forEach((item) => {
-      setTimeout(() => {
+    setTimeout(() => {
+      this.radios.forEach((item) => {
         item.name = this.name;
         item.registerOnChange((v) => {
           this.changeValue(v);
-          console.log(v, this.innerValue);
         });
 
         setTimeout(() => {
           item.createControl();
+          this.callNewValue();
         }, 0);
-      }, 0);
-    });
-
-    // const originalElement = $(this.input.nativeElement);
-    // originalElement.hide();
-    //
-    // if (this.clonedElement) {
-    //   this.clonedElement.parent().remove();
-    // }
-    //
-    // this.clonedElement = originalElement.clone().show();
-    // originalElement.parent().append(this.clonedElement);
-    //
-    // this.radio = this.clonedElement.radio().data('radio');
-    //
-    // this.clonedElement.one('blur', () => {
-    //   this.touchCallback();
-    // });
-    //
-    // this.clonedElement.on('change', (event) => {
-    //   this.changeValue(this.clonedElement.val());
-    // });
+      });
+    }, 0);
   }
 
   disable(disabled: boolean): void {
-    if (disabled) {
-      // this.clonedElement.attr('disabled', '');
-      // this.radio.disable();
-    } else {
-      // this.clonedElement.attr('disabled', null);
-      // this.radio.enable();
-    }
+    this.radios.forEach((item) => {
+      setTimeout(() => {
+        item.disable(disabled);
+      }, 0);
+    });
   }
 
   newValue(): void {
-    // if (!this.radio) {
-    //   return;
-    // }
+    if (!this.radios) {
+      return;
+    }
 
-    // if (this.innerValue === this.value) {
-    //   this.clonedElement.prop('checked', true);
-    // } else {
-    //   this.clonedElement.prop('checked', false);
-    // }
+    this.radios.forEach((item) => {
+      item.writeValue(this.innerValue);
+    });
   }
 }

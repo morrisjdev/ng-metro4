@@ -16,7 +16,7 @@ export class CheckboxComponent extends ControlBase<boolean> {
   @Input('caption-position') captionPosition: 'left'|'right';
   @Input('indeterminate') indeterminate: boolean;
 
-  @Input('cls-radio') clsRadio: string;
+  @Input('cls-checkbox') clsCheckbox: string;
   @Input('cls-caption') clsCaption: string;
   @Input('cls-check') clsCheck: string;
 

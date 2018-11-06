@@ -1,3 +1,8 @@
-<input #input
-       [name]="name"
-       [value]="value">
+<input #input [name]="name"
+       [attr.data-style]="style"
+       [attr.data-caption]="caption"
+       [attr.data-caption-position]="captionPosition"
+
+       [attr.data-cls-radio]="clsRadio"
+       [attr.data-cls-caption]="clsCaption"
+       [attr.data-cls-check]="clsCheck">

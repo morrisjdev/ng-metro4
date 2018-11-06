@@ -9,6 +9,8 @@ export class RadioComponent implements OnInit {
 
   model = 'x';
 
+  disable = true;
+
   constructor() { }
 
   ngOnInit() {

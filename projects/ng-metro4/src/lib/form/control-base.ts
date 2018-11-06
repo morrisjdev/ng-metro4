@@ -51,7 +51,7 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
 
   public abstract newValue();
 
-  private callNewValue() {
+  callNewValue() {
     this.disableUpdate = true;
     this.newValue();
     this.disableUpdate = false;
