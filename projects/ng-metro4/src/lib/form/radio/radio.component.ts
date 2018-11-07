@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
@@ -65,7 +66,7 @@ export class RadioComponent extends ControlBase<any> {
       return;
     }
 
-    if (this.innerValue === this.value) {
+    if (ObjectHelper.compare(this.innerValue, this.value)) {
       this.clonedElement.prop('checked', true);
     } else {
       this.clonedElement.prop('checked', false);

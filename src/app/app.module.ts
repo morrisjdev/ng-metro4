@@ -12,6 +12,9 @@ import { ReactiveComponent } from './reactive/reactive.component';
 import { TextareaComponent } from './form/textarea/textarea.component';
 import { CheckboxComponent } from './form/checkbox/checkbox.component';
 import { RadioComponent } from './form/radio/radio.component';
+import { FileInputComponent } from './form/file-input/file-input.component';
+import { KeypadComponent } from './form/keypad/keypad.component';
+import { SliderComponent } from './form/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { RadioComponent } from './form/radio/radio.component';
     TextareaComponent,
     CheckboxComponent,
     RadioComponent,
+    FileInputComponent,
+    KeypadComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,

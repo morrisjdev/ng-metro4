@@ -10,7 +10,7 @@ declare var $: any;
   styleUrls: ['./input.component.css'],
   providers: [DefaultValueAccessor.get(InputComponent)]
 })
-export class InputComponent extends ControlBase<string> {
+export class InputComponent extends ControlBase<string|number> {
   @Input('type') type = 'text';
   @Input('default-value') defaultValue: any;
   @Input('size') size: number;
@@ -53,7 +53,13 @@ export class InputComponent extends ControlBase<string> {
 
     this.clonedElement.on('keydown change', (event) => {
       setTimeout(() => {
-        this.changeValue(this.clonedElement.val());
+        let newValue = this.clonedElement.val();
+
+        if (this.type === 'number') {
+          newValue = +newValue;
+        }
+
+        this.changeValue(newValue);
       }, 0);
     });
   }

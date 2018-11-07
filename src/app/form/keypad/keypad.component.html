@@ -1,0 +1,30 @@
+<m4-keypad [(ngModel)]="model"></m4-keypad>
+
+<m4-keypad [(ngModel)]="model" [disabled]="true"></m4-keypad>
+
+<m4-keypad [(ngModel)]="model" [keys]="['a','b','c']"></m4-keypad>
+
+<m4-keypad [(ngModel)]="model" [keys]="['aa','b','c']" type="password"></m4-keypad>
+
+<m4-radio-group [(ngModel)]="position">
+  <m4-radio value="left" caption="left"></m4-radio>
+  <m4-radio value="top-left" caption="top-left"></m4-radio>
+  <m4-radio value="top" caption="top"></m4-radio>
+  <m4-radio value="top-right" caption="top-right"></m4-radio>
+  <m4-radio value="right" caption="right"></m4-radio>
+  <m4-radio value="bottom-right" caption="bottom-right"></m4-radio>
+  <m4-radio value="bottom" caption="bottom"></m4-radio>
+  <m4-radio value="bottom-left" caption="bottom-left"></m4-radio>
+</m4-radio-group>
+
+<m4-switch [(ngModel)]="open" caption="open"></m4-switch>
+
+<m4-keypad [(ngModel)]="model" [open]="open" [position]="position"></m4-keypad>
+
+{{model | json}}
+
+<m4-keypad [(ngModel)]="modelNumber" type="number"></m4-keypad>
+
+<m4-keypad [(ngModel)]="modelNumber" type="number"></m4-keypad>
+
+{{modelNumber | json}}

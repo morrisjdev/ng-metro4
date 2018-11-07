@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ContentChildren, ElementRef, forwardRef, Input, OnInit, QueryList, ViewChild} from '@angular/core';
+import {Component, ContentChildren, forwardRef, QueryList} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {RadioComponent} from '../radio/radio.component';
@@ -28,6 +28,10 @@ export class RadioGroupComponent extends ControlBase<any> {
         item.name = this.name;
         item.registerOnChange((v) => {
           this.changeValue(v);
+        });
+
+        item.registerOnTouched(() => {
+          this.touchCallback();
         });
 
         setTimeout(() => {

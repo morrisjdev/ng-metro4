@@ -1,0 +1,17 @@
+<m4-file-input [(ngModel)]="model"></m4-file-input>
+
+<m4-file-input [(ngModel)]="model" [disabled]="true"></m4-file-input>
+
+<m4-input [(ngModel)]="prepend" prepend="Prepend"></m4-input>
+
+<m4-file-input [(ngModel)]="model" [button-title]="prepend"></m4-file-input>
+
+<m4-file-input [(ngModel)]="model" button-title="<span class='mif-folder'></span>"></m4-file-input>
+
+<m4-file-input [(ngModel)]="model" [drop]="true" (ngModelChange)="openFile()"></m4-file-input>
+
+{{model | json}}
+
+<m4-file-input [(ngModel)]="modelArr" [prepend]="prepend" [multiple]="true"></m4-file-input>
+
+{{modelArr | json}}

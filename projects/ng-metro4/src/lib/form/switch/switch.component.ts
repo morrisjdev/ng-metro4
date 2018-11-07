@@ -1,28 +1,27 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
-import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {ControlBase} from '../control-base';
 
 declare var $: any;
 
 @Component({
-  selector: 'm4-checkbox',
-  templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.css'],
-  providers: [DefaultValueAccessor.get(CheckboxComponent)]
+  selector: 'm4-switch',
+  templateUrl: './switch.component.html',
+  styleUrls: ['./switch.component.css'],
+  providers: [DefaultValueAccessor.get(SwitchComponent)]
 })
-export class CheckboxComponent extends ControlBase<boolean> {
-  @Input('style') style: 1|2;
+export class SwitchComponent extends ControlBase<boolean> {
+  @Input('material') material: boolean;
   @Input('caption') caption: string;
   @Input('caption-position') captionPosition: 'left'|'right';
-  @Input('indeterminate') indeterminate: boolean;
 
-  @Input('cls-checkbox') clsCheckbox: string;
+  @Input('cls-switch') clsSwitch: string;
   @Input('cls-caption') clsCaption: string;
   @Input('cls-check') clsCheck: string;
 
   @ViewChild('input') private input: ElementRef;
   private clonedElement: any;
-  private checkbox: any;
+  private switch: any;
 
   createControl() {
     const originalElement = $(this.input.nativeElement);
@@ -35,7 +34,7 @@ export class CheckboxComponent extends ControlBase<boolean> {
     this.clonedElement = originalElement.clone().show();
     originalElement.parent().append(this.clonedElement);
 
-    this.checkbox = this.clonedElement.checkbox().data('checkbox');
+    this.switch = this.clonedElement.switch().data('switch');
 
     this.clonedElement.one('blur', () => {
       this.touchCallback();
@@ -49,19 +48,18 @@ export class CheckboxComponent extends ControlBase<boolean> {
   disable(disabled: boolean): void {
     if (disabled) {
       this.clonedElement.attr('disabled', '');
-      this.checkbox.disable();
+      this.switch.disable();
     } else {
       this.clonedElement.attr('disabled', null);
-      this.checkbox.enable();
+      this.switch.enable();
     }
   }
 
   newValue(): void {
-    if (!this.checkbox) {
+    if (!this.switch) {
       return;
     }
 
     this.clonedElement.prop('checked', this.innerValue);
   }
-
 }

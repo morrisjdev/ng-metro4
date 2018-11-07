@@ -1,6 +1,6 @@
 import {ControlValueAccessor} from '@angular/forms';
-import {ArrayHelper} from '../helper/array-helper';
 import {AfterViewInit, OnChanges, SimpleChanges} from '@angular/core';
+import {ObjectHelper} from '../helper/object-helper';
 
 export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewInit, OnChanges {
   public innerValue: T;
@@ -14,14 +14,8 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
       return;
     }
 
-    if (newValue instanceof Array && this.innerValue instanceof Array) {
-      if (ArrayHelper.sequenceEquals(this.innerValue, newValue)) {
-        return;
-      }
-    } else {
-      if (newValue === this.innerValue) {
-        return;
-      }
+    if (ObjectHelper.compare(newValue, this.innerValue)) {
+      return;
     }
 
     this.innerValue = newValue;
@@ -33,10 +27,6 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
 
   registerOnChange(fn: (v: T) => void): void {
     this.changeCallback = fn;
-  }
-
-  public touched() {
-    this.touchCallback();
   }
 
   registerOnTouched(fn: () => void): void {

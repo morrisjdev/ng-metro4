@@ -1,4 +1,4 @@
-<h3>Input</h3>
+<h1>Input</h1>
 
 <m4-input [(ngModel)]="model"></m4-input>
 
@@ -14,9 +14,17 @@
 
 {{model | json}}
 
-<h3>Material Input</h3>
+<m4-input [(ngModel)]="modelNumber" type="number" prepend="Number"></m4-input>
+
+<m4-material-input [(ngModel)]="modelNumber" type="number"></m4-material-input>
+
+{{modelNumber | json}}
+
+<h1>Material Input</h1>
 
 <m4-material-input [(ngModel)]="mmodel"></m4-material-input>
+
+<m4-material-input [(ngModel)]="mmodel" type="password"></m4-material-input>
 
 <m4-material-input [(ngModel)]="mmodel" placeholder="test123"
                    icon="<span class='mif-envelop'></span>" [label]="model" informer="das ist ein test"></m4-material-input>

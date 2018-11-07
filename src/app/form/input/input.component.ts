@@ -11,6 +11,8 @@ export class InputComponent implements OnInit {
 
   mmodel = 'test2';
 
+  modelNumber = 12;
+
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 
@@ -44,7 +44,13 @@ export class MaterialInputComponent extends ControlBase<string> {
 
     this.clonedElement.on('keydown change', (event) => {
       setTimeout(() => {
-        this.changeValue(this.clonedElement.val());
+        let newValue = this.clonedElement.val();
+
+        if (this.type === 'number') {
+          newValue = +newValue;
+        }
+
+        this.changeValue(newValue);
       }, 0);
     });
   }

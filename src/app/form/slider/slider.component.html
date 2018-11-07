@@ -1,0 +1,18 @@
+<m4-slider [(ngModel)]="model"></m4-slider>
+
+<m4-slider [(ngModel)]="model" [accuracy]="1"></m4-slider>
+
+<m4-slider [(ngModel)]="model" [hint]="true" hint-mask="V: $1, $2%"></m4-slider>
+
+
+<m4-slider [(ngModel)]="model" [vertical]="true"></m4-slider>
+
+<m4-slider [(ngModel)]="buffer"></m4-slider>
+
+<m4-slider [(ngModel)]="model" [buffer]="buffer"></m4-slider>
+
+<br><br>
+
+<m4-slider [(ngModel)]="model" [hint-always]="true"></m4-slider>
+
+{{model | json}}

@@ -1,3 +1,5 @@
+<h1>Checkbox</h1>
+
 <m4-checkbox [(ngModel)]="model"></m4-checkbox>
 
 <m4-checkbox [(ngModel)]="model" [disabled]="true"></m4-checkbox>
@@ -15,5 +17,17 @@
 <m4-checkbox [ngModel]="model" caption="Test" caption-position="left"></m4-checkbox><br>
 
 <m4-checkbox [ngModel]="model" [indeterminate]="true"></m4-checkbox><br>
+
+{{model | json}}
+
+<h1>Switch</h1>
+
+<m4-switch [(ngModel)]="model"></m4-switch><br>
+
+<m4-switch [(ngModel)]="model" [disabled]="true"></m4-switch><br>
+
+<m4-switch [(ngModel)]="model" caption="Test"></m4-switch><br>
+
+<m4-switch [(ngModel)]="model" caption="Test" caption-position="left"></m4-switch><br>
 
 {{model | json}}

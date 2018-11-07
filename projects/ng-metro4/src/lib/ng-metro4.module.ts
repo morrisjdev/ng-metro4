@@ -10,6 +10,10 @@ import { TextareaComponent } from './form/textarea/textarea.component';
 import { CheckboxComponent } from './form/checkbox/checkbox.component';
 import { RadioComponent } from './form/radio/radio.component';
 import { RadioGroupComponent } from './form/radio-group/radio-group.component';
+import { SwitchComponent } from './form/switch/switch.component';
+import { FileInputComponent } from './form/file-input/file-input.component';
+import { KeypadComponent } from './form/keypad/keypad.component';
+import { SliderComponent } from './form/slider/slider.component';
 
 const declarations = [
   TagInputComponent,
@@ -20,6 +24,10 @@ const declarations = [
   CheckboxComponent,
   RadioComponent,
   RadioGroupComponent,
+  SwitchComponent,
+  FileInputComponent,
+  KeypadComponent,
+  SliderComponent,
 ];
 
 @NgModule({
