@@ -14,6 +14,8 @@ import { SwitchComponent } from './form/switch/switch.component';
 import { FileInputComponent } from './form/file-input/file-input.component';
 import { KeypadComponent } from './form/keypad/keypad.component';
 import { SliderComponent } from './form/slider/slider.component';
+import { SpinnerComponent } from './form/spinner/spinner.component';
+import { RatingComponent } from './form/rating/rating.component';
 
 const declarations = [
   TagInputComponent,
@@ -28,6 +30,8 @@ const declarations = [
   FileInputComponent,
   KeypadComponent,
   SliderComponent,
+  SpinnerComponent,
+  RatingComponent,
 ];
 
 @NgModule({

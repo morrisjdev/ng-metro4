@@ -89,6 +89,13 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
     }
 
     if (this.multiple) {
+      const oldConsoleLog = console.log;
+      console.log = () => {};
+
+      this.select.reset();
+
+      console.log = oldConsoleLog;
+
       this.select.val(this.innerValue);
     } else {
       this.select.val([this.innerValue]);

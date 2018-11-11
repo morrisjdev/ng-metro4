@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 
@@ -8,7 +8,8 @@ declare var $: any;
   selector: 'm4-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
-  providers: [DefaultValueAccessor.get(SliderComponent)]
+  providers: [DefaultValueAccessor.get(SliderComponent)],
+  encapsulation: ViewEncapsulation.None
 })
 export class SliderComponent extends ControlBase<number> {
   @Input('min') min: number;
@@ -53,7 +54,7 @@ export class SliderComponent extends ControlBase<number> {
 
     this.slider = this.clonedElement.slider().data('slider');
 
-    this.clonedElement.one('blur', () => {
+    this.clonedElement.parent().find('button.marker').one('blur', () => {
       this.touchCallback();
     });
 
@@ -66,9 +67,9 @@ export class SliderComponent extends ControlBase<number> {
 
   disable(disabled: boolean): void {
     if (disabled) {
-      this.slider.disable();
+      this.clonedElement.parent().addClass('disabled');
     } else {
-      this.slider.enable();
+      this.clonedElement.parent().removeClass('disabled');
     }
   }
 

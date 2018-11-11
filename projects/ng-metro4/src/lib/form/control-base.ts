@@ -4,7 +4,7 @@ import {ObjectHelper} from '../helper/object-helper';
 
 export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewInit, OnChanges {
   public innerValue: T;
-  private disableUpdate = false;
+  public disableUpdate = false;
 
   public touchCallback: () => void = () => {};
   public changeCallback: (currentValue: T) => void = (_) => {};

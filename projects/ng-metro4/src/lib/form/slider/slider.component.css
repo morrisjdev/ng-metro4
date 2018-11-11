@@ -1,0 +1,7 @@
+m4-slider .disabled button.marker {
+  background-color: #989898;
+}
+
+m4-slider .disabled .complete {
+  background-color: #989898;
+}

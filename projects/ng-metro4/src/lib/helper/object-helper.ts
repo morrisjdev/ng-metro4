@@ -10,6 +10,10 @@ export class ObjectHelper {
       if (firstObject === secondObject) {
         return true;
       }
+
+      if (JSON.stringify(firstObject) === JSON.stringify(secondObject)) {
+        return true;
+      }
     }
 
     return false;

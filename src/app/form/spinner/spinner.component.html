@@ -1,0 +1,20 @@
+<m4-spinner [(ngModel)]="model"></m4-spinner>
+
+<m4-spinner [(ngModel)]="model" [disabled]="true"></m4-spinner>
+
+<m4-spinner [(ngModel)]="model" buttons-position="left"></m4-spinner>
+
+<m4-spinner [(ngModel)]="model" buttons-position="right"></m4-spinner>
+
+
+{{model | json}}
+
+<m4-spinner [(ngModel)]="modelDecimal" [min-value]="10" [max-value]="20" [step]="0.25" [fixed]="2"></m4-spinner>
+
+<m4-spinner [(ngModel)]="modelDecimal" [min-value]="10" [max-value]="20" [step]="0.25" [fixed]="2"></m4-spinner>
+
+{{modelDecimal | json}}
+
+<m4-spinner [(ngModel)]="modelDecimalBig" [min-value]="10" [max-value]="20" [step]="0.25" [fixed]="2"></m4-spinner>
+
+{{modelDecimalBig | json}}

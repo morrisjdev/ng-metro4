@@ -15,7 +15,7 @@
         [attr.data-cls-selected-item]="clsSelectedItem"
         [attr.data-cls-selected-item-remover]="clsSelectedItemRemover">
 
-  <ng-content select="[options]" *ngIf="!options"></ng-content>
+  <ng-content *ngIf="!options"></ng-content>
 
   <ng-container *ngIf="renderOptions()">
     <ng-container *ngFor="let option of options">

@@ -15,6 +15,8 @@ import { RadioComponent } from './form/radio/radio.component';
 import { FileInputComponent } from './form/file-input/file-input.component';
 import { KeypadComponent } from './form/keypad/keypad.component';
 import { SliderComponent } from './form/slider/slider.component';
+import { SpinnerComponent } from './form/spinner/spinner.component';
+import { RatingComponent } from './form/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { SliderComponent } from './form/slider/slider.component';
     FileInputComponent,
     KeypadComponent,
     SliderComponent,
+    SpinnerComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,

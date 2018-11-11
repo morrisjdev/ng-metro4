@@ -1,0 +1,12 @@
+<input type="text" #input
+       [attr.data-stars]="values ? values.length : stars"
+       [attr.data-round-func]="roundFunc"
+       [attr.data-values]="values?.join(',')"
+       [attr.data-message]="message"
+       [attr.data-star-color]="starColor"
+       [attr.data-stared-color]="staredColor"
+       [attr.data-static]="static"
+
+       [attr.data-cls-rating]="clsRating"
+       [attr.data-cls-stars]="clsStars"
+       [attr.data-cls-result]="clsResult">

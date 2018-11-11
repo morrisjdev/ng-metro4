@@ -1,0 +1,21 @@
+<m4-rating [(ngModel)]="model" message="Rate"></m4-rating><br>
+<m4-rating [(ngModel)]="model" [disabled]="true" message="Rate"></m4-rating><br>
+<m4-rating [(ngModel)]="model" message="Rate" [stars]="12"></m4-rating><br>
+
+<m4-rating [(ngModel)]="model" round-func="ceil" star-color="red"></m4-rating><br>
+
+<m4-rating [(ngModel)]="model" round-func="floor" stared-color="green"></m4-rating><br>
+
+<m4-rating [(ngModel)]="model" round-func="round"></m4-rating><br>
+
+{{model | json}}<br>
+
+<m4-rating [(ngModel)]="modelChar" [values]="['A', 'B', 'c', 'D', 'E']"></m4-rating><br>
+<m4-rating [(ngModel)]="modelChar" [values]="['A', 'B', 'c', 'D', 'E']"></m4-rating><br>
+
+{{modelChar | json}}<br>
+
+<m4-rating [(ngModel)]="modelDec" [values]="[0.3, 0.4, 0.7]"></m4-rating><br>
+<m4-rating [(ngModel)]="modelDec" [values]="[0.3, 0.4, 0.7, 1.3]"></m4-rating><br>
+
+{{modelDec | json}}
