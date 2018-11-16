@@ -46,22 +46,17 @@ export class RatingComponent extends ControlBase<string|number> {
     });
 
     this.clonedElement.on('change', (event) => {
-      const newValue = this.getParsedValue(this.clonedElement.val());
-      this.changeValue(newValue);
+      const newValue = this.clonedElement.val();
+      const valueParsed = +newValue;
+
+      if (!Number.isNaN(valueParsed)) {
+        this.changeValue(valueParsed);
+      } else {
+        this.changeValue(newValue);
+      }
     });
   }
-
-  getParsedValue(input: any) {
-    const newValue = this.clonedElement.val();
-    const valueParsed = +newValue;
-
-    if (!Number.isNaN(valueParsed)) {
-      return valueParsed;
-    } else {
-      return newValue;
-    }
-  }
-
+  
   disable(disabled: boolean): void {
     if (disabled) {
       this.clonedElement.parent().parent().addClass('disabled');

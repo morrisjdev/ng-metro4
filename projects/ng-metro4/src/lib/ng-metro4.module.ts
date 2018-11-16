@@ -16,6 +16,7 @@ import { KeypadComponent } from './form/keypad/keypad.component';
 import { SliderComponent } from './form/slider/slider.component';
 import { SpinnerComponent } from './form/spinner/spinner.component';
 import { RatingComponent } from './form/rating/rating.component';
+import { CalendarPickerComponent } from './form/calendar-picker/calendar-picker.component';
 
 const declarations = [
   TagInputComponent,
@@ -32,6 +33,7 @@ const declarations = [
   SliderComponent,
   SpinnerComponent,
   RatingComponent,
+  CalendarPickerComponent,
 ];
 
 @NgModule({
@@ -46,4 +48,5 @@ const declarations = [
     ...declarations
   ]
 })
-export class NgMetro4Module { }
+export class NgMetro4Module {
+}

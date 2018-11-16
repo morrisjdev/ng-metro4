@@ -17,6 +17,7 @@ import { KeypadComponent } from './form/keypad/keypad.component';
 import { SliderComponent } from './form/slider/slider.component';
 import { SpinnerComponent } from './form/spinner/spinner.component';
 import { RatingComponent } from './form/rating/rating.component';
+import { DateTimeComponent } from './form/date-time/date-time.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { RatingComponent } from './form/rating/rating.component';
     SliderComponent,
     SpinnerComponent,
     RatingComponent,
+    DateTimeComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import {KeypadComponent} from './form/keypad/keypad.component';
 import {SliderComponent} from './form/slider/slider.component';
 import {SpinnerComponent} from './form/spinner/spinner.component';
 import {RatingComponent} from './form/rating/rating.component';
+import {DateTimeComponent} from './form/date-time/date-time.component';
 
 const routes: Routes = [
   { path: 'reactive', component: ReactiveComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'form/keypad', component: KeypadComponent },
   { path: 'form/slider', component: SliderComponent },
   { path: 'form/spinner', component: SpinnerComponent },
-  { path: 'form/rating', component: RatingComponent }
+  { path: 'form/rating', component: RatingComponent },
+  { path: 'form/datetime', component: DateTimeComponent }
 ];
 
 @NgModule({

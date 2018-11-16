@@ -1,8 +1,10 @@
 import {ControlValueAccessor} from '@angular/forms';
-import {AfterViewInit, OnChanges, SimpleChanges} from '@angular/core';
+import {AfterViewInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {ObjectHelper} from '../helper/object-helper';
 
 export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewInit, OnChanges {
+  @Input('class') class: string;
+
   public innerValue: T;
   public disableUpdate = false;
 
