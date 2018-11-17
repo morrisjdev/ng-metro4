@@ -1,0 +1,8 @@
+m4-calendar .calendar.disabled .calendar-content {
+  color: #e4e4e4!important;
+}
+
+m4-calendar .calendar.disabled .calendar-footer button {
+  color: #e4e4e4!important;
+  opacity: .65;
+}

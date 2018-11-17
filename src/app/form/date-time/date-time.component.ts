@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-date-time',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DateTimeComponent implements OnInit {
 
-  model = new Date('12.11.2018');
+
+  exclude = [
+    moment('17.11.2018', 'DD.MM.YYYY'),
+    moment('16.11.2018', 'DD.MM.YYYY'),
+    moment('15.11.2018', 'DD.MM.YYYY')
+  ];
+
+  min = moment('03.11.2018', 'DD.MM.YYYY');
+  max = moment('28.11.2018', 'DD.MM.YYYY');
+
+  model = moment('12.11.2018', 'DD.MM.YYYY');
+
+  modelMulti = [moment('12.11.2018', 'DD.MM.YYYY'), moment('13.11.2018', 'DD.MM.YYYY')];
 
   constructor() { }
 

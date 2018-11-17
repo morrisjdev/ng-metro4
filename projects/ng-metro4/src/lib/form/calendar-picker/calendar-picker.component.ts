@@ -1,7 +1,9 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
+import * as moment from 'moment';
 
+const _moment = moment;
 declare var $: any;
 
 @Component({
@@ -10,26 +12,41 @@ declare var $: any;
   styleUrls: ['./calendar-picker.component.css'],
   providers: [DefaultValueAccessor.get(CalendarPickerComponent)]
 })
-export class CalendarPickerComponent extends ControlBase<Date> {
+export class CalendarPickerComponent extends ControlBase<moment.Moment> {
+  @Input('calendar-wide') calendarWide: boolean;
+  @Input('calendar-wide-point') calendarWidePoint: 'fs'|'sm'|'md'|'lg'|'xl'|'xxl';
+  @Input('dialog-mode') dialogMode: boolean;
+  @Input('dialog-point') dialogPoint: number;
+  @Input('dialog-overlay') dialogOverlay: boolean;
+  @Input('overlay-color') overlayColor: string;
+  @Input('overlay-alpha') overlayAlpha: number;
+  @Input('locale') locale: string;
+  @Input('size') size: string;
+  @Input('format') format: string;
+  @Input('clear-button') clearButton: boolean;
+  @Input('clear-button-icon') clearButtonIcon: string;
+  @Input('calendar-button-icon') calendarButtonIcon: string;
+  @Input('years-before') yearsBefore: number;
+  @Input('years-after') yearsAfter: number;
+  @Input('week-start') weekStart: 0|1;
+  @Input('outside') outside: boolean;
+  @Input('ripple') ripple: boolean;
+  @Input('ripple-color') rippleColor: string;
+  @Input('exclude') exclude: moment.Moment[];
+  @Input('special') special: moment.Moment[];
+  @Input('min-date') minDate: moment.Moment;
+  @Input('max-date') maxDate: moment.Moment;
+  @Input('show-header') showHeader: boolean;
 
-  // @Input('type') type = 'text';
-  // @Input('default-value') defaultValue: any;
-  // @Input('size') size: number;
-  // @Input('prepend') prepend: string;
-  // @Input('append') append: string;
-  // @Input('clear-button') clearButton: boolean;
-  // @Input('clear-button-icon') clearButtonIcon: string;
-  // @Input('reveal-button') revealButton: boolean;
-  // @Input('reveal-button-icon') revealButtonIcon: string;
-  // @Input('custom-buttons') customButtons: { html: string, cls: string, onclick: string }[];
-  //
-  // @Input('cls-component') clsComponent: string;
-  // @Input('cls-input') clsInput: string;
-  // @Input('cls-prepend') clsPrepend: string;
-  // @Input('cls-append') clsAppend: string;
-  // @Input('cls-clear-button') clsClearButton: string;
-  // @Input('cls-reveal-button') clsRevealButton: string;
-  // @Input('cls-custom-button') clsCustomButton: string;
+  @Input('cls-picker') clsPicker: string;
+  @Input('cls-today') clsToday: string;
+  @Input('cls-selected') clsSelected: string;
+  @Input('cls-exclude') clsExclude: string;
+  @Input('cls-calendar') clsCalendar: string;
+  @Input('cls-calendar-header') clsCalendarHeader: string;
+  @Input('cls-calendar-content') clsCalendarContent: string;
+  @Input('cls-calendar-months') clsCalendarMonths: string;
+  @Input('cls-calendar-years') clsCalendarYears: string;
 
   @ViewChild('input') private input: ElementRef;
   private calendarPicker: any;
@@ -52,21 +69,19 @@ export class CalendarPickerComponent extends ControlBase<Date> {
       this.touchCallback();
     });
 
-    this.clonedElement.on('change', (event) => {
-      setTimeout(() => {
-        let newValue = this.calendarPicker.val().toLocaleDateString('en-US');
-        console.log(newValue);
-        this.changeValue(new Date(newValue));
-      });
-    });
+    this.calendarPicker.options.onChange = (val, date, el) => {
+      this.changeValue(_moment(val.toLocaleDateString('en'), 'MM/DD/YYYY'));
+    };
   }
 
   disable(disabled: boolean): void {
-    if (disabled) {
-      this.calendarPicker.disable();
-    } else {
-      this.calendarPicker.enable();
-    }
+    setTimeout(() => {
+      if (disabled) {
+        this.clonedElement.parent().addClass('disabled');
+      } else {
+        this.clonedElement.parent().removeClass('disabled');
+      }
+    }, 0);
   }
 
   newValue(): void {
@@ -74,7 +89,10 @@ export class CalendarPickerComponent extends ControlBase<Date> {
       return;
     }
 
-    this.calendarPicker.val(this.innerValue.toLocaleDateString('en-GB'));
+    this.calendarPicker.val(this.innerValue.format('MM/DD/YYYY'));
   }
 
+  convertMomentArray(arr: moment.Moment[]) {
+    return arr ? arr.map(v => v.format('MM/DD/YYYY')).join(',') : null;
+  }
 }

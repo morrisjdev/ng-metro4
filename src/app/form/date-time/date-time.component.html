@@ -1,5 +1,47 @@
-<m4-calendar-picker [(ngModel)]="model"></m4-calendar-picker>
+<h1>Calendar Picker</h1>
 
-<m4-calendar-picker [(ngModel)]="model" [disabled]="true"></m4-calendar-picker>
+<m4-calendar-picker [(ngModel)]="model" format="%d.%m.%Y"></m4-calendar-picker>
 
-{{model | json}}
+<m4-calendar-picker [(ngModel)]="model" format="%d.%m.%Y" [dialog-mode]="true"></m4-calendar-picker>
+
+<m4-calendar-picker [(ngModel)]="model" format="%d.%m.%Y" [dialog-point]="400"></m4-calendar-picker>
+
+<m4-calendar-picker [(ngModel)]="model" format="%d.%m.%Y" cls-calendar="compact"></m4-calendar-picker>
+
+<m4-calendar-picker [(ngModel)]="model" [calendar-wide]="true"></m4-calendar-picker>
+<m4-calendar-picker [(ngModel)]="model" calendar-wide-point="md"></m4-calendar-picker>
+
+<m4-calendar-picker [(ngModel)]="model" format="%d/%m/%Y" [disabled]="true"></m4-calendar-picker>
+
+<m4-calendar-picker [(ngModel)]="model" format="%d.%m.%Y" [exclude]="exclude"></m4-calendar-picker>
+
+<m4-calendar-picker [(ngModel)]="model" format="%d.%m.%Y" [special]="exclude"></m4-calendar-picker>
+
+<m4-calendar-picker [(ngModel)]="model" format="%d.%m.%Y" [min-date]="min" [max-date]="max"></m4-calendar-picker>
+
+{{model | date:'dd.MM.yyyy'}} {{model | json}}
+
+<h1>Calendar</h1>
+
+<m4-calendar [(ngModel)]="model" locale="de-DE" [week-start]="1"></m4-calendar>
+
+<m4-calendar [(ngModel)]="model" [picker-mode]="true"></m4-calendar>
+
+<m4-calendar [(ngModel)]="model" buttons="today, clear"></m4-calendar>
+
+
+{{model | date:'dd.MM.yyyy'}} {{model | json}}
+
+<h2>Multi Select</h2>
+
+<m4-calendar [(ngModel)]="modelMulti" [multi-select]="true" [min-date]="min" [max-date]="max" [show]="model"></m4-calendar>
+
+<m4-calendar [(ngModel)]="modelMulti" [multi-select]="true" [disabled]="true" [special]="exclude"></m4-calendar>
+
+<m4-calendar [(ngModel)]="modelMulti" [multi-select]="true" [week-day-click]="true" [exclude]="exclude"></m4-calendar>
+
+<ng-container *ngFor="let d of modelMulti">
+  {{d | date:'dd.MM.yyyy'}},
+</ng-container>
+<br>
+{{modelMulti | json}}
