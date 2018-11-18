@@ -64,9 +64,12 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
 
     this.calendar = this.clonedElement.calendar().data('calendar');
 
-    this.clonedElement.one('click', () => {
-      this.touchCallback();
-    });
+    setTimeout(() => {
+      this.clonedElement.find('.calendar-content .day, .calendar-content span, .calendar-footer button').on('click', () => {
+        this.touchCallback();
+        this.clonedElement.find('.calendar-content .day, .calendar-content span, .calendar-footer button').unbind('click');
+      });
+    }, 0);
 
     this.calendar.options.onDone = (sel, el) => {
       const dates = sel.map(s => _moment(s));

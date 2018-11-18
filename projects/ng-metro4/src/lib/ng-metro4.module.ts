@@ -18,6 +18,7 @@ import { SpinnerComponent } from './form/spinner/spinner.component';
 import { RatingComponent } from './form/rating/rating.component';
 import { CalendarPickerComponent } from './form/calendar-picker/calendar-picker.component';
 import { CalendarComponent } from './form/calendar/calendar.component';
+import { DatePickerComponent } from './form/date-picker/date-picker.component';
 
 const declarations = [
   TagInputComponent,
@@ -36,6 +37,7 @@ const declarations = [
   RatingComponent,
   CalendarPickerComponent,
   CalendarComponent,
+  DatePickerComponent,
 ];
 
 @NgModule({

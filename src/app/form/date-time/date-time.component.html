@@ -45,3 +45,17 @@
 </ng-container>
 <br>
 {{modelMulti | json}}
+
+<h1>Date Picker</h1>
+
+<m4-date-picker [(ngModel)]="model"></m4-date-picker>
+
+<m4-date-picker [(ngModel)]="model" [disabled]="true"></m4-date-picker>
+
+<m4-date-picker [(ngModel)]="model" [year]="false" [day]="false"></m4-date-picker>
+
+<m4-date-picker [(ngModel)]="model" [day]="false"></m4-date-picker>
+
+<m4-date-picker [(ngModel)]="model" [year]="false"></m4-date-picker>
+
+{{model | date:'dd.MM.yyyy'}}
