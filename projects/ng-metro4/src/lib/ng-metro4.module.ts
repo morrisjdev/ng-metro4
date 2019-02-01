@@ -19,6 +19,7 @@ import { RatingComponent } from './form/rating/rating.component';
 import { CalendarPickerComponent } from './form/calendar-picker/calendar-picker.component';
 import { CalendarComponent } from './form/calendar/calendar.component';
 import { DatePickerComponent } from './form/date-picker/date-picker.component';
+import { TimePickerComponent } from './form/time-picker/time-picker.component';
 
 const declarations = [
   TagInputComponent,
@@ -38,6 +39,7 @@ const declarations = [
   CalendarPickerComponent,
   CalendarComponent,
   DatePickerComponent,
+  TimePickerComponent
 ];
 
 @NgModule({
@@ -47,6 +49,7 @@ const declarations = [
   ],
   declarations: [
     ...declarations,
+    TimePickerComponent,
   ],
   exports: [
     ...declarations

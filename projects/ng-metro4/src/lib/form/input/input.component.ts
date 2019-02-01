@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 
@@ -8,9 +8,12 @@ declare var $: any;
   selector: 'm4-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css'],
-  providers: [DefaultValueAccessor.get(InputComponent)]
+  providers: [DefaultValueAccessor.get(InputComponent)],
+  encapsulation: ViewEncapsulation.None
 })
 export class InputComponent extends ControlBase<string|number> {
+  @Output('search-button-click') searchButtonClick = new EventEmitter<string|number>();
+
   @Input('type') type = 'text';
   @Input('default-value') defaultValue: any;
   @Input('size') size: number;
@@ -20,7 +23,12 @@ export class InputComponent extends ControlBase<string|number> {
   @Input('clear-button-icon') clearButtonIcon: string;
   @Input('reveal-button') revealButton: boolean;
   @Input('reveal-button-icon') revealButtonIcon: string;
-  @Input('custom-buttons') customButtons: { html: string, cls: string, onclick: string }[];
+  @Input('custom-buttons') customButtons: { html: string, cls: string, onclick: string }[] = [];
+  @Input('search-button') searchButton: boolean;
+  @Input('search-button-icon') searchButtonIcon: string;
+  @Input('autocomplete') autocomplete: string[];
+  @Input('autocomplete-divider') autocompleteDivider: string;
+  @Input('autocomplete-list-height') autocompleteListHeight: number;
 
   @Input('cls-component') clsComponent: string;
   @Input('cls-input') clsInput: string;
@@ -45,7 +53,10 @@ export class InputComponent extends ControlBase<string|number> {
     this.clonedElement = originalElement.clone().show();
     originalElement.parent().append(this.clonedElement);
 
-    this.inputObj = this.clonedElement.input().data('input');
+    this.inputObj = this.clonedElement.input({
+      customButtons: this.customButtons,
+      onSearchButtonClick: (val) => this.searchButtonClick.emit(val)
+    }).data('input');
 
     this.clonedElement.one('blur', () => {
       this.touchCallback();

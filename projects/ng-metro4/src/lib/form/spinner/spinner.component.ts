@@ -18,6 +18,7 @@ export class SpinnerComponent extends ControlBase<number> {
   @Input('min-value') minValue: number;
   @Input('max-value') maxValue: number;
   @Input('fixed') fixed = 0;
+  @Input('hide-cursor') hideCursor = false;
 
   @Input('cls-spinner') clsSpinner: string;
   @Input('cls-spinner-input') clsSpinnerInput: string;

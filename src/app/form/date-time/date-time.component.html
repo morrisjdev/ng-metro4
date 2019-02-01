@@ -9,6 +9,7 @@
 <m4-calendar-picker [(ngModel)]="model" format="%d.%m.%Y" cls-calendar="compact"></m4-calendar-picker>
 
 <m4-calendar-picker [(ngModel)]="model" [calendar-wide]="true"></m4-calendar-picker>
+
 <m4-calendar-picker [(ngModel)]="model" calendar-wide-point="md"></m4-calendar-picker>
 
 <m4-calendar-picker [(ngModel)]="model" format="%d/%m/%Y" [disabled]="true"></m4-calendar-picker>
@@ -23,11 +24,17 @@
 
 <h1>Calendar</h1>
 
-<m4-calendar [(ngModel)]="model" locale="de-DE" [week-start]="1"></m4-calendar>
+<m4-calendar [(ngModel)]="model" locale="de-DE" [week-start]="1" class="compact"></m4-calendar>
 
 <m4-calendar [(ngModel)]="model" [picker-mode]="true"></m4-calendar>
 
 <m4-calendar [(ngModel)]="model" buttons="today, clear"></m4-calendar>
+
+<m4-calendar [(ngModel)]="model" buttons="today, clear" [disabled]="true"></m4-calendar>
+
+<m4-calendar [(ngModel)]="model" [wide]="true"></m4-calendar>
+
+<m4-calendar [(ngModel)]="model" [wide-point]="'md'"></m4-calendar>
 
 
 {{model | date:'dd.MM.yyyy'}} {{model | json}}
@@ -59,3 +66,23 @@
 <m4-date-picker [(ngModel)]="model" [year]="false"></m4-date-picker>
 
 {{model | date:'dd.MM.yyyy'}}
+
+<h1>Time Picker</h1>
+
+<m4-time-picker [(ngModel)]="dmodel"></m4-time-picker>
+
+<m4-time-picker [(ngModel)]="dmodel"></m4-time-picker>
+
+<m4-time-picker [(ngModel)]="dmodel" [disabled]="true"></m4-time-picker>
+
+<m4-time-picker [(ngModel)]="dmodel" [seconds]="false" [minutes]="false"></m4-time-picker>
+
+<m4-time-picker [(ngModel)]="dmodel" [hours]="false"></m4-time-picker>
+
+<m4-time-picker [(ngModel)]="dmodel" [show-labels]="false"></m4-time-picker>
+
+<m4-time-picker [(ngModel)]="dmodel" [distance]="2"></m4-time-picker>
+
+{{dmodel}}<br>
+
+{{model.clone().add(dmodel) | date:'dd.MM.yyyy HH:mm:ss'}}

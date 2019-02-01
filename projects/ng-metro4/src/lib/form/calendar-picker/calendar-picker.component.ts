@@ -77,9 +77,9 @@ export class CalendarPickerComponent extends ControlBase<moment.Moment> {
   disable(disabled: boolean): void {
     setTimeout(() => {
       if (disabled) {
-        this.clonedElement.parent().addClass('disabled');
+        this.calendarPicker.disable();
       } else {
-        this.clonedElement.parent().removeClass('disabled');
+        this.calendarPicker.enable();
       }
     }, 0);
   }

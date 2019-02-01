@@ -5,5 +5,6 @@
 <m4-input [(ngModel)]="prepend" prepend="Prepend"></m4-input>
 
 <m4-textarea [(ngModel)]="model" [prepend]="prepend" [default-value]="prepend"></m4-textarea>
+<m4-textarea [(ngModel)]="model" [append]="prepend" [default-value]="prepend"></m4-textarea>
 
 {{ model | json }}

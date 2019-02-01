@@ -1,11 +1,12 @@
 <m4-spinner [(ngModel)]="model"></m4-spinner>
 
+<m4-spinner [(ngModel)]="model" [hide-cursor]="true"></m4-spinner>
+
 <m4-spinner [(ngModel)]="model" [disabled]="true"></m4-spinner>
 
 <m4-spinner [(ngModel)]="model" buttons-position="left"></m4-spinner>
 
 <m4-spinner [(ngModel)]="model" buttons-position="right"></m4-spinner>
-
 
 {{model | json}}
 

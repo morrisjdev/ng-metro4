@@ -32,6 +32,8 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
   @Input('multi-select') multiSelect: boolean;
   @Input('show-header') showHeader: boolean;
   @Input('show-footer') showFooter: boolean;
+  @Input('wide-point') widePoint: 'fs'|'sm'|'md'|'lg'|'xl'|'xxl';
+  @Input('wide') wide: boolean;
 
   @Input('cls-today') clsToday: string;
   @Input('cls-selected') clsSelected: string;

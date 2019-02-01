@@ -20,6 +20,8 @@ export class DateTimeComponent implements OnInit {
 
   model = moment('12.11.2018', 'DD.MM.YYYY');
 
+  dmodel = moment.duration('5:30:47');
+
   modelMulti = [moment('12.11.2018', 'DD.MM.YYYY'), moment('13.11.2018', 'DD.MM.YYYY')];
 
   constructor() { }

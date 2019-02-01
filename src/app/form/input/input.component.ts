@@ -7,6 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
+  customButtons = [
+    {
+      html: '<span class=\'mif-user\'></span>',
+      cls: 'alert',
+      onclick: 'alert(\'You press user button\')'
+    },
+    {
+      html: '<span class=\'mif-user\'></span>',
+      cls: 'alert',
+      onclick: () => alert(this.model)
+    },
+    {
+      html: '<span class=\'mif-user\'></span>',
+      cls: 'alert',
+      onclick: 'alert(\'You press user button\')'
+    },
+    {
+      html: '<span class=\'mif-user\'></span>',
+      cls: 'alert',
+      onclick: 'alert(\'You press user button\')'
+    }
+  ];
+
   model = 'test';
 
   mmodel = 'test2';
@@ -18,4 +41,7 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
 
+  search(val: string) {
+    alert(val);
+  }
 }
