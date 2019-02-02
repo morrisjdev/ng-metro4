@@ -7,6 +7,10 @@ export class ObjectHelper {
         return true;
       }
     } else {
+      if (firstObject instanceof File && secondObject instanceof File) {
+        return (<File>firstObject).name === (<File>secondObject).name;
+      }
+
       if (firstObject === secondObject) {
         return true;
       }

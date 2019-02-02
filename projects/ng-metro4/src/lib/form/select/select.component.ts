@@ -1,7 +1,6 @@
 import {Component, ElementRef, Input, OnChanges, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
-import {instantiateDefaultStyleNormalizer} from '@angular/platform-browser/animations/src/providers';
 
 declare var $: any;
 

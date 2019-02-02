@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 
@@ -75,11 +75,11 @@ export class KeypadComponent extends ControlBase<string|number> {
   }
 
   newValue(): void {
-    if (!this.keypad || !this.innerValue) {
+    if (!this.keypad) {
       return;
     }
 
-    this.keypad.val(this.innerValue.toString());
+    this.keypad.val(this.innerValue ? this.innerValue.toString() : '');
   }
 
 }
