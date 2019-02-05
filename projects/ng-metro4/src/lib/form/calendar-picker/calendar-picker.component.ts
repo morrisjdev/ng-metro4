@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
+import {WidePointType} from '../../helper/types';
 
 const _moment = moment;
 declare var $: any;
@@ -14,7 +15,7 @@ declare var $: any;
 })
 export class CalendarPickerComponent extends ControlBase<moment.Moment> {
   @Input('calendar-wide') calendarWide: boolean;
-  @Input('calendar-wide-point') calendarWidePoint: 'fs'|'sm'|'md'|'lg'|'xl'|'xxl';
+  @Input('calendar-wide-point') calendarWidePoint: WidePointType;
   @Input('dialog-mode') dialogMode: boolean;
   @Input('dialog-point') dialogPoint: number;
   @Input('dialog-overlay') dialogOverlay: boolean;

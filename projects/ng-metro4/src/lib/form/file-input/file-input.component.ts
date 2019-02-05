@@ -40,8 +40,6 @@ export class FileInputComponent extends ControlBase<File | File[]> {
     this.fileInput = this.clonedElement.file().data('file');
 
     this.fileInput.options.onSelect = (files, element) => {
-      console.log(files);
-
       if (this.multiple) {
         this.changeValue(files);
       } else {
@@ -52,22 +50,6 @@ export class FileInputComponent extends ControlBase<File | File[]> {
     this.clonedElement.one('blur', () => {
       this.touchCallback();
     });
-
-    // this.clonedElement.on('change', (event) => {
-    //   const fileList: FileList = this.clonedElement[0].files;
-    //
-    //   if (this.multiple) {
-    //     const files = [];
-    //
-    //     for (let i = 0; i < fileList.length; i++) {
-    //       files.push(fileList[i]);
-    //     }
-    //
-    //     this.changeValue(files);
-    //   } else {
-    //     this.changeValue(fileList[0]);
-    //   }
-    // });
   }
 
   disable(disabled: boolean): void {
@@ -79,8 +61,7 @@ export class FileInputComponent extends ControlBase<File | File[]> {
   }
 
   newValue(): void {
-    // || this.drop || !this.innerValue
-    if (!this.fileInput) {
+    if (!this.fileInput || this.drop) {
       return;
     }
 

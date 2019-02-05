@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angul
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {WidePointType} from '../../helper/types';
 
 const _moment = moment;
 declare var $: any;
@@ -32,7 +33,7 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
   @Input('multi-select') multiSelect: boolean;
   @Input('show-header') showHeader: boolean;
   @Input('show-footer') showFooter: boolean;
-  @Input('wide-point') widePoint: 'fs'|'sm'|'md'|'lg'|'xl'|'xxl';
+  @Input('wide-point') widePoint: WidePointType;
   @Input('wide') wide: boolean;
 
   @Input('cls-today') clsToday: string;

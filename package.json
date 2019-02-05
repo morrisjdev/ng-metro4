@@ -21,10 +21,11 @@
     "@angular/platform-browser-dynamic": "~7.0.0-rc.0",
     "@angular/router": "~7.0.0-rc.0",
     "core-js": "^2.5.4",
+    "linq4js": "^2.1.9",
     "metro4": "^4.2.26",
+    "moment": "^2.22.2",
     "rxjs": "~6.3.3",
-    "zone.js": "~0.8.26",
-    "moment": "^2.22.2"
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.9.0-rc.1",

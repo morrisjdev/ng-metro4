@@ -13,6 +13,11 @@ import {SliderComponent} from './form/slider/slider.component';
 import {SpinnerComponent} from './form/spinner/spinner.component';
 import {RatingComponent} from './form/rating/rating.component';
 import {DateTimeComponent} from './form/date-time/date-time.component';
+import {ContainerComponent} from './base/container/container.component';
+import {GridComponent} from './base/grid/grid.component';
+import {FormComponent} from './base/form/form.component';
+import {ButtonComponent} from './base/button/button.component';
+import {IconComponent} from './base/icon/icon.component';
 
 const routes: Routes = [
   { path: 'reactive', component: ReactiveComponent },
@@ -27,7 +32,12 @@ const routes: Routes = [
   { path: 'form/slider', component: SliderComponent },
   { path: 'form/spinner', component: SpinnerComponent },
   { path: 'form/rating', component: RatingComponent },
-  { path: 'form/datetime', component: DateTimeComponent }
+  { path: 'form/datetime', component: DateTimeComponent },
+  { path: 'base/container', component: ContainerComponent },
+  { path: 'base/grid', component: GridComponent },
+  { path: 'base/form', component: FormComponent },
+  { path: 'base/button', component: ButtonComponent },
+  { path: 'base/icon', component: IconComponent },
 ];
 
 @NgModule({

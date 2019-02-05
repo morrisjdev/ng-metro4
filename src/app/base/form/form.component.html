@@ -1,0 +1,22 @@
+<form [formGroup]="formGroup">
+  <div class="form-group">
+    <label>Email address</label>
+    <m4-input type="email" formControlName="name" placeholder="Email"></m4-input>
+    <small class="text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <m4-input type="password" placeholder="Enter password" formControlName="password"></m4-input>
+  </div>
+  <div class="form-group">
+    <m4-checkbox caption="Remember me" formControlName="remember"></m4-checkbox>
+  </div>
+  <div class="form-group">
+    <button m4Button></button>
+    <button class="button success">Submit data</button>
+    <input type="button" class="button" value="Cancel">
+  </div>
+</form>
+
+{{ formGroup.value | json }}
+{{ formGroup.valid | json }}

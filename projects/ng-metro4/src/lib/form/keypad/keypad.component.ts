@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
+import {PositionType} from '../../helper/types';
 
 declare var $: any;
 
@@ -17,7 +18,7 @@ export class KeypadComponent extends ControlBase<string|number> {
   @Input('length') length: number;
   @Input('shuffle') shuffle: boolean;
   @Input('shuffle-count') shuffleCount: number;
-  @Input('position') position: 'left'|'top-left'|'top'|'top-right'|'right'|'bottom-right'|'bottom'|'bottom-left';
+  @Input('position') position: PositionType;
   @Input('dynamic-position') dynamicPosition: boolean;
   @Input('service-buttons') serviceButtons: boolean;
   @Input('show-value') showValue: boolean;

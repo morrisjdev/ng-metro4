@@ -14,6 +14,7 @@ declare var $: any;
 export class InputComponent extends ControlBase<string|number> {
   @Output('search-button-click') searchButtonClick = new EventEmitter<string|number>();
 
+  @Input('placeholder') placeholder: string;
   @Input('type') type = 'text';
   @Input('default-value') defaultValue: any;
   @Input('size') size: number;

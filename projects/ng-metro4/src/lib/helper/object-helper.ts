@@ -1,4 +1,5 @@
 import {ArrayHelper} from './array-helper';
+import {CompareHelper} from './compare-helper';
 
 export class ObjectHelper {
   public static compare(firstObject: any, secondObject: any) {
@@ -7,17 +8,7 @@ export class ObjectHelper {
         return true;
       }
     } else {
-      if (firstObject instanceof File && secondObject instanceof File) {
-        return (<File>firstObject).name === (<File>secondObject).name;
-      }
-
-      if (firstObject === secondObject) {
-        return true;
-      }
-
-      if (JSON.stringify(firstObject) === JSON.stringify(secondObject)) {
-        return true;
-      }
+      return CompareHelper.equal(firstObject, secondObject);
     }
 
     return false;

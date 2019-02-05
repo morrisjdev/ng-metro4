@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {NgMetro4Module} from 'ng-metro4';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TagInputComponent } from './form/tag-input/tag-input.component';
 import { SelectComponent } from './form/select/select.component';
@@ -18,6 +17,12 @@ import { SliderComponent } from './form/slider/slider.component';
 import { SpinnerComponent } from './form/spinner/spinner.component';
 import { RatingComponent } from './form/rating/rating.component';
 import { DateTimeComponent } from './form/date-time/date-time.component';
+import { ContainerComponent } from './base/container/container.component';
+import {NgMetro4BaseModule, NgMetro4FormsModule} from 'ng-metro4';
+import { GridComponent } from './base/grid/grid.component';
+import { FormComponent } from './base/form/form.component';
+import { ButtonComponent } from './base/button/button.component';
+import { IconComponent } from './base/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +40,19 @@ import { DateTimeComponent } from './form/date-time/date-time.component';
     SpinnerComponent,
     RatingComponent,
     DateTimeComponent,
+    ContainerComponent,
+    GridComponent,
+    FormComponent,
+    ButtonComponent,
+    IconComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgMetro4Module
+    NgMetro4BaseModule,
+    NgMetro4FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

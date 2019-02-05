@@ -1,0 +1,76 @@
+<m4-radio-group [(ngModel)]="type">
+  <m4-radio value="" caption="Default"></m4-radio>
+  <m4-radio value="primary" caption="Primary"></m4-radio>
+  <m4-radio value="secondary" caption="Secondary"></m4-radio>
+  <m4-radio value="success" caption="Success"></m4-radio>
+  <m4-radio value="alert" caption="Alert"></m4-radio>
+  <m4-radio value="warning" caption="Warning"></m4-radio>
+  <m4-radio value="yellow" caption="Yellow"></m4-radio>
+  <m4-radio value="info" caption="Info"></m4-radio>
+  <m4-radio value="dark" caption="Dark"></m4-radio>
+  <m4-radio value="light" caption="Light"></m4-radio>
+  <m4-radio value="link" caption="Link"></m4-radio>
+</m4-radio-group>
+<br>
+
+<m4-checkbox caption="Outline" [(ngModel)]="outline"></m4-checkbox>
+<m4-checkbox caption="Rounded" [(ngModel)]="rounded"></m4-checkbox>
+<m4-checkbox caption="Shadow" [(ngModel)]="shadow"></m4-checkbox>
+<m4-checkbox caption="Flat" [(ngModel)]="flat"></m4-checkbox>
+
+<br>
+
+<m4-radio-group [(ngModel)]="shape">
+  <m4-radio value="" caption="Default"></m4-radio>
+  <m4-radio value="square" caption="Square"></m4-radio>
+  <m4-radio value="cycle" caption="Cycle"></m4-radio>
+</m4-radio-group>
+
+<br>
+
+<m4-radio-group [(ngModel)]="size">
+  <m4-radio value="" caption="Default"></m4-radio>
+  <m4-radio value="mini" caption="Mini"></m4-radio>
+  <m4-radio value="small" caption="Small"></m4-radio>
+  <m4-radio value="large" caption="Large"></m4-radio>
+</m4-radio-group>
+
+<br>
+
+<button m4Button [btn-style]="type" [outline]="outline" [rounded]="rounded">Type: {{type}}</button><br>
+<button m4Button [btn-style]="type" [size]="size" [shape]="shape"><span class="mif-checkmark"></span> Test</button><br>
+<button m4Button [btn-style]="type" [flat]="flat" [shadow]="shadow"><span class="mif-checkmark"></span></button>
+
+<br>
+
+<button m4Button [btn-style]="type" special-btn="command">
+  <span class="mif-share icon"></span>
+  <span class="caption">
+        Yes, share and connect
+        <small>Use this option for home or work</small>
+    </span>
+</button><br>
+
+<button m4Button [btn-style]="type" special-btn="command" class="icon-right">
+  <span class="mif-share icon"></span>
+  <span class="caption">
+        Yes, share and connect
+        <small>Use this option for home or work</small>
+    </span>
+</button><br>
+
+<button m4Button special-btn="image" [btn-style]="type">
+  <span class="mif-share icon"></span>
+  <span class="caption">Share it</span>
+</button><br>
+
+<button m4Button [btn-style]="type" special-btn="shortcut">
+  <span class="tag">10</span>
+  <span class="caption">Rocket</span>
+  <span class="mif-rocket icon"></span>
+</button>
+
+<button m4Button [btn-style]="type" special-btn="shortcut" class="no-caption">
+  <span class="tag">10</span>
+  <span class="mif-rocket icon"></span>
+</button>
