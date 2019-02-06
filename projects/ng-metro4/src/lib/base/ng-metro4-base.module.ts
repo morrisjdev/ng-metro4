@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonDirective } from './button/button.directive';
-import { IconDirective } from './icon/icon.directive';
+import { IconComponent } from './icon/icon.component';
 
 const declarations = [
   ButtonDirective,
-  IconDirective,
+  IconComponent,
 ];
 
 @NgModule({

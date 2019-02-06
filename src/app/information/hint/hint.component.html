@@ -1,0 +1,12 @@
+<m4-input prepend="Hint Text: " [(ngModel)]="hint"></m4-input>
+
+<m4-radio-group [(ngModel)]="position">
+  <m4-radio caption="Left" value="left"></m4-radio>
+  <m4-radio caption="Top" value="top"></m4-radio>
+  <m4-radio caption="Right" value="right"></m4-radio>
+  <m4-radio caption="Bottom" value="bottom"></m4-radio>
+</m4-radio-group>
+
+<br>
+
+<button m4-button [m4-hint]="hint" [hint-position]="position" [hint-offset]="6"></button>

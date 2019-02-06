@@ -9,6 +9,10 @@ export class CheckboxComponent implements OnInit {
 
   model = true;
 
+  group = [{ 'test': 1 }, 123, 'Test 2', [ 2, 3, 4 ]];
+
+  listView = [];
+
   constructor() { }
 
   ngOnInit() {

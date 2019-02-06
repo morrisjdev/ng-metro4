@@ -20,6 +20,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { TimePickerComponent } from './time-picker/time-picker.component';
 import {FormsModule} from '@angular/forms';
+import { CheckboxGroupComponent } from './checkbox-group/checkbox-group.component';
 
 const declarations = [
   TagInputComponent,
@@ -28,6 +29,7 @@ const declarations = [
   MaterialInputComponent,
   TextareaComponent,
   CheckboxComponent,
+  CheckboxGroupComponent,
   RadioComponent,
   RadioGroupComponent,
   SwitchComponent,
@@ -48,7 +50,7 @@ const declarations = [
     FormsModule
   ],
   declarations: [
-    ...declarations
+    ...declarations,
   ],
   exports: [
     ...declarations

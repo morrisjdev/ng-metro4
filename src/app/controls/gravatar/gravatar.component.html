@@ -1,0 +1,5 @@
+<m4-input prepend="Data Email: " [(ngModel)]="email"></m4-input>
+<m4-spinner [min-value]="1" [max-value]="2048" [(ngModel)]="size"></m4-spinner>
+
+
+<m4-gravatar [email]="email" [size]="size" default="mm"></m4-gravatar>

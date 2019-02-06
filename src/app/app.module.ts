@@ -7,7 +7,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TagInputComponent } from './form/tag-input/tag-input.component';
 import { SelectComponent } from './form/select/select.component';
 import { InputComponent } from './form/input/input.component';
-import { ReactiveComponent } from './reactive/reactive.component';
 import { TextareaComponent } from './form/textarea/textarea.component';
 import { CheckboxComponent } from './form/checkbox/checkbox.component';
 import { RadioComponent } from './form/radio/radio.component';
@@ -18,11 +17,17 @@ import { SpinnerComponent } from './form/spinner/spinner.component';
 import { RatingComponent } from './form/rating/rating.component';
 import { DateTimeComponent } from './form/date-time/date-time.component';
 import { ContainerComponent } from './base/container/container.component';
-import {NgMetro4BaseModule, NgMetro4FormsModule} from 'ng-metro4';
+import {NgMetro4BaseModule, NgMetro4FormsModule, NgMetro4Module} from 'ng-metro4';
 import { GridComponent } from './base/grid/grid.component';
 import { FormComponent } from './base/form/form.component';
 import { ButtonComponent } from './base/button/button.component';
 import { IconComponent } from './base/icon/icon.component';
+import { GravatarComponent } from './controls/gravatar/gravatar.component';
+import { DonutComponent } from './controls/donut/donut.component';
+import { ProgressComponent } from './controls/progress/progress.component';
+import { HintComponent } from './information/hint/hint.component';
+import { ToastComponent } from './information/toast/toast.component';
+import { NotifyComponent } from './information/notify/notify.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,6 @@ import { IconComponent } from './base/icon/icon.component';
     TagInputComponent,
     SelectComponent,
     InputComponent,
-    ReactiveComponent,
     TextareaComponent,
     CheckboxComponent,
     RadioComponent,
@@ -45,14 +49,19 @@ import { IconComponent } from './base/icon/icon.component';
     FormComponent,
     ButtonComponent,
     IconComponent,
+    GravatarComponent,
+    DonutComponent,
+    ProgressComponent,
+    HintComponent,
+    ToastComponent,
+    NotifyComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgMetro4BaseModule,
-    NgMetro4FormsModule
+    NgMetro4Module
   ],
   providers: [],
   bootstrap: [AppComponent]

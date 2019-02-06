@@ -11,6 +11,8 @@ declare var $: any;
   providers: [DefaultValueAccessor.get(CheckboxComponent)]
 })
 export class CheckboxComponent extends ControlBase<boolean> {
+  @Input('value') value: any;
+
   @Input('style') style: 1|2;
   @Input('caption') caption: string;
   @Input('caption-position') captionPosition: 'left'|'right';

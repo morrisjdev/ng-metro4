@@ -37,13 +37,13 @@
 
 <br>
 
-<button m4Button [btn-style]="type" [outline]="outline" [rounded]="rounded">Type: {{type}}</button><br>
-<button m4Button [btn-style]="type" [size]="size" [shape]="shape"><span class="mif-checkmark"></span> Test</button><br>
-<button m4Button [btn-style]="type" [flat]="flat" [shadow]="shadow"><span class="mif-checkmark"></span></button>
+<button m4-button [btn-style]="type" [outline]="outline" [rounded]="rounded">Type: {{type}}</button><br>
+<button m4-button [btn-style]="type" [size]="size" [shape]="shape"><span class="mif-checkmark"></span> Test</button><br>
+<button m4-button [btn-style]="type" [flat]="flat" [shadow]="shadow"><span class="mif-checkmark"></span></button>
 
 <br>
 
-<button m4Button [btn-style]="type" special-btn="command">
+<button m4-button [btn-style]="type" special-btn="command">
   <span class="mif-share icon"></span>
   <span class="caption">
         Yes, share and connect
@@ -51,7 +51,7 @@
     </span>
 </button><br>
 
-<button m4Button [btn-style]="type" special-btn="command" class="icon-right">
+<button m4-button [btn-style]="type" special-btn="command" class="icon-right">
   <span class="mif-share icon"></span>
   <span class="caption">
         Yes, share and connect
@@ -59,18 +59,18 @@
     </span>
 </button><br>
 
-<button m4Button special-btn="image" [btn-style]="type">
+<button m4-button special-btn="image" [btn-style]="type">
   <span class="mif-share icon"></span>
   <span class="caption">Share it</span>
 </button><br>
 
-<button m4Button [btn-style]="type" special-btn="shortcut">
+<button m4-button [btn-style]="type" special-btn="shortcut">
   <span class="tag">10</span>
   <span class="caption">Rocket</span>
   <span class="mif-rocket icon"></span>
 </button>
 
-<button m4Button [btn-style]="type" special-btn="shortcut" class="no-caption">
+<button m4-button [btn-style]="type" special-btn="shortcut" class="no-caption">
   <span class="tag">10</span>
   <span class="mif-rocket icon"></span>
 </button>

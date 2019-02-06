@@ -31,3 +31,46 @@
 <m4-switch [(ngModel)]="model" caption="Test" caption-position="left"></m4-switch><br>
 
 {{model | json}}
+
+<h1>Checkbox Group</h1>
+
+<m4-checkbox-group [(ngModel)]="group">
+  <m4-checkbox [value]="{test: 1}" caption="Object"></m4-checkbox>
+  <m4-checkbox [value]="{test: 2}" caption="Object 2"></m4-checkbox>
+  <m4-checkbox [value]="123" caption="Number"></m4-checkbox>
+  <m4-checkbox [value]="234" caption="Number 2"></m4-checkbox>
+  <m4-checkbox value="Test" caption="String"></m4-checkbox>
+  <m4-checkbox value="Test 2" caption="String 2"></m4-checkbox>
+  <m4-checkbox [value]="[1, 2, 3]" caption="Array"></m4-checkbox>
+  <m4-checkbox [value]="[2, 3, 4]" caption="Array 2"></m4-checkbox>
+</m4-checkbox-group>
+
+{{group | json}}
+
+<br>
+
+<m4-checkbox-group [(ngModel)]="listView">
+  <ul data-role="treeview">
+    <li>
+      <m4-checkbox caption="Play video"></m4-checkbox>
+      <ul>
+        <li><m4-checkbox caption="AVI" value="avi"></m4-checkbox></li>
+        <li><input type="checkbox" data-role="checkbox" data-caption="MPEG" title=""></li>
+        <li><input checked type="checkbox" data-role="checkbox" data-caption="VIDX" title=""></li>
+        <li><input type="checkbox" data-role="checkbox" data-caption="MP4" title=""></li>
+        <li><input checked type="checkbox" data-role="checkbox" data-caption="XVID" title=""></li>
+      </ul>
+    </li>
+    <li><input type="checkbox" data-role="checkbox" data-caption="Play audio" title=""></li>
+    <li>
+      <input type="checkbox" data-role="checkbox" data-caption="Subtitles" title="">
+      <ul>
+        <li><input type="checkbox" data-role="checkbox" data-caption="English" title=""></li>
+        <li><input checked type="checkbox" data-role="checkbox" data-caption="Ukrainian" title=""></li>
+        <li><input type="checkbox" data-role="checkbox" data-caption="Dutch" title=""></li>
+      </ul>
+    </li>
+  </ul>
+</m4-checkbox-group>
+
+{{listView | json}}

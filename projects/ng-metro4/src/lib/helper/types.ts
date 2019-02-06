@@ -13,3 +13,6 @@ export type ColorType = 'black'|'white'|'dark'|'light'|'grayWhite'|'grayMouse'|'
   'darkTaupe'|'darkGray'|'darkGrayBlue';
 export type IconCategoryType = 'application'|'mobile'|'device'|'player'|'brand'|'weather'|'chart'|'spinner'|'arrows'|
   'file'|'vehicle'|'medic';
+export type GravatarDefaultsType = 'mm'|'identicon'|'monsterid'|'wavatar'|'retro'|'robohash'|'blank';
+export type ActivityType = 'ring'|'metro'|'square'|'cycle'|'simple';
+export type ActivityStyleType = ''|'dark'|'color';

@@ -1,0 +1,9 @@
+<m4-radio-group [(ngModel)]="color">
+  <m4-radio value="success" caption="Success"></m4-radio>
+  <m4-radio value="alert" caption="Alert"></m4-radio>
+
+</m4-radio-group>
+
+<m4-input prepend="Toast: " [(ngModel)]="message"></m4-input>
+
+<button m4-button (click)="send()">Send</button>

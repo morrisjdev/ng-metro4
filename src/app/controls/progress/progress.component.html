@@ -1,0 +1,31 @@
+<m4-slider [(ngModel)]="value"></m4-slider>
+<m4-slider [(ngModel)]="buffer"></m4-slider>
+<m4-switch [(ngModel)]="small" caption="Small"></m4-switch>
+
+<m4-progress [value]="value" [buffer]="buffer" type="buffer"></m4-progress>
+<br>
+<br>
+
+<m4-progress [value]="value" [buffer]="buffer" type="buffer" [small]="small"></m4-progress>
+
+<br>
+
+<m4-progress [value]="value" [buffer]="buffer" type="load" [small]="small"></m4-progress>
+<br>
+
+<m4-progress [value]="value" [buffer]="buffer" type="line" [small]="small"></m4-progress>
+
+<h1>Activity</h1>
+
+<m4-select [options]="{'cycle': 'cycle', 'ring': 'ring', 'metro': 'metro', 'square': 'square', 'simple': 'simple'}"
+           [(ngModel)]="type"></m4-select>
+
+<m4-radio-group [(ngModel)]="style">
+  <m4-radio [value]="'dark'" caption="Dark"></m4-radio>
+  <m4-radio [value]="'color'" caption="Color"></m4-radio>
+  <m4-radio [value]="''" caption="Default"></m4-radio>
+</m4-radio-group>
+
+<m4-activity [type]="type" [activity-style]="style"></m4-activity>
+
+<button m4-button (click)="showActivity()">Show activity</button>

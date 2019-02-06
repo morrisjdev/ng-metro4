@@ -1,4 +1,3 @@
-import {ObjectHelper} from './object-helper';
 import {CompareHelper} from './compare-helper';
 
 export class ArrayHelper {
@@ -16,5 +15,9 @@ export class ArrayHelper {
     }
 
     return false;
+  }
+
+  public static contains(array: any[], object: any) {
+    return array.findIndex(v => CompareHelper.equal(v, object)) !== -1;
   }
 }

@@ -1,0 +1,6 @@
+<m4-slider [(ngModel)]="value"></m4-slider>
+<m4-slider [(ngModel)]="hole"></m4-slider>
+
+<m4-donut [value]="value" [hole]="hole * 0.01" [radius]="hole * 5" [size]="hole * 10"></m4-donut>
+
+{{value}}

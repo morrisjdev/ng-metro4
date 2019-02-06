@@ -3,7 +3,7 @@ import {AccentType} from '../../helper/types';
 import {DOCUMENT} from '@angular/common';
 
 @Directive({
-  selector: 'button[m4Button]'
+  selector: 'button[m4-button]'
 })
 export class ButtonDirective implements OnInit, OnChanges {
   @Input('btn-style') btnStyle: AccentType;
