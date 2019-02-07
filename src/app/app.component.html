@@ -1,1 +1,71 @@
-<router-outlet></router-outlet>
+<header class="app-bar bg-darkMagenta fg-white" data-role="appbar" data-expand-point="md">
+  <a routerLink="" class="d-block brand fg-white no-hover">
+    <span class="border bd-white border-radius p-2">ng m<sup>4</sup></span>
+  </a>
+  <ul class="app-bar-menu ml-auto text-upper">
+    <li>
+      <a href="#" class="dropdown-toggle">Base</a>
+      <ul class="d-menu" data-role="dropdown">
+        <li><a [routerLink]="['base', 'button']">Button</a></li>
+        <li><a [routerLink]="['base', 'container']">Container</a></li>
+        <li><a [routerLink]="['base', 'grid']">Grid</a></li>
+        <li><a [routerLink]="['base', 'icon']">Icon</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#" class="dropdown-toggle">Form</a>
+      <ul class="d-menu" data-role="dropdown">
+        <li><a [routerLink]="['form', 'input']">Input</a></li>
+        <li><a [routerLink]="['form', 'checkbox']">Checkbox</a></li>
+        <li><a [routerLink]="['form', 'datetime']">Date/Time</a></li>
+        <li><a [routerLink]="['form', 'file-input']">File</a></li>
+        <li><a [routerLink]="['form', 'keypad']">Keypad</a></li>
+        <li><a [routerLink]="['form', 'radio']">Radio</a></li>
+        <li><a [routerLink]="['form', 'rating']">Rating</a></li>
+        <li><a [routerLink]="['form', 'select']">Select</a></li>
+        <li><a [routerLink]="['form', 'slider']">Slider</a></li>
+        <li><a [routerLink]="['form', 'spinner']">Spinner</a></li>
+        <li><a [routerLink]="['form', 'tag-input']">Tag Input</a></li>
+        <li><a [routerLink]="['form', 'textarea']">Textarea</a></li>
+        <li class="divider bg-lightGray"></li>
+        <li><a [routerLink]="['base', 'form']">Form</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#" class="dropdown-toggle">Controls</a>
+      <ul class="d-menu" data-role="dropdown">
+        <li><a [routerLink]="['controls', 'donut']">Donut</a></li>
+        <li><a [routerLink]="['controls', 'gravatar']">Gravatar</a></li>
+        <li><a [routerLink]="['controls', 'panel']">Panel</a></li>
+        <li><a [routerLink]="['controls', 'popover']">Popover</a></li>
+        <li><a [routerLink]="['controls', 'progress']">Progress</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="dropdown-toggle">Information</a>
+      <ul class="d-menu" data-role="dropdown">
+        <li><a [routerLink]="['information', 'dialog']">Dialog</a></li>
+        <li><a [routerLink]="['information', 'hint']">Hint</a></li>
+        <li><a [routerLink]="['information', 'notify']">Notify</a></li>
+        <li><a [routerLink]="['information', 'toast']">Toast</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://github.com/morrisjdev/ng-metro4" target="_blank">
+        <span class="mif-github mif-2x d-none d-block-md"></span>
+        <span class="d-block d-none-md">Github</span>
+      </a>
+    </li>
+  </ul>
+</header>
+
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <div class="cell-md-10 cell-xl-8 pr-1-sx pl-1-sx pr-5-md pl-5-md offset-md-1 offset-xl-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ButtonComponent implements OnInit {
 
   type = '';
+  color = '#ff0000';
   outline = false;
   size = '';
   rounded = false;

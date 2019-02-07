@@ -1,0 +1,17 @@
+<div #panel
+     [attr.data-width]="width"
+     [attr.data-height]="height"
+     [attr.data-title-caption]="title"
+     [attr.data-title-icon]="titleIcon"
+     [attr.data-collapsible]="collapsible"
+     [attr.data-collapsed]="collapsed"
+     [attr.data-draggable]="draggable"
+
+     [attr.data-cls-panel]="clsPanel"
+     [attr.data-cls-title]="clsTitle"
+     [attr.data-cls-title-caption]="clsTitleCaption"
+     [attr.data-cls-title-icon]="clsTitleIcon"
+     [attr.data-cls-content]="clsContent"
+     [attr.data-cls-collapse-toggle]="clsCollapseToggle">
+  <ng-content></ng-content>
+</div>

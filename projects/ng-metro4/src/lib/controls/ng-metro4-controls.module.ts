@@ -4,12 +4,16 @@ import {GravatarComponent} from './gravatar/gravatar.component';
 import {DonutComponent} from './donut/donut.component';
 import {ProgressComponent} from './progress/progress.component';
 import {ActivityComponent} from './activity/activity.component';
+import {PopoverDirective} from './popover/popover.directive';
+import { PanelComponent } from './panel/panel.component';
 
 const declarations = [
   GravatarComponent,
   DonutComponent,
   ProgressComponent,
   ActivityComponent,
+  PopoverDirective,
+  PanelComponent,
 ];
 
 @NgModule({
@@ -17,7 +21,7 @@ const declarations = [
     CommonModule,
   ],
   declarations: [
-    ...declarations
+    ...declarations,
   ],
   exports: [
     ...declarations,

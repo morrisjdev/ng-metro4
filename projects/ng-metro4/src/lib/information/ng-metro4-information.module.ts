@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HintDirective } from './hint/hint.directive';
+import { DialogComponent } from './dialog/dialog.component';
 
 const declarations = [
-  HintDirective
+  HintDirective,
+  DialogComponent
 ];
 
 @NgModule({
@@ -11,7 +13,7 @@ const declarations = [
     CommonModule
   ],
   declarations: [
-    ...declarations
+    ...declarations,
   ],
   exports: [
     ...declarations

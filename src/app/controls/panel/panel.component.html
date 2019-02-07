@@ -1,0 +1,24 @@
+<m4-slider [(ngModel)]="width" [max]="700"></m4-slider>
+<m4-slider [(ngModel)]="height" [max]="700"></m4-slider>
+
+<m4-switch caption="Draggable" [(ngModel)]="draggable"></m4-switch>
+<m4-switch caption="Collapsible" [(ngModel)]="collapsible"></m4-switch>
+<m4-switch caption="Collapsed" [(ngModel)]="collapsed"></m4-switch>
+
+<m4-input prepend="Title" [(ngModel)]="title"></m4-input>
+<m4-input prepend="Icon" [(ngModel)]="icon"></m4-input>
+
+<div style="height: 300px; width: 300px">
+  <m4-panel [width]="width" [height]="height" [draggable]="draggable" [collapsed]="collapsed"
+            [collapsible]="collapsible" [title]="title" [title-icon]="icon">
+    <h1>Das ist ein test</h1>
+  </m4-panel>
+
+  <br>
+  <br>
+
+  <m4-panel [draggable]="draggable" [collapsed]="collapsed"
+            [collapsible]="collapsible" [title]="title" [title-icon]="icon">
+    <h1>Das ist ein test</h1>
+  </m4-panel>
+</div>

@@ -1,0 +1,26 @@
+<m4-dialog #dialog>
+  <div dialog-title>Das ist ein test</div>
+  <div dialog-content>
+    <h2>Das ist der Inhalt</h2>
+    <h5>Das ist Inhalt</h5>
+
+    <m4-input prepend="Test" [(ngModel)]="test"></m4-input>
+  </div>
+  <div dialog-actions>
+    <button m4-button btn-style="success">Yes</button>
+  </div>
+</m4-dialog>
+
+{{test}}<br>
+
+<button m4-button (click)="showDialog()">Open</button>
+
+<br><br>
+
+<m4-input prepend="Title" [(ngModel)]="title"></m4-input>
+<m4-input prepend="Message" [(ngModel)]="message"></m4-input>
+
+<button m4-button (click)="showAlert()">Alert</button>
+<button m4-button (click)="showConfirm()">Confirm</button>
+<button m4-button (click)="showPrompt()">Prompt</button>
+<button m4-button (click)="showInfo()">Info</button>

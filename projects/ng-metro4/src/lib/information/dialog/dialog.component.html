@@ -1,0 +1,11 @@
+<div class="dialog" data-role="dialog" #dialog>
+  <div class="dialog-title">
+    <ng-content select="[dialog-title]"></ng-content>
+  </div>
+  <div class="dialog-content">
+    <ng-content select="[dialog-content]"></ng-content>
+  </div>
+  <div class="dialog-actions" #dialogActions>
+    <ng-content select="[dialog-actions]"></ng-content>
+  </div>
+</div>

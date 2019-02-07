@@ -1,0 +1,13 @@
+<h1>Popover</h1>
+
+<m4-radio-group [(ngModel)]="position">
+  <m4-radio caption="Left" value="left"></m4-radio>
+  <m4-radio caption="Right" value="right"></m4-radio>
+  <m4-radio caption="Top" value="top"></m4-radio>
+  <m4-radio caption="Bottom" value="bottom"></m4-radio>
+</m4-radio-group>
+
+<m4-input prepend="Text" [(ngModel)]="text"></m4-input>
+
+<button m4-button [m4-popover]="text" [popover-position]="position" [popover-hide]="0" popover-trigger="click">
+  TestBtn</button>

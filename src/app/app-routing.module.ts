@@ -23,6 +23,9 @@ import {ProgressComponent} from './controls/progress/progress.component';
 import {HintComponent} from './information/hint/hint.component';
 import {ToastComponent} from './information/toast/toast.component';
 import {NotifyComponent} from './information/notify/notify.component';
+import {DialogComponent} from './information/dialog/dialog.component';
+import {PopoverComponent} from './controls/popover/popover.component';
+import {PanelComponent} from './controls/panel/panel.component';
 
 const routes: Routes = [
   { path: 'form/tag-input', component: TagInputComponent },
@@ -47,10 +50,13 @@ const routes: Routes = [
   { path: 'controls/gravatar', component: GravatarComponent },
   { path: 'controls/donut', component: DonutComponent },
   { path: 'controls/progress', component: ProgressComponent },
+  { path: 'controls/popover', component: PopoverComponent },
+  { path: 'controls/panel', component: PanelComponent },
 
   { path: 'information/hint', component: HintComponent },
   { path: 'information/toast', component: ToastComponent },
   { path: 'information/notify', component: NotifyComponent },
+  { path: 'information/dialog', component: DialogComponent },
 ];
 
 @NgModule({
