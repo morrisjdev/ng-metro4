@@ -1,5 +1,6 @@
 {
   "name": "ng-metro4",
+  "description": "ng-metro4 is an implementation of the beautiful metro4 components",
   "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^7.0.0",
@@ -7,5 +8,22 @@
     "moment": "^2.22.2",
 	  "metro4": "4.2.26",
     "rxjs": "~6.3.3"
+  },
+  "keywords": [
+    "metro4",
+    "ui",
+    "angular"
+  ],
+  "author": {
+    "name": "Morris Janatzek"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morrisjdev/ng-metro4/issues"
+  },
+  "homepage": "https://github.com/morrisjdev/ng-metro4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morrisjdev/ng-metro.git"
   }
 }
