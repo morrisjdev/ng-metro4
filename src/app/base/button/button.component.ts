@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
+  hotkey = 'alt+2';
+
   type = '';
   color = '#ff0000';
   outline = false;
@@ -19,6 +21,10 @@ export class ButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  test() {
+    alert('Hotkey clicked');
   }
 
 }

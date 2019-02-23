@@ -33,8 +33,12 @@ export class PopoverDirective implements OnInit, OnChanges {
       if (!this.popoverObj) {
         this.popoverObj = $(this.element.nativeElement).popover().data('popover');
       } else {
-        this.popoverObj.changeText();
-        this.popoverObj.changePosition();
+        this.popoverObj.options.popoverText = this.popoverText;
+        this.popoverObj.options.popoverPosition = this.popoverPosition;
+        this.popoverObj.options.popoverTrigger = this.popoverTrigger;
+        this.popoverObj.options.popoverHide = this.popoverHide;
+        this.popoverObj.options.closeButton = this.closeBtn;
+        this.popoverObj.options.clsPopover = this.clsPopover;
       }
     }, 0);
   }

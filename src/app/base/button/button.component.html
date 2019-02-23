@@ -76,3 +76,8 @@
   <span class="tag">10</span>
   <span class="mif-rocket icon"></span>
 </button>
+
+<br>
+
+<m4-input [(ngModel)]="hotkey"></m4-input>
+<button m4-button [m4-hotkey]="hotkey" (click)="test()">Hotkey {{hotkey}}</button>

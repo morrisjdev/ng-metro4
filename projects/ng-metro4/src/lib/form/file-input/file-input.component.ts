@@ -41,7 +41,13 @@ export class FileInputComponent extends ControlBase<File | File[]> {
 
     this.fileInput.options.onSelect = (files, element) => {
       if (this.multiple) {
-        this.changeValue(files);
+        const result: File[] = [];
+
+        for (let i = 0; i < files.length; i++) {
+          result.push(files[i]);
+        }
+
+        this.changeValue(result);
       } else {
         this.changeValue(files[0]);
       }

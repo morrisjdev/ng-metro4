@@ -23,6 +23,10 @@ export class RippleDirective implements OnInit, OnChanges {
     setTimeout(() => {
       if (!this.rippleObj) {
         this.rippleObj = $(this.element.nativeElement).ripple().data('ripple');
+      } else {
+        this.rippleObj.options.rippleColor = this.rippleColor;
+        this.rippleObj.options.rippleTarget = this.rippleTarget;
+        this.rippleObj.options.rippleAlpha = this.rippleAlpha;
       }
     }, 0);
   }

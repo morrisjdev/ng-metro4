@@ -20,15 +20,19 @@ export class HintDirective implements OnInit, OnChanges {
   private createElement() {
     AttributeHelper.setAttribute(this.renderer, this.element, 'data-hint-text', this.hintText);
     AttributeHelper.setAttribute(this.renderer, this.element, 'data-hint-position', this.hintPosition);
-    AttributeHelper.setAttribute(this.renderer, this.element, 'data-hint-hide', '' + this.hintHide);
+    AttributeHelper.setAttribute(this.renderer, this.element, 'data-hint-hide', this.hintHide);
     AttributeHelper.setAttribute(this.renderer, this.element, 'data-cls-hint', this.clsHint);
-    AttributeHelper.setAttribute(this.renderer, this.element, 'data-hint-offset', '' + this.hintOffset);
+    AttributeHelper.setAttribute(this.renderer, this.element, 'data-hint-offset', this.hintOffset);
 
     setTimeout(() => {
       if (!this.hintObj) {
         this.hintObj = $(this.element.nativeElement).hint().data('hint');
       } else {
-        this.hintObj.changeText();
+        this.hintObj.options.hintText = this.hintText;
+        this.hintObj.options.hintPosition = this.hintPosition;
+        this.hintObj.options.hintHide = this.hintHide;
+        this.hintObj.options.clsHint = this.clsHint;
+        this.hintObj.options.hintOffset = this.hintOffset;
       }
     }, 0);
   }
