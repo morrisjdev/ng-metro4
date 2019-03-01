@@ -2,6 +2,8 @@
 
 ng-metro4 is an implementation of the beautiful metro4 components.
 
+[Demo](https://morrisjdev.github.io/ng-metro4/#/)
+
 See metro4 for more details:
 [Metro4](https://metroui.org.ua/)
 
