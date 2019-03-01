@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
@@ -90,7 +90,9 @@ export class CalendarPickerComponent extends ControlBase<moment.Moment> {
       return;
     }
 
-    this.calendarPicker.val(this.innerValue ? this.innerValue.format('MM/DD/YYYY') : '01/01/0000');
+    setTimeout(() => {
+      this.calendarPicker.val(this.innerValue ? this.innerValue.format('MM/DD/YYYY') : '01/01/0000');
+    }, 0);
   }
 
   convertMomentArray(arr: moment.Moment[]) {

@@ -102,15 +102,17 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
 
     this.calendar.selected = [];
 
-    if (this.innerValue) {
-      if (this.multiSelect) {
-        this.calendar.setPreset((<moment.Moment[]>this.innerValue).map(v => v.format('MM/DD/YYYY')).join(','));
+    setTimeout(() => {
+      if (this.innerValue) {
+        if (this.multiSelect) {
+          this.calendar.setPreset((<moment.Moment[]>this.innerValue).map(v => v.format('MM/DD/YYYY')).join(','));
+        } else {
+          this.calendar.setPreset((<moment.Moment>this.innerValue).format('MM/DD/YYYY'));
+        }
       } else {
-        this.calendar.setPreset((<moment.Moment>this.innerValue).format('MM/DD/YYYY'));
+        this.calendar.setPreset('');
       }
-    } else {
-      this.calendar.setPreset('');
-    }
+    }, 0);
   }
 
   convertMomentArray(arr: moment.Moment[]) {

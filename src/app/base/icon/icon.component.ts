@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {ColorType, Lists} from 'ng-metro4';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Lists} from 'ng-metro4';
 import 'linq4js';
 
 @Component({
   selector: 'app-icon',
   templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.less']
+  styleUrls: ['./icon.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IconComponent implements OnInit {
   colorArrForSelect: any[];

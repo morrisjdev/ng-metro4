@@ -13,6 +13,7 @@ export class DialogComponent implements OnInit {
 
   title: string;
   message: string;
+  test: string;
 
   constructor(private dialogService: DialogService) { }
 

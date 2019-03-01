@@ -36,6 +36,8 @@ export class InputComponent implements OnInit {
 
   modelNumber = 12;
 
+  prepend: string;
+
   constructor() { }
 
   ngOnInit() {

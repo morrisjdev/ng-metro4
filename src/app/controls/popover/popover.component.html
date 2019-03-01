@@ -11,3 +11,15 @@
 
 <button m4-button [m4-popover]="text" [popover-position]="position" [popover-hide]="0" popover-trigger="click">
   TestBtn</button>
+
+<m4-popover>
+  <button m4-button m4-popover [popover-position]="position" [popover-hide]="0" [popover-close-button]="true" popover-trigger="click">TestBtn</button>
+
+  <div content>
+    <h1>Das ist ein test</h1>
+    <m4-input prepend="Text" [(ngModel)]="text"></m4-input>
+    <m4-select [options]="{test: 'test', test2: 'test2'}" [(ngModel)]="select" [multiple]="true"></m4-select>
+    <h1>{{text}}</h1>
+    {{select | json}}
+  </div>
+</m4-popover>

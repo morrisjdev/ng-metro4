@@ -7,6 +7,7 @@ import {ActivityComponent} from './activity/activity.component';
 import {PopoverDirective} from './popover/popover.directive';
 import { PanelComponent } from './panel/panel.component';
 import { HotkeyDirective } from './hotkey/hotkey.directive';
+import { PopoverComponent } from './popover/popover.component';
 
 const declarations = [
   GravatarComponent,
@@ -16,6 +17,7 @@ const declarations = [
   PopoverDirective,
   PanelComponent,
   HotkeyDirective,
+  PopoverComponent,
 ];
 
 @NgModule({

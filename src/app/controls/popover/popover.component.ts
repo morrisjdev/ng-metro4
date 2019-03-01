@@ -8,7 +8,8 @@ import {Component, OnInit} from '@angular/core';
 export class PopoverComponent implements OnInit {
 
   position = 'top';
-  text: string;
+  text = 'test';
+  select: string[] = [];
 
 
   constructor() { }
