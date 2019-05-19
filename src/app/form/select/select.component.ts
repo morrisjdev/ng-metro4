@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectComponent implements OnInit {
 
+  alert = true;
   prepend: string;
 
   model = 't';

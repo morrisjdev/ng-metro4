@@ -118,4 +118,20 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
   convertMomentArray(arr: moment.Moment[]) {
     return arr ? arr.map(v => v.format('MM/DD/YYYY')).join(',') : null;
   }
+
+  newClassValue(newClasses: string[], oldClasses: string[]) {
+    setTimeout(() => {
+      if (this.clonedElement) {
+        const target = this.clonedElement;
+
+        oldClasses.forEach((cls: string) => {
+          target.removeClass(cls);
+        });
+
+        newClasses.forEach((cls: string) => {
+          target.addClass(cls);
+        });
+      }
+    }, 0);
+  }
 }

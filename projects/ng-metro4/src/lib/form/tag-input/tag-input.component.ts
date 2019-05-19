@@ -65,4 +65,18 @@ export class TagInputComponent extends ControlBase<string[]> {
       this.tagInput.val(this.innerValue);
     }
   }
+
+  newClassValue(newClasses: string[], oldClasses: string[]) {
+    if (this.clonedElement) {
+      const target = this.clonedElement.parent();
+
+      oldClasses.forEach((cls: string) => {
+        target.removeClass(cls);
+      });
+
+      newClasses.forEach((cls: string) => {
+        target.addClass(cls);
+      });
+    }
+  }
 }

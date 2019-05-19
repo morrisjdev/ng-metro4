@@ -19,6 +19,7 @@ export class DateTimeComponent implements OnInit {
   max = moment('28.11.2018', 'DD.MM.YYYY');
 
   model = moment('12.11.2018', 'DD.MM.YYYY');
+  alert = true;
 
   dmodel = moment.duration('5:30:47');
 

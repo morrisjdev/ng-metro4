@@ -68,4 +68,18 @@ export class DatePickerComponent extends ControlBase<moment.Moment> {
 
     this.datePicker.val(this.innerValue ? this.innerValue.format('YYYY-MM-DD') : '');
   }
+
+  newClassValue(newClasses: string[], oldClasses: string[]) {
+    if (this.clonedElement) {
+      const target = this.clonedElement.parent();
+
+      oldClasses.forEach((cls: string) => {
+        target.removeClass(cls);
+      });
+
+      newClasses.forEach((cls: string) => {
+        target.addClass(cls);
+      });
+    }
+  }
 }

@@ -15,13 +15,18 @@ export class DialogComponent implements OnInit {
   message: string;
   test: string;
 
+  dialogOpen = true;
+  overlay = true;
+  primary = true;
+  width = 900;
+
   constructor(private dialogService: DialogService) { }
 
   ngOnInit() {
   }
 
   showDialog() {
-    this.dialog.open();
+    this.dialog.open().subscribe(console.log);
 
     setTimeout(() => {
       this.dialog.close();

@@ -77,4 +77,18 @@ export class FileInputComponent extends ControlBase<File | File[]> {
     this.clonedElement.parent().find('span.caption').html(name);
   }
 
+  newClassValue(newClasses: string[], oldClasses: string[]) {
+    if (this.clonedElement) {
+      const target = this.clonedElement.parent();
+
+      oldClasses.forEach((cls: string) => {
+        target.removeClass(cls);
+      });
+
+      newClasses.forEach((cls: string) => {
+        target.addClass(cls);
+      });
+    }
+  }
+
 }

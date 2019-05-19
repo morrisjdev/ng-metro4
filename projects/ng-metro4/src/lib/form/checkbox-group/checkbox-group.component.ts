@@ -1,4 +1,4 @@
-import {Component, ContentChildren, forwardRef, OnInit, QueryList} from '@angular/core';
+import {Component, ContentChildren, ElementRef, forwardRef, OnInit, QueryList} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {RadioComponent} from '../radio/radio.component';
@@ -14,8 +14,8 @@ import {ArrayHelper} from '../../helper/array-helper';
 export class CheckboxGroupComponent extends ControlBase<any[]> {
   @ContentChildren(forwardRef(() => CheckboxComponent), { descendants: true }) checkboxes: QueryList<CheckboxComponent>;
 
-  constructor() {
-    super();
+  constructor(element: ElementRef) {
+    super(element);
   }
 
   createControl() {
@@ -59,4 +59,6 @@ export class CheckboxGroupComponent extends ControlBase<any[]> {
       item.writeValue(this.innerValue && ArrayHelper.contains(this.innerValue, item.value));
     });
   }
+
+  newClassValue(newClasses: string[], oldClasses: string[]) {}
 }

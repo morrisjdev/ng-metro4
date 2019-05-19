@@ -67,4 +67,18 @@ export class TimePickerComponent extends ControlBase<moment.Duration> {
 
     this.timePicker.val(this.innerValue ? `${this.innerValue.hours()}:${this.innerValue.minutes()}:${this.innerValue.seconds()}` : '');
   }
+
+  newClassValue(newClasses: string[], oldClasses: string[]) {
+    if (this.clonedElement) {
+      const target = this.clonedElement.parent();
+
+      oldClasses.forEach((cls: string) => {
+        target.removeClass(cls);
+      });
+
+      newClasses.forEach((cls: string) => {
+        target.addClass(cls);
+      });
+    }
+  }
 }

@@ -1,4 +1,6 @@
-<m4-file-input [(ngModel)]="model"></m4-file-input>
+<m4-file-input [(ngModel)]="model" [class.bg-red]="alert"></m4-file-input>
+
+<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
 
 <m4-file-input [(ngModel)]="model" [disabled]="true"></m4-file-input>
 

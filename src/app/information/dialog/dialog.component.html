@@ -1,19 +1,27 @@
-<m4-dialog #dialog>
+<m4-dialog #dialog [open]="dialogOpen" data="12345" [width]="width" [overlay]="overlay" [class.primary]="primary">
   <div dialog-title>Das ist ein test</div>
   <div dialog-content>
     <h2>Das ist der Inhalt</h2>
     <h5>Das ist Inhalt</h5>
 
+    <m4-checkbox [(ngModel)]="dialogOpen" caption="Dialog open"></m4-checkbox>
+    <m4-slider [(ngModel)]="width" min="50" max="900"></m4-slider>
+    <m4-checkbox [(ngModel)]="primary" caption="Primary"></m4-checkbox>
+
     <m4-input prepend="Test" [(ngModel)]="test"></m4-input>
   </div>
   <div dialog-actions>
-    <button m4-button btn-style="success">Yes</button>
+    <button m4-button btn-style="success" (click)="dialog.close()">Yes</button>
   </div>
 </m4-dialog>
 
 {{test}}<br>
 
 <button m4-button (click)="showDialog()">Open</button>
+<m4-checkbox [(ngModel)]="dialogOpen" caption="Dialog open"></m4-checkbox>
+<m4-checkbox [(ngModel)]="overlay" caption="Overlay"></m4-checkbox>
+<m4-checkbox [(ngModel)]="primary" caption="Primary"></m4-checkbox>
+<m4-slider [(ngModel)]="width" min="50" max="900"></m4-slider>
 
 <br><br>
 

@@ -73,4 +73,20 @@ export class RadioComponent extends ControlBase<any> {
     }
   }
 
+  newClassValue(newClasses: string[], oldClasses: string[]) {
+    setTimeout(() => {
+      if (this.clonedElement) {
+        const target = this.clonedElement.parent();
+
+        oldClasses.forEach((cls: string) => {
+          target.removeClass(cls);
+        });
+
+        newClasses.forEach((cls: string) => {
+          target.addClass(cls);
+        });
+      }
+    }, 0);
+  }
+
 }

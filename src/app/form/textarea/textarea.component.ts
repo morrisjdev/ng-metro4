@@ -10,6 +10,7 @@ export class TextareaComponent implements OnInit {
   prepend = '';
 
   model = 'test';
+  alert = true;
 
   constructor() { }
 

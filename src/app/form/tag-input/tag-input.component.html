@@ -1,8 +1,9 @@
 <m4-input [(ngModel)]="tagClass" prepend="Tag class"></m4-input>
+<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
 
 {{tagClass}}
 
-<m4-tag-input [(ngModel)]="model"></m4-tag-input>
+<m4-tag-input [(ngModel)]="model" [class.alert]="alert"></m4-tag-input>
 
 <m4-tag-input [(ngModel)]="model" [random-color]="true"></m4-tag-input>
 

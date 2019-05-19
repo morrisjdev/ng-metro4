@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class RadioComponent implements OnInit {
 
   model = 'x';
+  alert = true;
 
   disable = true;
 

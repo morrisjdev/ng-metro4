@@ -1,6 +1,7 @@
 <h1>Checkbox</h1>
 
-<m4-checkbox [(ngModel)]="model"></m4-checkbox>
+<m4-checkbox [(ngModel)]="model" [class.bg-red]="alert"></m4-checkbox>
+<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
 
 <m4-checkbox [(ngModel)]="model" [disabled]="true"></m4-checkbox>
 
@@ -22,7 +23,7 @@
 
 <h1>Switch</h1>
 
-<m4-switch [(ngModel)]="model"></m4-switch><br>
+<m4-switch [(ngModel)]="model" [class.bg-red]="alert"></m4-switch><br>
 
 <m4-switch [(ngModel)]="model" [disabled]="true"></m4-switch><br>
 

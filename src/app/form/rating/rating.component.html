@@ -1,6 +1,8 @@
-<m4-rating [(ngModel)]="model" message="Rate"></m4-rating><br>
+<m4-rating [(ngModel)]="model" message="Rate" [class.bg-red]="alert"></m4-rating><br>
 <m4-rating [(ngModel)]="model" [disabled]="true" message="Rate"></m4-rating><br>
 <m4-rating [(ngModel)]="model" message="Rate" [stars]="12"></m4-rating><br>
+
+<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
 
 <m4-rating [(ngModel)]="model" round-func="ceil" star-color="red"></m4-rating><br>
 

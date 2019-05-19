@@ -2,6 +2,9 @@
 
 <m4-input [(ngModel)]="model"></m4-input>
 
+<m4-input [(ngModel)]="model" (ngModelChange)="classTest($event)" [class.alert]="alert"></m4-input>
+<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
+
 <m4-input [(ngModel)]="model" [search-button]="true" (search-button-click)="search($event)"></m4-input>
 
 <m4-input [(ngModel)]="model" [search-button]="true" search-button-icon="<span class='mif-rocket mif-2x'></span>"
@@ -29,7 +32,7 @@
 
 <h1>Material Input</h1>
 
-<m4-material-input [(ngModel)]="mmodel"></m4-material-input>
+<m4-material-input [(ngModel)]="mmodel" [class.alert]="alert"></m4-material-input>
 
 <m4-material-input [(ngModel)]="mmodel" type="password"></m4-material-input>
 

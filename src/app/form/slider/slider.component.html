@@ -1,4 +1,5 @@
-<m4-slider [(ngModel)]="model"></m4-slider>
+<m4-slider [(ngModel)]="model" [class.bg-red]="alert"></m4-slider>
+<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
 
 <m4-slider [(ngModel)]="model" [disabled]="true"></m4-slider>
 

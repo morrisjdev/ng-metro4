@@ -104,4 +104,20 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
   renderOptions(): boolean {
     return this.options instanceof Array;
   }
+
+  newClassValue(newClasses: string[], oldClasses: string[]) {
+    setTimeout(() => {
+      if (this.clonedElement) {
+        const target = this.clonedElement.parent();
+
+        oldClasses.forEach((cls: string) => {
+          target.removeClass(cls);
+        });
+
+        newClasses.forEach((cls: string) => {
+          target.addClass(cls);
+        });
+      }
+    }, 0);
+  }
 }

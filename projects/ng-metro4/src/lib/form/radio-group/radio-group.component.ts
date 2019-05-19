@@ -1,4 +1,4 @@
-import {Component, ContentChildren, forwardRef, QueryList} from '@angular/core';
+import {Component, ContentChildren, ElementRef, forwardRef, QueryList} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {RadioComponent} from '../radio/radio.component';
@@ -17,8 +17,8 @@ export class RadioGroupComponent extends ControlBase<any> {
 
   private name: string;
 
-  constructor() {
-    super();
+  constructor(element: ElementRef) {
+    super(element);
     this.name = StringHelper.guid();
   }
 
@@ -59,4 +59,6 @@ export class RadioGroupComponent extends ControlBase<any> {
       item.writeValue(this.innerValue);
     });
   }
+
+  newClassValue(newClasses: string[], oldClasses: string[]) {}
 }

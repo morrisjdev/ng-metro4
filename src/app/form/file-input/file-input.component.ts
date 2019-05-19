@@ -10,6 +10,7 @@ export class FileInputComponent implements OnInit {
   prepend: string;
   model: File;
   modelArr: File[];
+  alert = true;
 
   constructor() { }
 

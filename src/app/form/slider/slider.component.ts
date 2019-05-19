@@ -8,4 +8,5 @@ import {Component} from '@angular/core';
 export class SliderComponent {
   model = 23;
   buffer = 12;
+  alert = true;
 }

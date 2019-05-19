@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SpinnerComponent implements OnInit {
 
   model = 12;
+  alert = true;
   modelDecimal = 12;
   modelDecimalBig = 25;
 

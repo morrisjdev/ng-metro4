@@ -66,4 +66,18 @@ export class CheckboxComponent extends ControlBase<boolean> {
     this.clonedElement.prop('checked', this.innerValue);
   }
 
+  newClassValue(newClasses: string[], oldClasses: string[]) {
+    if (this.clonedElement) {
+      const target = this.clonedElement.parent();
+
+      oldClasses.forEach((cls: string) => {
+        target.removeClass(cls);
+      });
+
+      newClasses.forEach((cls: string) => {
+        target.addClass(cls);
+      });
+    }
+  }
+
 }

@@ -11,6 +11,7 @@ export class KeypadComponent implements OnInit {
   position = 'left';
   model = 'test';
   modelNumber = 12;
+  alert = true;
 
   constructor() { }
 

@@ -31,6 +31,7 @@ export class InputComponent implements OnInit {
   ];
 
   model = 'test';
+  alert = true;
 
   mmodel = 'test2';
 
@@ -45,5 +46,9 @@ export class InputComponent implements OnInit {
 
   search(val: string) {
     alert(val);
+  }
+
+  classTest($event: string) {
+    this.alert = $event.length > 5;
   }
 }
