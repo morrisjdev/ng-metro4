@@ -3,6 +3,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {RadioComponent} from '../radio/radio.component';
 import {StringHelper} from '../../helper/string-helper';
+import {TypeAlias} from '../../helper/type-alias';
 
 declare var $: any;
 
@@ -10,7 +11,7 @@ declare var $: any;
   selector: 'm4-radio-group',
   templateUrl: './radio-group.component.html',
   styleUrls: ['./radio-group.component.css'],
-  providers: [DefaultValueAccessor.get(RadioGroupComponent)]
+  providers: [DefaultValueAccessor.get(RadioGroupComponent), TypeAlias.get(RadioGroupComponent)]
 })
 export class RadioGroupComponent extends ControlBase<any> {
   @ContentChildren(forwardRef(() => RadioComponent), { descendants: true }) radios: QueryList<RadioComponent>;

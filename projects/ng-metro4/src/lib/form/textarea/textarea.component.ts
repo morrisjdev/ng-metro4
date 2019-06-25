@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {TypeAlias} from '../../helper/type-alias';
 
 declare var $: any;
 
@@ -8,7 +9,7 @@ declare var $: any;
   selector: 'm4-textarea',
   templateUrl: './textarea.component.html',
   styleUrls: ['./textarea.component.css'],
-  providers: [DefaultValueAccessor.get(TextareaComponent)]
+  providers: [DefaultValueAccessor.get(TextareaComponent), TypeAlias.get(TextareaComponent)]
 })
 export class TextareaComponent extends ControlBase<string> {
   @Input('default-value') defaultValue: string;

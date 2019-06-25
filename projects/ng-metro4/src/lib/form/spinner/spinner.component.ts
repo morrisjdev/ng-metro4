@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {TypeAlias} from '../../helper/type-alias';
 
 declare var $: any;
 
@@ -8,7 +9,7 @@ declare var $: any;
   selector: 'm4-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.css'],
-  providers: [DefaultValueAccessor.get(SpinnerComponent)]
+  providers: [DefaultValueAccessor.get(SpinnerComponent), TypeAlias.get(SpinnerComponent)]
 })
 export class SpinnerComponent extends ControlBase<number> {
   @Input('step') step = 1;

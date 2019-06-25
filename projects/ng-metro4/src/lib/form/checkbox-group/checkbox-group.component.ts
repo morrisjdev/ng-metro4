@@ -4,12 +4,13 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {RadioComponent} from '../radio/radio.component';
 import {CheckboxComponent} from '../checkbox/checkbox.component';
 import {ArrayHelper} from '../../helper/array-helper';
+import {TypeAlias} from '../../helper/type-alias';
 
 @Component({
   selector: 'm4-checkbox-group',
   templateUrl: './checkbox-group.component.html',
   styleUrls: ['./checkbox-group.component.css'],
-  providers: [DefaultValueAccessor.get(CheckboxGroupComponent)]
+  providers: [DefaultValueAccessor.get(CheckboxGroupComponent), TypeAlias.get(CheckboxGroupComponent)]
 })
 export class CheckboxGroupComponent extends ControlBase<any[]> {
   @ContentChildren(forwardRef(() => CheckboxComponent), { descendants: true }) checkboxes: QueryList<CheckboxComponent>;

@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {PositionType} from '../../helper/types';
+import {TypeAlias} from '../../helper/type-alias';
 
 declare var $: any;
 
@@ -9,7 +10,7 @@ declare var $: any;
   selector: 'm4-keypad',
   templateUrl: './keypad.component.html',
   styleUrls: ['./keypad.component.css'],
-  providers: [DefaultValueAccessor.get(KeypadComponent)]
+  providers: [DefaultValueAccessor.get(KeypadComponent), TypeAlias.get(KeypadComponent)]
 })
 export class KeypadComponent extends ControlBase<string|number> {
   @Input('type') type = 'text';

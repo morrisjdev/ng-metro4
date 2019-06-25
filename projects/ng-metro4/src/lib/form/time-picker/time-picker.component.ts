@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
+import {TypeAlias} from '../../helper/type-alias';
 
 const _moment = moment;
 declare var $: any;
@@ -10,7 +11,7 @@ declare var $: any;
   selector: 'm4-time-picker',
   templateUrl: './time-picker.component.html',
   styleUrls: ['./time-picker.component.css'],
-  providers: [DefaultValueAccessor.get(TimePickerComponent)]
+  providers: [DefaultValueAccessor.get(TimePickerComponent), TypeAlias.get(TimePickerComponent)]
 })
 export class TimePickerComponent extends ControlBase<moment.Duration> {
   @Input('hours') hours: boolean;

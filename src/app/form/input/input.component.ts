@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ContentChildren, OnInit, QueryList, ViewChildren} from '@angular/core';
+import {ControlBase} from 'ng-metro4';
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.less']
 })
-export class InputComponent implements OnInit {
+export class InputComponent implements OnInit, AfterViewInit {
+
+  @ViewChildren(ControlBase) controls: QueryList<ControlBase<any>>;
 
   customButtons = [
     {
@@ -50,5 +53,9 @@ export class InputComponent implements OnInit {
 
   classTest($event: string) {
     this.alert = $event.length > 5;
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.controls);
   }
 }

@@ -3,6 +3,7 @@ import {ControlBase} from '../control-base';
 import * as moment from 'moment';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {WidePointType} from '../../helper/types';
+import {TypeAlias} from '../../helper/type-alias';
 
 const _moment = moment;
 declare var $: any;
@@ -11,7 +12,7 @@ declare var $: any;
   selector: 'm4-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css'],
-  providers: [DefaultValueAccessor.get(CalendarComponent)],
+  providers: [DefaultValueAccessor.get(CalendarComponent), TypeAlias.get(CalendarComponent)],
   encapsulation: ViewEncapsulation.None
 })
 export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]> {

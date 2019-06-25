@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {TypeAlias} from '../../helper/type-alias';
 
 declare var $: any;
 
@@ -9,7 +10,7 @@ declare var $: any;
   templateUrl: './rating.component.html',
   styleUrls: ['./rating.component.css'],
   encapsulation: ViewEncapsulation.None,
-  providers: [DefaultValueAccessor.get(RatingComponent)]
+  providers: [DefaultValueAccessor.get(RatingComponent), TypeAlias.get(RatingComponent)]
 })
 export class RatingComponent extends ControlBase<string|number> {
   @Input('stars') stars: number;

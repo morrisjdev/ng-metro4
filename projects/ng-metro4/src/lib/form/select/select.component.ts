@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, OnChanges, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {TypeAlias} from '../../helper/type-alias';
 
 declare var $: any;
 
@@ -14,7 +15,7 @@ interface Option {
   selector: 'm4-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.css'],
-  providers: [DefaultValueAccessor.get(SelectComponent)]
+  providers: [DefaultValueAccessor.get(SelectComponent), TypeAlias.get(SelectComponent)]
 })
 export class SelectComponent extends ControlBase<string|string[]> implements OnChanges {
   @Input('options') options: { [key: string]: (string | { [key: string]: string }) } |

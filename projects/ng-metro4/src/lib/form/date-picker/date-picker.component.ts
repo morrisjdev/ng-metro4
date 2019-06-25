@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {TypeAlias} from '../../helper/type-alias';
 
 const _moment = moment;
 declare var $: any;
@@ -10,7 +11,7 @@ declare var $: any;
   selector: 'm4-date-picker',
   templateUrl: './date-picker.component.html',
   styleUrls: ['./date-picker.component.css'],
-  providers: [DefaultValueAccessor.get(DatePickerComponent)]
+  providers: [DefaultValueAccessor.get(DatePickerComponent), TypeAlias.get(DatePickerComponent)]
 })
 export class DatePickerComponent extends ControlBase<moment.Moment> {
   @Input('month') month: boolean;

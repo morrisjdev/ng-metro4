@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {TypeAlias} from '../../helper/type-alias';
 
 declare var $: any;
 
@@ -8,7 +9,7 @@ declare var $: any;
   selector: 'm4-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
-  providers: [DefaultValueAccessor.get(SliderComponent)],
+  providers: [DefaultValueAccessor.get(SliderComponent), TypeAlias.get(SliderComponent)],
   encapsulation: ViewEncapsulation.None
 })
 export class SliderComponent extends ControlBase<number> {

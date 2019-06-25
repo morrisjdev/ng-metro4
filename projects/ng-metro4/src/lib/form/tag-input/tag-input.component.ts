@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
+import {TypeAlias} from '../../helper/type-alias';
 
 declare var $: any;
 
@@ -8,7 +9,7 @@ declare var $: any;
   selector: 'm4-tag-input',
   templateUrl: './tag-input.component.html',
   styleUrls: ['./tag-input.component.css'],
-  providers: [DefaultValueAccessor.get(TagInputComponent)]
+  providers: [DefaultValueAccessor.get(TagInputComponent), TypeAlias.get(TagInputComponent)]
 })
 export class TagInputComponent extends ControlBase<string[]> {
   @Input('random-color') randomColor: boolean;

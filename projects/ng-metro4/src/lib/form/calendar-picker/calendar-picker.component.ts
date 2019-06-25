@@ -3,6 +3,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
 import {WidePointType} from '../../helper/types';
+import {TypeAlias} from '../../helper/type-alias';
 
 const _moment = moment;
 declare var $: any;
@@ -11,7 +12,7 @@ declare var $: any;
   selector: 'm4-calendar-picker',
   templateUrl: './calendar-picker.component.html',
   styleUrls: ['./calendar-picker.component.css'],
-  providers: [DefaultValueAccessor.get(CalendarPickerComponent)]
+  providers: [DefaultValueAccessor.get(CalendarPickerComponent), TypeAlias.get(CalendarPickerComponent)]
 })
 export class CalendarPickerComponent extends ControlBase<moment.Moment> {
   @Input('calendar-wide') calendarWide: boolean;
