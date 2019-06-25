@@ -10,6 +10,7 @@ export * from './lib/base/button/button.directive';
 export * from './lib/base/ripple/ripple.directive';
 
 export * from './lib/form/ng-metro4-forms.module';
+export * from './lib/form/control-base';
 export * from './lib/form/calendar/calendar.component';
 export * from './lib/form/calendar-picker/calendar-picker.component';
 export * from './lib/form/checkbox/checkbox.component';

@@ -1,77 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="updated readme and public api.ts">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar-picker/calendar-picker.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar-picker/calendar-picker.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar-picker/calendar-picker.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar-picker/calendar-picker.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar/calendar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar/calendar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar/calendar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar/calendar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/checkbox-group/checkbox-group.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/checkbox-group/checkbox-group.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/checkbox/checkbox.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/checkbox/checkbox.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/checkbox/checkbox.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/checkbox/checkbox.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/control-base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/control-base.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/date-picker/date-picker.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/date-picker/date-picker.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/date-picker/date-picker.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/date-picker/date-picker.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/file-input/file-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/file-input/file-input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/file-input/file-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/file-input/file-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/input/input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/input/input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/input/input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/input/input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/keypad/keypad.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/keypad/keypad.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/keypad/keypad.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/keypad/keypad.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/material-input/material-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/material-input/material-input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/material-input/material-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/material-input/material-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio-group/radio-group.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio-group/radio-group.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/rating/rating.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/rating/rating.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/rating/rating.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/rating/rating.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/slider/slider.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/slider/slider.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/slider/slider.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/slider/slider.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/spinner/spinner.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/spinner/spinner.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/spinner/spinner.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/spinner/spinner.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/switch/switch.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/switch/switch.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/switch/switch.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/switch/switch.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/textarea/textarea.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/textarea/textarea.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/textarea/textarea.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/textarea/textarea.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/time-picker/time-picker.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/time-picker/time-picker.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/time-picker/time-picker.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/time-picker/time-picker.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/dialog/dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/dialog/dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/dialog/dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/dialog/dialog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/date-time/date-time.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/date-time/date-time.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/date-time/date-time.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/date-time/date-time.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/input/input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/input/input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/input/input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/input/input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/keypad/keypad.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/keypad/keypad.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/keypad/keypad.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/keypad/keypad.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/radio/radio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/radio/radio.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/radio/radio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/radio/radio.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/rating/rating.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/rating/rating.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/rating/rating.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/rating/rating.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/select/select.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/select/select.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/select/select.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/select/select.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/slider/slider.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/slider/slider.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/slider/slider.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/slider/slider.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/spinner/spinner.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/spinner/spinner.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/spinner/spinner.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/spinner/spinner.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/tag-input/tag-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/tag-input/tag-input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/tag-input/tag-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/tag-input/tag-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/textarea/textarea.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/textarea/textarea.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/textarea/textarea.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/textarea/textarea.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/information/dialog/dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/dialog/dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/information/dialog/dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/dialog/dialog.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="updated readme and public api.ts" />
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,7 +15,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114">
+            <state relative-caret-position="17">
               <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
             </state>
           </provider>
@@ -194,8 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -317,6 +245,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -429,6 +359,7 @@
       <workItem from="1551363797476" duration="15503000" />
       <workItem from="1551444471484" duration="35000" />
       <workItem from="1558263048843" duration="10103000" />
+      <workItem from="1558273326110" duration="603000" />
     </task>
     <task id="LOCAL-00001" summary="added timepicker&#10;fixed calendar&#10;fixed input">
       <created>1549009089576</created>
@@ -462,19 +393,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213172000" />
+    <option name="totallyTimeSpent" value="213775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18656716" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18869936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.17768148" />
@@ -885,7 +816,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
+        <state relative-caret-position="17">
           <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
         </state>
       </provider>
