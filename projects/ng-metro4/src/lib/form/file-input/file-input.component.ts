@@ -23,7 +23,7 @@ export class FileInputComponent extends ControlBase<File | File[]> {
   @Input('cls-prepend') clsPrepend: string;
   @Input('cls-button') clsButton: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private fileInput: any;
   private clonedElement: any;
 

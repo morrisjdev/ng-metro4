@@ -17,7 +17,7 @@ export class ProgressComponent implements OnInit, OnChanges {
   @Input('cls-bar') clsBar: string;
   @Input('cls-buffer') clsBuffer: string;
 
-  @ViewChild('progress') private progress: ElementRef;
+  @ViewChild('progress', { static: true }) private progress: ElementRef;
   private clonedElement: any;
   private progressObj: any;
 

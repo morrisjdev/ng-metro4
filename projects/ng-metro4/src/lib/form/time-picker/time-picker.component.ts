@@ -27,7 +27,7 @@ export class TimePickerComponent extends ControlBase<moment.Duration> {
   @Input('cls-minutes') clsMinutes: string;
   @Input('cls-seconds') clsSeconds: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private timePicker: any;
   private clonedElement: any;
 

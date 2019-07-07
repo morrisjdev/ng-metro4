@@ -19,7 +19,7 @@ export class DialogComponent implements OnChanges, AfterViewInit, OnDestroy {
 
   @Input('data') data: any;
 
-  @ViewChild('dialog') private dialog: ElementRef;
+  @ViewChild('dialog', { static: true }) private dialog: ElementRef;
   dialogObj: any;
 
   private closeSubject$ = new Subject<any>();

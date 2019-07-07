@@ -38,7 +38,7 @@ export class SliderComponent extends ControlBase<number> {
   @Input('cls-min') clsMin: string;
   @Input('cls-max') clsMax: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private slider: any;
   private clonedElement: any;
 

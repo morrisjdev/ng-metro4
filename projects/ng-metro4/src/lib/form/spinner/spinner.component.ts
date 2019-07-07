@@ -27,7 +27,7 @@ export class SpinnerComponent extends ControlBase<number> {
   @Input('cls-spinner-button-plus') clsSpinnerButtonPlus: string;
   @Input('cls-spinner-button-minus') clsSpinnerButtonMinus: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private spinner: any;
   private clonedElement: any;
 

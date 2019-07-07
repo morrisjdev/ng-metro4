@@ -28,7 +28,7 @@ export class DatePickerComponent extends ControlBase<moment.Moment> {
   @Input('cls-day') clsDay: string;
   @Input('cls-year') clsYear: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private datePicker: any;
   private clonedElement: any;
 

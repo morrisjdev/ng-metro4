@@ -24,7 +24,7 @@ export class TextareaComponent extends ControlBase<string> {
   @Input('cls-prepend') clsPrepend: string;
   @Input('cls-append') clsAppend: string;
 
-  @ViewChild('textarea') private textarea: ElementRef;
+  @ViewChild('textarea', { static: true }) private textarea: ElementRef;
   private textareaObj: any;
   private clonedElement: any;
 

@@ -10,8 +10,8 @@ declare var Metro: any;
   styleUrls: ['./popover.component.css']
 })
 export class PopoverComponent implements AfterViewInit {
-  @ContentChild(PopoverDirective) popover: PopoverDirective;
-  @ViewChild('popoverContent') content: ElementRef;
+  @ContentChild(PopoverDirective, { static: true }) popover: PopoverDirective;
+  @ViewChild('popoverContent', { static: true }) content: ElementRef;
 
   ngAfterViewInit(): void {
     setTimeout(() => {

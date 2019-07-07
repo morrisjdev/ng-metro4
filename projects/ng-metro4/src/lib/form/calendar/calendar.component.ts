@@ -51,7 +51,7 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
   @Input('cls-calendar-months') clsCalendarMonths: string;
   @Input('cls-calendar-years') clsCalendarYears: string;
 
-  @ViewChild('object') private object: ElementRef;
+  @ViewChild('object', { static: true }) private object: ElementRef;
   private calendar: any;
   private clonedElement: any;
 

@@ -23,7 +23,7 @@ export class PanelComponent implements OnInit, OnChanges {
   @Input('cls-content') clsContent: string;
   @Input('cls-collapse-toggle') clsCollapseToggle: string;
 
-  @ViewChild('panel') panel: ElementRef;
+  @ViewChild('panel', { static: true }) panel: ElementRef;
   private clonedElement: any;
   panelObj: any;
 

@@ -9,7 +9,7 @@ import {DialogService} from 'ng-metro4';
 })
 export class DialogComponent implements OnInit {
 
-  @ViewChild('dialog') dialog: metro4.DialogComponent;
+  @ViewChild('dialog', { static: true }) dialog: metro4.DialogComponent;
 
   title: string;
   message: string;

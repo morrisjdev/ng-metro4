@@ -37,7 +37,7 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
   @Input('cls-selected-item') clsSelectedItem: string;
   @Input('cls-selected-item-remover') clsSelectedItemRemover: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private select: any;
   private clonedElement: any;
 

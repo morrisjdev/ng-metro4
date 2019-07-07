@@ -20,7 +20,7 @@ export class SwitchComponent extends ControlBase<boolean> {
   @Input('cls-caption') clsCaption: string;
   @Input('cls-check') clsCheck: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private clonedElement: any;
   private switch: any;
 

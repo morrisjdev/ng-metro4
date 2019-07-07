@@ -22,7 +22,7 @@ export class MaterialInputComponent extends ControlBase<string> {
   @Input('cls-informer') clsInformer: string;
   @Input('cls-icon') clsIcon: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private materialInput: any;
   private clonedElement: any;
 

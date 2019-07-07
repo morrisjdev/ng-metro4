@@ -25,7 +25,7 @@ export class RatingComponent extends ControlBase<string|number> {
   @Input('cls-stars') clsStars: string;
   @Input('cls-result') clsResult: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private rating: any;
   private clonedElement: any;
 

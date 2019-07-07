@@ -12,7 +12,7 @@ export class ActivityComponent implements OnInit, OnChanges {
   @Input() type: ActivityType;
   @Input('activity-style') activityStyle: ActivityStyleType;
 
-  @ViewChild('activity') private activity: ElementRef;
+  @ViewChild('activity', { static: true }) private activity: ElementRef;
   private clonedElement: any;
 
   constructor() { }

@@ -40,7 +40,7 @@ export class InputComponent extends ControlBase<string|number> {
   @Input('cls-reveal-button') clsRevealButton: string;
   @Input('cls-custom-button') clsCustomButton: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private inputObj: any;
   private clonedElement: any;
 

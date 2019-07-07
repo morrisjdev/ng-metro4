@@ -22,7 +22,7 @@ export class DonutComponent implements OnInit, OnChanges {
   @Input() animate: number;
   @Input('show-value') showValue: boolean;
 
-  @ViewChild('donut') private donut: ElementRef;
+  @ViewChild('donut', { static: true }) private donut: ElementRef;
   private clonedElement: any;
   private donutObj: any;
 

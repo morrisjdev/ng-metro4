@@ -50,7 +50,7 @@ export class CalendarPickerComponent extends ControlBase<moment.Moment> {
   @Input('cls-calendar-months') clsCalendarMonths: string;
   @Input('cls-calendar-years') clsCalendarYears: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private calendarPicker: any;
   private clonedElement: any;
 

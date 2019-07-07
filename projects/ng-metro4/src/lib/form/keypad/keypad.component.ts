@@ -34,7 +34,7 @@ export class KeypadComponent extends ControlBase<string|number> {
   @Input('cls-backspace') clsBackspace: string;
   @Input('cls-clear') clsClear: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private keypad: any;
   private clonedElement: any;
 

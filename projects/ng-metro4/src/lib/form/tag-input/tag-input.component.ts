@@ -21,7 +21,7 @@ export class TagInputComponent extends ControlBase<string[]> {
   @Input('cls-tag-title') clsTagTitle: string;
   @Input('cls-tag-remover') clsTagRemover: string;
 
-  @ViewChild('input') private input: ElementRef;
+  @ViewChild('input', { static: true }) private input: ElementRef;
   private tagInput: any;
   private clonedElement: any;
 
