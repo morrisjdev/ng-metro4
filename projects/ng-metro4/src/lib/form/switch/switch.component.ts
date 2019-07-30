@@ -25,25 +25,30 @@ export class SwitchComponent extends ControlBase<boolean> {
   private switch: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.switch = this.clonedElement.switch().data('switch');
+      this.switch = this.clonedElement.switch().data('switch');
 
-    this.clonedElement.one('blur', () => {
-      this.touchCallback();
+      this.clonedElement.one('blur', () => {
+        this.touchCallback();
+      });
+
+      this.clonedElement.on('change', (event) => {
+        this.changeValue(this.clonedElement.prop('checked'));
+      });
+
+      complete();
     });
 
-    this.clonedElement.on('change', (event) => {
-      this.changeValue(this.clonedElement.prop('checked'));
-    });
   }
 
   disable(disabled: boolean): void {

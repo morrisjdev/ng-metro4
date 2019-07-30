@@ -3,6 +3,7 @@ import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ObjectHelper} from '../../helper/object-helper';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -29,29 +30,34 @@ export class RadioComponent extends ControlBase<any> {
   private radio: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.radio = this.clonedElement.radio().data('radio');
+      this.radio = this.clonedElement.radio().data('radio');
 
-    this.clonedElement.one('blur', () => {
-      this.touchCallback();
+      this.clonedElement.one('blur', () => {
+        this.touchCallback();
+      });
+
+      this.clonedElement.on('change', (event) => {
+        this.changeCallback(this.value);
+      });
+
+      complete();
     });
 
-    this.clonedElement.on('change', (event) => {
-      this.changeCallback(this.value);
-    });
   }
 
   disable(disabled: boolean): void {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (disabled) {
         this.clonedElement.parent().addClass('disabled');
         this.clonedElement.attr('disabled', '');
@@ -59,7 +65,7 @@ export class RadioComponent extends ControlBase<any> {
         this.clonedElement.parent().removeClass('disabled');
         this.clonedElement.attr('disabled', null);
       }
-    }, 0);
+    });
   }
 
   newValue(): void {
@@ -75,7 +81,7 @@ export class RadioComponent extends ControlBase<any> {
   }
 
   newClassValue(newClasses: string[], oldClasses: string[]) {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (this.clonedElement) {
         const target = this.clonedElement.parent();
 
@@ -87,7 +93,7 @@ export class RadioComponent extends ControlBase<any> {
           target.addClass(cls);
         });
       }
-    }, 0);
+    });
   }
 
 }

@@ -1,5 +1,6 @@
 import {Directive, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
 import {AttributeHelper} from '../../helper/attribute-helper';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -24,7 +25,7 @@ export class HintDirective implements OnInit, OnChanges {
     AttributeHelper.setAttribute(this.renderer, this.element, 'data-cls-hint', this.clsHint);
     AttributeHelper.setAttribute(this.renderer, this.element, 'data-hint-offset', this.hintOffset);
 
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (!this.hintObj) {
         this.hintObj = $(this.element.nativeElement).hint().data('hint');
       } else {
@@ -34,7 +35,7 @@ export class HintDirective implements OnInit, OnChanges {
         this.hintObj.options.clsHint = this.clsHint;
         this.hintObj.options.hintOffset = this.hintOffset;
       }
-    }, 0);
+    });
   }
 
   ngOnInit(): void {

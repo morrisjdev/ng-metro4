@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angul
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -43,26 +44,30 @@ export class SliderComponent extends ControlBase<number> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.slider = this.clonedElement.slider().data('slider');
+      this.slider = this.clonedElement.slider().data('slider');
 
-    this.clonedElement.parent().find('button.marker').one('blur', () => {
-      this.touchCallback();
-    });
+      this.clonedElement.parent().find('button.marker').one('blur', () => {
+        this.touchCallback();
+      });
 
-    this.clonedElement.on('change', (event) => {
-      setTimeout(() => {
-        this.changeValue(+this.clonedElement.val());
-      }, 0);
+      this.clonedElement.on('change', (event) => {
+        asapScheduler.schedule(() => {
+          this.changeValue(+this.clonedElement.val());
+        });
+      });
+
+      complete();
     });
   }
 

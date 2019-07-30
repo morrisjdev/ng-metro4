@@ -1,6 +1,7 @@
 import {Directive, ElementRef, Inject, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 import {AttributeHelper} from '../../helper/attribute-helper';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -29,7 +30,7 @@ export class PopoverDirective implements OnInit, OnChanges {
     AttributeHelper.setAttribute(this.renderer, this.element, 'data-cls-popover', this.clsPopover);
     AttributeHelper.setAttribute(this.renderer, this.element, 'data-close-button', this.closeBtn);
 
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (!this.popoverObj) {
         this.popoverObj = $(this.element.nativeElement).popover().data('popover');
       } else {
@@ -40,7 +41,7 @@ export class PopoverDirective implements OnInit, OnChanges {
         this.popoverObj.options.closeButton = this.closeBtn;
         this.popoverObj.options.clsPopover = this.clsPopover;
       }
-    }, 0);
+    });
   }
 
   ngOnInit(): void {

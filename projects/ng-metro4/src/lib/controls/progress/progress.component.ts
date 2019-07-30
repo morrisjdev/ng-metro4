@@ -1,4 +1,5 @@
 import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -24,7 +25,7 @@ export class ProgressComponent implements OnInit, OnChanges {
   constructor() { }
 
   private createControl() {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       const originalElement = $(this.progress.nativeElement);
       originalElement.hide();
 
@@ -36,7 +37,7 @@ export class ProgressComponent implements OnInit, OnChanges {
       originalElement.parent().append(this.clonedElement);
 
       this.progressObj = this.clonedElement.progress().data('progress');
-    }, 0);
+    });
   }
 
   ngOnInit() {

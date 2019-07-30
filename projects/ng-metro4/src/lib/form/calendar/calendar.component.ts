@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {WidePointType} from '../../helper/types';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 const _moment = moment;
 declare var $: any;
@@ -56,44 +57,48 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.object.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.object.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.remove();
-    }
-
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
-
-    this.calendar = this.clonedElement.calendar().data('calendar');
-
-    setTimeout(() => {
-      this.clonedElement.find('.calendar-content .day, .calendar-content span, .calendar-footer button').on('click', () => {
-        this.touchCallback();
-        this.clonedElement.find('.calendar-content .day, .calendar-content span, .calendar-footer button').unbind('click');
-      });
-    }, 0);
-
-    this.calendar.options.onDone = (sel, el) => {
-      const dates = sel.map(s => _moment(s));
-
-      if (this.multiSelect) {
-        this.changeValue(dates);
-      } else {
-        this.changeValue(dates.length > 0 ? dates[0] : null);
+      if (this.clonedElement) {
+        this.clonedElement.remove();
       }
-    };
+
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
+
+      this.calendar = this.clonedElement.calendar().data('calendar');
+
+      asapScheduler.schedule(() => {
+        this.clonedElement.find('.calendar-content .day, .calendar-content span, .calendar-footer button').on('click', () => {
+          this.touchCallback();
+          this.clonedElement.find('.calendar-content .day, .calendar-content span, .calendar-footer button').unbind('click');
+        });
+      });
+
+      this.calendar.options.onDone = (sel, el) => {
+        const dates = sel.map(s => _moment(s));
+
+        if (this.multiSelect) {
+          this.changeValue(dates);
+        } else {
+          this.changeValue(dates.length > 0 ? dates[0] : null);
+        }
+      };
+
+      complete();
+    });
   }
 
   disable(disabled: boolean): void {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (disabled) {
         this.clonedElement.addClass('disabled');
       } else {
         this.clonedElement.removeClass('disabled');
       }
-    }, 0);
+    });
   }
 
   newValue(): void {
@@ -103,7 +108,7 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
 
     this.calendar.selected = [];
 
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (this.innerValue) {
         if (this.multiSelect) {
           this.calendar.setPreset((<moment.Moment[]>this.innerValue).map(v => v.format('MM/DD/YYYY')).join(','));
@@ -113,7 +118,7 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
       } else {
         this.calendar.setPreset('');
       }
-    }, 0);
+    });
   }
 
   convertMomentArray(arr: moment.Moment[]) {
@@ -121,7 +126,7 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
   }
 
   newClassValue(newClasses: string[], oldClasses: string[]) {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (this.clonedElement) {
         const target = this.clonedElement;
 
@@ -133,6 +138,6 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
           target.addClass(cls);
         });
       }
-    }, 0);
+    });
   }
 }

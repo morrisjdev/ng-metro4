@@ -4,6 +4,7 @@ import {ControlBase} from '../control-base';
 import * as moment from 'moment';
 import {WidePointType} from '../../helper/types';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 const _moment = moment;
 declare var $: any;
@@ -55,35 +56,40 @@ export class CalendarPickerComponent extends ControlBase<moment.Moment> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.calendarPicker = this.clonedElement.calendarpicker().data('calendarpicker');
+      this.calendarPicker = this.clonedElement.calendarpicker().data('calendarpicker');
 
-    this.clonedElement.one('blur', () => {
-      this.touchCallback();
+      this.clonedElement.one('blur', () => {
+        this.touchCallback();
+      });
+
+      this.calendarPicker.options.onChange = (val, date, el) => {
+        this.changeValue(_moment(val.toLocaleDateString('en'), 'MM/DD/YYYY'));
+      };
+
+      complete();
     });
 
-    this.calendarPicker.options.onChange = (val, date, el) => {
-      this.changeValue(_moment(val.toLocaleDateString('en'), 'MM/DD/YYYY'));
-    };
   }
 
   disable(disabled: boolean): void {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (disabled) {
         this.calendarPicker.disable();
       } else {
         this.calendarPicker.enable();
       }
-    }, 0);
+    });
   }
 
   newValue(): void {
@@ -91,9 +97,9 @@ export class CalendarPickerComponent extends ControlBase<moment.Moment> {
       return;
     }
 
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       this.calendarPicker.val(this.innerValue ? this.innerValue.format('MM/DD/YYYY') : '01/01/0000');
-    }, 0);
+    });
   }
 
   convertMomentArray(arr: moment.Moment[]) {
@@ -101,7 +107,7 @@ export class CalendarPickerComponent extends ControlBase<moment.Moment> {
   }
 
   newClassValue(newClasses: string[], oldClasses: string[]) {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (this.clonedElement) {
         const target = this.clonedElement.parent();
 

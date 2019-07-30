@@ -1,5 +1,6 @@
 import {Directive, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
 import {AttributeHelper} from '../../helper/attribute-helper';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -20,7 +21,7 @@ export class RippleDirective implements OnInit, OnChanges {
     AttributeHelper.setAttribute(this.renderer, this.element, 'data-ripple-color', this.rippleColor);
     AttributeHelper.setAttribute(this.renderer, this.element, 'data-ripple-alpha', this.rippleAlpha);
 
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (!this.rippleObj) {
         this.rippleObj = $(this.element.nativeElement).ripple().data('ripple');
       } else {
@@ -28,7 +29,7 @@ export class RippleDirective implements OnInit, OnChanges {
         this.rippleObj.options.rippleTarget = this.rippleTarget;
         this.rippleObj.options.rippleAlpha = this.rippleAlpha;
       }
-    }, 0);
+    });
   }
 
   ngOnInit(): void {

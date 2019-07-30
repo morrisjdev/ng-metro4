@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -29,27 +30,32 @@ export class TextareaComponent extends ControlBase<string> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.textarea.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.textarea.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.textareaObj = this.clonedElement.textarea().data('textarea');
+      this.textareaObj = this.clonedElement.textarea().data('textarea');
 
-    this.clonedElement.one('blur', () => {
-      this.touchCallback();
+      this.clonedElement.one('blur', () => {
+        this.touchCallback();
+      });
+
+      this.clonedElement.on('keydown change', (event) => {
+        asapScheduler.schedule(() => {
+          this.changeValue(this.clonedElement.val());
+        });
+      });
+
+      complete();
     });
 
-    this.clonedElement.on('keydown change', (event) => {
-      setTimeout(() => {
-        this.changeValue(this.clonedElement.val());
-      }, 0);
-    });
   }
 
   disable(disabled: boolean): void {

@@ -1,5 +1,6 @@
 import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {ActivityStyleType, ActivityType} from '../../helper/types';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -18,7 +19,7 @@ export class ActivityComponent implements OnInit, OnChanges {
   constructor() { }
 
   private createControl() {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       const originalElement = $(this.activity.nativeElement);
       originalElement.hide();
 
@@ -30,7 +31,7 @@ export class ActivityComponent implements OnInit, OnChanges {
       originalElement.parent().append(this.clonedElement);
 
       this.clonedElement.activity();
-    }, 0);
+    });
   }
 
   ngOnInit() {

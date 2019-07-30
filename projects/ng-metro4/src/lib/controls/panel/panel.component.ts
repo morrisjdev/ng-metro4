@@ -1,4 +1,5 @@
 import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -30,7 +31,7 @@ export class PanelComponent implements OnInit, OnChanges {
   constructor() { }
 
   createElement() {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       const originalElement = $(this.panel.nativeElement);
       originalElement.hide();
 

@@ -33,25 +33,30 @@ export class DatePickerComponent extends ControlBase<moment.Moment> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.datePicker = this.clonedElement.datepicker().data('datepicker');
+      this.datePicker = this.clonedElement.datepicker().data('datepicker');
 
-    this.clonedElement.parent().find('.date-wrapper').one('click', () => {
-      this.touchCallback();
+      this.clonedElement.parent().find('.date-wrapper').one('click', () => {
+        this.touchCallback();
+      });
+
+      this.datePicker.options.onSet = (val, elem_val, elem, picker) => {
+        this.changeValue(_moment(elem_val, 'YYYY-MM-DD'));
+      };
+
+      complete();
     });
 
-    this.datePicker.options.onSet = (val, elem_val, elem, picker) => {
-      this.changeValue(_moment(elem_val, 'YYYY-MM-DD'));
-    };
   }
 
   disable(disabled: boolean): void {

@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, ContentChild, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {PopoverDirective} from './popover.directive';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 declare var Metro: any;
@@ -14,7 +15,7 @@ export class PopoverComponent implements AfterViewInit {
   @ViewChild('popoverContent', { static: true }) content: ElementRef;
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       this.popover.popoverObj.options.onPopoverShow = () => {
         if (this.popover.popoverObj.popover) {
           $(this.content.nativeElement).children().appendTo(this.popover.popoverObj.popover.find('.popover-content'));
@@ -25,10 +26,10 @@ export class PopoverComponent implements AfterViewInit {
       };
 
       this.popover.popoverObj.options.onPopoverHide = () => {
-        setTimeout(() => {
+        asapScheduler.schedule(() => {
           this.popover.popoverObj.popover.find('.popover-content').children().appendTo($(this.content.nativeElement));
         }, 300);
       };
-    }, 0);
+    }, 1);
   }
 }

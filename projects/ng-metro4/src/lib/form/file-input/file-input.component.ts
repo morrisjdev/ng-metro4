@@ -28,35 +28,40 @@ export class FileInputComponent extends ControlBase<File | File[]> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
-
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
-
-    this.fileInput = this.clonedElement.file().data('file');
-
-    this.fileInput.options.onSelect = (files, element) => {
-      if (this.multiple) {
-        const result: File[] = [];
-
-        for (let i = 0; i < files.length; i++) {
-          result.push(files[i]);
-        }
-
-        this.changeValue(result);
-      } else {
-        this.changeValue(files[0]);
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
       }
-    };
 
-    this.clonedElement.one('blur', () => {
-      this.touchCallback();
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
+
+      this.fileInput = this.clonedElement.file().data('file');
+
+      this.fileInput.options.onSelect = (files, element) => {
+        if (this.multiple) {
+          const result: File[] = [];
+
+          for (let i = 0; i < files.length; i++) {
+            result.push(files[i]);
+          }
+
+          this.changeValue(result);
+        } else {
+          this.changeValue(files[0]);
+        }
+      };
+
+      this.clonedElement.one('blur', () => {
+        this.touchCallback();
+      });
+
+      complete();
     });
+
   }
 
   disable(disabled: boolean): void {

@@ -26,25 +26,30 @@ export class TagInputComponent extends ControlBase<string[]> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.tagInput = this.clonedElement.taginput().data('taginput');
+      this.tagInput = this.clonedElement.taginput().data('taginput');
 
-    this.clonedElement.next('.input-wrapper').one('blur', () => {
-      this.touchCallback();
+      this.clonedElement.next('.input-wrapper').one('blur', () => {
+        this.touchCallback();
+      });
+
+      this.tagInput.options.onTag = (tag, val, vals) => {
+        this.changeValue(vals.slice(0));
+      };
+
+      complete();
     });
 
-    this.tagInput.options.onTag = (tag, val, vals) => {
-      this.changeValue(vals.slice(0));
-    };
   }
 
   disable(disabled: boolean): void {

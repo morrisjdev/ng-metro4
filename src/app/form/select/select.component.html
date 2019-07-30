@@ -1,7 +1,7 @@
 <m4-input [(ngModel)]="prepend" prepend="Prepend" [class.alert]="alert"></m4-input>
 <m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
 
-<m4-select [(ngModel)]="model" [prepend]="prepend" [filter]="false">
+<m4-select [(ngModel)]="model" [prepend]="prepend" [filter]="false" [class.alert]="alert">
   <option *ngFor="let opt of dataArray" [value]="opt">{{opt}}</option>
 </m4-select>
 

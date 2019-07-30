@@ -35,7 +35,7 @@
 
 <h1>Checkbox Group</h1>
 
-<m4-checkbox-group [(ngModel)]="group">
+<m4-checkbox-group [(ngModel)]="group" [disabled]="model">
   <m4-checkbox [value]="{test: 1}" caption="Object"></m4-checkbox>
   <m4-checkbox [value]="{test: 2}" caption="Object 2"></m4-checkbox>
   <m4-checkbox [value]="123" caption="Number"></m4-checkbox>

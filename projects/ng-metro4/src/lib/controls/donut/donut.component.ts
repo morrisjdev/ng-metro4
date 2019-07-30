@@ -1,4 +1,5 @@
 import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -29,7 +30,7 @@ export class DonutComponent implements OnInit, OnChanges {
   constructor() { }
 
   private createControl() {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       const originalElement = $(this.donut.nativeElement);
       originalElement.hide();
 
@@ -41,7 +42,7 @@ export class DonutComponent implements OnInit, OnChanges {
       originalElement.parent().append(this.clonedElement);
 
       this.donutObj = this.clonedElement.donut().data('donut');
-    }, 0);
+    });
   }
 
   ngOnInit() {

@@ -1,6 +1,7 @@
 import {ControlValueAccessor} from '@angular/forms';
 import {AfterViewInit, ElementRef, Input, OnChanges, OnDestroy, Optional, SimpleChanges} from '@angular/core';
 import {ObjectHelper} from '../helper/object-helper';
+import {asapScheduler, Observable} from 'rxjs';
 
 export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewInit, OnChanges, OnDestroy {
   private classObserver: MutationObserver;
@@ -77,19 +78,21 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
     this.callNewValue();
   }
 
-  public abstract createControl();
+  public abstract createControl(): Promise<void>;
 
   ngAfterViewInit() {
-    this.createControl();
-    this.callNewValue();
-    this.observeClassValue();
+    this.createControl().then(() => {
+      this.callNewValue();
+      this.observeClassValue();
+    });
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    setTimeout(() => {
-      this.createControl();
-      this.callNewValue();
-    }, 0);
+    asapScheduler.schedule(() => {
+      this.createControl().then(() => {
+        this.callNewValue();
+      });
+    });
   }
 
   ngOnDestroy(): void {

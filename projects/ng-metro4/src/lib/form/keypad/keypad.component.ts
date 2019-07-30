@@ -3,6 +3,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {PositionType} from '../../helper/types';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -39,33 +40,39 @@ export class KeypadComponent extends ControlBase<string|number> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.keypad = this.clonedElement.keypad().data('keypad');
+      this.keypad = this.clonedElement.keypad().data('keypad');
 
-    this.clonedElement.one('blur', () => {
-      this.touchCallback();
+      this.clonedElement.one('blur', () => {
+        this.touchCallback();
+      });
+
+      this.clonedElement.on('change', (event) => {
+        asapScheduler.schedule(() => {
+          let newValue = this.clonedElement.val();
+
+          if (this.type === 'number') {
+            newValue = +newValue;
+          }
+
+          this.changeValue(newValue);
+        });
+      });
+
+      complete();
     });
 
-    this.clonedElement.on('change', (event) => {
-      setTimeout(() => {
-        let newValue = this.clonedElement.val();
 
-        if (this.type === 'number') {
-          newValue = +newValue;
-        }
-
-        this.changeValue(newValue);
-      }, 0);
-    });
   }
 
   disable(disabled: boolean): void {

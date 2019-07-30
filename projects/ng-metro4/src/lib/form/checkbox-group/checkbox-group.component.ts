@@ -5,6 +5,7 @@ import {RadioComponent} from '../radio/radio.component';
 import {CheckboxComponent} from '../checkbox/checkbox.component';
 import {ArrayHelper} from '../../helper/array-helper';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 @Component({
   selector: 'm4-checkbox-group',
@@ -20,22 +21,29 @@ export class CheckboxGroupComponent extends ControlBase<any[]> {
   }
 
   createControl() {
-    setTimeout(() => {
-      this.checkboxes.forEach((item) => {
-        item.registerOnChange((v) => {
-          this.computeInnerValue();
-        });
+    return new Promise<void>((complete) => {
+      asapScheduler.schedule(() => {
+        this.checkboxes.forEach((item) => {
+          item.registerOnChange((v) => {
+            this.computeInnerValue();
+          });
 
-        item.registerOnTouched(() => {
-          this.touchCallback();
-        });
+          item.registerOnTouched(() => {
+            this.touchCallback();
+          });
 
-        setTimeout(() => {
-          item.createControl();
-          this.callNewValue();
-        }, 0);
+          asapScheduler.schedule(() => {
+            item.createControl();
+            this.callNewValue();
+          });
+
+          complete();
+        });
       });
-    }, 0);
+
+
+    });
+
   }
 
   private computeInnerValue() {
@@ -45,9 +53,9 @@ export class CheckboxGroupComponent extends ControlBase<any[]> {
 
   disable(disabled: boolean): void {
     this.checkboxes.forEach((item) => {
-      setTimeout(() => {
+      asapScheduler.schedule(() => {
         item.disable(disabled);
-      }, 0);
+      });
     });
   }
 

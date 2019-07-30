@@ -32,25 +32,29 @@ export class TimePickerComponent extends ControlBase<moment.Duration> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.timePicker = this.clonedElement.timepicker().data('timepicker');
+      this.timePicker = this.clonedElement.timepicker().data('timepicker');
 
-    this.clonedElement.parent().find('.time-wrapper').one('click', () => {
-      this.touchCallback();
+      this.clonedElement.parent().find('.time-wrapper').one('click', () => {
+        this.touchCallback();
+      });
+
+      this.timePicker.options.onSet = (val, elem_val, elem, picker) => {
+        this.changeValue(moment.duration(elem_val));
+      };
+
+      complete();
     });
-
-    this.timePicker.options.onSet = (val, elem_val, elem, picker) => {
-      this.changeValue(moment.duration(elem_val));
-    };
   }
 
   disable(disabled: boolean): void {

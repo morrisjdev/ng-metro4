@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angul
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -30,32 +31,37 @@ export class RatingComponent extends ControlBase<string|number> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
-
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
-
-    this.rating = this.clonedElement.rating().data('rating');
-
-    this.clonedElement.parent().find('ul li').one('click', () => {
-      this.touchCallback();
-    });
-
-    this.clonedElement.on('change', (event) => {
-      const newValue = this.clonedElement.val();
-      const valueParsed = +newValue;
-
-      if (!Number.isNaN(valueParsed)) {
-        this.changeValue(valueParsed);
-      } else {
-        this.changeValue(newValue);
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
       }
+
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
+
+      this.rating = this.clonedElement.rating().data('rating');
+
+      this.clonedElement.parent().find('ul li').one('click', () => {
+        this.touchCallback();
+      });
+
+      this.clonedElement.on('change', (event) => {
+        const newValue = this.clonedElement.val();
+        const valueParsed = +newValue;
+
+        if (!Number.isNaN(valueParsed)) {
+          this.changeValue(valueParsed);
+        } else {
+          this.changeValue(newValue);
+        }
+      });
+
+      complete();
     });
+
   }
   
   disable(disabled: boolean): void {
@@ -89,7 +95,7 @@ export class RatingComponent extends ControlBase<string|number> {
   }
 
   newClassValue(newClasses: string[], oldClasses: string[]) {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (this.clonedElement) {
         const target = this.clonedElement.parent();
 
@@ -101,7 +107,7 @@ export class RatingComponent extends ControlBase<string|number> {
           target.addClass(cls);
         });
       }
-    }, 0);
+    });
   }
 
 }

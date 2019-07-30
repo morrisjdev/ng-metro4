@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -27,33 +28,38 @@ export class MaterialInputComponent extends ControlBase<string> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.materialInput = this.clonedElement.materialinput().data('materialinput');
+      this.materialInput = this.clonedElement.materialinput().data('materialinput');
 
-    this.clonedElement.one('blur', () => {
-      this.touchCallback();
+      this.clonedElement.one('blur', () => {
+        this.touchCallback();
+      });
+
+      this.clonedElement.on('keydown change', (event) => {
+        asapScheduler.schedule(() => {
+          let newValue = this.clonedElement.val();
+
+          if (this.type === 'number') {
+            newValue = +newValue;
+          }
+
+          this.changeValue(newValue);
+        }, 1);
+      });
+
+      complete();
     });
 
-    this.clonedElement.on('keydown change', (event) => {
-      setTimeout(() => {
-        let newValue = this.clonedElement.val();
-
-        if (this.type === 'number') {
-          newValue = +newValue;
-        }
-
-        this.changeValue(newValue);
-      }, 0);
-    });
   }
 
   disable(disabled: boolean): void {

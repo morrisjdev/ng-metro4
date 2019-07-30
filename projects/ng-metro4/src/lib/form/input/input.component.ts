@@ -2,6 +2,7 @@ import {Component, ElementRef, EventEmitter, Input, Output, ViewChild, ViewEncap
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler, Observable} from 'rxjs';
 
 declare var $: any;
 
@@ -45,35 +46,39 @@ export class InputComponent extends ControlBase<string|number> {
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
+      }
 
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
 
-    this.inputObj = this.clonedElement.input({
-      customButtons: this.customButtons,
-      onSearchButtonClick: (val) => this.searchButtonClick.emit(val)
-    }).data('input');
+      this.inputObj = this.clonedElement.input({
+        customButtons: this.customButtons,
+        onSearchButtonClick: (val) => this.searchButtonClick.emit(val)
+      }).data('input');
 
-    this.clonedElement.one('blur', () => {
-      this.touchCallback();
-    });
+      this.clonedElement.one('blur', () => {
+        this.touchCallback();
+      });
 
-    this.clonedElement.on('keydown change', (event) => {
-      setTimeout(() => {
-        let newValue = this.clonedElement.val();
+      this.clonedElement.on('keydown change', (event) => {
+        asapScheduler.schedule(() => {
+          let newValue = this.clonedElement.val();
 
-        if (this.type === 'number') {
-          newValue = +newValue;
-        }
+          if (this.type === 'number') {
+            newValue = +newValue;
+          }
 
-        this.changeValue(newValue);
-      }, 0);
+          this.changeValue(newValue);
+        }, 1);
+      });
+
+      complete();
     });
   }
 

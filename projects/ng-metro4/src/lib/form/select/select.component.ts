@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, OnChanges, ViewChild} from '@angular/core'
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -42,37 +43,42 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
   private clonedElement: any;
 
   createControl() {
-    const originalElement = $(this.input.nativeElement);
-    originalElement.hide();
+    return new Promise<void>((complete) => {
+      const originalElement = $(this.input.nativeElement);
+      originalElement.hide();
 
-    if (this.clonedElement) {
-      this.clonedElement.parent().remove();
-    }
-
-    this.clonedElement = originalElement.clone().show();
-    originalElement.parent().append(this.clonedElement);
-
-    this.clonedElement.html(this.clonedElement.find('[options]').html());
-    this.select = this.clonedElement.select().data('select');
-
-    this.clonedElement.parent().on('mousedown', (ev: MouseEvent) => {
-      if (ev.button === 0) {
-        this.touchCallback();
-        this.clonedElement.parent().unbind('mousedown');
+      if (this.clonedElement) {
+        this.clonedElement.parent().remove();
       }
+
+      this.clonedElement = originalElement.clone().show();
+      originalElement.parent().append(this.clonedElement);
+
+      this.clonedElement.html(this.clonedElement.find('[options]').html());
+      this.select = this.clonedElement.select().data('select');
+
+      this.clonedElement.parent().on('mousedown', (ev: MouseEvent) => {
+        if (ev.button === 0) {
+          this.touchCallback();
+          this.clonedElement.parent().unbind('mousedown');
+        }
+      });
+
+      this.select.options.onChange = (val) => {
+        if (this.multiple) {
+          this.changeValue(val.slice(0));
+        } else {
+          this.changeValue(val[0]);
+        }
+      };
+
+      if (this.options && !(this.options instanceof Array)) {
+        this.select.data(this.options);
+      }
+
+      complete();
     });
 
-    this.select.options.onChange = (val) => {
-      if (this.multiple) {
-        this.changeValue(val.slice(0));
-      } else {
-        this.changeValue(val[0]);
-      }
-    };
-
-    if (this.options && !(this.options instanceof Array)) {
-      this.select.data(this.options);
-    }
   }
 
   disable(disabled: boolean) {
@@ -107,7 +113,7 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
   }
 
   newClassValue(newClasses: string[], oldClasses: string[]) {
-    setTimeout(() => {
+    asapScheduler.schedule(() => {
       if (this.clonedElement) {
         const target = this.clonedElement.parent();
 
@@ -119,6 +125,6 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
           target.addClass(cls);
         });
       }
-    }, 0);
+    }, 1);
   }
 }

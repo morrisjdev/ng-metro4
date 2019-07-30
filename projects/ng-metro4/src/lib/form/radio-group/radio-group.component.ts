@@ -4,6 +4,7 @@ import {ControlBase} from '../control-base';
 import {RadioComponent} from '../radio/radio.component';
 import {StringHelper} from '../../helper/string-helper';
 import {TypeAlias} from '../../helper/type-alias';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -24,30 +25,35 @@ export class RadioGroupComponent extends ControlBase<any> {
   }
 
   createControl() {
-    setTimeout(() => {
-      this.radios.forEach((item) => {
-        item.name = this.name;
-        item.registerOnChange((v) => {
-          this.changeValue(v);
-        });
+    return new Promise<void>((complete) => {
+      asapScheduler.schedule(() => {
+        this.radios.forEach((item) => {
+          item.name = this.name;
+          item.registerOnChange((v) => {
+            this.changeValue(v);
+          });
 
-        item.registerOnTouched(() => {
-          this.touchCallback();
-        });
+          item.registerOnTouched(() => {
+            this.touchCallback();
+          });
 
-        setTimeout(() => {
-          item.createControl();
-          this.callNewValue();
-        }, 0);
+          asapScheduler.schedule(() => {
+            item.createControl();
+            this.callNewValue();
+          }, 1);
+
+          complete();
+        });
       });
-    }, 0);
+    });
+
   }
 
   disable(disabled: boolean): void {
     this.radios.forEach((item) => {
-      setTimeout(() => {
+      asapScheduler.schedule(() => {
         item.disable(disabled);
-      }, 0);
+      }, 1);
     });
   }
 

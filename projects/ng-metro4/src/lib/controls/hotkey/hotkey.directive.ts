@@ -14,6 +14,8 @@ export class HotkeyDirective implements OnInit, OnChanges {
   constructor(private element: ElementRef, private renderer: Renderer2) { }
 
   private createElement() {
+    console.log(this.hotkey);
+
     if (this.previousHandle) {
       $(document).off('keydown', this.previousHandle);
     }
