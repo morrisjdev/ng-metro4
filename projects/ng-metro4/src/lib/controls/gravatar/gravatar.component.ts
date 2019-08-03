@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {GravatarDefaultsType} from '../../helper/types';
 
 declare var $: any;
@@ -6,7 +6,8 @@ declare var $: any;
 @Component({
   selector: 'm4-gravatar',
   templateUrl: './gravatar.component.html',
-  styleUrls: ['./gravatar.component.css']
+  styleUrls: ['./gravatar.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GravatarComponent implements OnInit {
   @Input() email: string;

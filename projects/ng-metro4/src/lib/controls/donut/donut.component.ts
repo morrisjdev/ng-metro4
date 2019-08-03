@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {asapScheduler} from 'rxjs';
 
 declare var $: any;
@@ -6,7 +6,8 @@ declare var $: any;
 @Component({
   selector: 'm4-donut',
   templateUrl: './donut.component.html',
-  styleUrls: ['./donut.component.css']
+  styleUrls: ['./donut.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DonutComponent implements OnInit, OnChanges {
   @Input() value: number;

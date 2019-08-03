@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {TypeAlias} from '../../helper/type-alias';
@@ -10,7 +10,8 @@ declare var $: any;
   selector: 'm4-material-input',
   templateUrl: './material-input.component.html',
   styleUrls: ['./material-input.component.css'],
-  providers: [DefaultValueAccessor.get(MaterialInputComponent), TypeAlias.get(MaterialInputComponent)]
+  providers: [DefaultValueAccessor.get(MaterialInputComponent), TypeAlias.get(MaterialInputComponent)],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MaterialInputComponent extends ControlBase<string> {
   @Input('type') type = 'text';

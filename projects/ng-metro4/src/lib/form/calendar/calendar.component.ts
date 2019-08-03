@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
@@ -14,7 +14,8 @@ declare var $: any;
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css'],
   providers: [DefaultValueAccessor.get(CalendarComponent), TypeAlias.get(CalendarComponent)],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]> {
   @Input('years-before') yearsBefore: number;

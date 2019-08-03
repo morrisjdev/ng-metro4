@@ -26,6 +26,8 @@ import {NotifyComponent} from './information/notify/notify.component';
 import {DialogComponent} from './information/dialog/dialog.component';
 import {PopoverComponent} from './controls/popover/popover.component';
 import {PanelComponent} from './controls/panel/panel.component';
+import {HotkeyComponent} from './controls/hotkey/hotkey.component';
+import {LoadingComponent} from './base/loading/loading.component';
 
 const routes: Routes = [
   { path: 'form/tag-input', component: TagInputComponent },
@@ -46,12 +48,14 @@ const routes: Routes = [
   { path: 'base/form', component: FormComponent },
   { path: 'base/button', component: ButtonComponent },
   { path: 'base/icon', component: IconComponent },
+  { path: 'base/loading', component: LoadingComponent },
 
   { path: 'controls/gravatar', component: GravatarComponent },
   { path: 'controls/donut', component: DonutComponent },
   { path: 'controls/progress', component: ProgressComponent },
   { path: 'controls/popover', component: PopoverComponent },
   { path: 'controls/panel', component: PanelComponent },
+  { path: 'controls/hotkey', component: HotkeyComponent },
 
   { path: 'information/hint', component: HintComponent },
   { path: 'information/toast', component: ToastComponent },

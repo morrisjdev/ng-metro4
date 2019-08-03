@@ -46,6 +46,17 @@
   <m4-checkbox [value]="[2, 3, 4]" caption="Array 2"></m4-checkbox>
 </m4-checkbox-group>
 
+<m4-checkbox-group [(ngModel)]="group" [disabled]="model">
+  <m4-checkbox [value]="{test: 1}" caption="Object"></m4-checkbox>
+  <m4-checkbox [value]="{test: 2}" caption="Object 2"></m4-checkbox>
+  <m4-checkbox [value]="123" caption="Number"></m4-checkbox>
+  <m4-checkbox [value]="234" caption="Number 2"></m4-checkbox>
+  <m4-checkbox value="Test" caption="String"></m4-checkbox>
+  <m4-checkbox value="Test 2" caption="String 2"></m4-checkbox>
+  <m4-checkbox [value]="[1, 2, 3]" caption="Array"></m4-checkbox>
+  <m4-checkbox [value]="[2, 3, 4]" caption="Array 2"></m4-checkbox>
+</m4-checkbox-group>
+
 {{group | json}}
 
 <br>

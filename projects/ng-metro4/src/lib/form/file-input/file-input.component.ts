@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
@@ -9,7 +9,8 @@ declare var $: any;
   selector: 'm4-file-input',
   templateUrl: './file-input.component.html',
   styleUrls: ['./file-input.component.css'],
-  providers: [DefaultValueAccessor.get(FileInputComponent), TypeAlias.get(FileInputComponent)]
+  providers: [DefaultValueAccessor.get(FileInputComponent), TypeAlias.get(FileInputComponent)],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FileInputComponent extends ControlBase<File | File[]> {
   @Input('multiple') multiple = false;

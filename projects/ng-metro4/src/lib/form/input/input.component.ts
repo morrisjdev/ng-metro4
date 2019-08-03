@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, Output, ViewChild, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
@@ -11,7 +11,8 @@ declare var $: any;
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css'],
   providers: [DefaultValueAccessor.get(InputComponent), TypeAlias.get(InputComponent)],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputComponent extends ControlBase<string|number> {
   @Output('search-button-click') searchButtonClick = new EventEmitter<string|number>();

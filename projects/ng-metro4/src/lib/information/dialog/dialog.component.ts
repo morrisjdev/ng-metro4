@@ -1,4 +1,15 @@
-import {AfterViewInit, Component, ElementRef, HostBinding, Input, OnChanges, OnDestroy, SimpleChanges, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostBinding,
+  Input,
+  OnChanges,
+  OnDestroy,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {take} from 'rxjs/operators';
 
@@ -7,7 +18,8 @@ declare var $: any;
 @Component({
   selector: 'm4-dialog',
   templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.css']
+  styleUrls: ['./dialog.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DialogComponent implements OnChanges, AfterViewInit, OnDestroy {
   @Input('open') isOpen = false;

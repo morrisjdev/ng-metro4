@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
@@ -10,7 +10,8 @@ declare var $: any;
   selector: 'm4-textarea',
   templateUrl: './textarea.component.html',
   styleUrls: ['./textarea.component.css'],
-  providers: [DefaultValueAccessor.get(TextareaComponent), TypeAlias.get(TextareaComponent)]
+  providers: [DefaultValueAccessor.get(TextareaComponent), TypeAlias.get(TextareaComponent)],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TextareaComponent extends ControlBase<string> {
   @Input('default-value') defaultValue: string;

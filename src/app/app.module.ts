@@ -31,6 +31,8 @@ import {NotifyComponent} from './information/notify/notify.component';
 import {DialogComponent} from './information/dialog/dialog.component';
 import {PopoverComponent} from './controls/popover/popover.component';
 import {PanelComponent} from './controls/panel/panel.component';
+import { HotkeyComponent } from './controls/hotkey/hotkey.component';
+import { LoadingComponent } from './base/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import {PanelComponent} from './controls/panel/panel.component';
     DialogComponent,
     PopoverComponent,
     PanelComponent,
+    HotkeyComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

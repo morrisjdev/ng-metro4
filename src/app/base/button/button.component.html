@@ -80,4 +80,4 @@
 <br>
 
 <m4-input [(ngModel)]="hotkey"></m4-input>
-<!--<button m4-button [m4-hotkey]="hotkey" (click)="test()">Hotkey {{hotkey}}</button>-->
+<button m4-button [m4-hotkey]="hotkey" (hotkeyClick)="test()" (click)="test()">Hotkey {{hotkey}}</button>

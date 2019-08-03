@@ -1,7 +1,7 @@
 import {ControlValueAccessor} from '@angular/forms';
-import {AfterViewInit, ElementRef, Input, OnChanges, OnDestroy, Optional, SimpleChanges} from '@angular/core';
+import {AfterViewInit, ElementRef, OnChanges, OnDestroy, Optional, SimpleChanges} from '@angular/core';
 import {ObjectHelper} from '../helper/object-helper';
-import {asapScheduler, Observable} from 'rxjs';
+import {asapScheduler} from 'rxjs';
 
 export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewInit, OnChanges, OnDestroy {
   private classObserver: MutationObserver;

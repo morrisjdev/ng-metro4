@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {ActivityStyleType, ActivityType} from '../../helper/types';
 import {asapScheduler} from 'rxjs';
 
@@ -7,7 +7,8 @@ declare var $: any;
 @Component({
   selector: 'm4-activity',
   templateUrl: './activity.component.html',
-  styleUrls: ['./activity.component.css']
+  styleUrls: ['./activity.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ActivityComponent implements OnInit, OnChanges {
   @Input() type: ActivityType;

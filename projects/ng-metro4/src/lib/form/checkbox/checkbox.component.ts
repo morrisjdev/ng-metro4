@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
@@ -9,7 +9,8 @@ declare var $: any;
   selector: 'm4-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.css'],
-  providers: [DefaultValueAccessor.get(CheckboxComponent), TypeAlias.get(CheckboxComponent)]
+  providers: [DefaultValueAccessor.get(CheckboxComponent), TypeAlias.get(CheckboxComponent)],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxComponent extends ControlBase<boolean> {
   @Input('value') value: any;

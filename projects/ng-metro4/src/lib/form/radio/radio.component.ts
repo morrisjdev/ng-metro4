@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ObjectHelper} from '../../helper/object-helper';
@@ -11,7 +11,8 @@ declare var $: any;
   selector: 'm4-radio',
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.css'],
-  providers: [DefaultValueAccessor.get(RadioComponent), TypeAlias.get(RadioComponent)]
+  providers: [DefaultValueAccessor.get(RadioComponent), TypeAlias.get(RadioComponent)],
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class RadioComponent extends ControlBase<any> {
   @Input('name') name: string;

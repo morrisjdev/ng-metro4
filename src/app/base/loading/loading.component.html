@@ -1,0 +1,4 @@
+<m4-switch [(ngModel)]="disabled"></m4-switch>
+<button m4-button [m4-loading]="neverEnding" [disabled]="disabled">This always loads</button>
+<button m4-button [m4-loading]="loading" (click)="startLoading()" [disabled]="disabled">This loads on click</button><br>
+<button m4-button (click)="startLoading()">Start loading</button>

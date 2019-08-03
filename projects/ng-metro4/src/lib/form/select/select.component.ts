@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnChanges, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, ViewChild} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
@@ -16,7 +16,8 @@ interface Option {
   selector: 'm4-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.css'],
-  providers: [DefaultValueAccessor.get(SelectComponent), TypeAlias.get(SelectComponent)]
+  providers: [DefaultValueAccessor.get(SelectComponent), TypeAlias.get(SelectComponent)],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectComponent extends ControlBase<string|string[]> implements OnChanges {
   @Input('options') options: { [key: string]: (string | { [key: string]: string }) } |
@@ -95,13 +96,7 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
     }
 
     if (this.multiple) {
-      const oldConsoleLog = console.log;
-      console.log = () => {};
-
       this.select.reset();
-
-      console.log = oldConsoleLog;
-
       this.select.val(this.innerValue);
     } else {
       this.select.val([this.innerValue]);

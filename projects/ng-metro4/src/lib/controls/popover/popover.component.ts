@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ContentChild, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, ContentChild, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {PopoverDirective} from './popover.directive';
 import {asapScheduler} from 'rxjs';
 
@@ -8,7 +8,8 @@ declare var Metro: any;
 @Component({
   selector: 'm4-popover',
   templateUrl: './popover.component.html',
-  styleUrls: ['./popover.component.css']
+  styleUrls: ['./popover.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PopoverComponent implements AfterViewInit {
   @ContentChild(PopoverDirective, { static: true }) popover: PopoverDirective;

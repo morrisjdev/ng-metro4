@@ -1,4 +1,4 @@
-import {Component, ContentChildren, ElementRef, forwardRef, QueryList} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, ElementRef, forwardRef, QueryList} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {RadioComponent} from '../radio/radio.component';
@@ -12,7 +12,8 @@ declare var $: any;
   selector: 'm4-radio-group',
   templateUrl: './radio-group.component.html',
   styleUrls: ['./radio-group.component.css'],
-  providers: [DefaultValueAccessor.get(RadioGroupComponent), TypeAlias.get(RadioGroupComponent)]
+  providers: [DefaultValueAccessor.get(RadioGroupComponent), TypeAlias.get(RadioGroupComponent)],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RadioGroupComponent extends ControlBase<any> {
   @ContentChildren(forwardRef(() => RadioComponent), { descendants: true }) radios: QueryList<RadioComponent>;
@@ -27,21 +28,27 @@ export class RadioGroupComponent extends ControlBase<any> {
   createControl() {
     return new Promise<void>((complete) => {
       asapScheduler.schedule(() => {
-        this.radios.forEach((item) => {
-          item.name = this.name;
-          item.registerOnChange((v) => {
-            this.changeValue(v);
+        const radioCreations = this.radios.map((item) => {
+          return new Promise<void>((radioComplete) => {
+            item.name = this.name;
+            item.registerOnChange((v) => {
+              this.changeValue(v);
+            });
+
+            item.registerOnTouched(() => {
+              this.touchCallback();
+            });
+
+            asapScheduler.schedule(() => {
+              item.createControl().then(() => {
+                radioComplete();
+              });
+            }, 1);
           });
+        });
 
-          item.registerOnTouched(() => {
-            this.touchCallback();
-          });
-
-          asapScheduler.schedule(() => {
-            item.createControl();
-            this.callNewValue();
-          }, 1);
-
+        Promise.all(radioCreations).then(() => {
+          this.callNewValue();
           complete();
         });
       });

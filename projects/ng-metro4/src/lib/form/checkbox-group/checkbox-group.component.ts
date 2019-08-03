@@ -1,4 +1,4 @@
-import {Component, ContentChildren, ElementRef, forwardRef, OnInit, QueryList} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ContentChildren, ElementRef, forwardRef, OnInit, QueryList} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {RadioComponent} from '../radio/radio.component';
@@ -11,7 +11,8 @@ import {asapScheduler} from 'rxjs';
   selector: 'm4-checkbox-group',
   templateUrl: './checkbox-group.component.html',
   styleUrls: ['./checkbox-group.component.css'],
-  providers: [DefaultValueAccessor.get(CheckboxGroupComponent), TypeAlias.get(CheckboxGroupComponent)]
+  providers: [DefaultValueAccessor.get(CheckboxGroupComponent), TypeAlias.get(CheckboxGroupComponent)],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxGroupComponent extends ControlBase<any[]> {
   @ContentChildren(forwardRef(() => CheckboxComponent), { descendants: true }) checkboxes: QueryList<CheckboxComponent>;
@@ -23,25 +24,29 @@ export class CheckboxGroupComponent extends ControlBase<any[]> {
   createControl() {
     return new Promise<void>((complete) => {
       asapScheduler.schedule(() => {
-        this.checkboxes.forEach((item) => {
-          item.registerOnChange((v) => {
-            this.computeInnerValue();
-          });
+        const checkboxCreations = this.checkboxes.map((item) => {
+          return new Promise<void>((checkboxComplete) => {
+            item.registerOnChange((v) => {
+              this.computeInnerValue();
+            });
 
-          item.registerOnTouched(() => {
-            this.touchCallback();
-          });
+            item.registerOnTouched(() => {
+              this.touchCallback();
+            });
 
-          asapScheduler.schedule(() => {
-            item.createControl();
-            this.callNewValue();
+            asapScheduler.schedule(() => {
+              item.createControl().then(() => {
+                checkboxComplete();
+              });
+            });
           });
+        });
 
+        Promise.all(checkboxCreations).then(() => {
+          this.callNewValue();
           complete();
         });
       });
-
-
     });
 
   }

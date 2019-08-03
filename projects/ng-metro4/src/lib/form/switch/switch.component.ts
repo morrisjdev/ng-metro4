@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {TypeAlias} from '../../helper/type-alias';
@@ -9,7 +9,8 @@ declare var $: any;
   selector: 'm4-switch',
   templateUrl: './switch.component.html',
   styleUrls: ['./switch.component.css'],
-  providers: [DefaultValueAccessor.get(SwitchComponent), TypeAlias.get(SwitchComponent)]
+  providers: [DefaultValueAccessor.get(SwitchComponent), TypeAlias.get(SwitchComponent)],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SwitchComponent extends ControlBase<boolean> {
   @Input('material') material: boolean;

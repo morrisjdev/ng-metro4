@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {asapScheduler} from 'rxjs';
 
 declare var $: any;
@@ -6,7 +6,8 @@ declare var $: any;
 @Component({
   selector: 'm4-panel',
   templateUrl: './panel.component.html',
-  styleUrls: ['./panel.component.css']
+  styleUrls: ['./panel.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PanelComponent implements OnInit, OnChanges {
   @Input() width: number;

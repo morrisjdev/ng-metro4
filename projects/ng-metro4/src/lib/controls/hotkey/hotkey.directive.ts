@@ -1,5 +1,4 @@
-import {Directive, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
-import {AttributeHelper} from '../../helper/attribute-helper';
+import {Directive, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, Renderer2, SimpleChanges} from '@angular/core';
 
 declare var $: any;
 
@@ -8,23 +7,22 @@ declare var $: any;
 })
 export class HotkeyDirective implements OnInit, OnChanges {
   @Input('m4-hotkey') hotkey: string;
+  @Output('hotkeyClick') hotkeyClick = new EventEmitter();
 
   private previousHandle: any;
 
   constructor(private element: ElementRef, private renderer: Renderer2) { }
 
   private createElement() {
-    console.log(this.hotkey);
-
     if (this.previousHandle) {
-      $(document).off('keydown', this.previousHandle);
+      $(document).unbind('keydown', this.previousHandle);
     }
 
     this.previousHandle = () => {
-      $(this.element.nativeElement).click();
+      this.hotkeyClick.emit();
     };
 
-    $(document).on('keydown', null, this.hotkey, this.previousHandle);
+    $(document).bind('keydown', this.hotkey, this.previousHandle);
   }
 
   ngOnInit(): void {

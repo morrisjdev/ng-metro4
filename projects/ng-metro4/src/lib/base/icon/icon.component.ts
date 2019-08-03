@@ -1,10 +1,11 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ColorType} from '../../helper/types';
 
 @Component({
   selector: 'm4-icon',
   templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.css']
+  styleUrls: ['./icon.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IconComponent implements OnInit, OnChanges {
   @Input() icon: string;
