@@ -1,22 +1,24 @@
-import {ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {ColorType} from '../../helper/types';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, Optional, SimpleChanges} from '@angular/core';
+import {ColorType, IconType} from '../../helper/types';
+import {AttributeHelper} from '../../helper/attribute-helper';
 
 @Component({
   selector: 'm4-icon',
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
-export class IconComponent implements OnInit, OnChanges {
-  @Input() icon: string;
+export class IconComponent implements OnInit, OnChanges, OnDestroy {
+  @Input() icon: IconType;
   @Input() size: 0|1|2|3|4|5 = 0;
   @Input() color: ColorType;
 
   @Input() class: string;
 
   elementClass: string;
+  private classObserver: MutationObserver;
 
-  constructor() { }
+  constructor(@Optional() private mainElement: ElementRef) { }
 
   private createElement() {
     const sizeClass = this.size === 0 ? '' : this.size === 1 ? ' mif-lg' : ' mif-' + this.size + 'x';
@@ -24,6 +26,11 @@ export class IconComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.classObserver = AttributeHelper.createObserver(this.mainElement, (newClasses, oldClasses) => {
+      this.class = newClasses.join(' ');
+      this.createElement();
+    });
+
     this.createElement();
   }
 
@@ -31,4 +38,9 @@ export class IconComponent implements OnInit, OnChanges {
     this.createElement();
   }
 
+  ngOnDestroy(): void {
+    if (this.classObserver) {
+      this.classObserver.disconnect();
+    }
+  }
 }

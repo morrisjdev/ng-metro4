@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {AttributeHelper} from '../../helper/attribute-helper';
 
@@ -8,17 +8,21 @@ import {AttributeHelper} from '../../helper/attribute-helper';
 export class LoadingDirective implements OnInit, OnChanges {
   @Input('m4-loading') subscription: Subscription;
   @Input('disabled') disabled: boolean;
+  @Input('icon') icon: string;
+  @Input('animation') animation: string;
+
+  public stateChange = new EventEmitter<boolean>();
 
   private registeredTerdownLogic: Subscription;
 
   constructor(private element: ElementRef, private renderer: Renderer2) { }
 
   private createElement() {
-    if (this.subscription) {
-      if (this.registeredTerdownLogic) {
-        this.registeredTerdownLogic.unsubscribe();
-      }
+    if (this.registeredTerdownLogic) {
+      this.registeredTerdownLogic.unsubscribe();
+    }
 
+    if (this.subscription) {
       this.setDisabled(!this.subscription.closed);
 
       this.registeredTerdownLogic = this.subscription.add(() => {
@@ -30,6 +34,7 @@ export class LoadingDirective implements OnInit, OnChanges {
   }
 
   private setDisabled(loading: boolean) {
+    this.stateChange.emit(loading);
     AttributeHelper.setAttribute(this.renderer, this.element, 'disabled', this.disabled || loading);
   }
 

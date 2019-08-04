@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Lists} from 'ng-metro4';
 import 'linq4js';
+import {Lists} from 'ng-metro4';
 
 @Component({
   selector: 'app-icon',
@@ -16,14 +16,14 @@ export class IconComponent implements OnInit {
   color: string;
 
   constructor() {
-    this.colorArrForSelect = Lists.getColors().map(c => {
+    this.colorArrForSelect = Lists.colors().map(c => {
       return {
         title: c,
         value: c
       };
     });
 
-    this.icons = Lists.getIcons().GroupBy(i => i.category).Select(g => {
+    this.icons = Lists.icons().GroupBy(v => v.category).Select(g => {
       return {
         groupName: g[0].category,
         options: g.Select(i => {

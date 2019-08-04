@@ -8,6 +8,8 @@ export * from './lib/base/ng-metro4-base.module';
 export * from './lib/base/icon/icon.component';
 export * from './lib/base/button/button.directive';
 export * from './lib/base/ripple/ripple.directive';
+export * from './lib/base/loading/loading.directive';
+export * from './lib/base/loading/loading-display.directive';
 
 export * from './lib/form/ng-metro4-forms.module';
 export * from './lib/form/control-base';

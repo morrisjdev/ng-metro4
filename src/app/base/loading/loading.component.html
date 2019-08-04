@@ -1,4 +1,22 @@
 <m4-switch [(ngModel)]="disabled"></m4-switch>
-<button m4-button [m4-loading]="neverEnding" [disabled]="disabled">This always loads</button>
-<button m4-button [m4-loading]="loading" (click)="startLoading()" [disabled]="disabled">This loads on click</button><br>
+<m4-switch [(ngModel)]="hover" caption="Hover"></m4-switch>
+<m4-input [(ngModel)]="animation"></m4-input>
+
+<button m4-button [m4-loading]="neverEnding" [disabled]="disabled">
+  This always loads
+  <m4-icon *loading icon="spinner" [m4-animation]="animation" [animation-hover]="hover"></m4-icon>
+</button>
+
+<button m4-button [m4-loading]="loading" (click)="startLoading()" [disabled]="disabled">
+  This loads on click
+  <m4-icon *loading icon="spinner" [m4-animation]="animation"></m4-icon>
+</button><br>
 <button m4-button (click)="startLoading()">Start loading</button>
+
+<br><br>
+
+<button m4-button [m4-loading]="loading2" (click)="startLoading2()" [disabled]="disabled">
+  This loads on click
+  <m4-icon *loading icon="spinner" class="ani-spin"></m4-icon>
+</button><br>
+<button m4-button (click)="startLoading2()">Start loading</button>

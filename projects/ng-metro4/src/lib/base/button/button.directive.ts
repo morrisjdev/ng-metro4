@@ -1,9 +1,11 @@
-import {Directive, ElementRef, HostBinding, Inject, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
+import {Directive, ElementRef, HostBinding, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
 import {AccentType} from '../../helper/types';
-import {DOCUMENT} from '@angular/common';
+
+declare var $: any;
 
 @Directive({
-  selector: 'button[m4-button]'
+  selector: 'button[m4-button]',
+
 })
 export class ButtonDirective implements OnInit, OnChanges {
   @Input('btn-style') btnStyle: AccentType;
@@ -16,12 +18,12 @@ export class ButtonDirective implements OnInit, OnChanges {
   @Input('special-btn') specialBtn: ''|'command'|'image'|'shortcut'|'ribbon';
 
   @Input() @HostBinding('type') type;
-  @Input() class;
 
-  @HostBinding('class') elementClass;
+  private jElement: any;
+  private oldClasses: string[] = [];
 
-  constructor(private element: ElementRef, private renderer: Renderer2, @Inject(DOCUMENT) private document) {
-
+  constructor(private element: ElementRef, private renderer: Renderer2) {
+    this.jElement = $(this.element.nativeElement);
   }
 
   private createElement() {
@@ -30,15 +32,47 @@ export class ButtonDirective implements OnInit, OnChanges {
     }
 
     const buttonClass = this.specialBtn === 'command' ? 'command-button' :
-        this.specialBtn === 'image' ? 'image-button' :
-          this.specialBtn === 'shortcut' ? 'shortcut' :
-            this.specialBtn === 'ribbon' ? 'ribbon-button' : 'button';
+      this.specialBtn === 'image' ? 'image-button' :
+        this.specialBtn === 'shortcut' ? 'shortcut' :
+          this.specialBtn === 'ribbon' ? 'ribbon-button' : 'button';
 
+    const newClasses = [ buttonClass ];
 
-    this.elementClass = `${this.class ? this.class + ' ' : ''}${buttonClass}` +
-      `${this.btnStyle ? ' ' + this.btnStyle : ''}${this.outline ? ' outline' : ''}${this.size ? ' ' + this.size : ''}` +
-      `${this.rounded ? ' rounded' : ''}${this.shape ? ' ' + this.shape : ''}${this.shadow ? ' drop-shadow' : ''}` +
-      `${this.flat ? ' flat-button' : ''}`;
+    if (this.btnStyle) {
+      newClasses.push(this.btnStyle);
+    }
+
+    if (this.outline) {
+      newClasses.push('outline');
+    }
+
+    if (this.size) {
+      newClasses.push(this.size);
+    }
+
+    if (this.rounded) {
+      newClasses.push('rounded');
+    }
+
+    if (this.shape) {
+      newClasses.push(this.shape);
+    }
+
+    if (this.shadow) {
+      newClasses.push('drop-shadow');
+    }
+
+    if (this.flat) {
+      newClasses.push('flat-button');
+    }
+
+    this.oldClasses.ForEach(c => {
+      this.jElement.removeClass(c);
+    });
+    newClasses.ForEach(c => {
+      this.jElement.addClass(c);
+    });
+    this.oldClasses = newClasses;
   }
 
   ngOnInit(): void {

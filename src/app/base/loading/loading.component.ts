@@ -8,8 +8,11 @@ import {NEVER, Subscription, timer} from 'rxjs';
 })
 export class LoadingComponent implements OnInit {
   disabled = false;
+  hover = false;
+  animation = 'spin';
   neverEnding: Subscription;
   loading: Subscription;
+  loading2: Subscription;
 
   constructor() {
     this.neverEnding = NEVER.subscribe();
@@ -20,5 +23,9 @@ export class LoadingComponent implements OnInit {
 
   startLoading() {
     this.loading = timer(1000).subscribe();
+  }
+
+  startLoading2() {
+    this.loading2 = timer(1000).subscribe();
   }
 }

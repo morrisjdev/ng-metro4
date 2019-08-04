@@ -2,6 +2,8 @@ import {ControlValueAccessor} from '@angular/forms';
 import {AfterViewInit, ElementRef, OnChanges, OnDestroy, Optional, SimpleChanges} from '@angular/core';
 import {ObjectHelper} from '../helper/object-helper';
 import {asapScheduler} from 'rxjs';
+import {observerClassExceptions} from '../helper/lists';
+import {AttributeHelper} from '../helper/attribute-helper';
 
 export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewInit, OnChanges, OnDestroy {
   private classObserver: MutationObserver;
@@ -15,22 +17,9 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
   constructor(@Optional() private mainElement: ElementRef) {}
 
   private observeClassValue() {
-    const filterOut: string[] = ['ng-valid', 'ng-dirty', 'ng-touched', 'ng-untouched', 'ng-pristine', 'ng-invalid'];
-    let previousClassValue: string[] = [];
-    const classValueCallback = () => {
-      const classValue: string = this.mainElement.nativeElement.getAttribute('class') || '';
-      const classValueArray: string[] = classValue.split(' ').filter(v => !!v && filterOut.indexOf(v) === -1);
-      this.newClassValue(classValueArray, previousClassValue);
-      previousClassValue = classValueArray;
-    };
-    this.classObserver = new MutationObserver(classValueCallback);
-
-    this.classObserver.observe(this.mainElement.nativeElement, {
-      attributeFilter: ['class'],
-      attributes: true
+    this.classObserver = AttributeHelper.createObserver(this.mainElement, (newClasses, oldClasses) => {
+      this.newClassValue(newClasses, oldClasses);
     });
-
-    classValueCallback();
   }
 
   public abstract newClassValue(newClasses: string[], oldClasses: string[]);
@@ -96,6 +85,8 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
   }
 
   ngOnDestroy(): void {
-    this.classObserver.disconnect();
+    if (this.classObserver) {
+      this.classObserver.disconnect();
+    }
   }
 }
