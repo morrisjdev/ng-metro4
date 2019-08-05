@@ -40,7 +40,7 @@ export class InputComponent implements OnInit, AfterViewInit {
 
   modelNumber = 12;
 
-  prepend: string;
+  prepend = 'testpreprend';
 
   constructor() { }
 

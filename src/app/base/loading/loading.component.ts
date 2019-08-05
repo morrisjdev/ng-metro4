@@ -13,6 +13,7 @@ export class LoadingComponent implements OnInit {
   neverEnding: Subscription;
   loading: Subscription;
   loading2: Subscription;
+  load = false;
 
   constructor() {
     this.neverEnding = NEVER.subscribe();

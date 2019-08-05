@@ -7,18 +7,31 @@ import {Subscription} from 'rxjs';
 })
 export class LoadingDisplayDirective implements OnDestroy {
   private subscription: Subscription;
+  private loadingState: boolean;
+  private conditionValue: any;
+
+  @Input()
+  set loading(val) {
+    this.conditionValue = val;
+    this.updateView();
+  }
 
   constructor(private element: ElementRef,
               private templateRef: TemplateRef<any>,
               private viewContainer: ViewContainerRef,
               private loadingDirective: LoadingDirective) {
     this.subscription = this.loadingDirective.stateChange.subscribe((loading: boolean) => {
-      this.viewContainer.clear();
-
-      if (loading) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
-      }
+      this.loadingState = loading;
+      this.updateView();
     });
+  }
+
+  private updateView() {
+    this.viewContainer.clear();
+
+    if (this.loadingState || this.conditionValue) {
+      this.viewContainer.createEmbeddedView(this.templateRef);
+    }
   }
 
   ngOnDestroy(): void {
