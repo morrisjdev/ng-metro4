@@ -2,6 +2,7 @@ import {Directive, ElementRef, Inject, Input, OnChanges, OnInit, Renderer2, Simp
 import {DOCUMENT} from '@angular/common';
 import {AttributeHelper} from '../../helper/attribute-helper';
 import {asapScheduler} from 'rxjs';
+import {PopoverTriggerType, PositionBaseType} from '../../helper/types';
 
 declare var $: any;
 
@@ -10,8 +11,8 @@ declare var $: any;
 })
 export class PopoverDirective implements OnInit, OnChanges {
   @Input('m4-popover') popoverText: string;
-  @Input('popover-position') popoverPosition: 'top'|'left'|'bottom'|'right' = 'top';
-  @Input('popover-trigger') popoverTrigger: 'click'|'focus'|'hover';
+  @Input('popover-position') popoverPosition: PositionBaseType = 'top';
+  @Input('popover-trigger') popoverTrigger: PopoverTriggerType;
   @Input('popover-hide') popoverHide: number;
   @Input('popover-close-button') closeBtn: boolean;
   @Input('cls-popover') clsPopover: number;

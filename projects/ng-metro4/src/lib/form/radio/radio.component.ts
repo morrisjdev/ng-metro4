@@ -4,6 +4,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ObjectHelper} from '../../helper/object-helper';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
+import {PositionHorizontalType} from '../../helper/types';
 
 declare var $: any;
 
@@ -20,7 +21,7 @@ export class RadioComponent extends ControlBase<any> {
 
   @Input('style') style: 1|2;
   @Input('caption') caption: string;
-  @Input('caption-position') captionPosition: 'left'|'right';
+  @Input('caption-position') captionPosition: PositionHorizontalType;
 
   @Input('cls-radio') clsRadio: string;
   @Input('cls-caption') clsCaption: string;

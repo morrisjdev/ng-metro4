@@ -3,6 +3,7 @@ import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
+import {PositionBaseType, ThinType} from '../../helper/types';
 
 declare var $: any;
 
@@ -21,12 +22,12 @@ export class SliderComponent extends ControlBase<number> {
   @Input('buffer') buffer: number;
   @Input('hint') hint: boolean;
   @Input('hint-always') hintAlways: boolean;
-  @Input('hint-position') hintPosition: 'top'|'left'|'right'|'bottom';
+  @Input('hint-position') hintPosition: PositionBaseType;
   @Input('hint-mask') hintMask: string;
   @Input('vertical') vertical: boolean;
   @Input('size') size: number;
 
-  @Input('thin') thin: 'thin'|'ultra-thin';
+  @Input('thin') thin: ThinType;
   @Input('cycle-marker') cycleMarker: boolean;
 
   @Input('cls-slider') clsSlider: string;

@@ -1,16 +1,56 @@
-import {animationDictionary, colorDictionary, iconCategoryDictionary, iconDictionary} from './lists';
+import {
+  accentDictionary,
+  activityDictionary,
+  activityStyleDictionary,
+  animationDictionary,
+  buttonShapeDictionary,
+  buttonSpecialDictionary,
+  colorDictionary,
+  gravatarDictionary,
+  iconCategoryDictionary,
+  iconDictionary,
+  popoverTriggerDictionary,
+  positionBaseDictionary,
+  positionDictionary,
+  positionHorizontalDictionary,
+  positionVerticalDictionary,
+  progressTypeDictionary,
+  roundTypeDictionary,
+  sizeDictionary,
+  thinDictionary,
+  widePointDictionary
+} from './lists';
 
-export type WidePointType = 'fs'|'sm'|'md'|'lg'|'xl'|'xxl';
-export type AccentType = ''|'primary'|'secondary'|'success'|'alert'|'warning'|'yellow'|'info'|'dark'|'light'|'link';
-export type PositionType = 'left'|'top-left'|'top'|'top-right'|'right'|'bottom-right'|'bottom'|'bottom-left';
-export type SizeType = ''|'mini'|'small'|'large';
+export type WidePointType = keyof typeof widePointDictionary;
 
-export type GravatarDefaultsType = 'mm'|'identicon'|'monsterid'|'wavatar'|'retro'|'robohash'|'blank';
+export type AccentType = keyof typeof accentDictionary;
 
-export type ActivityType = 'ring'|'metro'|'square'|'cycle'|'simple';
-export type ActivityStyleType = ''|'dark'|'color';
+export type PositionVerticalType = keyof typeof positionVerticalDictionary;
+export type PositionHorizontalType = keyof typeof positionHorizontalDictionary;
+export type PositionBaseType = keyof typeof positionBaseDictionary;
+export type PositionType = keyof typeof positionDictionary;
+
+export type SizeType = keyof typeof sizeDictionary;
 
 export type ColorType = keyof typeof colorDictionary;
+
+export type GravatarDefaultsType = keyof typeof gravatarDictionary;
+
+export type ActivityType = keyof typeof activityDictionary;
+export type ActivityStyleType = keyof typeof activityStyleDictionary;
+
 export type IconCategoryType = keyof typeof iconCategoryDictionary;
 export type IconType = keyof typeof iconDictionary;
+
 export type AnimationType = keyof typeof animationDictionary;
+
+export type ButtonShapeType = keyof typeof buttonShapeDictionary;
+export type ButtonSpecialType = keyof typeof buttonSpecialDictionary;
+
+export type PopoverTriggerType = keyof typeof popoverTriggerDictionary;
+
+export type ProgressTypeType = keyof typeof progressTypeDictionary;
+
+export type RoundTypeType = keyof typeof roundTypeDictionary;
+
+export type ThinType = keyof typeof thinDictionary;

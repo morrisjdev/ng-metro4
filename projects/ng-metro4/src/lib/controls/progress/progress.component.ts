@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {asapScheduler} from 'rxjs';
+import {ProgressTypeType} from '../../helper/types';
 
 declare var $: any;
 
@@ -13,7 +14,7 @@ export class ProgressComponent implements OnInit, OnChanges {
   @Input() value: number;
   @Input() buffer: number;
   @Input() small: boolean;
-  @Input() type: ''|'buffer'|'load'|'line';
+  @Input() type: ProgressTypeType;
 
   @Input('cls-back') clsBack: string;
   @Input('cls-bar') clsBar: string;

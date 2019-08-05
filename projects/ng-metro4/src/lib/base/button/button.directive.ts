@@ -1,5 +1,5 @@
 import {Directive, ElementRef, HostBinding, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
-import {AccentType} from '../../helper/types';
+import {AccentType, ButtonShapeType, ButtonSpecialType, SizeType} from '../../helper/types';
 
 declare var $: any;
 
@@ -10,12 +10,12 @@ declare var $: any;
 export class ButtonDirective implements OnInit, OnChanges {
   @Input('btn-style') btnStyle: AccentType;
   @Input() outline: boolean;
-  @Input() size: ''|'mini'|'small'|'large';
+  @Input() size: SizeType;
   @Input() rounded: boolean;
-  @Input() shape: ''|'square'|'cycle';
+  @Input() shape: ButtonShapeType;
   @Input() shadow: boolean;
   @Input() flat: boolean;
-  @Input('special-btn') specialBtn: ''|'command'|'image'|'shortcut'|'ribbon';
+  @Input('special-btn') specialBtn: ButtonSpecialType;
 
   @Input() @HostBinding('type') type;
 

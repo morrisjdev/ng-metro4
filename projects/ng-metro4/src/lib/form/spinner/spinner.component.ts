@@ -3,6 +3,7 @@ import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
+import {PositionHorizontalType} from '../../helper/types';
 
 declare var $: any;
 
@@ -17,7 +18,7 @@ export class SpinnerComponent extends ControlBase<number> {
   @Input('step') step = 1;
   @Input('plus-icon') plusIcon: string;
   @Input('minus-icon') minusIcon: string;
-  @Input('buttons-position') buttonsPosition: 'default'|'left'|'right';
+  @Input('buttons-position') buttonsPosition: 'default'|PositionHorizontalType;
   @Input('min-value') minValue: number;
   @Input('max-value') maxValue: number;
   @Input('fixed') fixed = 0;
@@ -53,31 +54,7 @@ export class SpinnerComponent extends ControlBase<number> {
         this.touchCallback();
       });
 
-      this.clonedElement.parent().find('button.spinner-button-plus').on('click', () => {
-        this.stepUp();
-      });
-
-      this.clonedElement.parent().find('button.spinner-button-minus').on('click', () => {
-        this.stepDown();
-      });
-
-      this.clonedElement.off('keydown').on('keydown', (e) => {
-        if (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) {
-          // Allow ctrl + a
-        } else if (e.keyCode >= 65 && e.keyCode <= 90) {
-          e.preventDefault();
-        }
-
-        if ([38, 40].indexOf(e.keyCode) !== -1) {
-          e.preventDefault();
-        }
-
-        if (e.keyCode === 38) {
-          this.stepUp();
-        } else if (e.keyCode === 40) {
-          this.stepDown();
-        }
-      }).on('change', () => {
+      this.clonedElement.on('change', () => {
         if (this.disableUpdate) {
           return;
         }
@@ -91,24 +68,6 @@ export class SpinnerComponent extends ControlBase<number> {
       complete();
     });
 
-  }
-
-  stepUp() {
-    const newValue = this.innerValue + this.step;
-
-    if (this.maxValue == null || newValue <= this.maxValue) {
-      this.changeValue(newValue);
-      this.setValue(newValue);
-    }
-  }
-
-  stepDown() {
-    const newValue = this.innerValue - this.step;
-
-    if (this.minValue == null || newValue >= this.minValue) {
-      this.changeValue(newValue);
-      this.setValue(newValue);
-    }
   }
 
   disable(disabled: boolean): void {

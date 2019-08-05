@@ -7,9 +7,7 @@ import {AttributeHelper} from '../../helper/attribute-helper';
 })
 export class LoadingDirective implements OnInit, OnChanges {
   @Input('m4-loading') subscription: Subscription;
-  @Input('disabled') disabled: boolean;
-  @Input('icon') icon: string;
-  @Input('animation') animation: string;
+  @Input() disabled: boolean;
 
   public stateChange = new EventEmitter<boolean>();
 

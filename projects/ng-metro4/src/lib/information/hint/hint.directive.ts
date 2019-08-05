@@ -1,6 +1,7 @@
 import {Directive, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
 import {AttributeHelper} from '../../helper/attribute-helper';
 import {asapScheduler} from 'rxjs';
+import {PositionBaseType} from '../../helper/types';
 
 declare var $: any;
 
@@ -9,7 +10,7 @@ declare var $: any;
 })
 export class HintDirective implements OnInit, OnChanges {
   @Input('m4-hint') hintText: string;
-  @Input('hint-position') hintPosition: 'left'|'right'|'top'|'bottom';
+  @Input('hint-position') hintPosition: PositionBaseType;
   @Input('hint-hide') hintHide: number;
   @Input('cls-hint') clsHint: string;
   @Input('hint-offset') hintOffset: number;

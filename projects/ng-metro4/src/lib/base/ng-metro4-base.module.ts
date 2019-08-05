@@ -6,6 +6,7 @@ import { RippleDirective } from './ripple/ripple.directive';
 import { LoadingDirective } from './loading/loading.directive';
 import { LoadingDisplayDirective } from './loading/loading-display.directive';
 import { AnimationDirective } from './animation/animation.directive';
+import { LetDirective } from './let/let.directive';
 
 const declarations = [
   ButtonDirective,
@@ -14,6 +15,7 @@ const declarations = [
   LoadingDirective,
   LoadingDisplayDirective,
   AnimationDirective,
+  LetDirective,
 ];
 
 @NgModule({

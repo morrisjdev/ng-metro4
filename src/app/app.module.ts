@@ -33,6 +33,7 @@ import {PopoverComponent} from './controls/popover/popover.component';
 import {PanelComponent} from './controls/panel/panel.component';
 import { HotkeyComponent } from './controls/hotkey/hotkey.component';
 import { LoadingComponent } from './base/loading/loading.component';
+import { LetComponent } from './base/let/let.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { LoadingComponent } from './base/loading/loading.component';
     PanelComponent,
     HotkeyComponent,
     LoadingComponent,
+    LetComponent,
   ],
   imports: [
     BrowserModule,

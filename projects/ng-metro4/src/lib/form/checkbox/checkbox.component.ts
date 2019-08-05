@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
+import {PositionHorizontalType} from '../../helper/types';
 
 declare var $: any;
 
@@ -17,7 +18,7 @@ export class CheckboxComponent extends ControlBase<boolean> {
 
   @Input('style') style: 1|2;
   @Input('caption') caption: string;
-  @Input('caption-position') captionPosition: 'left'|'right';
+  @Input('caption-position') captionPosition: PositionHorizontalType;
   @Input('indeterminate') indeterminate: boolean;
 
   @Input('cls-checkbox') clsCheckbox: string;

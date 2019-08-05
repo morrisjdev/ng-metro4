@@ -7,7 +7,7 @@ declare var $: any;
 })
 export class HotkeyDirective implements OnInit, OnChanges {
   @Input('m4-hotkey') hotkey: string;
-  @Output('hotkeyClick') hotkeyClick = new EventEmitter();
+  @Output() hotkeyClick = new EventEmitter();
 
   private previousHandle: any;
 

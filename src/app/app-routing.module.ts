@@ -28,6 +28,7 @@ import {PopoverComponent} from './controls/popover/popover.component';
 import {PanelComponent} from './controls/panel/panel.component';
 import {HotkeyComponent} from './controls/hotkey/hotkey.component';
 import {LoadingComponent} from './base/loading/loading.component';
+import {LetComponent} from './base/let/let.component';
 
 const routes: Routes = [
   { path: 'form/tag-input', component: TagInputComponent },
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'base/button', component: ButtonComponent },
   { path: 'base/icon', component: IconComponent },
   { path: 'base/loading', component: LoadingComponent },
+  { path: 'base/let', component: LetComponent},
 
   { path: 'controls/gravatar', component: GravatarComponent },
   { path: 'controls/donut', component: DonutComponent },

@@ -3,6 +3,7 @@ import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
+import {RoundTypeType} from '../../helper/types';
 
 declare var $: any;
 
@@ -16,7 +17,7 @@ declare var $: any;
 })
 export class RatingComponent extends ControlBase<string|number> {
   @Input('stars') stars: number;
-  @Input('round-func') roundFunc: 'round'|'ceil'|'floor';
+  @Input('round-func') roundFunc: RoundTypeType;
   @Input('values') values: (string|number)[];
   @Input('message') message: string;
   @Input('star-color') starColor: string;

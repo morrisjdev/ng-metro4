@@ -730,6 +730,121 @@ export const animationDictionary = {
   'ripple': 'ripple',
 };
 
+export const accentDictionary = {
+  '': '',
+  'primary': 'primary',
+  'secondary': 'secondary',
+  'success': 'success',
+  'alert': 'alert',
+  'warning': 'warning',
+  'yellow': 'yellow',
+  'info': 'info',
+  'dark': 'dark',
+  'light': 'light',
+  'link': 'link'
+};
+
+export const widePointDictionary = {
+  'fs': 'fs',
+  'sm': 'sm',
+  'md': 'md',
+  'lg': 'lg',
+  'xl': 'xl',
+  'xxl': 'xxl'
+};
+
+export const positionHorizontalDictionary = {
+  'left': 'left',
+  'right': 'right'
+};
+
+export const positionVerticalDictionary = {
+  'top': 'top',
+  'bottom': 'bottom'
+};
+
+export const positionBaseDictionary = {
+  ...positionHorizontalDictionary,
+  ...positionVerticalDictionary
+};
+
+export const positionDictionary = {
+  ...positionBaseDictionary,
+  'top-left': 'top-left',
+  'top-right': 'top-right',
+  'bottom-right': 'bottom-right',
+  'bottom-left': 'bottom-left'
+};
+
+export const sizeDictionary = {
+  '': '',
+  'mini': 'mini',
+  'small': 'small',
+  'large': 'large'
+};
+
+export const gravatarDictionary = {
+  'mm': 'mm',
+  'identicon': 'identicon',
+  'monsterid': 'monsterid',
+  'wavatar': 'wavatar',
+  'retro': 'retro',
+  'robohash': 'robohash',
+  'blank': 'blank'
+};
+
+export const activityDictionary = {
+  'ring': 'ring',
+  'metro': 'metro',
+  'square': 'square',
+  'cycle': 'cycle',
+  'simple': 'simple'
+};
+
+export const activityStyleDictionary = {
+  '': '',
+  'dark': '',
+  'color': ''
+};
+
+export const buttonShapeDictionary = {
+  '': '',
+  'square': 'square',
+  'cycle': 'cycle'
+};
+
+export const buttonSpecialDictionary = {
+  '': '',
+  'command': 'command',
+  'image': 'image',
+  'shortcut': 'shortcut',
+  'ribbon': 'ribbon'
+};
+
+export const popoverTriggerDictionary = {
+  'click': 'click',
+  'focus': 'focus',
+  'hover': 'hover'
+};
+
+export const progressTypeDictionary = {
+  '': '',
+  'buffer': 'buffer',
+  'load': 'load',
+  'line': 'line'
+};
+
+export const roundTypeDictionary = {
+  'round': 'round',
+  'ceil': 'ceil',
+  'floor': 'floor'
+};
+
+export const thinDictionary = {
+  'thin': 'thin',
+  'ultra-thin': 'ultra-thin'
+};
+
 export class Lists {
   public static icons() {
     return Object.values(iconDictionary);
@@ -745,5 +860,57 @@ export class Lists {
 
   public static animations() {
     return Object.values(animationDictionary);
+  }
+
+  public static accents() {
+    return Object.values(accentDictionary);
+  }
+
+  public static widePoints() {
+    return Object.values(widePointDictionary);
+  }
+
+  public static positions(all: boolean = true) {
+    return Object.values(all ? positionDictionary : positionBaseDictionary);
+  }
+
+  public static sizes() {
+    return Object.values(sizeDictionary);
+  }
+
+  public static gravatars() {
+    return Object.values(gravatarDictionary);
+  }
+
+  public static activities() {
+    return Object.values(activityDictionary);
+  }
+
+  public static activityStyles() {
+    return Object.values(activityStyleDictionary);
+  }
+
+  public static buttonShapes() {
+    return Object.values(buttonShapeDictionary);
+  }
+
+  public static buttonSpecials() {
+    return Object.values(buttonSpecialDictionary);
+  }
+
+  public static popoverTriggers() {
+    return Object.values(popoverTriggerDictionary);
+  }
+
+  public static progressTypes() {
+    return Object.values(progressTypeDictionary);
+  }
+
+  public static roundTypes() {
+    return Object.values(roundTypeDictionary);
+  }
+
+  public static thins() {
+    return Object.values(thinDictionary);
   }
 }

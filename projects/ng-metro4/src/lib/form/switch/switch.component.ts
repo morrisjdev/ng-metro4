@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {TypeAlias} from '../../helper/type-alias';
+import {PositionHorizontalType} from '../../helper/types';
 
 declare var $: any;
 
@@ -15,7 +16,7 @@ declare var $: any;
 export class SwitchComponent extends ControlBase<boolean> {
   @Input('material') material: boolean;
   @Input('caption') caption: string;
-  @Input('caption-position') captionPosition: 'left'|'right';
+  @Input('caption-position') captionPosition: PositionHorizontalType;
 
   @Input('cls-switch') clsSwitch: string;
   @Input('cls-caption') clsCaption: string;
