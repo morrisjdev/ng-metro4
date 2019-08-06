@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import {AccentType} from '../../helper/types';
+import {Observable, Subject} from 'rxjs';
 
 interface ToastOptions {
   timeout?: number;
   cls?: string|AccentType;
-  callback?: () => void;
   additional?: {
     distance?: number;
     showTop?: boolean;
@@ -18,7 +18,14 @@ export class ToastService {
 
   constructor() { }
 
-  public create(message: string, options: ToastOptions = {}) {
-    (<any>window).Metro.toast.create(message, options.callback, options.timeout, options.cls, options.additional);
+  public create(message: string, options: ToastOptions = {}): Observable<any> {
+    const closeSubject$ = new Subject<any>();
+
+    (<any>window).Metro.toast.create(message, () => {
+      closeSubject$.next();
+      closeSubject$.complete();
+    }, options.timeout, options.cls, options.additional);
+
+    return closeSubject$.asObservable();
   }
 }

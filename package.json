@@ -20,10 +20,12 @@
     "@angular/platform-browser-dynamic": "~8.1.0",
     "@angular/router": "~8.1.0",
     "core-js": "^2.5.4",
+    "highlight.js": "^9.15.9",
     "jquery.hotkeys": "^0.1.0",
     "linq4js": "^2.2.2",
     "metro4": "^4.2.47",
     "moment": "^2.24.0",
+    "ngx-highlightjs": "^3.0.3",
     "rxjs": "~6.5.2",
     "zone.js": "~0.9.1"
   },

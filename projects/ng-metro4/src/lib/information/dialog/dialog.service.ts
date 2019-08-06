@@ -51,7 +51,9 @@ export class DialogService {
     return (<any>window).Metro.dialog.create(options);
   }
 
-  public alert(title: string, message: string, cls?: string, okBtnText?: string, okBtnCls?: string) {
+  public alert(title: string, message: string, cls?: string, okBtnText?: string, okBtnCls?: string): Observable<void> {
+    const subject$ = new Subject<void>();
+
     const options: DialogOptions = {
       title: title,
       content: message,
@@ -63,11 +65,16 @@ export class DialogService {
       options.actions = [{
         caption: okBtnText,
         cls: (okBtnCls ? okBtnCls : '') + ' js-dialog-close',
-        onclick: () => {}
+        onclick: () => {
+          subject$.next();
+          subject$.complete();
+        }
       }];
     }
 
     this.create(options);
+
+    return subject$.asObservable();
   }
 
   public confirm(title: string, message: string, yesBtnText?: string, noBtnText?: string,

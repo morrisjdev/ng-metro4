@@ -12,6 +12,10 @@ export class AttributeHelper {
 
   public static createObserver(element: ElementRef,
                                newClassValues: (newClassValues: string[], oldClassValues: string[]) => void): MutationObserver {
+    if (!element || !element.nativeElement) {
+      return null;
+    }
+
     let previousClassValue: string[] = [];
     const classValueCallback = () => {
       const classValue: string = element.nativeElement.getAttribute('class') || '';

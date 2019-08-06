@@ -23,7 +23,7 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
   public touchCallback: () => void = () => {};
   public changeCallback: (currentValue: T) => void = (_) => {};
 
-  constructor(@Optional() public mainElement: ElementRef, protected cdRef: ChangeDetectorRef) {}
+  constructor(@Optional() public mainElement: ElementRef, private cdRef: ChangeDetectorRef) {}
 
   private observeClassValue() {
     this.classObserver = AttributeHelper.createObserver(this.mainElement, (newClasses, oldClasses) => {
@@ -79,6 +79,8 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
   public abstract createControl(): Promise<void>;
 
   ngAfterViewInit() {
+    console.log(this.mainElement);
+
     this.createControl().then(() => {
       this.callNewValue();
       this.observeClassValue();
@@ -104,7 +106,11 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
 
     if (oldValue !== newValue) {
       this[key] = newValue;
-      this.cdRef.detectChanges();
+
+      if (this.cdRef) {
+        this.cdRef.detectChanges();
+      }
+
       const changes: SimpleChanges = {};
       changes[key as string] = { previousValue: oldValue, currentValue: newValue, firstChange: false } as SimpleChange;
       this.ngOnChanges(changes);

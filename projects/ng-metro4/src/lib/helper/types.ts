@@ -5,7 +5,7 @@ import {
   animationDictionary,
   buttonShapeDictionary,
   buttonSpecialDictionary,
-  colorDictionary,
+  colorDictionary, easingDictionary,
   gravatarDictionary,
   iconCategoryDictionary,
   iconDictionary,
@@ -54,3 +54,5 @@ export type ProgressTypeType = keyof typeof progressTypeDictionary;
 export type RoundTypeType = keyof typeof roundTypeDictionary;
 
 export type ThinType = keyof typeof thinDictionary;
+
+export type EasingType = keyof typeof easingDictionary;

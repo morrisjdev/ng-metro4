@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
+import {Observable, Subject} from 'rxjs';
+import {EasingType} from '../../helper/types';
 
-interface NotifySetupOptions {
+export interface NotifySetupOptions {
   container?: string;
   width?: string;
   timeout?: number;
   duration?: number;
   distance?: string;
-  animation?: string;
+  animation?: EasingType;
 }
 
-interface NotifyOptions {
+export interface NotifyOptions {
   keepOpen?: boolean;
   cls?: string;
-  width: string;
-  onShow?: () => void;
-  onClose?: () => void;
+  width?: string;
 }
 
 @Injectable({
@@ -32,7 +32,17 @@ export class NotifyService {
     (<any>window).Metro.notify.reset();
   }
 
-  public create(message: string, title?: string, options?: NotifyOptions) {
-    (<any>window).Metro.notify.create(message, title, options);
+  public create(message: string, title?: string, options?: NotifyOptions): Observable<void> {
+    const closeSubject$ = new Subject<any>();
+
+    (<any>window).Metro.notify.create(message, title, {
+      onClose: () => {
+        closeSubject$.next();
+        closeSubject$.complete();
+      },
+      ...options
+    });
+
+    return closeSubject$.asObservable();
   }
 }
