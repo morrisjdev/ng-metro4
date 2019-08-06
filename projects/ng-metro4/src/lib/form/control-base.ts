@@ -79,8 +79,6 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
   public abstract createControl(): Promise<void>;
 
   ngAfterViewInit() {
-    console.log(this.mainElement);
-
     this.createControl().then(() => {
       this.callNewValue();
       this.observeClassValue();
