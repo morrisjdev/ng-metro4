@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ContentChildren, OnInit, QueryList, ViewChildren} from '@angular/core';
-import {ControlBase} from 'ng-metro4';
+import {ControlBase, InputComponent as ic} from 'ng-metro4';
 
 @Component({
   selector: 'app-input',
@@ -57,5 +57,10 @@ export class InputComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     console.log(this.controls);
+  }
+
+  updateProp() {
+    const input: ic = this.controls.first as ic;
+    input.updateProperty('prepend', 'Das ist ein test');
   }
 }

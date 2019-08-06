@@ -1,4 +1,13 @@
-import {ChangeDetectionStrategy, Component, ContentChildren, ElementRef, forwardRef, OnInit, QueryList} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ContentChildren,
+  ElementRef,
+  forwardRef,
+  OnInit,
+  QueryList
+} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {RadioComponent} from '../radio/radio.component';
@@ -17,8 +26,8 @@ import {asapScheduler} from 'rxjs';
 export class CheckboxGroupComponent extends ControlBase<any[]> {
   @ContentChildren(forwardRef(() => CheckboxComponent), { descendants: true }) checkboxes: QueryList<CheckboxComponent>;
 
-  constructor(element: ElementRef) {
-    super(element);
+  constructor(element: ElementRef, cdRef: ChangeDetectorRef) {
+    super(element, cdRef);
   }
 
   createControl() {

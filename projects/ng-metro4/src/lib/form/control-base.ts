@@ -1,8 +1,17 @@
 import {ControlValueAccessor} from '@angular/forms';
-import {AfterViewInit, ElementRef, OnChanges, OnDestroy, Optional, SimpleChanges} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  ElementRef,
+  EventEmitter,
+  OnChanges,
+  OnDestroy,
+  Optional,
+  Output, SimpleChange,
+  SimpleChanges
+} from '@angular/core';
 import {ObjectHelper} from '../helper/object-helper';
 import {asapScheduler} from 'rxjs';
-import {observerClassExceptions} from '../helper/lists';
 import {AttributeHelper} from '../helper/attribute-helper';
 
 export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewInit, OnChanges, OnDestroy {
@@ -14,7 +23,7 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
   public touchCallback: () => void = () => {};
   public changeCallback: (currentValue: T) => void = (_) => {};
 
-  constructor(@Optional() private mainElement: ElementRef) {}
+  constructor(@Optional() public mainElement: ElementRef, protected cdRef: ChangeDetectorRef) {}
 
   private observeClassValue() {
     this.classObserver = AttributeHelper.createObserver(this.mainElement, (newClasses, oldClasses) => {
@@ -87,6 +96,18 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
   ngOnDestroy(): void {
     if (this.classObserver) {
       this.classObserver.disconnect();
+    }
+  }
+
+  updateProperty(key: keyof this, newValue: any) {
+    const oldValue = this[key];
+
+    if (oldValue !== newValue) {
+      this[key] = newValue;
+      this.cdRef.detectChanges();
+      const changes: SimpleChanges = {};
+      changes[key as string] = { previousValue: oldValue, currentValue: newValue, firstChange: false } as SimpleChange;
+      this.ngOnChanges(changes);
     }
   }
 }

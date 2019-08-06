@@ -2,6 +2,8 @@
 
 <m4-input [(ngModel)]="model"></m4-input>
 
+<button m4-button (click)="updateProp()">Update Test</button>
+
 <m4-input [(ngModel)]="model" (ngModelChange)="classTest($event)" [class.alert]="alert"></m4-input>
 <m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
 

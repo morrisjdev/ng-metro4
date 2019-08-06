@@ -20,8 +20,8 @@ export class RadioGroupComponent extends ControlBase<any> {
 
   private name: string;
 
-  constructor(element: ElementRef) {
-    super(element);
+  constructor(element: ElementRef, cdRef: ChangeDetectorRef) {
+    super(element, cdRef);
     this.name = StringHelper.guid();
   }
 
