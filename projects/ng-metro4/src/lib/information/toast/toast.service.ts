@@ -18,8 +18,8 @@ export class ToastService {
 
   constructor() { }
 
-  public create(message: string, options: ToastOptions = {}): Observable<any> {
-    const closeSubject$ = new Subject<any>();
+  public create(message: string, options: ToastOptions = {}): Observable<void> {
+    const closeSubject$ = new Subject<void>();
 
     (<any>window).Metro.toast.create(message, () => {
       closeSubject$.next();
