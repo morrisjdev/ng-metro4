@@ -3,7 +3,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  HostBinding,
   Input,
   OnChanges,
   OnDestroy,
@@ -49,14 +48,22 @@ export class DialogComponent implements OnChanges, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.dialogObj = $(this.dialog.nativeElement).dialog({
+    const dialogOptions: any = {
       width: this.width,
       show: this.isOpen,
       overlay: this.overlay,
-      overlayColor: this.overlayColor,
-      overlayAlpha: this.overlayAlpha,
       overlayClickClose: this.overlayClickClose
-    }).data('dialog');
+    };
+
+    if (this.overlayColor) {
+      dialogOptions.overlayColor = this.overlayColor;
+    }
+
+    if (this.overlayAlpha) {
+      dialogOptions.overlayAlpha = this.overlayAlpha;
+    }
+
+    this.dialogObj = $(this.dialog.nativeElement).dialog(dialogOptions).data('dialog');
     this.dialogObj.options.onClose = () => {
       this.closeSubject$.next(this.data);
     };
