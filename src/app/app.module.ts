@@ -1,6 +1,11 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
+import typescript from 'highlight.js/lib/languages/typescript';
+import xml from 'highlight.js/lib/languages/xml';
+import powershell from 'highlight.js/lib/languages/powershell';
+import json from 'highlight.js/lib/languages/json';
+
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -34,6 +39,18 @@ import {PanelComponent} from './controls/panel/panel.component';
 import { HotkeyComponent } from './controls/hotkey/hotkey.component';
 import { LoadingComponent } from './base/loading/loading.component';
 import { LetComponent } from './base/let/let.component';
+import {HighlightModule} from 'ngx-highlightjs';
+import { StartComponent } from './home/start/start.component';
+import { HomeComponent } from './home/home/home.component';
+
+export function hljsLanguages() {
+  return [
+    {name: 'typescript', func: typescript},
+    {name: 'html', func: xml},
+    {name: 'ps', func: powershell },
+    {name: 'json', func: json },
+  ];
+}
 
 @NgModule({
   declarations: [
@@ -67,13 +84,18 @@ import { LetComponent } from './base/let/let.component';
     HotkeyComponent,
     LoadingComponent,
     LetComponent,
+    StartComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgMetro4Module
+    NgMetro4Module,
+    HighlightModule.forRoot({
+      languages: hljsLanguages
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

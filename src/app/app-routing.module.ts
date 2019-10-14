@@ -29,8 +29,13 @@ import {PanelComponent} from './controls/panel/panel.component';
 import {HotkeyComponent} from './controls/hotkey/hotkey.component';
 import {LoadingComponent} from './base/loading/loading.component';
 import {LetComponent} from './base/let/let.component';
+import {StartComponent} from './home/start/start.component';
+import {HomeComponent} from './home/home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'start', component: StartComponent },
+
   { path: 'form/tag-input', component: TagInputComponent },
   { path: 'form/select', component: SelectComponent },
   { path: 'form/input', component: InputComponent },

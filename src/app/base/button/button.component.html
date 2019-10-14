@@ -1,3 +1,136 @@
+<h1>Button</h1>
+
+<h2>Playground</h2>
+
+<div class="card">
+  <div class="card-content p-5">
+    <button m4-button [btn-style]="style" [outline]="outline" [rounded]="rounded" [shape]="shape" [disabled]="disabled"
+            [shadow]="shadow" [flat]="flat" [size]="size">
+      <m4-icon *ngIf="showIcon" icon="checkmark"></m4-icon>
+      <span *ngIf="showText">Example button</span>
+    </button>
+  </div>
+
+  <div class="card-footer">
+    <div class="row w-100">
+      <div class="cell-4">
+        <m4-select prepend="Style" [(ngModel)]="style" [options]="styles"></m4-select>
+      </div>
+      <div class="cell-4">
+        <m4-select prepend="Size" [(ngModel)]="size" [options]="sizes"></m4-select>
+      </div>
+      <div class="cell-4">
+        <m4-checkbox [(ngModel)]="showIcon" caption="Show icon"></m4-checkbox>
+        <m4-checkbox [(ngModel)]="showText" caption="Show text"></m4-checkbox>
+        <m4-checkbox [(ngModel)]="outline" caption="Outline"></m4-checkbox>
+        <m4-checkbox [(ngModel)]="rounded" caption="Rounded"></m4-checkbox>
+        <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+        <m4-checkbox [(ngModel)]="flat" caption="Flat"></m4-checkbox>
+        <m4-checkbox [(ngModel)]="shadow" caption="Shadow"></m4-checkbox>
+      </div>
+      <div class="cell-4">
+        <m4-select prepend="Shape" [(ngModel)]="shape" [options]="shapes"></m4-select>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2>Basic usage</h2>
+
+<div class="card">
+  <div class="card-content p-5">
+    <button m4-button>button</button>
+    <button m4-button btn-style="primary">button</button>
+    <button m4-button btn-style="secondary">button</button>
+    <button m4-button btn-style="success">button</button>
+    <button m4-button btn-style="alert">button</button>
+    <button m4-button btn-style="warning">button</button>
+    <button m4-button btn-style="yellow">button</button>
+    <button m4-button btn-style="info">button</button>
+    <button m4-button btn-style="dark">button</button>
+    <button m4-button btn-style="light">button</button>
+    <button m4-button btn-style="link">button</button>
+  </div>
+</div>
+
+<pre><code [highlight]="basicButtons" [languages]="['html']"></code></pre>
+
+<h2>Button with icon</h2>
+
+<div class="card">
+  <div class="card-content p-5">
+    <button m4-button>
+      <m4-icon icon="add"></m4-icon>
+      button
+    </button>
+  </div>
+</div>
+
+<pre><code [highlight]="iconButton" [languages]="['html']"></code></pre>
+
+<h2>Outline buttons</h2>
+
+<div class="card">
+  <div class="card-content p-5">
+    <button m4-button [outline]="true">button</button>
+    <button m4-button [outline]="true" btn-style="primary">button</button>
+    <button m4-button [outline]="true" btn-style="secondary">button</button>
+    <button m4-button [outline]="true" btn-style="success">button</button>
+    <button m4-button [outline]="true" btn-style="alert">button</button>
+    <button m4-button [outline]="true" btn-style="warning">button</button>
+    <button m4-button [outline]="true" btn-style="yellow">button</button>
+    <button m4-button [outline]="true" btn-style="info">button</button>
+    <button m4-button [outline]="true" btn-style="dark">button</button>
+    <button m4-button [outline]="true" btn-style="light">button</button>
+    <button m4-button [outline]="true" btn-style="link">button</button>
+  </div>
+</div>
+
+<pre><code [highlight]="outlineButtons" [languages]="['html']"></code></pre>
+
+<h2>Button sizes</h2>
+
+<div class="card">
+  <div class="card-content p-5">
+    <button m4-button btn-style="primary" size="mini">button</button>
+    <button m4-button btn-style="primary" size="small">button</button>
+    <button m4-button btn-style="primary">button</button>
+    <button m4-button btn-style="primary" size="large">button</button>
+    <button m4-button btn-style="primary" [outline]="true" size="mini">button</button>
+    <button m4-button btn-style="primary" [outline]="true" size="small">button</button>
+    <button m4-button btn-style="primary" [outline]="true">button</button>
+    <button m4-button btn-style="primary" [outline]="true" size="large">button</button>
+  </div>
+</div>
+
+<pre><code [highlight]="buttonsSizes" [languages]="['html']"></code></pre>
+
+<h2>Rounded corners</h2>
+
+<div class="card">
+  <div class="card-content p-5">
+    <button m4-button btn-style="primary" [rounded]="true">button</button>
+  </div>
+</div>
+
+<pre><code [highlight]="roundedCode" [languages]="['html']"></code></pre>
+
+<h2>Square & cycle buttons</h2>
+
+<div class="card">
+  <div class="card-content p-5">
+    <button m4-button btn-style="primary" shape="square">
+      <m4-icon icon="checkmark"></m4-icon>
+    </button>
+    <button m4-button btn-style="primary" shape="cycle">
+      <m4-icon icon="checkmark"></m4-icon>
+    </button>
+  </div>
+</div>
+
+<pre><code [highlight]="shapesCode" [languages]="['html']"></code></pre>
+
 <m4-radio-group [(ngModel)]="type">
   <m4-radio value="" caption="Default"></m4-radio>
   <m4-radio value="primary" caption="Primary"></m4-radio>
@@ -37,11 +170,14 @@
 
 <br>
 
+
 <m4-input prepend="Color: " [(ngModel)]="color"></m4-input>
 
-<button m4-button [btn-style]="type" [outline]="outline" [rounded]="rounded" m4-ripple [ripple-color]="color" [ripple-alpha]="0.4">Type: {{type}}</button><br>
+<button m4-button [btn-style]="type" [outline]="outline" [rounded]="rounded" m4-ripple [ripple-color]="color"
+        [ripple-alpha]="0.4">Type: {{type}}</button><br>
 <button m4-button [btn-style]="type" [size]="size" [shape]="shape"><span class="mif-checkmark"></span> Test</button><br>
-<button m4-button [btn-style]="type" [flat]="flat" [shadow]="shadow" m4-animation="spin" animation-hover="true"><span class="mif-checkmark"></span></button>
+<button m4-button [btn-style]="type" [flat]="flat" [shadow]="shadow" m4-animation="spin" animation-hover="true"><span
+  class="mif-checkmark"></span></button>
 
 <br>
 
