@@ -1,6 +1,5 @@
-import {Directive, ElementRef, HostBinding, Input, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges} from '@angular/core';
+import {Directive, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
 import {AnimationType} from '../../helper/types';
-import {AttributeHelper} from '../../helper/attribute-helper';
 
 declare var $: any;
 
@@ -14,17 +13,17 @@ export class AnimationDirective implements OnInit, OnChanges {
   private jElement: any;
   private oldClasses: string[] = [];
 
-  constructor(private element: ElementRef, private renderer: Renderer2) {
+  constructor(private element: ElementRef) {
     this.jElement = $(this.element.nativeElement);
   }
 
   private createElement() {
     const newClasses = [ `ani-${this.hover ? 'hover-' : ''}${this.animation}` ];
 
-    this.oldClasses.ForEach(c => {
+    this.oldClasses.forEach(c => {
       this.jElement.removeClass(c);
     });
-    newClasses.ForEach(c => {
+    newClasses.forEach(c => {
       this.jElement.addClass(c);
     });
     this.oldClasses = newClasses;

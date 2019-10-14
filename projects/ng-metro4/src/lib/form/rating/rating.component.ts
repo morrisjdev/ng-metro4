@@ -4,6 +4,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
 import {RoundTypeType} from '../../helper/types';
+import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
@@ -35,13 +36,14 @@ export class RatingComponent extends ControlBase<string|number> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.rating = this.clonedElement.rating().data('rating');
@@ -50,7 +52,7 @@ export class RatingComponent extends ControlBase<string|number> {
         this.touchCallback();
       });
 
-      this.clonedElement.on('change', (event) => {
+      this.clonedElement.on('change', () => {
         const newValue = this.clonedElement.val();
         const valueParsed = +newValue;
 
@@ -65,7 +67,7 @@ export class RatingComponent extends ControlBase<string|number> {
     });
 
   }
-  
+
   disable(disabled: boolean): void {
     if (disabled) {
       this.clonedElement.parent().parent().addClass('disabled');

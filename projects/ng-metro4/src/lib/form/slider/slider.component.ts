@@ -4,6 +4,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
 import {PositionBaseType, ThinType} from '../../helper/types';
+import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
@@ -47,13 +48,14 @@ export class SliderComponent extends ControlBase<number> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.slider = this.clonedElement.slider().data('slider');
@@ -62,7 +64,7 @@ export class SliderComponent extends ControlBase<number> {
         this.touchCallback();
       });
 
-      this.clonedElement.on('change', (event) => {
+      this.clonedElement.on('change', () => {
         asapScheduler.schedule(() => {
           this.changeValue(+this.clonedElement.val());
         });

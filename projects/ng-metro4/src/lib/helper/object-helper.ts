@@ -13,4 +13,12 @@ export class ObjectHelper {
 
     return false;
   }
+
+  public static hide(object: any) {
+    object.addClass('d-none');
+  }
+
+  public static show(object: any) {
+    object.removeClass('d-none');
+  }
 }

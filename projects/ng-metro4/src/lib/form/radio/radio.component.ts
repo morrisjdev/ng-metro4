@@ -34,13 +34,14 @@ export class RadioComponent extends ControlBase<any> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.radio = this.clonedElement.radio().data('radio');
@@ -49,7 +50,7 @@ export class RadioComponent extends ControlBase<any> {
         this.touchCallback();
       });
 
-      this.clonedElement.on('change', (event) => {
+      this.clonedElement.on('change', () => {
         this.changeCallback(this.value);
       });
 
@@ -62,10 +63,10 @@ export class RadioComponent extends ControlBase<any> {
     asapScheduler.schedule(() => {
       if (disabled) {
         this.clonedElement.parent().addClass('disabled');
-        this.clonedElement.attr('disabled', '');
+        this.clonedElement.attr('disabled', 'disabled');
       } else {
         this.clonedElement.parent().removeClass('disabled');
-        this.clonedElement.attr('disabled', null);
+        this.clonedElement.removeAttr('disabled');
       }
     });
   }

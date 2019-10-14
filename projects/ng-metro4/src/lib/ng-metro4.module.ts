@@ -1,5 +1,5 @@
 import 'linq4js';
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {NgMetro4FormsModule} from './form/ng-metro4-forms.module';
 import {NgMetro4BaseModule} from './base/ng-metro4-base.module';

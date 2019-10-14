@@ -4,6 +4,7 @@ import {ControlBase} from '../control-base';
 import {PositionType} from '../../helper/types';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
+import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
@@ -43,13 +44,14 @@ export class KeypadComponent extends ControlBase<string|number> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.keypad = this.clonedElement.keypad().data('keypad');
@@ -58,7 +60,7 @@ export class KeypadComponent extends ControlBase<string|number> {
         this.touchCallback();
       });
 
-      this.clonedElement.on('change', (event) => {
+      this.clonedElement.on('change', () => {
         asapScheduler.schedule(() => {
           let newValue = this.clonedElement.val();
 

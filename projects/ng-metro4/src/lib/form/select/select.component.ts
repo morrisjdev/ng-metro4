@@ -3,6 +3,7 @@ import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
+import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
@@ -46,22 +47,23 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
-      this.clonedElement.html(this.clonedElement.find('[options]').html());
+      this.clonedElement.html(originalElement.html());
       this.select = this.clonedElement.select().data('select');
 
       this.clonedElement.parent().on('mousedown', (ev: MouseEvent) => {
         if (ev.button === 0) {
           this.touchCallback();
-          this.clonedElement.parent().unbind('mousedown');
+          this.clonedElement.parent().off('mousedown');
         }
       });
 
@@ -101,10 +103,6 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
     } else {
       this.select.val([this.innerValue]);
     }
-  }
-
-  renderOptions(): boolean {
-    return this.options instanceof Array;
   }
 
   newClassValue(newClasses: string[], oldClasses: string[]) {

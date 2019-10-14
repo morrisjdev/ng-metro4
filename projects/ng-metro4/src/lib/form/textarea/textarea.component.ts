@@ -3,6 +3,7 @@ import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
+import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
@@ -33,13 +34,14 @@ export class TextareaComponent extends ControlBase<string> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.textarea.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.textareaObj = this.clonedElement.textarea().data('textarea');
@@ -48,7 +50,7 @@ export class TextareaComponent extends ControlBase<string> {
         this.touchCallback();
       });
 
-      this.clonedElement.on('keydown change', (event) => {
+      this.clonedElement.on('keydown change', () => {
         asapScheduler.schedule(() => {
           this.changeValue(this.clonedElement.val());
         });

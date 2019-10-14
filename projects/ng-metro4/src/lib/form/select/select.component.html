@@ -18,7 +18,7 @@
 
   <ng-content *ngIf="!options"></ng-content>
 
-  <ng-container *ngIf="renderOptions()">
+  <ng-container *ngIf="options | isArray">
     <ng-container *ngFor="let option of options">
       <option *ngIf="!option.options" [value]="option.value" [attr.data-template]="option.dataTemplate">
         {{option.title}}
@@ -32,5 +32,3 @@
     </ng-container>
   </ng-container>
 </select>
-
-

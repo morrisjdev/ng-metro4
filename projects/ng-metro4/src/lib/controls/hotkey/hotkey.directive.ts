@@ -1,28 +1,25 @@
-import {Directive, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, Renderer2, SimpleChanges} from '@angular/core';
+import {Directive, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
 
 declare var $: any;
 
 @Directive({
   selector: '[m4-hotkey]'
 })
-export class HotkeyDirective implements OnInit, OnChanges {
+export class HotkeyDirective implements OnInit, OnChanges, OnDestroy {
   @Input('m4-hotkey') hotkey: string;
   @Output() hotkeyClick = new EventEmitter();
 
-  private previousHandle: any;
+  private previousKey: string;
 
-  constructor(private element: ElementRef, private renderer: Renderer2) { }
+  constructor() {}
 
   private createElement() {
-    if (this.previousHandle) {
-      $(document).unbind('keydown', this.previousHandle);
-    }
+    this.unregister();
+    this.previousKey = this.hotkey;
 
-    this.previousHandle = () => {
+    $(document).hotkey(this.hotkey, () => {
       this.hotkeyClick.emit();
-    };
-
-    $(document).bind('keydown', this.hotkey, this.previousHandle);
+    });
   }
 
   ngOnInit(): void {
@@ -31,5 +28,15 @@ export class HotkeyDirective implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.createElement();
+  }
+
+  private unregister() {
+    if (this.previousKey) {
+      $(document).off('keyup', null, {ns: 'hotkey-method-' + this.previousKey});
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.unregister();
   }
 }

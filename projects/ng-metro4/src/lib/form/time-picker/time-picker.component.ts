@@ -3,8 +3,8 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
 import {TypeAlias} from '../../helper/type-alias';
+import {ObjectHelper} from '../../helper/object-helper';
 
-const _moment = moment;
 declare var $: any;
 
 @Component({
@@ -35,13 +35,14 @@ export class TimePickerComponent extends ControlBase<moment.Duration> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.timePicker = this.clonedElement.timepicker().data('timepicker');
@@ -50,7 +51,7 @@ export class TimePickerComponent extends ControlBase<moment.Duration> {
         this.touchCallback();
       });
 
-      this.timePicker.options.onSet = (val, elem_val, elem, picker) => {
+      this.timePicker.options.onSet = (val, elem_val) => {
         this.changeValue(moment.duration(elem_val));
       };
 

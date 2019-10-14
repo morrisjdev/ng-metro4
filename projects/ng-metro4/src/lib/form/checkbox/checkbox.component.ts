@@ -3,6 +3,7 @@ import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {PositionHorizontalType} from '../../helper/types';
+import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
@@ -32,13 +33,14 @@ export class CheckboxComponent extends ControlBase<boolean> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.checkbox = this.clonedElement.checkbox().data('checkbox');
@@ -47,7 +49,7 @@ export class CheckboxComponent extends ControlBase<boolean> {
         this.touchCallback();
       });
 
-      this.clonedElement.on('change', (event) => {
+      this.clonedElement.on('change', () => {
         this.changeValue(this.clonedElement.prop('checked'));
       });
 
@@ -58,10 +60,10 @@ export class CheckboxComponent extends ControlBase<boolean> {
 
   disable(disabled: boolean): void {
     if (disabled) {
-      this.clonedElement.attr('disabled', '');
+      this.clonedElement.attr('disabled', 'disabled');
       this.checkbox.disable();
     } else {
-      this.clonedElement.attr('disabled', null);
+      this.clonedElement.removeAttr('disabled');
       this.checkbox.enable();
     }
   }

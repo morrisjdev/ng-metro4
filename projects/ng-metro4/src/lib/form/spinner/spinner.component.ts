@@ -4,6 +4,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
 import {PositionHorizontalType} from '../../helper/types';
+import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
@@ -37,13 +38,14 @@ export class SpinnerComponent extends ControlBase<number> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.spinner = this.clonedElement.spinner().data('spinner');

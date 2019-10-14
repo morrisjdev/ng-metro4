@@ -3,6 +3,7 @@ import {ControlBase} from '../control-base';
 import * as moment from 'moment';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
+import {ObjectHelper} from '../../helper/object-helper';
 
 const _moment = moment;
 declare var $: any;
@@ -36,13 +37,14 @@ export class DatePickerComponent extends ControlBase<moment.Moment> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.datePicker = this.clonedElement.datepicker().data('datepicker');
@@ -51,7 +53,7 @@ export class DatePickerComponent extends ControlBase<moment.Moment> {
         this.touchCallback();
       });
 
-      this.datePicker.options.onSet = (val, elem_val, elem, picker) => {
+      this.datePicker.options.onSet = (val, elem_val) => {
         this.changeValue(_moment(elem_val, 'YYYY-MM-DD'));
       };
 

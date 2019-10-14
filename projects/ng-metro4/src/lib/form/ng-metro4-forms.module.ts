@@ -21,6 +21,7 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 import { TimePickerComponent } from './time-picker/time-picker.component';
 import {FormsModule} from '@angular/forms';
 import { CheckboxGroupComponent } from './checkbox-group/checkbox-group.component';
+import {IsArrayPipe} from '../helper/pipes/is-array.pipe';
 
 const declarations = [
   TagInputComponent,
@@ -50,6 +51,7 @@ const declarations = [
     FormsModule
   ],
   declarations: [
+    IsArrayPipe,
     ...declarations,
   ],
   exports: [

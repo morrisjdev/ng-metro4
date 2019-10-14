@@ -1,17 +1,19 @@
 {
-    "extends": "../../tslint.json",
-    "rules": {
-        "directive-selector": [
-            true,
-            "attribute",
-            "m4",
-            "camelCase"
-        ],
-        "component-selector": [
-            true,
-            "element",
-            "m4",
-            "kebab-case"
-        ]
-    }
+  "extends": "../../tslint.json",
+  "rules": {
+    "no-input-rename": false,
+    "no-output-rename": false,
+    "directive-selector": [
+      true,
+      "attribute",
+      "m4",
+      "kebab-case"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "m4",
+      "kebab-case"
+    ]
+  }
 }

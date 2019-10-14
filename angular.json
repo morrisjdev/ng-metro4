@@ -31,8 +31,6 @@
               "src/styles.less"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/jquery.hotkeys/jquery.hotkeys.js",
               "node_modules/metro4/build/js/metro.min.js"
             ]
           },

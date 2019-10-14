@@ -3,6 +3,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {TypeAlias} from '../../helper/type-alias';
 import {PositionHorizontalType} from '../../helper/types';
+import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
@@ -29,13 +30,14 @@ export class SwitchComponent extends ControlBase<boolean> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.switch = this.clonedElement.switch().data('switch');
@@ -44,7 +46,7 @@ export class SwitchComponent extends ControlBase<boolean> {
         this.touchCallback();
       });
 
-      this.clonedElement.on('change', (event) => {
+      this.clonedElement.on('change', () => {
         this.changeValue(this.clonedElement.prop('checked'));
       });
 
@@ -55,10 +57,10 @@ export class SwitchComponent extends ControlBase<boolean> {
 
   disable(disabled: boolean): void {
     if (disabled) {
-      this.clonedElement.attr('disabled', '');
+      this.clonedElement.attr('disabled', 'disabled');
       this.switch.disable();
     } else {
-      this.clonedElement.attr('disabled', null);
+      this.clonedElement.removeAttr('disabled');
       this.switch.enable();
     }
   }

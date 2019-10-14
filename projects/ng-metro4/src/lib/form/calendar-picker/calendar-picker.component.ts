@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import {WidePointType} from '../../helper/types';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
+import {ObjectHelper} from '../../helper/object-helper';
 
 const _moment = moment;
 declare var $: any;
@@ -59,13 +60,14 @@ export class CalendarPickerComponent extends ControlBase<moment.Moment> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.calendarPicker = this.clonedElement.calendarpicker().data('calendarpicker');
@@ -74,7 +76,7 @@ export class CalendarPickerComponent extends ControlBase<moment.Moment> {
         this.touchCallback();
       });
 
-      this.calendarPicker.options.onChange = (val, date, el) => {
+      this.calendarPicker.options.onChange = (val) => {
         this.changeValue(_moment(val.toLocaleDateString('en'), 'MM/DD/YYYY'));
       };
 

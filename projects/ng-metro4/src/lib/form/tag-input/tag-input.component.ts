@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {TypeAlias} from '../../helper/type-alias';
+import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
@@ -29,13 +30,14 @@ export class TagInputComponent extends ControlBase<string[]> {
   createControl() {
     return new Promise<void>((complete) => {
       const originalElement = $(this.input.nativeElement);
-      originalElement.hide();
+      ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
         this.clonedElement.parent().remove();
       }
 
-      this.clonedElement = originalElement.clone().show();
+      this.clonedElement = originalElement.clone();
+      ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
       this.tagInput = this.clonedElement.taginput().data('taginput');
