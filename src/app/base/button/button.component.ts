@@ -8,6 +8,38 @@ import {accentDictionary, AccentType, buttonShapeDictionary, ButtonShapeType, si
 })
 export class ButtonComponent implements OnInit {
 
+  btnMarkup = `<button m4-button [btn-style]="style" [outline]="outline" [rounded]="rounded" [shape]="shape" [disabled]="disabled"
+        [shadow]="shadow" [flat]="flat" [size]="size">
+  <m4-icon *ngIf="showIcon" icon="checkmark"></m4-icon>
+  <span *ngIf="showText">Example button</span>
+</button>
+
+<button m4-button [btn-style]="style" [outline]="outline" [rounded]="rounded" [shape]="shape" [disabled]="disabled"
+        [shadow]="shadow" [size]="size" special-btn="command">
+  <span class="mif-share icon"></span>
+  <span class="caption">
+    Yes, share and connect
+    <small>Use this option for home or work</small>
+  </span>
+</button>
+
+<button m4-button [btn-style]="style" [outline]="outline" [rounded]="rounded" [shape]="shape" [disabled]="disabled"
+        [shadow]="shadow" [flat]="flat" [size]="size" special-btn="image">
+  <span class="mif-share icon"></span>
+  <span class="caption">
+    Share it
+  </span>
+</button>
+
+<button m4-button [btn-style]="style" [outline]="outline" [rounded]="rounded" [shape]="shape" [disabled]="disabled"
+        [shadow]="shadow" [flat]="flat" [size]="size" special-btn="shortcut">
+  <span class="tag">10</span>
+  <span class="caption">
+    Shortcut
+  </span>
+  <span class="mif-rocket icon"></span>
+</button>`;
+
   basicButtons = `<button m4-button>button</button>
 <button m4-button btn-style="primary">button</button>
 <button m4-button btn-style="secondary">button</button>

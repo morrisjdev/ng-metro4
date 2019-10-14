@@ -35,101 +35,19 @@
   </div>
 </div>
 
+<pre><code [highlight]="btnMarkup" [languages]="['html']"></code></pre>
 
-<h2>Basic usage</h2>
+<app-doc-component title="Basic usage" [html]="basicButtons"></app-doc-component>
 
-<div class="card">
-  <div class="card-content p-5">
-    <button m4-button>button</button>
-    <button m4-button btn-style="primary">button</button>
-    <button m4-button btn-style="secondary">button</button>
-    <button m4-button btn-style="success">button</button>
-    <button m4-button btn-style="alert">button</button>
-    <button m4-button btn-style="warning">button</button>
-    <button m4-button btn-style="yellow">button</button>
-    <button m4-button btn-style="info">button</button>
-    <button m4-button btn-style="dark">button</button>
-    <button m4-button btn-style="light">button</button>
-    <button m4-button btn-style="link">button</button>
-  </div>
-</div>
+<app-doc-component title="Button with icon" [html]="iconButton"></app-doc-component>
 
-<pre><code [highlight]="basicButtons" [languages]="['html']"></code></pre>
+<app-doc-component title="Outline buttons" [html]="outlineButtons"></app-doc-component>
 
-<h2>Button with icon</h2>
+<app-doc-component title="Button sizes" [html]="buttonsSizes"></app-doc-component>
 
-<div class="card">
-  <div class="card-content p-5">
-    <button m4-button>
-      <m4-icon icon="add"></m4-icon>
-      button
-    </button>
-  </div>
-</div>
+<app-doc-component title="Rounded corners" [html]="roundedCode"></app-doc-component>
 
-<pre><code [highlight]="iconButton" [languages]="['html']"></code></pre>
-
-<h2>Outline buttons</h2>
-
-<div class="card">
-  <div class="card-content p-5">
-    <button m4-button [outline]="true">button</button>
-    <button m4-button [outline]="true" btn-style="primary">button</button>
-    <button m4-button [outline]="true" btn-style="secondary">button</button>
-    <button m4-button [outline]="true" btn-style="success">button</button>
-    <button m4-button [outline]="true" btn-style="alert">button</button>
-    <button m4-button [outline]="true" btn-style="warning">button</button>
-    <button m4-button [outline]="true" btn-style="yellow">button</button>
-    <button m4-button [outline]="true" btn-style="info">button</button>
-    <button m4-button [outline]="true" btn-style="dark">button</button>
-    <button m4-button [outline]="true" btn-style="light">button</button>
-    <button m4-button [outline]="true" btn-style="link">button</button>
-  </div>
-</div>
-
-<pre><code [highlight]="outlineButtons" [languages]="['html']"></code></pre>
-
-<h2>Button sizes</h2>
-
-<div class="card">
-  <div class="card-content p-5">
-    <button m4-button btn-style="primary" size="mini">button</button>
-    <button m4-button btn-style="primary" size="small">button</button>
-    <button m4-button btn-style="primary">button</button>
-    <button m4-button btn-style="primary" size="large">button</button>
-    <button m4-button btn-style="primary" [outline]="true" size="mini">button</button>
-    <button m4-button btn-style="primary" [outline]="true" size="small">button</button>
-    <button m4-button btn-style="primary" [outline]="true">button</button>
-    <button m4-button btn-style="primary" [outline]="true" size="large">button</button>
-  </div>
-</div>
-
-<pre><code [highlight]="buttonsSizes" [languages]="['html']"></code></pre>
-
-<h2>Rounded corners</h2>
-
-<div class="card">
-  <div class="card-content p-5">
-    <button m4-button btn-style="primary" [rounded]="true">button</button>
-  </div>
-</div>
-
-<pre><code [highlight]="roundedCode" [languages]="['html']"></code></pre>
-
-<h2>Square & cycle buttons</h2>
-
-<div class="card">
-  <div class="card-content p-5">
-    <button m4-button btn-style="primary" shape="square">
-      <m4-icon icon="checkmark"></m4-icon>
-    </button>
-    <button m4-button btn-style="primary" shape="cycle">
-      <m4-icon icon="checkmark"></m4-icon>
-    </button>
-  </div>
-</div>
-
-<pre><code [highlight]="shapesCode" [languages]="['html']"></code></pre>
+<app-doc-component title="Square & cycle buttons" [html]="shapesCode"></app-doc-component>
 
 <m4-radio-group [(ngModel)]="type">
   <m4-radio value="" caption="Default"></m4-radio>
