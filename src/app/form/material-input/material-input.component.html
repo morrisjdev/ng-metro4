@@ -1,0 +1,66 @@
+<h1>Material input</h1>
+
+<app-doc-component title="Playground"
+                   [values]="{ model: 'value', type: 'text', icon: '<span class=\'mif-envelop\'></span>' }"
+                   [showModel]="true">
+  <![CDATA[
+  <m4-material-input [type]="type" [(ngModel)]="model" [label]="label" [informer]="informer" [disabled]="disabled"\l
+            \t\t[placeholder]="placeholder" [icon]="icon"></m4-material-input>
+
+  \i
+  <hr>
+
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input prepend="Placeholder" [(ngModel)]="placeholder"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Label" [(ngModel)]="label"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Informer" [(ngModel)]="informer"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Icon" [(ngModel)]="icon"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Type" [options]="inputDictionary" [(ngModel)]="type"></m4-select>
+    </div>
+
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Basic usage" [showModel]="true" [values]="{ model: 'value' }">
+  <![CDATA[
+  <m4-material-input [(ngModel)]="model"></m4-material-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Placeholder" [showModel]="true" [values]="{ model: '' }">
+  <![CDATA[
+  <m4-material-input [(ngModel)]="model" placeholder="Placeholder"></m4-material-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Label" [showModel]="true" [values]="{ model: 'value' }">
+  <![CDATA[
+  <m4-material-input [(ngModel)]="model" label="Label"></m4-material-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Informer" [showModel]="true" [values]="{ model: 'value' }">
+  <![CDATA[
+  <m4-material-input [(ngModel)]="model" informer="Information"></m4-material-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Icon" [showModel]="true" [values]="{ model: 'value' }">
+  <![CDATA[
+  <m4-material-input [(ngModel)]="model" icon="<span class='mif-envelop'></span>"></m4-material-input>
+  ]]>
+</app-doc-component>
+

@@ -4,6 +4,7 @@ import {ControlBase} from '../control-base';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
 import {ObjectHelper} from '../../helper/object-helper';
+import {InputType} from '../../helper/types';
 
 declare var $: any;
 
@@ -15,7 +16,7 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MaterialInputComponent extends ControlBase<string> {
-  @Input('type') type = 'text';
+  @Input('type') type: InputType = 'text';
   @Input('placeholder') placeholder = '';
   @Input('label') label: string;
   @Input('informer') informer: string;
@@ -67,8 +68,10 @@ export class MaterialInputComponent extends ControlBase<string> {
 
   disable(disabled: boolean): void {
     if (disabled) {
+      this.clonedElement.attr('disabled', 'disabled');
       this.materialInput.disable();
     } else {
+      this.clonedElement.removeAttr('disabled');
       this.materialInput.enable();
     }
   }

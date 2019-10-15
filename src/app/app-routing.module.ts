@@ -31,6 +31,8 @@ import {LoadingComponent} from './base/loading/loading.component';
 import {LetComponent} from './base/let/let.component';
 import {StartComponent} from './home/start/start.component';
 import {HomeComponent} from './home/home/home.component';
+import {MaterialInputComponent} from './form/material-input/material-input.component';
+import {SwitchComponent} from './form/switch/switch.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,8 +41,10 @@ const routes: Routes = [
   { path: 'form/tag-input', component: TagInputComponent },
   { path: 'form/select', component: SelectComponent },
   { path: 'form/input', component: InputComponent },
+  { path: 'form/material_input', component: MaterialInputComponent },
   { path: 'form/textarea', component: TextareaComponent },
   { path: 'form/checkbox', component: CheckboxComponent },
+  { path: 'form/switch', component: SwitchComponent },
   { path: 'form/radio', component: RadioComponent },
   { path: 'form/file-input', component: FileInputComponent },
   { path: 'form/keypad', component: KeypadComponent },

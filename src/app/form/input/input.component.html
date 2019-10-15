@@ -1,23 +1,108 @@
 <h1>Input</h1>
 
+<app-doc-component title="Playground"
+                   [values]="{ model: 'value', clearBtn: true, clearBtnIcon: '<span class=\'mif-cross\'></span>', type: 'text', placeholder: '', revealIcon: '<span class=\'mif-eye\'></span>', searchIcon: '<span class=\'mif-search\'></span>' }"
+                   [showModel]="true">
+  <![CDATA[
+  <m4-input [type]="type" [(ngModel)]="model" [prepend]="prepend" [append]="append" [disabled]="disabled"\l
+            \t\t[placeholder]="placeholder" [clear-button]="clearBtn" [clear-button-icon]="clearBtnIcon"\l
+            \t\t[reveal-button]="revealBtn" [reveal-button-icon]="revealIcon" [search-button]="searchBtn"\l
+            \t\t[search-button-icon]="searchIcon" [autocomplete]="autocomplete" [default-value]="defaultValue"\l
+            \t\t[custom-buttons]="customButtons" [class]="accent"></m4-input>
+
+  \i
+  <hr>
+
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input prepend="Placeholder" [(ngModel)]="placeholder"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Prepend" [(ngModel)]="prepend"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Append" [(ngModel)]="append"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Clear icon" [(ngModel)]="clearBtnIcon"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Reveal icon" [(ngModel)]="revealIcon"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Search icon" [(ngModel)]="searchIcon"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Type" [options]="inputDictionary" [(ngModel)]="type"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Autocomplete values" [multiple]="true"
+                 [options]="{'test': 'test', 'magic': 'magic', 'awesome': 'awesome'}"
+                 [(ngModel)]="autocomplete"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Default value" [(ngModel)]="defaultValue"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
+
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="clearBtn" caption="Show clear button"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="revealBtn" caption="Show reveal button"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="searchBtn" caption="Show search button"></m4-checkbox><br>
+
+      <m4-checkbox-group [(ngModel)]="customButtons">
+        <m4-checkbox [value]="{ html: '<span class=\'mif-user\'></span>', cls: 'success' }" caption="Custom btn1"></m4-checkbox>
+        <m4-checkbox [value]="{ html: '<span class=\'mif-user\'></span>', cls: 'primary' }" caption="Custom btn2"></m4-checkbox>
+        <m4-checkbox [value]="{ html: '<span class=\'mif-user\'></span>', cls: 'warning' }" caption="Custom btn3"></m4-checkbox>
+      </m4-checkbox-group>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
+
 <app-doc-component title="Basic usage" [values]="{ model: 'value' }" [showModel]="true">
   <![CDATA[
   <m4-input [(ngModel)]="model"></m4-input>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Prepend/Append" [showModel]="true" [values]="{ model: 'value', prepend: 'Example Description' }">
+<app-doc-component title="Placeholder" [values]="{ model: '' }" [showModel]="true">
   <![CDATA[
-  <m4-input [(ngModel)]="prepend" prepend="Change prepend value"></m4-input>\n
-  <m4-input [(ngModel)]="model" [prepend]="prepend"></m4-input>\n
+  <m4-input [(ngModel)]="model" placeholder="Placeholder"></m4-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Prepend/Append" [showModel]="true"
+                   [values]="{ model: 'value', prepend: 'Example Description' }">
+  <![CDATA[
+  <m4-input [(ngModel)]="prepend" prepend="Change prepend value"></m4-input>
+  \n
+  <m4-input [(ngModel)]="model" [prepend]="prepend"></m4-input>
+  \n
   <m4-input [(ngModel)]="model" [append]="prepend"></m4-input>
   ]]>
 </app-doc-component>
 
 <app-doc-component title="Clear button">
   <![CDATA[
-  <m4-input [ngModel]="'value'" [clear-button]="true"></m4-input>\n
-  <m4-input [ngModel]="'value'" [clear-button]="false"></m4-input>\n
+  Default\l
+  <m4-input [ngModel]="'value'"></m4-input>
+  \n
+
+  Clear button disabled\l
+  <m4-input [ngModel]="'value'" [clear-button]="false"></m4-input>
+  \n
+
+  Default value\l
+  <m4-input [ngModel]="'value'" [default-value]="'default value from reset'" [clear-button]="true"></m4-input>
+  \n
+
+  Custom icon\l
   <m4-input [ngModel]="'value'" clear-button-icon="<span class='mif-rocket'></span>"></m4-input>
   ]]>
 </app-doc-component>
@@ -36,14 +121,17 @@
 
 <app-doc-component title="Custom buttons" [values]="{ model: 'custom buttons', clickEvent: search }" [showModel]="true">
   <![CDATA[
-  <m4-input [(ngModel)]="model" [custom-buttons]="[{html: '<span class=\'mif-user\'></span>', cls: 'success', onclick: clickEvent }]"></m4-input>
+  <m4-input [(ngModel)]="model"
+            [custom-buttons]="[{html: '<span class=\'mif-user\'></span>', cls: 'success', onclick: clickEvent }]"></m4-input>
   ]]>
 </app-doc-component>
 
 <app-doc-component title="Autocomplete" [values]="{ model: 'automcomplete' }" [showModel]="true">
   <![CDATA[
-  <m4-input [(ngModel)]="model" [autocomplete]="['autocomplete', 'value', 'magic', 'useful', 'test']"></m4-input>\n
-  <m4-input [(ngModel)]="model" [autocomplete]="['autocomplete', 'value', 'magic', 'useful', 'test']" [autocomplete-list-height]="150"></m4-input>
+  <m4-input [(ngModel)]="model" [autocomplete]="['autocomplete', 'value', 'magic', 'useful', 'test']"></m4-input>
+  \n
+  <m4-input [(ngModel)]="model" [autocomplete]="['autocomplete', 'value', 'magic', 'useful', 'test']"
+            [autocomplete-list-height]="150"></m4-input>
   ]]>
 </app-doc-component>
 
@@ -52,48 +140,3 @@
   <m4-input type="number" [(ngModel)]="model"></m4-input>
   ]]>
 </app-doc-component>
-
-<m4-input [(ngModel)]="model"></m4-input>
-
-<button m4-button (click)="updateProp()">Update Test</button>
-
-<m4-input [(ngModel)]="model" (ngModelChange)="classTest($event)" [class.alert]="alert"></m4-input>
-<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
-
-<m4-input [(ngModel)]="model" [search-button]="true" (search-button-click)="search($event)"></m4-input>
-
-<m4-input [(ngModel)]="model" [search-button]="true" search-button-icon="<span class='mif-rocket mif-2x'></span>"
-          (search-button-click)="search($event)"></m4-input>
-
-<m4-input [(ngModel)]="model" [custom-buttons]="customButtons"></m4-input>
-
-<m4-input type="password" [(ngModel)]="model"></m4-input>
-
-<m4-input [(ngModel)]="model" [disabled]="true"></m4-input>
-
-<m4-input [(ngModel)]="prepend" prepend="Prepend"></m4-input>
-
-<m4-input [(ngModel)]="model" [prepend]="prepend" [append]="prepend"></m4-input>
-
-<m4-input [(ngModel)]="model" [default-value]="prepend" clear-button-icon="<span class='mif-amazon'></span>"></m4-input>
-
-<m4-input [(ngModel)]="model" [autocomplete]="['Demo', 'Test', 'Current', 'Magic', 'Awesome']"></m4-input>
-
-{{model | json}}
-
-<m4-input [(ngModel)]="modelNumber" type="number" prepend="Number"></m4-input>
-
-{{modelNumber | json}}
-
-<h1>Material Input</h1>
-
-<m4-material-input [(ngModel)]="mmodel" [class.alert]="alert"></m4-material-input>
-
-<m4-material-input [(ngModel)]="mmodel" type="password"></m4-material-input>
-
-<m4-material-input [(ngModel)]="modelNumber" type="number"></m4-material-input>
-
-<m4-material-input [(ngModel)]="mmodel" placeholder="test123"
-                   icon="<span class='mif-envelop'></span>" [label]="model" informer="das ist ein test"></m4-material-input>
-
-{{mmodel | json}}

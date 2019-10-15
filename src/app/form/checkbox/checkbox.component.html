@@ -1,91 +1,187 @@
 <h1>Checkbox</h1>
 
-<m4-checkbox [(ngModel)]="model" [disabled]="!model"></m4-checkbox>
-<m4-checkbox [(ngModel)]="model" [disabled]="model"></m4-checkbox><br>
+<app-doc-component title="Playground" [values]="{ model: true, style: 1 }" [showModel]="true">
+  <![CDATA[
+  <m4-checkbox [(ngModel)]="model" [disabled]="disabled" [caption]="caption" [caption-position]="captionPosition" \l
+               \t\t[indeterminate]="indeterminate" [style]="style"></m4-checkbox>
 
-<m4-checkbox [(ngModel)]="model" [class.bg-red]="alert"></m4-checkbox>
-<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
+  \i
+  <hr>
 
-<m4-checkbox [(ngModel)]="model" [disabled]="true"></m4-checkbox>
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input prepend="Caption" [(ngModel)]="caption"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Caption position" [(ngModel)]="captionPosition"
+                 [options]="positionHorizontalDictionary"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Style" [(ngModel)]="style"
+                 [options]="{'1': 1, '2': 2}"></m4-select>
+    </div>
 
-<m4-checkbox [ngModel]="true" [disabled]="model"></m4-checkbox>
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="indeterminate" caption="Indeterminate"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
 
-<m4-checkbox [ngModel]="false" [disabled]="model"></m4-checkbox>
+<app-doc-component title="Basic usage" [values]="{ model: true }" [showModel]="true">
+  <![CDATA[
+  <m4-checkbox [(ngModel)]="model"></m4-checkbox>
+  \n
+  <m4-checkbox [(ngModel)]="model" [disabled]="true"></m4-checkbox>
+  ]]>
+</app-doc-component>
 
-<m4-checkbox [ngModel]="model" [style]="1"></m4-checkbox>
+<app-doc-component title="Checkbox group" [values]="{ model: [1, 2, 6] }" [showModel]="true">
+  <![CDATA[
+  <m4-checkbox-group [(ngModel)]="model" [disabled]="disabled">\l
+    \t
+    <m4-checkbox caption="1" [value]="1"></m4-checkbox>
+    \l
+    \t
+    <m4-checkbox caption="2" [value]="2"></m4-checkbox>
+    \l
+    \t
+    <m4-checkbox caption="3" [value]="3"></m4-checkbox>
+    \l
+    \t
+    <m4-checkbox caption="4" [value]="4"></m4-checkbox>
+    \l
+    \t
+    <m4-checkbox caption="5" [value]="5"></m4-checkbox>
+    \l
+    \t
+    <m4-checkbox caption="6" [value]="6"></m4-checkbox>
+    \l
+  </m4-checkbox-group>
 
-<m4-checkbox [ngModel]="model" [style]="2"></m4-checkbox><br>
+  \i
+  <hr>
+  <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+  ]]>
+</app-doc-component>
 
-<m4-checkbox [ngModel]="model" caption="Test"></m4-checkbox><br>
+<app-doc-component title="Style" [values]="{ model: true }" [showModel]="true">
+  <![CDATA[
+  <m4-checkbox [(ngModel)]="model"></m4-checkbox>
+  \n
+  <m4-checkbox [(ngModel)]="model" [style]="2"></m4-checkbox>
+  ]]>
+</app-doc-component>
 
-<m4-checkbox [ngModel]="model" caption="Test" caption-position="left"></m4-checkbox><br>
+<app-doc-component title="Caption" [values]="{ model: true }" [showModel]="true">
+  <![CDATA[
+  <m4-checkbox [(ngModel)]="model" caption="Description"></m4-checkbox>
+  \n
+  <m4-checkbox [(ngModel)]="model" caption="Description" caption-position="left"></m4-checkbox>
+  ]]>
+</app-doc-component>
 
-<m4-checkbox [ngModel]="model" [indeterminate]="true"></m4-checkbox><br>
+<app-doc-component title="Indeterminate" [values]="{ model: true }" [showModel]="true">
+  <![CDATA[
+  <m4-checkbox [(ngModel)]="model" [indeterminate]="true"></m4-checkbox>
+  \n
+  <m4-checkbox [(ngModel)]="model" [indeterminate]="true" [style]="2"></m4-checkbox>
+  ]]>
+</app-doc-component>
 
-{{model | json}}
-
-<h1>Switch</h1>
-
-<m4-switch [(ngModel)]="model" [class.bg-red]="alert"></m4-switch><br>
-
-<m4-switch [(ngModel)]="model" [disabled]="true"></m4-switch><br>
-
-<m4-switch [(ngModel)]="model" caption="Test"></m4-switch><br>
-
-<m4-switch [(ngModel)]="model" caption="Test" caption-position="left"></m4-switch><br>
-
-{{model | json}}
-
-<h1>Checkbox Group</h1>
-
-<m4-checkbox-group [(ngModel)]="group" [disabled]="model">
-  <m4-checkbox [value]="{test: 1}" caption="Object"></m4-checkbox>
-  <m4-checkbox [value]="{test: 2}" caption="Object 2"></m4-checkbox>
-  <m4-checkbox [value]="123" caption="Number"></m4-checkbox>
-  <m4-checkbox [value]="234" caption="Number 2"></m4-checkbox>
-  <m4-checkbox value="Test" caption="String"></m4-checkbox>
-  <m4-checkbox value="Test 2" caption="String 2"></m4-checkbox>
-  <m4-checkbox [value]="[1, 2, 3]" caption="Array"></m4-checkbox>
-  <m4-checkbox [value]="[2, 3, 4]" caption="Array 2"></m4-checkbox>
-</m4-checkbox-group>
-
-<m4-checkbox-group [(ngModel)]="group" [disabled]="model">
-  <m4-checkbox [value]="{test: 1}" caption="Object"></m4-checkbox>
-  <m4-checkbox [value]="{test: 2}" caption="Object 2"></m4-checkbox>
-  <m4-checkbox [value]="123" caption="Number"></m4-checkbox>
-  <m4-checkbox [value]="234" caption="Number 2"></m4-checkbox>
-  <m4-checkbox value="Test" caption="String"></m4-checkbox>
-  <m4-checkbox value="Test 2" caption="String 2"></m4-checkbox>
-  <m4-checkbox [value]="[1, 2, 3]" caption="Array"></m4-checkbox>
-  <m4-checkbox [value]="[2, 3, 4]" caption="Array 2"></m4-checkbox>
-</m4-checkbox-group>
-
-{{group | json}}
-
-<br>
-
-<m4-checkbox-group [(ngModel)]="listView">
-  <ul data-role="treeview">
-    <li>
-      <m4-checkbox caption="Play video"></m4-checkbox>
-      <ul>
-        <li><m4-checkbox caption="AVI" value="avi"></m4-checkbox></li>
-        <li><input type="checkbox" data-role="checkbox" data-caption="MPEG" title=""></li>
-        <li><input checked type="checkbox" data-role="checkbox" data-caption="VIDX" title=""></li>
-        <li><input type="checkbox" data-role="checkbox" data-caption="MP4" title=""></li>
-        <li><input checked type="checkbox" data-role="checkbox" data-caption="XVID" title=""></li>
-      </ul>
-    </li>
-    <li><input type="checkbox" data-role="checkbox" data-caption="Play audio" title=""></li>
-    <li>
-      <input type="checkbox" data-role="checkbox" data-caption="Subtitles" title="">
-      <ul>
-        <li><input type="checkbox" data-role="checkbox" data-caption="English" title=""></li>
-        <li><input checked type="checkbox" data-role="checkbox" data-caption="Ukrainian" title=""></li>
-        <li><input type="checkbox" data-role="checkbox" data-caption="Dutch" title=""></li>
-      </ul>
-    </li>
-  </ul>
-</m4-checkbox-group>
-
-{{listView | json}}
+<app-doc-component title="Treeview (Bugfixing in progress!)" [values]="{ model: [1, 3, 5, 11] }" [showModel]="true">
+  <![CDATA[
+  <m4-checkbox-group [(ngModel)]="model">\l
+    \t
+    <ul data-role="treeview">\l
+      \t\t
+      <li>\l
+        \t\t\t
+        <m4-checkbox caption="First section"></m4-checkbox>
+        \l
+        \t\t\t
+        <ul>\l
+          \t\t\t\t
+          <li>
+            <m4-checkbox caption="1" [value]="1"></m4-checkbox>
+          </li>
+          \l
+          \t\t\t\t
+          <li>
+            <m4-checkbox caption="2" [value]="2"></m4-checkbox>
+          </li>
+          \l
+          \t\t\t\t
+          <li>
+            <m4-checkbox caption="3" [value]="3"></m4-checkbox>
+          </li>
+          \l
+          \t\t\t\t
+          <li>
+            <m4-checkbox caption="4" [value]="4"></m4-checkbox>
+          </li>
+          \l
+          \t\t\t\t
+          <li>
+            <m4-checkbox caption="5" [value]="5"></m4-checkbox>
+          </li>
+          \l
+          \t\t\t
+        </ul>
+        \l
+        \t\t
+      </li>
+      \l
+      \t\t
+      <li>\l
+        \t\t\t
+        <m4-checkbox caption="6" [value]="6"></m4-checkbox>
+        \l
+        \t\t
+      </li>
+      \l
+      \t\t
+      <li>\l
+        \t\t\t
+        <m4-checkbox caption="Second section"></m4-checkbox>
+        \l
+        \t\t\t
+        <ul>\l
+          \t\t\t\t
+          <li>
+            <m4-checkbox caption="7" [value]="7"></m4-checkbox>
+          </li>
+          \l
+          \t\t\t\t
+          <li>
+            <m4-checkbox caption="8" [value]="8"></m4-checkbox>
+          </li>
+          \l
+          \t\t\t\t
+          <li>
+            <m4-checkbox caption="9" [value]="9"></m4-checkbox>
+          </li>
+          \l
+          \t\t\t\t
+          <li>
+            <m4-checkbox caption="10" [value]="10"></m4-checkbox>
+          </li>
+          \l
+          \t\t\t\t
+          <li>
+            <m4-checkbox caption="11" [value]="11"></m4-checkbox>
+          </li>
+          \l
+          \t\t\t
+        </ul>
+        \l
+        \t\t
+      </li>
+      \l
+      \t
+    </ul>
+    \l
+  </m4-checkbox-group>
+  ]]>
+</app-doc-component>

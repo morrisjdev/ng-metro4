@@ -14,6 +14,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler, Observable} from 'rxjs';
 import {ObjectHelper} from '../../helper/object-helper';
+import {InputType} from '../../helper/types';
 
 declare var $: any;
 
@@ -29,7 +30,7 @@ export class InputComponent extends ControlBase<string|number> {
   @Output('search-button-click') searchButtonClick = new EventEmitter<string|number>();
 
   @Input('placeholder') placeholder = '';
-  @Input('type') type = 'text';
+  @Input('type') type: InputType = 'text';
   @Input('default-value') defaultValue: any;
   @Input('size') size: number;
   @Input('prepend') prepend: string;

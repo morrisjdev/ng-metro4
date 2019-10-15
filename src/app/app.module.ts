@@ -42,8 +42,9 @@ import { LetComponent } from './base/let/let.component';
 import {HighlightModule} from 'ngx-highlightjs';
 import { StartComponent } from './home/start/start.component';
 import { HomeComponent } from './home/home/home.component';
-import { HtmlPipe } from './helper/html.pipe';
 import { DocComponentComponent } from './helper/doc-component/doc-component.component';
+import { MaterialInputComponent } from './form/material-input/material-input.component';
+import { SwitchComponent } from './form/switch/switch.component';
 
 export function hljsLanguages() {
   return [
@@ -88,8 +89,9 @@ export function hljsLanguages() {
     LetComponent,
     StartComponent,
     HomeComponent,
-    HtmlPipe,
     DocComponentComponent,
+    MaterialInputComponent,
+    SwitchComponent,
   ],
   imports: [
     BrowserModule,

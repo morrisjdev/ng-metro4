@@ -19,7 +19,7 @@ import {
   buttonShapeDictionary,
   buttonSpecialDictionary,
   colorDictionary, easingDictionary, gravatarDictionary,
-  iconDictionary, popoverTriggerDictionary,
+  iconDictionary, inputDictionary, popoverTriggerDictionary,
   positionBaseDictionary,
   positionDictionary,
   positionHorizontalDictionary,
@@ -55,11 +55,12 @@ export class DocComponentComponent implements OnInit, OnChanges {
   compileTemplate() {
     const values = this.htmlElementRef.nativeElement.innerText.split('\\n');
     const html = values.map(v => `<span class="p-1">${v}</span>`).join('\n')
-      .split('\\l').join('').split('\\t').join('');
+      .split('\\l').join('').split('\\t').join('').split('\\i').join('');
 
     this.html = values.map(v => v.trim()).map(v =>
-      v.split('\\l').map(vinner => vinner.trim()).join('\n')
-        .split('\\t').join('\t')).join('\n');
+      v.split('\\l').map(vInner => vInner.trim()).join('\n')
+        .split('\\t').join('\t')).join('\n')
+      .split('\\i').filter((v, i) => i % 2 === 0).join('');
 
     const metadata = {
       selector: `runtime-component-sample`,
@@ -109,6 +110,7 @@ export class DocComponentComponent implements OnInit, OnChanges {
       roundTypeDictionary = roundTypeDictionary;
       thinDictionary = thinDictionary;
       easingDictionary = easingDictionary;
+      inputDictionary = inputDictionary;
 
       constructor() {
         if (inputValues) {

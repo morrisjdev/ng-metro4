@@ -744,6 +744,19 @@ export const accentDictionary = {
   'link': 'link'
 };
 
+export const inputDictionary = {
+  'text': 'text',
+  'number': 'number',
+  'email': 'email',
+  'password': 'password',
+  'datetime-local': 'datetime-local',
+  'color': 'color',
+  'date': 'date',
+  'month': 'month',
+  'time': 'time',
+  'week': 'week'
+};
+
 export const widePointDictionary = {
   'fs': 'fs',
   'sm': 'sm',

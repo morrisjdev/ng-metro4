@@ -24,12 +24,12 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
   @Input('options') options: { [key: string]: (string | { [key: string]: string }) } |
     (Option | { groupName: string, options: Option[] })[];
   @Input('multiple') multiple = false;
-  @Input('duration') duration: number;
+  @Input('duration') duration = 0;
   @Input('prepend') prepend: string;
   @Input('append') append: string;
-  @Input('dropHeight') dropHeight: number;
+  @Input('drop-height') dropHeight: number;
   @Input('filter') filter: boolean;
-  @Input('filterPlaceholder') filterPlaceholder: string;
+  @Input('filter-placeholder') filterPlaceholder: string;
 
   @Input('cls-select') clsSelect: string;
   @Input('cls-prepend') clsPrepend: string;
@@ -88,7 +88,7 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
     if (disabled) {
       this.select.disable();
     } else {
-      this.select.enabled();
+      this.select.enable();
     }
   }
 

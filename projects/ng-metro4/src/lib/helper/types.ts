@@ -8,7 +8,7 @@ import {
   colorDictionary, easingDictionary,
   gravatarDictionary,
   iconCategoryDictionary,
-  iconDictionary,
+  iconDictionary, inputDictionary,
   popoverTriggerDictionary,
   positionBaseDictionary,
   positionDictionary,
@@ -24,6 +24,8 @@ import {
 export type WidePointType = keyof typeof widePointDictionary;
 
 export type AccentType = keyof typeof accentDictionary;
+
+export type InputType = keyof typeof inputDictionary;
 
 export type PositionVerticalType = keyof typeof positionVerticalDictionary;
 export type PositionHorizontalType = keyof typeof positionHorizontalDictionary;

@@ -1,48 +1,90 @@
-<m4-radio [(ngModel)]="model" name="test" value="t" [class.bg-red]="alert"></m4-radio>
+<h1>Radio</h1>
 
-<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
+<app-doc-component title="Playground" [values]="{ model: 1, style: 1 }" [showModel]="true">
+  <![CDATA[
+  <m4-radio name="radio_playground" [(ngModel)]="model" [value]="1" [disabled]="disabled" [caption]="caption" [caption-position]="captionPosition" \l
+               \t\t [style]="style"></m4-radio>\n
 
-<m4-radio [(ngModel)]="model" name="test" [value]="{name: 'test', id: 3}"></m4-radio>
+  <m4-radio name="radio_playground" [(ngModel)]="model" [value]="2" [disabled]="disabled" [caption]="caption" [caption-position]="captionPosition" \l
+            \t\t [style]="style"></m4-radio>
+  \i
+  <hr>
 
-<m4-radio [(ngModel)]="model" name="test" value="s" caption="test123"></m4-radio>
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input prepend="Caption" [(ngModel)]="caption"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Caption position" [(ngModel)]="captionPosition"
+                 [options]="positionHorizontalDictionary"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Style" [(ngModel)]="style"
+                 [options]="{'1': 1, '2': 2}"></m4-select>
+    </div>
 
-<m4-radio [(ngModel)]="model" name="test" value="x" caption="test123" caption-position="left"></m4-radio>
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
 
-<br>
+<div class="remark alert">
+  Please note that it's important to define a name for the radios of one group or for simplicity use the <code>m4-radio-group</code>
+</div>
 
-<m4-radio [(ngModel)]="model" name="test2" value="t"></m4-radio>
+<app-doc-component title="Basic usage" [values]="{ model: 1 }" [showModel]="true">
+  <![CDATA[
+  <m4-radio name="radio_basic" [(ngModel)]="model" [value]="1"></m4-radio>\n
+  <m4-radio name="radio_basic" [(ngModel)]="model" [value]="2"></m4-radio>\n
+  <m4-radio name="radio_basic2" [(ngModel)]="model" [value]="1" [disabled]="true"></m4-radio>\n
+  <m4-radio name="radio_basic2" [(ngModel)]="model" [value]="2" [disabled]="true"></m4-radio>\n
+  ]]>
+</app-doc-component>
 
-<m4-radio [(ngModel)]="model" name="test2" value="s" [disabled]="disable"></m4-radio>
+<app-doc-component title="Radio group" [values]="{ model: 1 }" [showModel]="true">
+  <![CDATA[
+  <m4-radio-group [(ngModel)]="model" [disabled]="disabled">\l
+    \t
+    <m4-radio caption="1" [value]="1"></m4-radio>
+    \l
+    \t
+    <m4-radio caption="2" [value]="2"></m4-radio>
+    \l
+    \t
+    <m4-radio caption="3" [value]="[1, 2, 3]"></m4-radio>
+    \l
+    \t
+    <m4-radio caption="4" [value]="{ test: 'value' }"></m4-radio>
+    \l
+    \t
+    <m4-radio caption="5" [value]="5"></m4-radio>
+    \l
+    \t
+    <m4-radio caption="6" [value]="6"></m4-radio>
+    \l
+  </m4-radio-group>
 
-<m4-radio [(ngModel)]="model" name="test2" value="x"></m4-radio>
+  \i
+  <hr>
+  <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+  ]]>
+</app-doc-component>
 
-<br>
+<app-doc-component title="Style" [values]="{ model: 1 }" [showModel]="true">
+  <![CDATA[
+  <m4-radio name="radio_style" [value]="1" [(ngModel)]="model"></m4-radio>\n
+  <m4-radio name="radio_style" [value]="2" [(ngModel)]="model"></m4-radio>\n
+  <m4-radio name="radio_style2" [value]="1" [(ngModel)]="model" [style]="2"></m4-radio>\n
+  <m4-radio name="radio_style2" [value]="2" [(ngModel)]="model" [style]="2"></m4-radio>
+  ]]>
+</app-doc-component>
 
-<m4-radio value="t"></m4-radio>
-
-<br>
-
-<m4-radio-group [(ngModel)]="model">
-  <m4-radio value="s"></m4-radio>
-  <m4-radio value="t"></m4-radio>
-  <m4-radio value="x"></m4-radio>
-  <m4-radio [value]="{name: 'test', id: 3}"></m4-radio>
-  <m4-radio [value]="[1,2,3]"></m4-radio>
-</m4-radio-group>
-
-<br>
-
-<m4-radio-group [(ngModel)]="model" [disabled]="disable">
-  <m4-radio value="s"></m4-radio>
-  <m4-radio value="t"></m4-radio>
-  <m4-radio value="x"></m4-radio>
-  <m4-radio [value]="[1,2,3]"></m4-radio>
-</m4-radio-group>
-
-<br>
-
-<m4-checkbox caption="Disable" [(ngModel)]="disable"></m4-checkbox>
-
-<br>
-
-{{model | json}}
+<app-doc-component title="Caption" [values]="{ model: 1 }" [showModel]="true">
+  <![CDATA[
+  <m4-radio name="radio_caption" [value]="1" [(ngModel)]="model" caption="Description"></m4-radio>
+  \n
+  <m4-radio name="radio_caption" [value]="2" [(ngModel)]="model" caption="Description" caption-position="left"></m4-radio>
+  ]]>
+</app-doc-component>

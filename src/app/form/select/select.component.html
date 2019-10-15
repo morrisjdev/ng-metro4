@@ -1,66 +1,85 @@
-<m4-input [(ngModel)]="prepend" prepend="Prepend" [class.alert]="alert"></m4-input>
-<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
+<h1>Select</h1>
 
-<m4-select [(ngModel)]="model" [prepend]="prepend" [filter]="false" [class.alert]="alert">
-  <option *ngFor="let opt of dataArray" [value]="opt">{{opt}}</option>
-</m4-select>
+<app-doc-component title="Basic usage" [values]="{ model: 'value' }" [showModel]="true">
+  <![CDATA[
+  <m4-select [(ngModel)]="model" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
+  ]]>
+</app-doc-component>
 
-{{model | json}}
+<app-doc-component title="Using an object as options" [values]="{ model: 'value' }" [showModel]="true">
+  <![CDATA[
+  <m4-select [(ngModel)]="model" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>\n
+  <m4-select [(ngModel)]="model" [options]="{ 'group title': { 'value': 'title' },  'second group title': { 'value': 'title' } }"></m4-select>
+  ]]>
+</app-doc-component>
 
-<m4-select [(ngModel)]="model2" append="test">
-  <optgroup label="Physical servers">
-    <option value="dedicated_corei3_hp">Core i3 (hp)</option>
-    <option value="dedicated_pentium_hp">Pentium (hp)</option>
-    <option value="dedicated_smart_corei3_hp">Smart Core i3 (hp)</option>
-  </optgroup>
-  <optgroup label="Virtual hosting">
-    <option value="mini">Mini</option>
-    <option value="site">Site</option>
-    <option value="portal">Portal</option>
-  </optgroup>
-  <optgroup label="Virtual servers">
-    <option value="evps0">eVPS-TEST (30 дней)</option>
-    <option value="evps1" selected="selected">eVPS-1</option>
-    <option value="evps2">eVPS-2</option>
-  </optgroup>
-  <optgroup label="test">
-    <option value="test">Test</option>
-  </optgroup>
-</m4-select>
+<app-doc-component title="Using an array as options" [values]="{ model: 'value' }" [showModel]="true">
+  <![CDATA[
+  <m4-select [(ngModel)]="model" [options]="[\l
+      \t\t{ title: 'Das ist ein test', value: 12, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1' },\l
+      \t\t{ groupName: 'Test Gruppe',\l
+        \t\t\toptions: [\l
+          \t\t\t\t{ title: 'Das ist ein test', value: 13, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1' }\l
+        \t\t\t]\l
+      \t\t}\l
+    \t]"></m4-select>
+  ]]>
+</app-doc-component>
 
-{{model2 | json}}
+<app-doc-component title="Defining options in html" [values]="{ model: 'mini' }" [showModel]="true">
+  <![CDATA[
+  <m4-select [(ngModel)]="model">\l
+    \t<optgroup label="Physical servers">\l
+      \t\t<option value="dedicated_corei3_hp">Core i3 (hp)</option>\l
+      \t\t<option value="dedicated_pentium_hp">Pentium (hp)</option>\l
+      \t\t<option value="dedicated_smart_corei3_hp">Smart Core i3 (hp)</option>\l
+    \t</optgroup>\l
+    \t<optgroup label="Virtual hosting">\l
+      \t\t<option value="mini">Mini</option>\l
+      \t\t<option value="site">Site</option>\l
+      \t\t<option value="portal">Portal</option>\l
+    \t</optgroup>\l
+    \t<optgroup label="Virtual servers">\l
+      \t\t<option value="evps0">eVPS-TEST (30 дней)</option>\l
+      \t\t<option value="evps1" selected="selected">eVPS-1</option>\l
+      \t\t<option value="evps2">eVPS-2</option>\l
+    \t</optgroup>\l
+  </m4-select>
+  ]]>
+</app-doc-component>
 
-<m4-select [(ngModel)]="modelArray" [multiple]="true" [options]="data"></m4-select>
+<div class="remark info ml-2 mr-2">
+  <code>$1</code> gets replaced by options title
+</div>
 
-<m4-select [(ngModel)]="modelArray" [multiple]="true" [options]="data" class="warning"></m4-select>
+<app-doc-component title="Prepend/Append" [values]="{ model: 'value' }" [showModel]="true">
+  <![CDATA[
+  <m4-select [(ngModel)]="model" prepend="Select" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>\n
+  <m4-select [(ngModel)]="model" append="Select" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
+  ]]>
+</app-doc-component>
 
-<m4-select [(ngModel)]="modelArray" [multiple]="true" [options]="data"></m4-select>
+<app-doc-component title="Multi select" [values]="{ model: ['1', '2'] }" [showModel]="true">
+  <![CDATA[
+  <m4-select [(ngModel)]="model" [multiple]="true" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
+  ]]>
+</app-doc-component>
 
-{{modelArray | json}}
+<app-doc-component title="Animation" [values]="{ model: 'value' }" [showModel]="true">
+  <![CDATA[
+  <m4-select [(ngModel)]="model" [duration]="500" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
+  ]]>
+</app-doc-component>
 
-<m4-select [(ngModel)]="modelArray2" [multiple]="true">
-  <optgroup label="Physical servers">
-    <option value="dedicated_corei3_hp" data-template="<span class='mif-amazon icon'></span> $1">Core i3 (hp)</option>
-    <option value="dedicated_pentium_hp" data-template="<span class='mif-amazon icon'></span> $1">Pentium (hp)</option>
-    <option value="dedicated_smart_corei3_hp">Smart Core i3 (hp)</option>
-  </optgroup>
-  <optgroup label="Virtual hosting">
-    <option value="mini">Mini</option>
-    <option value="site">Site</option>
-    <option value="portal">Portal</option>
-  </optgroup>
-  <optgroup label="Virtual servers">
-    <option value="evps0">eVPS-TEST (30 дней)</option>
-    <option value="evps1" selected="selected">eVPS-1</option>
-    <option value="evps2">eVPS-2</option>
-  </optgroup>
-  <optgroup label="test">
-    <option value="test">Test</option>
-  </optgroup>
-</m4-select>
+<app-doc-component title="Drop height" [values]="{ model: 'value' }" [showModel]="true">
+  <![CDATA[
+  <m4-select [(ngModel)]="model" [drop-height]="80" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
+  ]]>
+</app-doc-component>
 
-{{modelArray2 | json}}
-
-<m4-select [(ngModel)]="modelArray3" [multiple]="true" [options]="complexOptionsArray"></m4-select>
-
-{{modelArray3 | json}}
+<app-doc-component title="Filter" [values]="{ model: 'value' }" [showModel]="true">
+  <![CDATA[
+  <m4-select [(ngModel)]="model" [filter]="false" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>\n
+  <m4-select [(ngModel)]="model" filter-placeholder="Custom filter placeholder" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
+  ]]>
+</app-doc-component>

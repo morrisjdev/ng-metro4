@@ -16,6 +16,8 @@ import {AttributeHelper} from '../helper/attribute-helper';
 
 export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewInit, OnChanges, OnDestroy {
   private classObserver: MutationObserver;
+  private disabled: boolean;
+  private currentClasses: string[];
 
   public innerValue: T;
   public disableUpdate = false;
@@ -27,6 +29,7 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
 
   private observeClassValue() {
     this.classObserver = AttributeHelper.createObserver(this.mainElement, (newClasses, oldClasses) => {
+      this.currentClasses = newClasses;
       this.newClassValue(newClasses, oldClasses);
     });
   }
@@ -60,6 +63,7 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
   public abstract disable(disabled: boolean);
 
   setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
     this.disable(isDisabled);
   }
 
@@ -88,7 +92,11 @@ export abstract class ControlBase<T> implements ControlValueAccessor, AfterViewI
   ngOnChanges(changes: SimpleChanges) {
     asapScheduler.schedule(() => {
       this.createControl().then(() => {
+        this.setDisabledState(this.disabled);
         this.callNewValue();
+        if (this.currentClasses) {
+          this.newClassValue(this.currentClasses, []);
+        }
       });
     });
   }

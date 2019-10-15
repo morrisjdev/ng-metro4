@@ -43,6 +43,7 @@ export class RadioComponent extends ControlBase<any> {
       this.clonedElement = originalElement.clone();
       ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
+      this.clonedElement.attr('name', this.name);
 
       this.radio = this.clonedElement.radio().data('radio');
 
@@ -51,7 +52,7 @@ export class RadioComponent extends ControlBase<any> {
       });
 
       this.clonedElement.on('change', () => {
-        this.changeCallback(this.value);
+        this.changeValue(this.value);
       });
 
       complete();
