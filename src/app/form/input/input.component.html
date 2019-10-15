@@ -1,5 +1,26 @@
 <h1>Input</h1>
 
+<app-doc-component title="Basic usage">
+  <![CDATA[
+  <m4-input [(ngModel)]="model"></m4-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Prepend/Append">
+  <![CDATA[
+  <m4-input [(ngModel)]="model" prepend="Prepend"></m4-input>\n
+  <m4-input [(ngModel)]="model" append="Append"></m4-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Clear button">
+  <![CDATA[
+  <m4-input [ngModel]="'value'" [clear-button]="true"></m4-input>\n
+  <m4-input [ngModel]="'value'" [clear-button]="false"></m4-input>\n
+  <m4-input [ngModel]="'value'" clear-button-icon="<span class='mif-rocket'></span>"></m4-input>
+  ]]>
+</app-doc-component>
+
 <m4-input [(ngModel)]="model"></m4-input>
 
 <button m4-button (click)="updateProp()">Update Test</button>

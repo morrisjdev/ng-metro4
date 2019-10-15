@@ -13,13 +13,16 @@
 
   <div class="card-footer">
     <div class="row w-100">
-      <div class="cell-4">
+      <div class="cell-md-4">
         <m4-select prepend="Style" [(ngModel)]="style" [options]="styles"></m4-select>
       </div>
-      <div class="cell-4">
+      <div class="cell-md-4">
         <m4-select prepend="Size" [(ngModel)]="size" [options]="sizes"></m4-select>
       </div>
-      <div class="cell-4">
+      <div class="cell-md-4">
+        <m4-select prepend="Shape" [(ngModel)]="shape" [options]="shapes"></m4-select>
+      </div>
+      <div class="cell-12">
         <m4-checkbox [(ngModel)]="showIcon" caption="Show icon"></m4-checkbox>
         <m4-checkbox [(ngModel)]="showText" caption="Show text"></m4-checkbox>
         <m4-checkbox [(ngModel)]="outline" caption="Outline"></m4-checkbox>
@@ -28,26 +31,181 @@
         <m4-checkbox [(ngModel)]="flat" caption="Flat"></m4-checkbox>
         <m4-checkbox [(ngModel)]="shadow" caption="Shadow"></m4-checkbox>
       </div>
-      <div class="cell-4">
-        <m4-select prepend="Shape" [(ngModel)]="shape" [options]="shapes"></m4-select>
-      </div>
     </div>
   </div>
 </div>
 
 <pre><code [highlight]="btnMarkup" [languages]="['html']"></code></pre>
 
-<app-doc-component title="Basic usage" [html]="basicButtons"></app-doc-component>
+<app-doc-component title="Basic usage">
+  <![CDATA[
+  <button m4-button>button</button>\n
+  <button m4-button btn-style="primary">button</button>\n
+  <button m4-button btn-style="secondary">button</button>\n
+  <button m4-button btn-style="success">button</button>\n
+  <button m4-button btn-style="alert">button</button>\n
+  <button m4-button btn-style="warning">button</button>\n
+  <button m4-button btn-style="yellow">button</button>\n
+  <button m4-button btn-style="info">button</button>\n
+  <button m4-button btn-style="dark">button</button>\n
+  <button m4-button btn-style="light">button</button>\n
+  <button m4-button btn-style="link">button</button>
+  ]]>
+</app-doc-component>
 
-<app-doc-component title="Button with icon" [html]="iconButton"></app-doc-component>
+<app-doc-component title="Button with icon">
+  <![CDATA[
+  <button m4-button><m4-icon icon="add"></m4-icon> button</button>
+  ]]>
+</app-doc-component>
 
-<app-doc-component title="Outline buttons" [html]="outlineButtons"></app-doc-component>
+<app-doc-component title="Outline buttons">
+  <![CDATA[
+  <button m4-button [outline]="true">button</button>\n
+  <button m4-button [outline]="true" btn-style="primary">button</button>\n
+  <button m4-button [outline]="true" btn-style="secondary">button</button>\n
+  <button m4-button [outline]="true" btn-style="success">button</button>\n
+  <button m4-button [outline]="true" btn-style="alert">button</button>\n
+  <button m4-button [outline]="true" btn-style="warning">button</button>\n
+  <button m4-button [outline]="true" btn-style="yellow">button</button>\n
+  <button m4-button [outline]="true" btn-style="info">button</button>\n
+  <button m4-button [outline]="true" btn-style="dark">button</button>\n
+  <button m4-button [outline]="true" btn-style="light">button</button>\n
+  <button m4-button [outline]="true" btn-style="link">button</button>
+  ]]>
+</app-doc-component>
 
-<app-doc-component title="Button sizes" [html]="buttonsSizes"></app-doc-component>
+<app-doc-component title="Button sizes">
+  <![CDATA[
+  <button m4-button btn-style="primary" size="mini">button</button>\n
+  <button m4-button btn-style="primary" size="small">button</button>\n
+  <button m4-button btn-style="primary">button</button>\n
+  <button m4-button btn-style="primary" size="large">button</button>\n
+  <button m4-button btn-style="primary" [outline]="true" size="mini">button</button>\n
+  <button m4-button btn-style="primary" [outline]="true" size="small">button</button>\n
+  <button m4-button btn-style="primary" [outline]="true">button</button>\n
+  <button m4-button btn-style="primary" [outline]="true" size="large">button</button>
+  ]]>
+</app-doc-component>
 
-<app-doc-component title="Rounded corners" [html]="roundedCode"></app-doc-component>
+<app-doc-component title="Shadow">
+  <![CDATA[
+  <button m4-button>button</button>\n
+  <button m4-button btn-style="primary" [shadow]="true">button</button>\n
+  <button m4-button btn-style="secondary" [shadow]="true">button</button>\n
+  <button m4-button btn-style="success" [shadow]="true">button</button>\n
+  <button m4-button btn-style="alert" [shadow]="true">button</button>\n
+  <button m4-button btn-style="warning" [shadow]="true">button</button>\n
+  <button m4-button btn-style="yellow" [shadow]="true">button</button>\n
+  <button m4-button btn-style="info" [shadow]="true">button</button>\n
+  <button m4-button btn-style="dark" [shadow]="true">button</button>\n
+  <button m4-button btn-style="light" [shadow]="true">button</button>\n
+  <button m4-button btn-style="link" [shadow]="true">button</button>
+  ]]>
+</app-doc-component>
 
-<app-doc-component title="Square & cycle buttons" [html]="shapesCode"></app-doc-component>
+<app-doc-component title="Rounded corners">
+  <![CDATA[
+  <button m4-button btn-style="primary" [rounded]="true">button</button>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Square & cycle buttons">
+  <![CDATA[
+  <button m4-button btn-style="primary" shape="square"><m4-icon icon="checkmark"></m4-icon></button>\n
+  <button m4-button btn-style="primary" shape="cycle"><m4-icon icon="checkmark"></m4-icon></button>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Flat">
+  <![CDATA[
+  <button m4-button [flat]="true">button</button>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Command buttons">
+  <![CDATA[
+  <button m4-button special-btn="command">\l
+    \t<span class="mif-share icon"></span>\l
+    \t<span class="caption">\l
+        \t\tYes, share and connect\l
+        \t\t<small>Use this option for home or work</small>\l
+    \t</span>\l
+  </button>\l\n
+  <button m4-button special-btn="command" btn-style="primary" [outline]="true" [rounded]="true">\l
+    \t<span class="mif-share icon"></span>\l
+    \t<span class="caption">\l
+        \t\tYes, share and connect\l
+        \t\t<small>Use this option for home or work</small>\l
+    \t</span>\l
+  </button>\l\n
+  <button m4-button special-btn="command" btn-style="warning" class="icon-right">\l
+    \t<span class="mif-share icon"></span>\l
+    \t<span class="caption">\l
+        \t\tYes, share and connect\l
+        \t\t<small>Use this option for home or work</small>\l
+    \t</span>\l
+  </button>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Image buttons">
+  <![CDATA[
+  <button m4-button special-btn="image">\l
+    \t<span class="mif-share icon"></span>\l
+    \t<span class="caption">Share it</span>\l
+  </button>\l\n
+  <button m4-button special-btn="image" class="icon-right">\l
+    \t<span class="mif-share icon"></span>\l
+    \t<span class="caption">Share it</span>\l
+  </button>\l\n
+  <button m4-button special-btn="image" btn-style="alert">\l
+    \t<span class="mif-share icon"></span>\l
+    \t<span class="caption">Share it</span>\l
+  </button>\l\n
+  <button m4-button special-btn="image" [outline]="true" btn-style="warning">\l
+    \t<span class="mif-share icon"></span>\l
+    \t<span class="caption">Share it</span>\l
+  </button>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Shortcuts">
+  <![CDATA[
+  <button m4-button special-btn="shortcut">\l
+    \t<span class="caption">Rocket</span>\l
+    \t<span class="mif-rocket icon"></span>\l
+  </button>\l\n
+  <button m4-button special-btn="shortcut">\l
+    \t<span class="tag">10</span>\l
+    \t<span class="caption">Rocket</span>\l
+    \t<span class="mif-rocket icon"></span>\l
+  </button>\l\n
+  <button m4-button special-btn="shortcut" btn-style="primary">\l
+    \t<span class="tag">10</span>\l
+    \t<span class="caption">Rocket</span>\l
+    \t<span class="mif-rocket icon"></span>\l
+  </button>\l\n
+  <button m4-button special-btn="shortcut" btn-style="secondary" [outline]="true">\l
+    \t<span class="tag">10</span>\l
+    \t<span class="caption">Rocket</span>\l
+    \t<span class="mif-rocket icon"></span>\l
+  </button>\l\n
+  <button m4-button special-btn="shortcut" btn-style="alert" [rounded]="true">\l
+    \t<span class="tag">10</span>\l
+    \t<span class="caption">Rocket</span>\l
+    \t<span class="mif-checkmark icon"></span>\l
+  </button>\l\n
+  <button  m4-button special-btn="shortcut" btn-style="info" [rounded]="true" [outline]="true" class="no-caption">\l
+    \t<span class="tag">10</span>\l
+    \t<span class="mif-rocket icon"></span>\l
+  </button>
+  ]]>
+</app-doc-component>
+
+
+
+
 
 <m4-radio-group [(ngModel)]="type">
   <m4-radio value="" caption="Default"></m4-radio>
