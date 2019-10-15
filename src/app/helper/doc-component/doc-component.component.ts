@@ -21,6 +21,7 @@ import {FormsModule} from '@angular/forms';
 export class DocComponentComponent implements OnInit, OnChanges {
 
   @Input() title: string;
+  @Input() showModel: boolean;
 
 
   html: string;
