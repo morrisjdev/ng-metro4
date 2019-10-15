@@ -8,8 +8,8 @@
   <div class="card-content p-5">
     <div #container></div>
   </div>
-  <div class="card-footer" *ngIf="showModel">
-
+  <div class="card-footer w-100" *ngIf="showModel">
+    {{componentRef?.instance?.model | json}}
   </div>
 </div>
 

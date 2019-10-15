@@ -42,7 +42,6 @@ export class InputComponent extends ControlBase<string|number> {
   @Input('search-button') searchButton: boolean;
   @Input('search-button-icon') searchButtonIcon: string;
   @Input('autocomplete') autocomplete: string[];
-  @Input('autocomplete-divider') autocompleteDivider: string;
   @Input('autocomplete-list-height') autocompleteListHeight: number;
 
   @Input('cls-component') clsComponent: string;

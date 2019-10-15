@@ -12,6 +12,21 @@ import {
 import {CommonModule} from '@angular/common';
 import {NgMetro4Module} from 'ng-metro4';
 import {FormsModule} from '@angular/forms';
+import {
+  accentDictionary,
+  activityDictionary, activityStyleDictionary,
+  animationDictionary,
+  buttonShapeDictionary,
+  buttonSpecialDictionary,
+  colorDictionary, easingDictionary, gravatarDictionary,
+  iconDictionary, popoverTriggerDictionary,
+  positionBaseDictionary,
+  positionDictionary,
+  positionHorizontalDictionary,
+  positionVerticalDictionary, progressTypeDictionary, roundTypeDictionary,
+  sizeDictionary, thinDictionary,
+  widePointDictionary
+} from '../../../../projects/ng-metro4/src/lib/helper/lists';
 
 @Component({
   selector: 'app-doc-component',
@@ -23,12 +38,15 @@ export class DocComponentComponent implements OnInit, OnChanges {
   @Input() title: string;
   @Input() showModel: boolean;
 
+  @Input() values: any;
 
   html: string;
   @ViewChild('container', {read: ViewContainerRef, static: true}) container: ViewContainerRef;
   @ViewChild('htmlElement', {static: true}) htmlElementRef: ElementRef;
 
-  private componentRef: ComponentRef<{}>;
+  private componentRef: ComponentRef<any>;
+  model: any;
+
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
               private compiler: Compiler) {
@@ -54,7 +72,9 @@ export class DocComponentComponent implements OnInit, OnChanges {
       this.componentRef.destroy();
       this.componentRef = null;
     }
+
     this.componentRef = this.container.createComponent(factory);
+    this.model = this.componentRef.instance.model;
   }
 
   ngOnInit() {
@@ -66,13 +86,42 @@ export class DocComponentComponent implements OnInit, OnChanges {
   }
 
   private createComponentFactorySync(compiler: Compiler, metadata: Component, componentClass: any): ComponentFactory<any> {
+    const inputValues = this.values;
+
     const cmpClass = componentClass || class RuntimeComponent {
+      buttonShapeDictionary = buttonShapeDictionary;
+      buttonSpecialDictionary = buttonSpecialDictionary;
+      iconDictionary = iconDictionary;
+      colorDictionary = colorDictionary;
+      animationDictionary = animationDictionary;
+      accentDictionary = accentDictionary;
+      widePointDictionary = widePointDictionary;
+      positionHorizontalDictionary = positionHorizontalDictionary;
+      positionVerticalDictionary = positionVerticalDictionary;
+      positionBaseDictionary = positionBaseDictionary;
+      positionDictionary = positionDictionary;
+      sizeDictionary = sizeDictionary;
+      activityDictionary = activityDictionary;
+      gravatarDictionary = gravatarDictionary;
+      activityStyleDictionary = activityStyleDictionary;
+      popoverTriggerDictionary = popoverTriggerDictionary;
+      progressTypeDictionary = progressTypeDictionary;
+      roundTypeDictionary = roundTypeDictionary;
+      thinDictionary = thinDictionary;
+      easingDictionary = easingDictionary;
+
+      constructor() {
+        if (inputValues) {
+          Object.keys(inputValues).forEach((k) => {
+            (<any>this)[k] = inputValues[k];
+          });
+        }
+      }
     };
     const decoratedCmp = Component(metadata)(cmpClass);
 
     @NgModule({imports: [CommonModule, NgMetro4Module, FormsModule], declarations: [decoratedCmp]})
-    class RuntimeComponentModule {
-    }
+    class RuntimeComponentModule { }
 
     const module: ModuleWithComponentFactories<any> = compiler.compileModuleAndAllComponentsSync(RuntimeComponentModule);
     return module.componentFactories.find(f => f.componentType === decoratedCmp);

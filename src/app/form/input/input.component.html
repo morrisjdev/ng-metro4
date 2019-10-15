@@ -1,15 +1,16 @@
 <h1>Input</h1>
 
-<app-doc-component title="Basic usage" [showModel]="true">
+<app-doc-component title="Basic usage" [values]="{ model: 'value' }" [showModel]="true">
   <![CDATA[
   <m4-input [(ngModel)]="model"></m4-input>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Prepend/Append">
+<app-doc-component title="Prepend/Append" [showModel]="true" [values]="{ model: 'value', prepend: 'Example Description' }">
   <![CDATA[
-  <m4-input [(ngModel)]="model" prepend="Prepend"></m4-input>\n
-  <m4-input [(ngModel)]="model" append="Append"></m4-input>
+  <m4-input [(ngModel)]="prepend" prepend="Change prepend value"></m4-input>\n
+  <m4-input [(ngModel)]="model" [prepend]="prepend"></m4-input>\n
+  <m4-input [(ngModel)]="model" [append]="prepend"></m4-input>
   ]]>
 </app-doc-component>
 
@@ -18,6 +19,37 @@
   <m4-input [ngModel]="'value'" [clear-button]="true"></m4-input>\n
   <m4-input [ngModel]="'value'" [clear-button]="false"></m4-input>\n
   <m4-input [ngModel]="'value'" clear-button-icon="<span class='mif-rocket'></span>"></m4-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Reveal button" [values]="{ model: 'password' }" [showModel]="true">
+  <![CDATA[
+  <m4-input type="password" [(ngModel)]="model" [reveal-button]="true"></m4-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Search button" [values]="{ model: 'serch text', clickEvent: search }" [showModel]="true">
+  <![CDATA[
+  <m4-input [(ngModel)]="model" [search-button]="true" (search-button-click)="clickEvent($event)"></m4-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Custom buttons" [values]="{ model: 'custom buttons', clickEvent: search }" [showModel]="true">
+  <![CDATA[
+  <m4-input [(ngModel)]="model" [custom-buttons]="[{html: '<span class=\'mif-user\'></span>', cls: 'success', onclick: clickEvent }]"></m4-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Autocomplete" [values]="{ model: 'automcomplete' }" [showModel]="true">
+  <![CDATA[
+  <m4-input [(ngModel)]="model" [autocomplete]="['autocomplete', 'value', 'magic', 'useful', 'test']"></m4-input>\n
+  <m4-input [(ngModel)]="model" [autocomplete]="['autocomplete', 'value', 'magic', 'useful', 'test']" [autocomplete-list-height]="150"></m4-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Number input" [values]="{ model: 54 }" [showModel]="true">
+  <![CDATA[
+  <m4-input type="number" [(ngModel)]="model"></m4-input>
   ]]>
 </app-doc-component>
 
