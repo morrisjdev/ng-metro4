@@ -1,23 +1,79 @@
-<m4-rating [(ngModel)]="model" message="Rate" [class.bg-red]="alert"></m4-rating><br>
-<m4-rating [(ngModel)]="model" [disabled]="true" message="Rate"></m4-rating><br>
-<m4-rating [(ngModel)]="model" message="Rate" [stars]="12"></m4-rating><br>
+<h1>Rating</h1>
+<a href="https://metroui.org.ua/rating.html" target="_blank">Rating in Metro 4 docs</a>
 
-<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
+<app-doc-component title="Playground" [values]="{ model: 2, stars: 5 }" [showModel]="true">
+  <![CDATA[
+  <m4-rating [(ngModel)]="model" [disabled]="disabled" [stars]="stars" [message]="message" [star-color]="starColor"\l
+             \t\t [stared-color]="staredColor" [static]="static" [class]="accent"></m4-rating>
 
-<m4-rating [(ngModel)]="model" round-func="ceil" star-color="red"></m4-rating><br>
+  \i
+  <hr>
 
-<m4-rating [(ngModel)]="model" round-func="floor" stared-color="green"></m4-rating><br>
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input prepend="Stars" type="number" [(ngModel)]="stars"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Star color" [(ngModel)]="starColor"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Stared color" [(ngModel)]="staredColor"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
 
-<m4-rating [(ngModel)]="model" round-func="round"></m4-rating><br>
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="static" caption="Static"></m4-checkbox>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
 
-{{model | json}}<br>
+<app-doc-component title="Basic usage" [values]="{ model: 2 }" [showModel]="true">
+  <![CDATA[
+  <m4-rating [(ngModel)]="model"></m4-rating>
+  ]]>
+</app-doc-component>
 
-<m4-rating [(ngModel)]="modelChar" [values]="['A', 'B', 'c', 'D', 'E']"></m4-rating><br>
-<m4-rating [(ngModel)]="modelChar" [values]="['A', 'B', 'c', 'D', 'E']"></m4-rating><br>
+<app-doc-component title="Star count" [values]="{ model: 2 }" [showModel]="true">
+  <![CDATA[
+  <m4-rating [(ngModel)]="model" [stars]="20"></m4-rating>
+  ]]>
+</app-doc-component>
 
-{{modelChar | json}}<br>
+<app-doc-component title="Round function" [values]="{ model: 2.4 }" [showModel]="true">
+  <![CDATA[
+  <m4-rating [(ngModel)]="model" round-func="round"></m4-rating>\n
+  <m4-rating [(ngModel)]="model" round-func="floor"></m4-rating>\n
+  <m4-rating [(ngModel)]="model" round-func="ceil"></m4-rating>
+  ]]>
+</app-doc-component>
 
-<m4-rating [(ngModel)]="modelDec" [values]="[0.3, 0.4, 0.7]"></m4-rating><br>
-<m4-rating [(ngModel)]="modelDec" [values]="[0.3, 0.4, 0.7, 1.3]"></m4-rating><br>
+<app-doc-component title="Custom values" [values]="{ model: 'C' }" [showModel]="true">
+  <![CDATA[
+  <m4-rating [(ngModel)]="model" [values]="['A', 'B', 'C', 'D', 'E', 'F']"></m4-rating>
+  ]]>
+</app-doc-component>
 
-{{modelDec | json}}
+<app-doc-component title="Message" [values]="{ model: 2 }" [showModel]="true">
+  <![CDATA[
+  <m4-rating [(ngModel)]="model" [message]="'(' + model + ')'"></m4-rating>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Color" [values]="{ model: 2 }" [showModel]="true">
+  <![CDATA[
+  <m4-rating [(ngModel)]="model" star-color="red"></m4-rating>\n
+  <m4-rating [(ngModel)]="model" stared-color="red"></m4-rating>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Static" [values]="{ model: 2 }" [showModel]="true">
+  <![CDATA[
+  <m4-rating [(ngModel)]="model" [static]="true"></m4-rating>
+  ]]>
+</app-doc-component>

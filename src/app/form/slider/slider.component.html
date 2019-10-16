@@ -1,31 +1,120 @@
-<m4-slider [(ngModel)]="model" [class.bg-red]="alert"></m4-slider>
-<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
+<h1>Slider</h1>
+<a href="https://metroui.org.ua/slider.html" target="_blank">Slider in Metro 4 docs</a>
 
-<m4-slider [(ngModel)]="model" [disabled]="true"></m4-slider>
+<app-doc-component title="Playground" [values]="{ model: 'value', min: 0, max: 100, accuracy: 1, hintPosition: 'top' }" [showModel]="true">
+  <![CDATA[
+  <m4-slider [(ngModel)]="model" [disabled]="disabled" [min]="min" [max]="max" [accuracy]="accuracy" [buffer]="buffer"\l
+             \t\t [hint]="hint" [hint-always]="hintAlways" [hint-position]="hintPosition" [class]="accent"\l
+             \t\t [vertical]="vertical" [size]="size" [thin]="thin" [cycle-marker]="cycle"></m4-slider>
 
-<m4-slider [(ngModel)]="model" [accuracy]="1"></m4-slider>
+  \i
+  <hr>
 
-<m4-slider [(ngModel)]="model" [hint]="true" hint-mask="V: $1, $2%"></m4-slider>
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input prepend="Min" type="number" [(ngModel)]="min"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Max" type="number" [(ngModel)]="max"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Accuracy" type="number" [(ngModel)]="accuracy"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Buffer" type="number" [(ngModel)]="buffer"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Size" type="number" [(ngModel)]="size"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Hint mask" [(ngModel)]="hintMask"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Hint position"
+                 [options]="positionBaseDictionary"
+                 [(ngModel)]="hintPosition"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Thin"
+                 [options]="thinDictionary"
+                 [(ngModel)]="thin"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
 
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="hint" caption="Hint"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="hintAlways" caption="Hint always"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="vertical" caption="Vertical"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="cycle" caption="Cycle"></m4-checkbox>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
 
-<m4-slider [(ngModel)]="model" [vertical]="true"></m4-slider>
+<app-doc-component title="Basic usage" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-slider [(ngModel)]="model"></m4-slider>
+  ]]>
+</app-doc-component>
 
-<m4-slider [(ngModel)]="buffer"></m4-slider>
+<app-doc-component title="Min/Max" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-slider [(ngModel)]="model" [min]="-10" [max]="40"></m4-slider>\n
+  <m4-slider [(ngModel)]="model" [min]="-10" [max]="40" [show-min-max]="true"></m4-slider>
+  ]]>
+</app-doc-component>
 
-<m4-slider [(ngModel)]="buffer" [min]="30" [max]="70"></m4-slider>
+<app-doc-component title="Accuracy" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-slider [(ngModel)]="model" [accuracy]="5"></m4-slider>
+  ]]>
+</app-doc-component>
 
-<m4-slider [(ngModel)]="buffer"></m4-slider>
+<app-doc-component title="Buffer" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-slider [(ngModel)]="model" [buffer]="70"></m4-slider>
+  ]]>
+</app-doc-component>
 
-<m4-slider [(ngModel)]="buffer" thin="thin" [cycle-marker]="true"></m4-slider>
+<app-doc-component title="Hint" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-slider [(ngModel)]="model" [hint]="true"></m4-slider>\n
+  <m4-slider [(ngModel)]="model" [hint]="true" [hint-always]="true"></m4-slider>\n
+  <m4-slider [(ngModel)]="model" [hint]="true" hint-position="bottom"></m4-slider>\n
+  <m4-slider [(ngModel)]="model" [hint]="true" hint-mask="V: $1, $2%"></m4-slider>
+  ]]>
+</app-doc-component>
 
-<m4-slider [(ngModel)]="buffer" thin="ultra-thin" [cycle-marker]="true"></m4-slider>
+<div class="remark info">
+  When using hint-mask <code>$1</code> gets replaced with the acutal value and <code>$2</code> with the current percentage.
+</div>
 
-<m4-slider [(ngModel)]="buffer"></m4-slider>
+<app-doc-component title="Vertical" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-slider [(ngModel)]="model" [vertical]="true"></m4-slider>
+  ]]>
+</app-doc-component>
 
-<m4-slider [(ngModel)]="model" [buffer]="buffer"></m4-slider>
+<app-doc-component title="Size" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-slider [(ngModel)]="model" [size]="300"></m4-slider>
+  ]]>
+</app-doc-component>
 
-<br><br>
+<app-doc-component title="Thin" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-slider [(ngModel)]="model" thin="thin"></m4-slider>\n
+  <m4-slider [(ngModel)]="model" thin="ultra-thin"></m4-slider>
+  ]]>
+</app-doc-component>
 
-<m4-slider [(ngModel)]="model" [hint-always]="true"></m4-slider>
-
-{{model | json}}
+<app-doc-component title="Cycle marker" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-slider [(ngModel)]="model" [cycle-marker]="true"></m4-slider>
+  ]]>
+</app-doc-component>

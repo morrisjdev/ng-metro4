@@ -8,46 +8,8 @@ import json from 'highlight.js/lib/languages/json';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {TagInputComponent} from './form/tag-input/tag-input.component';
-import {SelectComponent} from './form/select/select.component';
-import {InputComponent} from './form/input/input.component';
-import {TextareaComponent} from './form/textarea/textarea.component';
-import {CheckboxComponent} from './form/checkbox/checkbox.component';
-import {RadioComponent} from './form/radio/radio.component';
-import {FileInputComponent} from './form/file-input/file-input.component';
-import {KeypadComponent} from './form/keypad/keypad.component';
-import {SliderComponent} from './form/slider/slider.component';
-import {SpinnerComponent} from './form/spinner/spinner.component';
-import {RatingComponent} from './form/rating/rating.component';
-import {ContainerComponent} from './base/container/container.component';
-import {NgMetro4Module} from 'ng-metro4';
-import {GridComponent} from './base/grid/grid.component';
-import {FormComponent} from './base/form/form.component';
-import {ButtonComponent} from './base/button/button.component';
-import {IconComponent} from './base/icon/icon.component';
-import {GravatarComponent} from './controls/gravatar/gravatar.component';
-import {DonutComponent} from './controls/donut/donut.component';
-import {ProgressComponent} from './controls/progress/progress.component';
-import {HintComponent} from './information/hint/hint.component';
-import {ToastComponent} from './information/toast/toast.component';
-import {NotifyComponent} from './information/notify/notify.component';
-import {DialogComponent} from './information/dialog/dialog.component';
-import {PopoverComponent} from './controls/popover/popover.component';
-import {PanelComponent} from './controls/panel/panel.component';
-import { HotkeyComponent } from './controls/hotkey/hotkey.component';
-import { LoadingComponent } from './base/loading/loading.component';
-import { LetComponent } from './base/let/let.component';
 import {HighlightModule} from 'ngx-highlightjs';
-import { StartComponent } from './home/start/start.component';
-import { HomeComponent } from './home/home/home.component';
-import { DocComponentComponent } from './helper/doc-component/doc-component.component';
-import { MaterialInputComponent } from './form/material-input/material-input.component';
-import { SwitchComponent } from './form/switch/switch.component';
-import { CalendarPickerComponent } from './form/calendar-picker/calendar-picker.component';
-import { CalendarComponent } from './form/calendar/calendar.component';
-import { DatePickerComponent } from './form/date-picker/date-picker.component';
-import { TimePickerComponent } from './form/time-picker/time-picker.component';
+import {SharedModule} from './shared/shared.module';
 
 export function hljsLanguages() {
   return [
@@ -61,50 +23,11 @@ export function hljsLanguages() {
 @NgModule({
   declarations: [
     AppComponent,
-    TagInputComponent,
-    SelectComponent,
-    InputComponent,
-    TextareaComponent,
-    CheckboxComponent,
-    RadioComponent,
-    FileInputComponent,
-    KeypadComponent,
-    SliderComponent,
-    SpinnerComponent,
-    RatingComponent,
-    ContainerComponent,
-    GridComponent,
-    FormComponent,
-    ButtonComponent,
-    IconComponent,
-    GravatarComponent,
-    DonutComponent,
-    ProgressComponent,
-    HintComponent,
-    ToastComponent,
-    NotifyComponent,
-    DialogComponent,
-    PopoverComponent,
-    PanelComponent,
-    HotkeyComponent,
-    LoadingComponent,
-    LetComponent,
-    StartComponent,
-    HomeComponent,
-    DocComponentComponent,
-    MaterialInputComponent,
-    SwitchComponent,
-    CalendarPickerComponent,
-    CalendarComponent,
-    DatePickerComponent,
-    TimePickerComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
+    SharedModule,
     AppRoutingModule,
-    NgMetro4Module,
     HighlightModule.forRoot({
       languages: hljsLanguages
     })

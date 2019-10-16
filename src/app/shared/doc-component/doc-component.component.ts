@@ -24,7 +24,7 @@ import {
   positionDictionary,
   positionHorizontalDictionary,
   positionVerticalDictionary, progressTypeDictionary, roundTypeDictionary,
-  sizeDictionary, thinDictionary,
+  sizeDictionary, spinnerButtonPositionDictionary, thinDictionary,
   widePointDictionary
 } from '../../../../projects/ng-metro4/src/lib/helper/lists';
 
@@ -111,6 +111,7 @@ export class DocComponentComponent implements OnInit, OnChanges {
       thinDictionary = thinDictionary;
       easingDictionary = easingDictionary;
       inputDictionary = inputDictionary;
+      spinnerButtonPositionDictionary = spinnerButtonPositionDictionary;
 
       constructor() {
         if (inputValues) {

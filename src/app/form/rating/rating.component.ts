@@ -7,13 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatingComponent implements OnInit {
 
-  model = 3.7;
-  alert = true;
-
-  modelChar = 'D';
-
-  modelDec = 0.3;
-
   constructor() { }
 
   ngOnInit() {

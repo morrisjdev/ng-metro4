@@ -51,6 +51,7 @@ export class SliderComponent extends ControlBase<number> {
       ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
+        this.clonedElement.parent().parent().find('.slider-min-max').remove();
         this.clonedElement.parent().remove();
       }
 

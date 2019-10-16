@@ -778,6 +778,11 @@ export const positionHorizontalDictionary = {
   'right': 'right'
 };
 
+export const spinnerButtonPositionDictionary = {
+  ...positionHorizontalDictionary,
+  'default': 'default'
+};
+
 export const positionVerticalDictionary = {
   'top': 'top',
   'bottom': 'bottom'
@@ -863,6 +868,7 @@ export const roundTypeDictionary = {
 };
 
 export const thinDictionary = {
+  '': '',
   'thin': 'thin',
   'ultra-thin': 'ultra-thin'
 };

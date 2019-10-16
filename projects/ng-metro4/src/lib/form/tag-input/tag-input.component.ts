@@ -3,6 +3,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {TypeAlias} from '../../helper/type-alias';
 import {ObjectHelper} from '../../helper/object-helper';
+import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 
@@ -56,7 +57,7 @@ export class TagInputComponent extends ControlBase<string[]> {
 
   disable(disabled: boolean): void {
     if (this.tagInput) {
-      const target = this.tagInput.element.next('.input-wrapper').parent('div.tag-input');
+      const target = this.tagInput.element.parent('div.tag-input');
 
       if (target != null) {
         if (disabled) {

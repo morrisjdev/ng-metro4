@@ -1,0 +1,18 @@
+<div class="form-group">
+  <label *ngIf="label">{{label}}</label>
+  <ng-content></ng-content>
+  <small class="text-muted" *ngIf="description">{{description}}</small>
+
+  <ng-container *ngIf="control.errors">
+    <ul class="fg-red text-small m-1">
+      <li *ngFor="let error of control.errors | errorDisplay: formControlPath">
+        <ng-container *ngIf="errorTemplate">
+          <ng-container *ngTemplateOutlet="errorTemplate;context:{ error: error }"></ng-container>
+        </ng-container>
+        <ng-container *ngIf="!errorTemplate">
+          {{error}}
+        </ng-container>
+      </li>
+    </ul>
+  </ng-container>
+</div>

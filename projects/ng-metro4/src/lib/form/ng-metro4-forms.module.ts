@@ -21,7 +21,10 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 import { TimePickerComponent } from './time-picker/time-picker.component';
 import {FormsModule} from '@angular/forms';
 import { CheckboxGroupComponent } from './checkbox-group/checkbox-group.component';
-import {IsArrayPipe} from '../helper/pipes/is-array.pipe';
+import {IsArrayPipe} from './pipes/is-array.pipe';
+import { FormControlWrapperComponent } from './form-control-wrapper/form-control-wrapper.component';
+import { ErrorDisplayPipe } from './pipes/error-display.pipe';
+import { FormWrapperComponent } from './form-wrapper/form-wrapper.component';
 
 const declarations = [
   TagInputComponent,
@@ -42,7 +45,8 @@ const declarations = [
   CalendarPickerComponent,
   CalendarComponent,
   DatePickerComponent,
-  TimePickerComponent
+  TimePickerComponent,
+  FormControlWrapperComponent,
 ];
 
 @NgModule({
@@ -52,7 +56,9 @@ const declarations = [
   ],
   declarations: [
     IsArrayPipe,
+    ErrorDisplayPipe,
     ...declarations,
+    FormWrapperComponent,
   ],
   exports: [
     ...declarations

@@ -1,4 +1,12 @@
 <form [formGroup]="formGroup">
+  <m4-form-control-wrapper label="Email" description="This is a test">
+    <m4-input type="email" formControlName="name"></m4-input>
+
+    <ng-template #error let-error="error">
+      <span class="mif-power"></span> {{error}}
+    </ng-template>
+  </m4-form-control-wrapper>
+
   <div class="form-group">
     <label>Email address</label>
     <m4-input type="email" formControlName="name" placeholder="Email"></m4-input>

@@ -6,13 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./file-input.component.less']
 })
 export class FileInputComponent implements OnInit {
-
-  prepend: string;
-  model: File;
-  modelArr: File[];
-  alert = true;
-
-  constructor() { }
+    constructor() { }
 
   ngOnInit() {
   }
@@ -24,6 +18,6 @@ export class FileInputComponent implements OnInit {
       console.log(reader.result);
     };
 
-    reader.readAsText(this.model);
+    // reader.readAsText(this.model);
   }
 }

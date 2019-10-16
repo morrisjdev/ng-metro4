@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
-import {PositionType} from '../../helper/types';
+import {InputType, PositionType} from '../../helper/types';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
 import {ObjectHelper} from '../../helper/object-helper';
@@ -16,10 +16,10 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class KeypadComponent extends ControlBase<string|number> {
-  @Input('type') type = 'text';
+  @Input('type') type: InputType = 'text';
   @Input('key-size') keySize: number;
   @Input('keys') keys: string[];
-  @Input('length') length: number;
+  @Input('key-length') keyLength: number;
   @Input('shuffle') shuffle: boolean;
   @Input('shuffle-count') shuffleCount: number;
   @Input('position') position: PositionType;

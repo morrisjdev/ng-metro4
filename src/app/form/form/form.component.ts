@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {M4FormGroup} from 'ng-metro4';
 
 @Component({
   selector: 'app-form',
@@ -12,8 +13,8 @@ export class FormComponent implements OnInit {
 
   constructor() {
 
-    this.formGroup = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    this.formGroup = new M4FormGroup('reactive_demo', {
+      name: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3)]),
       password: new FormControl(''),
       remember: new FormControl(false)
     });

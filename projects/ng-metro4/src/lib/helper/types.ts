@@ -16,7 +16,7 @@ import {
   positionVerticalDictionary,
   progressTypeDictionary,
   roundTypeDictionary,
-  sizeDictionary,
+  sizeDictionary, spinnerButtonPositionDictionary,
   thinDictionary,
   widePointDictionary
 } from './lists';
@@ -33,6 +33,8 @@ export type PositionVerticalType = keyof typeof positionVerticalDictionary;
 export type PositionHorizontalType = keyof typeof positionHorizontalDictionary;
 export type PositionBaseType = keyof typeof positionBaseDictionary;
 export type PositionType = keyof typeof positionDictionary;
+
+export type SpinnerButtonPositionType = keyof typeof spinnerButtonPositionDictionary;
 
 export type SizeType = keyof typeof sizeDictionary;
 

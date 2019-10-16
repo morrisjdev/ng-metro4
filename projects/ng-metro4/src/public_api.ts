@@ -32,6 +32,9 @@ export * from './lib/form/switch/switch.component';
 export * from './lib/form/tag-input/tag-input.component';
 export * from './lib/form/textarea/textarea.component';
 export * from './lib/form/time-picker/time-picker.component';
+export * from './lib/form/form-control-wrapper/form-control-wrapper.component';
+export * from './lib/form/form-wrapper/form-wrapper.component';
+export * from './lib/form/m4-form-group';
 
 export * from './lib/controls/ng-metro4-controls.module';
 export * from './lib/controls/activity/activity.service';

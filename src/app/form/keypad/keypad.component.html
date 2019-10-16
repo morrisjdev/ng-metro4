@@ -1,31 +1,116 @@
-<m4-keypad [(ngModel)]="model" [class.bg-red]="alert"></m4-keypad>
-<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
+<h1>Keypad</h1>
+<a href="https://metroui.org.ua/keypad.html" target="_blank">Keypad in Metro 4 docs</a>
 
-<m4-keypad [(ngModel)]="model" [disabled]="true"></m4-keypad>
+<app-doc-component title="Playground" [values]="{ model: '', showValue: true, serviceBtn: true, position: 'bottom' }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model" [disabled]="disabled" [class]="accent" [keys]="keys" [key-size]="keySize"\l
+             \t\t [type]="type" [shuffle]="shuffle" [show-value]="showValue" [service-buttons]="serviceBtn"\l
+             \t\t [open]="open" [position]="position"></m4-keypad>
 
-<m4-keypad [(ngModel)]="model" [keys]="['a','b','c']"></m4-keypad>
+  \i
+  <hr>
 
-<m4-keypad [(ngModel)]="model" [keys]="['aa','b','c']" type="password"></m4-keypad>
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input prepend="Key size" [(ngModel)]="keySize" type="number"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Star color" [(ngModel)]="starColor"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Keys"
+                 [options]="{ 'a': 'a', 'b': 'b', 'c': 'c', 'd': 'd', 'e': 'e' }"
+                 [(ngModel)]="keys" [multiple]="true"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Type"
+                 [options]="inputDictionary"
+                 [(ngModel)]="type"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Type"
+                 [options]="positionDictionary"
+                 [(ngModel)]="position"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
 
-<m4-radio-group [(ngModel)]="position">
-  <m4-radio value="left" caption="left"></m4-radio>
-  <m4-radio value="top-left" caption="top-left"></m4-radio>
-  <m4-radio value="top" caption="top"></m4-radio>
-  <m4-radio value="top-right" caption="top-right"></m4-radio>
-  <m4-radio value="right" caption="right"></m4-radio>
-  <m4-radio value="bottom-right" caption="bottom-right"></m4-radio>
-  <m4-radio value="bottom" caption="bottom"></m4-radio>
-  <m4-radio value="bottom-left" caption="bottom-left"></m4-radio>
-</m4-radio-group>
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="shuffle" caption="Shuffle"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="serviceBtn" caption="Service buttons"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="showValue" caption="Show value"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="open" caption="Open"></m4-checkbox>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
 
-<m4-switch [(ngModel)]="open" caption="open"></m4-switch>
+<app-doc-component title="Basic usage" [values]="{ model: '' }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model"></m4-keypad>
+  ]]>
+</app-doc-component>
 
-<m4-keypad [(ngModel)]="model" [open]="open" [position]="position"></m4-keypad>
+<app-doc-component title="Keys" [values]="{ model: 'ab' }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model" [keys]="['a', 'b', 'c', 'd', 'e']"></m4-keypad>
+  ]]>
+</app-doc-component>
 
-{{model | json}}
+<app-doc-component title="Key size" [values]="{ model: '' }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model" [key-size]="30"></m4-keypad>
+  ]]>
+</app-doc-component>
 
-<m4-keypad [(ngModel)]="modelNumber" type="number"></m4-keypad>
+<app-doc-component title="Custom key length" [values]="{ model: '' }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model" [key-length]="3" [keys]="['aa', 'bb', 'cc']"></m4-keypad>
+  ]]>
+</app-doc-component>
 
-<m4-keypad [(ngModel)]="modelNumber" type="number"></m4-keypad>
+<div class="info remark pl-2 pr-2">
+  The key length is an internal contraint and has to be greater than the longest key-value.
+</div>
 
-{{modelNumber | json}}
+<app-doc-component title="Shuffle" [values]="{ model: '' }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model" [shuffle]="true"></m4-keypad>\n
+  <m4-keypad [(ngModel)]="model" [shuffle]="true" [shuffle-count]="4"></m4-keypad>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Position" [values]="{ model: '' }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model" position="top"></m4-keypad>\n
+  <m4-keypad [(ngModel)]="model" [dynamic-position]="true"></m4-keypad>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Disable service buttons" [values]="{ model: '' }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model" [service-buttons]="false"></m4-keypad>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Hide value" [values]="{ model: '' }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model" [show-value]="false"></m4-keypad>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Always open" [values]="{ model: '' }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model" [open]="true" position="right"></m4-keypad>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="As number input" [values]="{ model: 4 }" [showModel]="true">
+  <![CDATA[
+  <m4-keypad [(ngModel)]="model" type="number"></m4-keypad>
+  ]]>
+</app-doc-component>

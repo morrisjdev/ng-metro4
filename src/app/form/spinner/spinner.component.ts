@@ -6,12 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./spinner.component.less']
 })
 export class SpinnerComponent implements OnInit {
-
-  model = 12;
-  alert = true;
-  modelDecimal = 12;
-  modelDecimalBig = 25;
-
   constructor() { }
 
   ngOnInit() {

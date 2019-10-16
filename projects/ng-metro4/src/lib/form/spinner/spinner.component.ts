@@ -3,7 +3,7 @@ import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
-import {PositionHorizontalType} from '../../helper/types';
+import {PositionHorizontalType, SpinnerButtonPositionType} from '../../helper/types';
 import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
@@ -19,7 +19,7 @@ export class SpinnerComponent extends ControlBase<number> {
   @Input('step') step = 1;
   @Input('plus-icon') plusIcon: string;
   @Input('minus-icon') minusIcon: string;
-  @Input('buttons-position') buttonsPosition: 'default'|PositionHorizontalType;
+  @Input('buttons-position') buttonsPosition: SpinnerButtonPositionType;
   @Input('min-value') minValue: number;
   @Input('max-value') maxValue: number;
   @Input('fixed') fixed = 0;

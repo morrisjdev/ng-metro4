@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as moment from 'moment';
 
 @Component({
@@ -15,5 +15,4 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

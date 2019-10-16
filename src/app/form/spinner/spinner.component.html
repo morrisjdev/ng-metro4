@@ -1,22 +1,89 @@
-<m4-spinner [(ngModel)]="model" [class.alert]="alert"></m4-spinner>
-<m4-checkbox caption="alert" [(ngModel)]="alert"></m4-checkbox>
+<h1>Spinner</h1>
+<a href="https://metroui.org.ua/spinner.html" target="_blank">Spinner in Metro 4 docs</a>
 
-<m4-spinner [(ngModel)]="model" [hide-cursor]="true"></m4-spinner>
+<app-doc-component title="Playground" [values]="{ model: 10, min: 0, max: 20, step: 1, fixed: 0, btnPosition: 'default', plusIcon: '<span class=\'mif-plus\'></span>', minusIcon: '<span class=\'mif-minus\'></span>' }" [showModel]="true">
+  <![CDATA[
+  <m4-spinner [(ngModel)]="model" [disabled]="disabled" [min-value]="min" [max-value]="max" [step]="step"\l
+              \t\t [fixed]="fixed" [class]="accent" [buttons-position]="btnPosition" [hide-cursor]="hideCursor"\l
+              \t\t [plus-icon]="plusIcon" [minus-icon]="minusIcon"></m4-spinner>
 
-<m4-spinner [(ngModel)]="model" [disabled]="true"></m4-spinner>
+  \i
+  <hr>
 
-<m4-spinner [(ngModel)]="model" buttons-position="left"></m4-spinner>
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input prepend="Min" type="number" [(ngModel)]="min"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Max" type="number" [(ngModel)]="max"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Step" type="number" [(ngModel)]="step"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Fixed" type="number" [(ngModel)]="fixed"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Plus icon" [(ngModel)]="plusIcon"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Minus icon" [(ngModel)]="minusIcon"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Buttons position"
+                 [options]="spinnerButtonPositionDictionary"
+                 [(ngModel)]="btnPosition"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
 
-<m4-spinner [(ngModel)]="model" buttons-position="right"></m4-spinner>
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="hideCursor" caption="Hide cursor"></m4-checkbox>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
 
-{{model | json}}
+<app-doc-component title="Basic usage" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-spinner [(ngModel)]="model"></m4-spinner>
+  ]]>
+</app-doc-component>
 
-<m4-spinner [(ngModel)]="modelDecimal" [min-value]="10" [max-value]="20" [step]="0.25" [fixed]="2"></m4-spinner>
+<app-doc-component title="Step/Fixed" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-spinner [(ngModel)]="model" [step]="2"></m4-spinner>\n
+  <m4-spinner [(ngModel)]="model" [step]="0.1" [fixed]="1"></m4-spinner>\n
+  <m4-spinner [(ngModel)]="model" [step]="0.05" [fixed]="2"></m4-spinner>
+  ]]>
+</app-doc-component>
 
-<m4-spinner [(ngModel)]="modelDecimal" [min-value]="10" [max-value]="20" [step]="0.25" [fixed]="2"></m4-spinner>
+<app-doc-component title="Min/Max" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-spinner [(ngModel)]="model" [min-value]="-10" [max-value]="40"></m4-spinner>
+  ]]>
+</app-doc-component>
 
-{{modelDecimal | json}}
+<app-doc-component title="Icons" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-spinner [(ngModel)]="model" plus-icon="<span class='mif-search'></span>" minus-icon="<span class='mif-envelop'></span>"></m4-spinner>
+  ]]>
+</app-doc-component>
 
-<m4-spinner [(ngModel)]="modelDecimalBig" [min-value]="10" [max-value]="20" [step]="0.25" [fixed]="2"></m4-spinner>
+<app-doc-component title="Button positions" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-spinner [(ngModel)]="model" buttons-position="default"></m4-spinner>\n
+  <m4-spinner [(ngModel)]="model" buttons-position="left"></m4-spinner>\n
+  <m4-spinner [(ngModel)]="model" buttons-position="right"></m4-spinner>
+  ]]>
+</app-doc-component>
 
-{{modelDecimalBig | json}}
+<app-doc-component title="Hide cursor" [values]="{ model: 30 }" [showModel]="true">
+  <![CDATA[
+  <m4-spinner [(ngModel)]="model" [hide-cursor]="true"></m4-spinner>
+  ]]>
+</app-doc-component>
