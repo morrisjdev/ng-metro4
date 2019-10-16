@@ -11,7 +11,6 @@ import {KeypadComponent} from './form/keypad/keypad.component';
 import {SliderComponent} from './form/slider/slider.component';
 import {SpinnerComponent} from './form/spinner/spinner.component';
 import {RatingComponent} from './form/rating/rating.component';
-import {DateTimeComponent} from './form/date-time/date-time.component';
 import {ContainerComponent} from './base/container/container.component';
 import {GridComponent} from './base/grid/grid.component';
 import {FormComponent} from './base/form/form.component';
@@ -34,6 +33,9 @@ import {HomeComponent} from './home/home/home.component';
 import {MaterialInputComponent} from './form/material-input/material-input.component';
 import {SwitchComponent} from './form/switch/switch.component';
 import {CalendarPickerComponent} from './form/calendar-picker/calendar-picker.component';
+import {CalendarComponent} from './form/calendar/calendar.component';
+import {DatePickerComponent} from './form/date-picker/date-picker.component';
+import {TimePickerComponent} from './form/time-picker/time-picker.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -52,8 +54,10 @@ const routes: Routes = [
   { path: 'form/slider', component: SliderComponent },
   { path: 'form/spinner', component: SpinnerComponent },
   { path: 'form/rating', component: RatingComponent },
-  { path: 'form/datetime', component: DateTimeComponent },
+  { path: 'form/calendar', component: CalendarComponent},
   { path: 'form/calender_picker', component: CalendarPickerComponent },
+  { path: 'form/date_picker', component: DatePickerComponent },
+  { path: 'form/time_picker', component: TimePickerComponent },
 
   { path: 'base/container', component: ContainerComponent },
   { path: 'base/grid', component: GridComponent },

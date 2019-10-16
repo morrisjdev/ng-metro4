@@ -38,7 +38,7 @@ export class CalendarPickerComponent extends ControlBase<moment.Moment> {
   @Input('ripple') ripple: boolean;
   @Input('ripple-color') rippleColor: string;
   @Input('exclude') exclude: moment.Moment[];
-  @Input('special') special: moment.Moment[];
+  @Input('include') include: moment.Moment[];
   @Input('min-date') minDate: moment.Moment;
   @Input('max-date') maxDate: moment.Moment;
   @Input('show-header') showHeader: boolean;

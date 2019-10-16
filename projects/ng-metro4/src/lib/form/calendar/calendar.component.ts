@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild, ViewEn
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
-import {WidePointType} from '../../helper/types';
+import {CalendarButtonType, WidePointType} from '../../helper/types';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
 import {ObjectHelper} from '../../helper/object-helper';
@@ -26,11 +26,11 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
   @Input('locale') locale: string;
   @Input('week-start') weekStart: 0|1;
   @Input('outside') outside: boolean;
-  @Input('buttons') buttons: string;
+  @Input('buttons') buttons: CalendarButtonType[];
   @Input('ripple') ripple: boolean;
   @Input('ripple-color') rippleColor: string;
   @Input('exclude') exclude: moment.Moment[];
-  @Input('special') special: moment.Moment[];
+  @Input('include') include: moment.Moment[];
   @Input('min-date') minDate: moment.Moment;
   @Input('max-date') maxDate: moment.Moment;
   @Input('week-day-click') weekDayClick: boolean;

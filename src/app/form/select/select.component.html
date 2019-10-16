@@ -5,7 +5,7 @@
   <![CDATA[
   <m4-select [(ngModel)]="model" [prepend]="prepend" [append]="append" [options]="options" [disabled]="disabled"\l
              \t [multiple]="multiple" [duration]="duration" [filter-placeholder]="filterPlaceholder"\l
-             \t [drop-height]="dropHeight" [filter]="filter"></m4-select>
+             \t [drop-height]="dropHeight" [filter]="filter" [class]="accent"></m4-select>
 
   \i
   <hr>
@@ -25,6 +25,11 @@
     </div>
     <div class="cell-md-4">
       <m4-input prepend="Drop height" type="number" [(ngModel)]="dropHeight"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
     </div>
 
     <div class="cell-12">

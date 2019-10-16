@@ -1,0 +1,92 @@
+<h1>Date picker</h1>
+<a href="https://metroui.org.ua/datepicker.html" target="_blank">Date picker in Metro 4 docs</a>
+
+<div class="remark info">
+  This library uses <a href="https://momentjs.com/" target="_blank">Moment.js</a> for date computations.<br>
+  Run <code>npm install -S moment</code> to use date-components.
+</div>
+
+<app-doc-component title="Playground" [values]="{ model: today, locale: 'de-DE', year: true, month: true, day: true, distance: 0 }" [showModel]="true">
+  <![CDATA[
+  <m4-date-picker [(ngModel)]="model" [disabled]="disabled" [class]="accent" [locale]="locale" [month]="month"\l
+                  \t\t [year]="year" [day]="day" [distance]="distance" [max-year]="maxYear" [min-year]="minYear"></m4-date-picker>
+
+  \i
+  <hr>
+
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input type="number" prepend="Distance" [(ngModel)]="distance"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input type="number" prepend="Min year" [(ngModel)]="minYear"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input type="number" prepend="Max year" [(ngModel)]="maxYear"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
+
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="month" caption="Month"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="year" caption="Year"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="day" caption="Day"></m4-checkbox>
+    </div>
+    <div class="cell-12">
+      <m4-radio-group [(ngModel)]="locale">
+        <m4-radio value="de-DE" caption="de-DE"></m4-radio>
+        <m4-radio value="en-US" caption="en-US"></m4-radio>
+        <m4-radio value="hu-HU" caption="hu-HU"></m4-radio>
+        <m4-radio value="uk-UA" caption="uk-UA"></m4-radio>
+        <m4-radio value="ru-RU" caption="ru-RU"></m4-radio>
+      </m4-radio-group>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Basic usage" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-date-picker [(ngModel)]="model"></m4-date-picker>\n
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Locale" [values]="{ model: today, locale: 'de-DE' }" [showModel]="true">
+  <![CDATA[
+  <m4-date-picker [(ngModel)]="model" [locale]="locale"></m4-date-picker>\n
+
+  \i
+  <m4-radio-group [(ngModel)]="locale">
+    <m4-radio value="de-DE" caption="de-DE"></m4-radio>
+    <m4-radio value="en-US" caption="en-US"></m4-radio>
+    <m4-radio value="hu-HU" caption="hu-HU"></m4-radio>
+    <m4-radio value="uk-UA" caption="uk-UA"></m4-radio>
+    <m4-radio value="ru-RU" caption="ru-RU"></m4-radio>
+  </m4-radio-group>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Min/Max" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-date-picker [(ngModel)]="model" [min-year]="2018"></m4-date-picker>\n
+  <m4-date-picker [(ngModel)]="model" [max-year]="2025"></m4-date-picker>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Picker parts" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-date-picker [(ngModel)]="model" [year]="false"></m4-date-picker>\n
+  <m4-date-picker [(ngModel)]="model" [month]="false"></m4-date-picker>\n
+  <m4-date-picker [(ngModel)]="model" [day]="false"></m4-date-picker>\n
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Distance" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-date-picker [(ngModel)]="model" [distance]="2"></m4-date-picker>
+  ]]>
+</app-doc-component>

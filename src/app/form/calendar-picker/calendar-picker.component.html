@@ -6,6 +6,55 @@
   Run <code>npm install -S moment</code> to use date-components.
 </div>
 
+<app-doc-component title="Playground" [values]="{ model: today, format: '%d.%m.%Y', locale: 'de-DE', size: '100%', clearBtnIcon: '<span class=\'mif-add\'></span>', icon: '<span class=\'mif-calendar\'></span>' }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar-picker [(ngModel)]="model" [disabled]="disabled" [class]="accent" [calendar-wide]="wide"\l
+                      \t\t [dialog-mode]="dialog" [locale]="locale" [format]="format" [size]="size"\l
+                      \t\t [clear-button]="clearBtn" [clear-button-icon]="clearBtnIcon" [calendar-button-icon]="icon"\l
+                      \t\t [show-header]="header"></m4-calendar-picker>
+
+  \i
+  <hr>
+
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input prepend="Format" [(ngModel)]="format"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Size" [(ngModel)]="size"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Clear button icon" [(ngModel)]="clearBtnIcon"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Icon" [(ngModel)]="icon"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
+
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="wide" caption="Wide"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="dialog" caption="Dialog"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="clearBtn" caption="Clear button"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="header" caption="Header"></m4-checkbox>
+    </div>
+    <div class="cell-12">
+      <m4-radio-group [(ngModel)]="locale">
+        <m4-radio value="de-DE" caption="de-DE"></m4-radio>
+        <m4-radio value="en-US" caption="en-US"></m4-radio>
+        <m4-radio value="hu-HU" caption="hu-HU"></m4-radio>
+        <m4-radio value="uk-UA" caption="uk-UA"></m4-radio>
+        <m4-radio value="ru-RU" caption="ru-RU"></m4-radio>
+      </m4-radio-group>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
+
 <app-doc-component title="Basic usage" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model"></m4-calendar-picker>\n
@@ -76,6 +125,13 @@
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [min-date]="today"></m4-calendar-picker>\n
   <m4-calendar-picker [(ngModel)]="model" [max-date]="today"></m4-calendar-picker>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Exclude/Include dates" [values]="{ model: today, array: dateArray }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar-picker [(ngModel)]="model" [exclude]="array"></m4-calendar-picker>\n
+  <m4-calendar-picker [(ngModel)]="model" [include]="array"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 

@@ -20,7 +20,6 @@ import {KeypadComponent} from './form/keypad/keypad.component';
 import {SliderComponent} from './form/slider/slider.component';
 import {SpinnerComponent} from './form/spinner/spinner.component';
 import {RatingComponent} from './form/rating/rating.component';
-import {DateTimeComponent} from './form/date-time/date-time.component';
 import {ContainerComponent} from './base/container/container.component';
 import {NgMetro4Module} from 'ng-metro4';
 import {GridComponent} from './base/grid/grid.component';
@@ -46,6 +45,9 @@ import { DocComponentComponent } from './helper/doc-component/doc-component.comp
 import { MaterialInputComponent } from './form/material-input/material-input.component';
 import { SwitchComponent } from './form/switch/switch.component';
 import { CalendarPickerComponent } from './form/calendar-picker/calendar-picker.component';
+import { CalendarComponent } from './form/calendar/calendar.component';
+import { DatePickerComponent } from './form/date-picker/date-picker.component';
+import { TimePickerComponent } from './form/time-picker/time-picker.component';
 
 export function hljsLanguages() {
   return [
@@ -70,7 +72,6 @@ export function hljsLanguages() {
     SliderComponent,
     SpinnerComponent,
     RatingComponent,
-    DateTimeComponent,
     ContainerComponent,
     GridComponent,
     FormComponent,
@@ -94,6 +95,9 @@ export function hljsLanguages() {
     MaterialInputComponent,
     SwitchComponent,
     CalendarPickerComponent,
+    CalendarComponent,
+    DatePickerComponent,
+    TimePickerComponent,
   ],
   imports: [
     BrowserModule,

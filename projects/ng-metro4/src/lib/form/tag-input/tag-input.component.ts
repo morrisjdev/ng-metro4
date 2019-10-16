@@ -16,7 +16,6 @@ declare var $: any;
 export class TagInputComponent extends ControlBase<string[]> {
   @Input('random-color') randomColor: boolean;
   @Input('max-tags') maxTags: number;
-  @Input('tag-separator') tagSeparator: string;
   @Input('tag-trigger') tagTrigger: number[];
 
   @Input('cls-tag') clsTag: string;
@@ -56,10 +55,16 @@ export class TagInputComponent extends ControlBase<string[]> {
   }
 
   disable(disabled: boolean): void {
-    if (disabled) {
-      this.tagInput.element.next('.input-wrapper').parent('div.tag-input').addClass('disabled');
-    } else {
-      this.tagInput.element.next('.input-wrapper').parent('div.tag-input').removeClass('disabled');
+    if (this.tagInput) {
+      const target = this.tagInput.element.next('.input-wrapper').parent('div.tag-input');
+
+      if (target != null) {
+        if (disabled) {
+          target.addClass('disabled');
+        } else {
+          target.removeClass('disabled');
+        }
+      }
     }
   }
 

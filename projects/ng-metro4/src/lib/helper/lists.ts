@@ -757,6 +757,13 @@ export const inputDictionary = {
   'week': 'week'
 };
 
+export const calendarButtonDictionary = {
+  'cancel': 'cancel',
+  'today': 'today',
+  'clear': 'clear',
+  'done': 'done',
+};
+
 export const widePointDictionary = {
   'fs': 'fs',
   'sm': 'sm',

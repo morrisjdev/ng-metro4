@@ -4,7 +4,7 @@ import {
   activityStyleDictionary,
   animationDictionary,
   buttonShapeDictionary,
-  buttonSpecialDictionary,
+  buttonSpecialDictionary, calendarButtonDictionary,
   colorDictionary, easingDictionary,
   gravatarDictionary,
   iconCategoryDictionary,
@@ -22,6 +22,8 @@ import {
 } from './lists';
 
 export type WidePointType = keyof typeof widePointDictionary;
+
+export type CalendarButtonType = keyof typeof calendarButtonDictionary;
 
 export type AccentType = keyof typeof accentDictionary;
 

@@ -1,0 +1,154 @@
+<h1>Calendar</h1>
+<a href="https://metroui.org.ua/calendar.html" target="_blank">Calendar in Metro 4 docs</a>
+
+<div class="remark info">
+  This library uses <a href="https://momentjs.com/" target="_blank">Moment.js</a> for date computations.<br>
+  Run <code>npm install -S moment</code> to use date-components.
+</div>
+
+<app-doc-component title="Playground" [values]="{ model: today, locale: 'de-DE', header: true, footer: true }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [disabled]="disabled" [class]="accent" [wide]="wide" [locale]="locale"\l
+               \t\t [show-header]="header" [show-footer]="footer" [picker-mode]="picker" [ripple]="ripple"\l
+               \t\t [multi-select]="multiple"></m4-calendar>
+
+  \i
+  <hr>
+
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
+
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="wide" caption="Wide"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="header" caption="Header"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="footer" caption="Footer"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="picker" caption="Picker"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="ripple" caption="Ripple"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="multiple" caption="Multiple"></m4-checkbox>
+    </div>
+    <div class="cell-12">
+      <m4-radio-group [(ngModel)]="locale">
+        <m4-radio value="de-DE" caption="de-DE"></m4-radio>
+        <m4-radio value="en-US" caption="en-US"></m4-radio>
+        <m4-radio value="hu-HU" caption="hu-HU"></m4-radio>
+        <m4-radio value="uk-UA" caption="uk-UA"></m4-radio>
+        <m4-radio value="ru-RU" caption="ru-RU"></m4-radio>
+      </m4-radio-group>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Basic usage" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model"></m4-calendar>\n
+  <m4-calendar [(ngModel)]="model" cls-calendar="compact"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Multi select" [values]="{ model: [ today ] }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [multi-select]="true"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Control width" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [wide]="true"></m4-calendar>\n
+  <m4-calendar [(ngModel)]="model" wide-point="md"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Locale" [values]="{ model: today, locale: 'de-DE' }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [locale]="locale"></m4-calendar>\n
+
+  \i
+  <m4-radio-group [(ngModel)]="locale">
+    <m4-radio value="de-DE" caption="de-DE"></m4-radio>
+    <m4-radio value="en-US" caption="en-US"></m4-radio>
+    <m4-radio value="hu-HU" caption="hu-HU"></m4-radio>
+    <m4-radio value="uk-UA" caption="uk-UA"></m4-radio>
+    <m4-radio value="ru-RU" caption="ru-RU"></m4-radio>
+  </m4-radio-group>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Picker mode" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [picker-mode]="true"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Min/Max" [values]="{ model: today, today: today }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [min-date]="today"></m4-calendar>\n
+  <m4-calendar [(ngModel)]="model" [max-date]="today"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Exclude/Include dates" [values]="{ model: today, array: dateArray }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [exclude]="array"></m4-calendar>\n
+  <m4-calendar [(ngModel)]="model" [include]="array"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Week start" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [week-start]="0"></m4-calendar>\n
+  <m4-calendar [(ngModel)]="model" [week-start]="1"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Selectable years" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [years-before]="0"></m4-calendar>\n
+  <m4-calendar [(ngModel)]="model" [years-after]="0"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Buttons" [values]="{ model: today, buttons: ['done'] }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [buttons]="buttons"></m4-calendar>
+
+  \i
+  <m4-checkbox-group [(ngModel)]="buttons">
+    <m4-checkbox value="done" caption="done"></m4-checkbox>
+    <m4-checkbox value="today" caption="today"></m4-checkbox>
+    <m4-checkbox value="clear" caption="clear"></m4-checkbox>
+    <m4-checkbox value="cancel" caption="cancel"></m4-checkbox>
+  </m4-checkbox-group>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Show header/footer" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [show-header]="false"></m4-calendar>\n
+  <m4-calendar [(ngModel)]="model" [show-footer]="false"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Weekday click" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [week-day-click]="true"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Outside" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [outside]="true"></m4-calendar>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Ripple" [values]="{ model: today }" [showModel]="true">
+  <![CDATA[
+  <m4-calendar [(ngModel)]="model" [ripple]="true"></m4-calendar>\n
+  <m4-calendar [(ngModel)]="model" [ripple]="true" ripple-color="#ff0000"></m4-calendar>
+  ]]>
+</app-doc-component>

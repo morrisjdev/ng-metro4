@@ -33,6 +33,7 @@ export class RadioGroupComponent extends ControlBase<any> {
             item.name = this.name;
             item.registerOnChange((v) => {
               this.changeValue(v);
+              this.newValue();
             });
 
             item.registerOnTouched(() => {

@@ -1,0 +1,77 @@
+<h1>Time picker</h1>
+<a href="https://metroui.org.ua/timepicker.html" target="_blank">Time picker in Metro 4 docs</a>
+
+<div class="remark info">
+  This library uses <a href="https://momentjs.com/" target="_blank">Moment.js</a> for date computations.<br>
+  Run <code>npm install -S moment</code> to use date-components.
+</div>
+
+<app-doc-component title="Playground" [values]="{ model: duration, locale: 'de-DE', hours: true, minutes: true, seconds: true, labels: true }" [showModel]="true">
+  <![CDATA[
+  <m4-time-picker [(ngModel)]="model" [disabled]="disabled" [class]="class" [locale]="locale" [hours]="hours"\l
+                  \t\t [minutes]="minutes" [seconds]="seconds" [show-labels]="labels"></m4-time-picker>
+
+  \i
+  <hr>
+
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
+
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="minutes" caption="Minutes"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="hours" caption="Hours"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="seconds" caption="Seconds"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="labels" caption="Labels"></m4-checkbox>
+    </div>
+    <div class="cell-12">
+      <m4-radio-group [(ngModel)]="locale">
+        <m4-radio value="de-DE" caption="de-DE"></m4-radio>
+        <m4-radio value="en-US" caption="en-US"></m4-radio>
+        <m4-radio value="hu-HU" caption="hu-HU"></m4-radio>
+        <m4-radio value="uk-UA" caption="uk-UA"></m4-radio>
+        <m4-radio value="ru-RU" caption="ru-RU"></m4-radio>
+      </m4-radio-group>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Basic usage" [values]="{ model: duration }" [showModel]="true">
+  <![CDATA[
+  <m4-time-picker [(ngModel)]="model"></m4-time-picker>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Locale" [values]="{ model: duration, locale: 'de-DE' }" [showModel]="true">
+  <![CDATA[
+  <m4-time-picker [(ngModel)]="model" [locale]="locale"></m4-time-picker>\n
+
+  \i
+  <m4-radio-group [(ngModel)]="locale">
+    <m4-radio value="de-DE" caption="de-DE"></m4-radio>
+    <m4-radio value="en-US" caption="en-US"></m4-radio>
+    <m4-radio value="hu-HU" caption="hu-HU"></m4-radio>
+    <m4-radio value="uk-UA" caption="uk-UA"></m4-radio>
+    <m4-radio value="ru-RU" caption="ru-RU"></m4-radio>
+  </m4-radio-group>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Picker parts" [values]="{ model: duration }" [showModel]="true">
+  <![CDATA[
+  <m4-time-picker [(ngModel)]="model" [minutes]="false"></m4-time-picker>\n
+  <m4-time-picker [(ngModel)]="model" [hours]="false"></m4-time-picker>\n
+  <m4-time-picker [(ngModel)]="model" [seconds]="false"></m4-time-picker>\n
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Labels" [values]="{ model: duration }" [showModel]="true">
+  <![CDATA[
+  <m4-time-picker [(ngModel)]="model" [show-labels]="false"></m4-time-picker>
+  ]]>
+</app-doc-component>
