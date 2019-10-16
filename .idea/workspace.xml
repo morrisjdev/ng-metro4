@@ -3,30 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/control-base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/control-base.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/input/input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/input/input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/material-input/material-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/material-input/material-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/button/button.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/button/button.directive.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/lists.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/lists.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/base/button/button.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/button/button.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/button/button.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/button/button.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/form/input/input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/input/input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/input/input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/input/input.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/material-input/material-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/material-input/material-input.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/form/radio/radio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/radio/radio.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/radio/radio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/radio/radio.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/form/select/select.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/select/select.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/select/select.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/select/select.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/helper/doc-component/doc-component.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/helper/doc-component/doc-component.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/helper/doc-component/doc-component.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/helper/doc-component/doc-component.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/helper/html.pipe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/switch/switch.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/switch/switch.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +177,8 @@
       <workItem from="1571048631153" duration="19885000" />
       <workItem from="1571134153446" duration="4375000" />
       <workItem from="1571144241120" duration="3548000" />
-      <workItem from="1571149170007" duration="12386000" />
+      <workItem from="1571149170007" duration="12641000" />
+      <workItem from="1571205904193" duration="4900000" />
     </task>
     <task id="LOCAL-00001" summary="added timepicker&#10;fixed calendar&#10;fixed input">
       <created>1549009089576</created>

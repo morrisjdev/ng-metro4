@@ -1,4 +1,51 @@
 <h1>Select</h1>
+<a href="https://metroui.org.ua/select.html" target="_blank">Select in Metro 4 docs</a>
+
+<app-doc-component title="Playground" [values]="{ model: 'value', options: [], duration: 0, filter: true }" [showModel]="true">
+  <![CDATA[
+  <m4-select [(ngModel)]="model" [prepend]="prepend" [append]="append" [options]="options" [disabled]="disabled"\l
+             \t [multiple]="multiple" [duration]="duration" [filter-placeholder]="filterPlaceholder"\l
+             \t [drop-height]="dropHeight" [filter]="filter"></m4-select>
+
+  \i
+  <hr>
+
+  <div class="row">
+    <div class="cell-md-4">
+      <m4-input prepend="Prepend" [(ngModel)]="prepend"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Append" [(ngModel)]="append"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Filter placeholder" [(ngModel)]="filterPlaceholder"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Duration" type="number" [(ngModel)]="duration"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Drop height" type="number" [(ngModel)]="dropHeight"></m4-input>
+    </div>
+
+    <div class="cell-12">
+      <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="multiple" caption="Multiple"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="filter" caption="Filter"></m4-checkbox>
+    </div>
+    <div class="cell-12">
+      <m4-checkbox-group [(ngModel)]="options">
+        <m4-checkbox [value]="{ title: 'Amazon', value: 'amazon', dataTemplate: '<span class=\'mif-amazon icon\'></span> $1' }" caption="Option 1"></m4-checkbox>
+        <m4-checkbox [value]="{ title: 'Eye', value: 'eye', dataTemplate: '<span class=\'mif-eye icon\'></span> $1' }" caption="Option 2"></m4-checkbox>
+        <m4-checkbox [value]="{ title: 'Search', value: 'search', dataTemplate: '<span class=\'mif-search icon\'></span> $1' }" caption="Option 3"></m4-checkbox>
+        <m4-checkbox [value]="{ groupName: 'Group 1', options: [
+          { title: 'Home', value: 'home', dataTemplate: '<span class=\'mif-home icon\'></span> $1' },
+          { title: 'Menu', value: 'menu', dataTemplate: '<span class=\'mif-menu icon\'></span> $1' }
+         ] }" caption="Group 1"></m4-checkbox>
+      </m4-checkbox-group>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>
 
 <app-doc-component title="Basic usage" [values]="{ model: 'value' }" [showModel]="true">
   <![CDATA[

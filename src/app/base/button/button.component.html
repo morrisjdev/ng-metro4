@@ -1,9 +1,10 @@
 <h1>Button</h1>
+<a href="https://metroui.org.ua/buttons.html" target="_blank">Buttons in Metro 4 docs</a>
 
 <app-doc-component title="Playground" [values]="{ showText: true }">
   <![CDATA[
   <button m4-button [btn-style]="style" [outline]="outline" [rounded]="rounded" [shape]="shape" [disabled]="disabled"\l
-          \t\t[shadow]="shadow" [flat]="flat" [size]="size">\l
+          \t\t[shadow]="shadow" [flat]="flat" [size]="size" [special-btn]="special">\l
     \t<m4-icon *ngIf="showIcon" icon="checkmark"></m4-icon>\l
     \t<span *ngIf="showText"> Example button</span>\l
   </button>
@@ -20,6 +21,9 @@
     </div>
     <div class="cell-md-4">
       <m4-select prepend="Shape" [(ngModel)]="shape" [options]="buttonShapeDictionary"></m4-select>
+    </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Special buttons" [(ngModel)]="special" [options]="buttonSpecialDictionary"></m4-select>
     </div>
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="showIcon" caption="Show icon"></m4-checkbox>
@@ -199,3 +203,27 @@
   </button>
   ]]>
 </app-doc-component>
+
+<app-doc-component title="Action button">
+  <![CDATA[
+  <button m4-button special-btn="action"><span class="icon"><m4-icon icon="plus"></m4-icon></span></button>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Multi action">
+  <![CDATA[
+  <div class="multi-action">\l
+    \t<button m4-button special-btn="multi-action" class="rotate-minus"><span class="icon"><m4-icon icon="plus"></m4-icon></span></button>\l
+    \t<ul class="actions drop-right">\l
+      \t\t<li class="bg-blue"><a href="#"><span class="mif-user-plus"></span></a></li>\l
+      \t\t<li class="bg-teal"><a href="#"><span class="mif-library"></span></a></li>\l
+      \t\t<li class="bg-pink"><a href="#"><span class="mif-alarm"></span></a></li>\l
+      \t\t<li class="bg-orange"><a href="#"><span class="mif-lock"></span></a></li>\l
+    \t</ul>\l
+  </div>
+  ]]>
+</app-doc-component>
+
+<div class="remark info ml-2 mr-2">
+  If you want to add the rotation effect you have to add the class <code>rotate</code> or <code>rotate-minus</code> to the button.
+</div>

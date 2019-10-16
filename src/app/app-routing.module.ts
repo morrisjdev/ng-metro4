@@ -33,6 +33,7 @@ import {StartComponent} from './home/start/start.component';
 import {HomeComponent} from './home/home/home.component';
 import {MaterialInputComponent} from './form/material-input/material-input.component';
 import {SwitchComponent} from './form/switch/switch.component';
+import {CalendarPickerComponent} from './form/calendar-picker/calendar-picker.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -52,6 +53,7 @@ const routes: Routes = [
   { path: 'form/spinner', component: SpinnerComponent },
   { path: 'form/rating', component: RatingComponent },
   { path: 'form/datetime', component: DateTimeComponent },
+  { path: 'form/calender_picker', component: CalendarPickerComponent },
 
   { path: 'base/container', component: ContainerComponent },
   { path: 'base/grid', component: GridComponent },

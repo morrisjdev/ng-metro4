@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostBinding, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
+import {Directive, ElementRef, HostBinding, HostListener, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
 import {AccentType, ButtonShapeType, ButtonSpecialType, SizeType} from '../../helper/types';
 
 declare var $: any;
@@ -34,7 +34,8 @@ export class ButtonDirective implements OnInit, OnChanges {
     const buttonClass = this.specialBtn === 'command' ? 'command-button' :
       this.specialBtn === 'image' ? 'image-button' :
         this.specialBtn === 'shortcut' ? 'shortcut' :
-          this.specialBtn === 'ribbon' ? 'ribbon-button' : 'button';
+          this.specialBtn === 'ribbon' ? 'ribbon-button' :
+            this.specialBtn === 'action' || this.specialBtn === 'multi-action' ? 'action-button' : 'button';
 
     const newClasses = [ buttonClass ];
 
@@ -73,6 +74,13 @@ export class ButtonDirective implements OnInit, OnChanges {
       this.jElement.addClass(c);
     });
     this.oldClasses = newClasses;
+  }
+
+  @HostListener('click')
+  private clickEvent() {
+    if (this.specialBtn === 'multi-action') {
+      this.jElement.toggleClass('active');
+    }
   }
 
   ngOnInit(): void {

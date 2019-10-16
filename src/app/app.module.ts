@@ -45,6 +45,7 @@ import { HomeComponent } from './home/home/home.component';
 import { DocComponentComponent } from './helper/doc-component/doc-component.component';
 import { MaterialInputComponent } from './form/material-input/material-input.component';
 import { SwitchComponent } from './form/switch/switch.component';
+import { CalendarPickerComponent } from './form/calendar-picker/calendar-picker.component';
 
 export function hljsLanguages() {
   return [
@@ -92,6 +93,7 @@ export function hljsLanguages() {
     DocComponentComponent,
     MaterialInputComponent,
     SwitchComponent,
+    CalendarPickerComponent,
   ],
   imports: [
     BrowserModule,

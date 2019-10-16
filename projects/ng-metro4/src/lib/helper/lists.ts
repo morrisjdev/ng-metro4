@@ -831,7 +831,9 @@ export const buttonSpecialDictionary = {
   'command': 'command',
   'image': 'image',
   'shortcut': 'shortcut',
-  'ribbon': 'ribbon'
+  'ribbon': 'ribbon',
+  'multi-action': 'multi-action',
+  'action': 'action',
 };
 
 export const popoverTriggerDictionary = {
