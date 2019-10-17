@@ -18,6 +18,8 @@ import {CalendarPickerComponent} from './calendar-picker/calendar-picker.compone
 import {DatePickerComponent} from './date-picker/date-picker.component';
 import {TimePickerComponent} from './time-picker/time-picker.component';
 import {FormComponent} from './form/form.component';
+import {FormWrapperComponent} from './form-wrapper/form-wrapper.component';
+import {FormControlWrapperComponent} from './form-control-wrapper/form-control-wrapper.component';
 
 const routes: Routes = [
   { path: 'tag-input', component: TagInputComponent },
@@ -38,6 +40,8 @@ const routes: Routes = [
   { path: 'date_picker', component: DatePickerComponent },
   { path: 'time_picker', component: TimePickerComponent },
   { path: 'form', component: FormComponent },
+  { path: 'form_wrapper', component: FormWrapperComponent },
+  { path: 'form_control_wrapper', component: FormControlWrapperComponent },
 ];
 
 @NgModule({

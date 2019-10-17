@@ -6,18 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./file-input.component.less']
 })
 export class FileInputComponent implements OnInit {
-    constructor() { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  openFile() {
+  openFile(file) {
     const reader = new FileReader();
 
     reader.onload = (e) => {
-      console.log(reader.result);
+      alert(reader.result);
     };
 
-    // reader.readAsText(this.model);
+    reader.readAsText(file);
   }
 }

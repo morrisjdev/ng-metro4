@@ -1,0 +1,82 @@
+<h1>Form wrapper</h1>
+
+<div class="remark info">
+  The <code>m4-form-wrapper</code> is useful to wrap the controls of a form together. It will create an error
+  display for the group and makes the creation of forms a bit easier.
+</div>
+
+<app-doc-component title="Usage" [values]="{ formGroup: formGroup }">
+  <![CDATA[
+  <m4-form-wrapper title="Form" description="This is a reactive form with different validations" [formGroup]="formGroup">\l
+    \t<m4-form-control-wrapper label="Password">\l
+      \t\t<m4-input type="password" placeholder="Enter password" formControlName="password"></m4-input>\l
+      \t</m4-form-control-wrapper>\l\l
+
+    \t<m4-form-control-wrapper label="Repeat password">\l
+      \t\t<m4-input type="password" placeholder="Enter password" formControlName="password_confirm"></m4-input>\l
+      \t</m4-form-control-wrapper>\l
+  </m4-form-wrapper>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    // Define form group\n\n
+    public formGroup: FormGroup;\n\n
+
+    constructor() {\n
+      \tthis.formGroup = new M4FormGroup('reactive_demo', {\n
+      \t\tpassword: new FormControl('', [Validators.required]),\n
+      \t\tpassword_confirm: new FormControl('', [Validators.required]),\n
+    \t}, [CustomGroupValidator.sameValues('password', 'password_confirm')]);\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Create custom error display" [values]="{ formGroup: formGroup }">
+  <![CDATA[
+  <m4-form-wrapper title="Form" description="This is a reactive form with different validations" [formGroup]="formGroup">\l
+    \t<m4-form-control-wrapper label="Password">\l
+      \t\t<m4-input type="password" placeholder="Enter password" formControlName="password"></m4-input>\l
+      \t</m4-form-control-wrapper>\l\l
+
+    \t<m4-form-control-wrapper label="Repeat password">\l
+      \t\t<m4-input type="password" placeholder="Enter password" formControlName="password_confirm"></m4-input>\l
+      \t</m4-form-control-wrapper>\l\l
+
+    \t<ng-template #formError let-error="error">\l
+      \t\t<span class="mif-home"></span>&nbsp;<span [innerText]="error"></span>\l
+    \t</ng-template>\l
+  </m4-form-wrapper>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Create custom group validator">
+  <![CDATA[
+
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    export class CustomGroupValidator {\n
+      \tstatic sameValues(...fieldKeys: string[]): ValidatorFn {\n
+        \t\treturn (formGroup: FormGroup): { [key: string]: any } | null => {\n
+          \t\t\tconst formValue = formGroup.value;\n\n
+
+          \t\t\tconst firstValue = formValue[fieldKeys[0]];\n\n
+
+          \t\t\tfor (let i = 1; i < fieldKeys.length; i++) {\n
+            \t\t\t\tif (formValue[fieldKeys[i]] !== firstValue) {\n
+              \t\t\t\t\treturn {\n
+                \t\t\t\t\t\t'same': 'Values do not match'\n
+              \t\t\t\t\t};\n
+              \t\t\t\t}\n
+            \t\t\t}\n\n
+
+         \t\t\treturn null;\n
+        \t\t};\n
+      \t}\n
+    }
+    ]]>
+  </div>
+</app-doc-component>

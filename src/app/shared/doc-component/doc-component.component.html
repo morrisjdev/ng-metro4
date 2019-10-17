@@ -1,10 +1,16 @@
 <h2>{{title}}</h2>
 
+<p *ngIf="description">{{description}}</p>
+
 <div #htmlElement class="d-none">
   <ng-content></ng-content>
 </div>
 
-<div class="card">
+<div #langElement class="d-none">
+  <ng-content select="[lang]"></ng-content>
+</div>
+
+<div class="card" [class.d-none]="!html">
   <div class="card-content p-5">
     <div #container></div>
   </div>
@@ -13,6 +19,12 @@
   </div>
 </div>
 
-<div class="pr-2 pl-2">
+<div class="pr-2 pl-2" *ngIf="html">
+  <h6 *ngIf="languages">html</h6>
   <pre><code [highlight]="html" [languages]="['html']"></code></pre>
+</div>
+
+<div class="pr-2 pl-2" *ngFor="let lang of languages">
+  <h6>{{lang.lang}}</h6>
+  <pre><code [highlight]="lang.content" [languages]="[ lang.lang ]"></code></pre>
 </div>

@@ -6,12 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./textarea.component.less']
 })
 export class TextareaComponent implements OnInit {
-
-  prepend = '';
-
-  model = 'test';
-  alert = true;
-
   constructor() { }
 
   ngOnInit() {

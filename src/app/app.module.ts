@@ -5,6 +5,7 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
 import powershell from 'highlight.js/lib/languages/powershell';
 import json from 'highlight.js/lib/languages/json';
+import css from 'highlight.js/lib/languages/css';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -17,6 +18,7 @@ export function hljsLanguages() {
     {name: 'html', func: xml},
     {name: 'ps', func: powershell },
     {name: 'json', func: json },
+    {name: 'css', func: css },
   ];
 }
 

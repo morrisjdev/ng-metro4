@@ -20,6 +20,8 @@ import {CalendarPickerComponent} from './calendar-picker/calendar-picker.compone
 import {DatePickerComponent} from './date-picker/date-picker.component';
 import {TimePickerComponent} from './time-picker/time-picker.component';
 import {SharedModule} from '../shared/shared.module';
+import { FormWrapperComponent } from './form-wrapper/form-wrapper.component';
+import { FormControlWrapperComponent } from './form-control-wrapper/form-control-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import {SharedModule} from '../shared/shared.module';
     CalendarComponent,
     DatePickerComponent,
     TimePickerComponent,
+    FormWrapperComponent,
+    FormControlWrapperComponent,
   ],
   imports: [
     SharedModule,

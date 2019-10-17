@@ -1,0 +1,31 @@
+<h1>Form control wrapper</h1>
+
+<div class="remark info">
+  The <code>m4-form-control-wrapper</code> marks the controls if it has errors and generates error classes and error messages.
+  It is very useful when creating forms.
+</div>
+
+<app-doc-component title="Usage" [values]="{ formGroup: formGroup }">
+  <![CDATA[
+  <div [formGroup]="formGroup">\l
+    \t<m4-form-control-wrapper label="Password">\l
+      \t\t<m4-input type="password" placeholder="Enter password" formControlName="password"></m4-input>\l
+    \t</m4-form-control-wrapper>\l
+  </div>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Define custom error template" [values]="{ formGroup: formGroup }">
+  <![CDATA[
+  <div [formGroup]="formGroup">\l
+    \t<m4-form-control-wrapper label="Password">\l
+      \t\t<m4-input type="password" placeholder="Enter password" formControlName="password"></m4-input>\l\l
+
+      \t\t<ng-template #controlError let-error="error">\l
+        \t\t\t<span class="mif-rocket"></span>&nbsp;<span [innerText]="error"></span>\l
+      \t\t</ng-template>\l
+      \t</m4-form-control-wrapper>\l
+  </div>
+  ]]>
+</app-doc-component>
+

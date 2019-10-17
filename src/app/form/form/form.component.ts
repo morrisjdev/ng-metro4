@@ -15,11 +15,16 @@ export class FormComponent implements OnInit {
   constructor() {
 
     this.formGroup = new M4FormGroup('reactive_demo', {
-      name: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3)]),
-      password: new FormControl('s'),
-      password_confirm: new FormControl(''),
+      email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3)]),
+      password: new FormControl('', [Validators.required]),
+      number: new FormControl(10, [Validators.min(5), Validators.max(30)]),
+      password_confirm: new FormControl('', [Validators.required]),
       remember: new FormControl(false, [Validators.requiredTrue])
     }, [CustomGroupValidator.sameValues('password', 'password_confirm')]);
+  }
+
+  alert(value) {
+    alert(JSON.stringify(value));
   }
 
   ngOnInit() {

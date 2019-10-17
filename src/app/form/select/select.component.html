@@ -65,17 +65,24 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Using an array as options" [values]="{ model: 'value' }" [showModel]="true">
+<app-doc-component title="Using an array as options" [values]="{ model: 'value', options: options }" [showModel]="true">
   <![CDATA[
-  <m4-select [(ngModel)]="model" [options]="[\l
-      \t\t{ title: 'Das ist ein test', value: 12, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1' },\l
-      \t\t{ groupName: 'Test Gruppe',\l
-        \t\t\toptions: [\l
-          \t\t\t\t{ title: 'Das ist ein test', value: 13, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1' }\l
-        \t\t\t]\l
-      \t\t}\l
-    \t]"></m4-select>
+  <m4-select [(ngModel)]="model" [options]="options"></m4-select>
   ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    options = [\n
+      \t{title: 'Das ist ein test', value: 12, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1'},\n
+      \t{\n
+        \t\tgroupName: 'Test Gruppe',\n
+        \t\toptions: [\n
+          \t\t\t{title: 'Das ist ein test', value: 13, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1'}\n
+        \t\t]\n
+      \t}\n
+    ];
+    ]]>
+  </div>
 </app-doc-component>
 
 <app-doc-component title="Defining options in html" [values]="{ model: 'mini' }" [showModel]="true">

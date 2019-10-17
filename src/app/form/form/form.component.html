@@ -1,38 +1,47 @@
-<m4-form-wrapper title="Login" description="This a form with a description" [formGroup]="formGroup">
-  <m4-form-control-wrapper label="Email">
-    <m4-input type="email" formControlName="name"></m4-input>
+<h1>Reactive form</h1>
 
-    <ng-template #controlError let-error="error">
-      <span class="mif-power"></span> {{error}}
-    </ng-template>
-  </m4-form-control-wrapper>
+<app-doc-component title="Creating a reactive form" [values]="{ formGroup: formGroup, alert: alert }">
+  <![CDATA[
+  <m4-form-wrapper title="Form" description="This is a reactive form with different validations" [formGroup]="formGroup">\l
+    \t<m4-form-control-wrapper label="Email">\l
+      \t\t<m4-input type="email" placeholder="Email" formControlName="email"></m4-input>\l
+    \t</m4-form-control-wrapper>\l\l
 
-  <m4-form-control-wrapper label="Email">
-    <m4-input type="email" formControlName="name" placeholder="Email"></m4-input>
-  </m4-form-control-wrapper>
+    \t<m4-form-control-wrapper label="Password">\l
+      \t\t<m4-input type="password" placeholder="Enter password" formControlName="password"></m4-input>\l
+    \t</m4-form-control-wrapper>\l\l
 
-  <m4-form-control-wrapper label="Password">
-    <m4-input type="password" placeholder="Enter password" formControlName="password"></m4-input>
-  </m4-form-control-wrapper>
+    \t<m4-form-control-wrapper label="Repeat password">\l
+      \t\t<m4-input type="password" placeholder="Enter password" formControlName="password_confirm"></m4-input>\l
+    \t</m4-form-control-wrapper>\l\l
 
-  <m4-form-control-wrapper label="Repeat password">
-    <m4-input type="password" placeholder="Enter password" formControlName="password_confirm"></m4-input>
-  </m4-form-control-wrapper>
+    \t<m4-form-control-wrapper label="Select a number">\l
+      \t\t<m4-slider type="number" formControlName="number"></m4-slider>\l
+    \t</m4-form-control-wrapper>\l\l
 
-  <m4-form-control-wrapper>
-    <m4-checkbox caption="Remember me" formControlName="remember"></m4-checkbox>
-  </m4-form-control-wrapper>
+    \t<m4-form-control-wrapper>\l
+      \t\t<m4-checkbox caption="Remember me" formControlName="remember"></m4-checkbox>\l
+    \t</m4-form-control-wrapper>\l
+  </m4-form-wrapper>\l\l
 
-  <ng-template #formError let-error="error">
-    <span class="mif-home"></span> {{error}}
-  </ng-template>
-</m4-form-wrapper>
+  <button btn-style="success" m4-button [disabled]="formGroup.invalid || formGroup.pristine"\l
+          \t\t (click)="alert(formGroup.value)">Submit data</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    // Define form group\n\n
+    public formGroup: FormGroup;\n\n
 
-<div class="form-group">
-  <button btn-style="success" m4-button>Submit data</button>
-  <button m4-button type="reset">Cancel</button>
-</div>
-
-{{ formGroup.errors | json }}
-{{ formGroup.value | json }}
-{{ formGroup.valid | json }}
+    constructor() {\n
+      \tthis.formGroup = new M4FormGroup('reactive_demo', {\n
+      \t\temail: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3)]),\n
+      \t\tpassword: new FormControl('', [Validators.required]),\n
+      \t\tnumber: new FormControl(10, [Validators.min(5), Validators.max(30)]),\n
+      \t\tpassword_confirm: new FormControl('', [Validators.required]),\n
+      \t\tremember: new FormControl(false, [Validators.requiredTrue])\n
+    \t}, [CustomGroupValidator.sameValues('password', 'password_confirm')]);\n
+    }
+    ]]>
+  </div>
+</app-doc-component>

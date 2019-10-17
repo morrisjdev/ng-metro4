@@ -1,36 +1,20 @@
 <h1>File</h1>
 <a href="https://metroui.org.ua/file.html" target="_blank">File in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: '', showValue: true, serviceBtn: true, position: 'bottom' }" [showModel]="true">
+<app-doc-component title="Playground" [values]="{ }" [showModel]="true">
   <![CDATA[
-  <m4-keypad [(ngModel)]="model" [disabled]="disabled" [class]="accent" [keys]="keys" [key-size]="keySize"\l
-             \t\t [type]="type" [shuffle]="shuffle" [show-value]="showValue" [service-buttons]="serviceBtn"\l
-             \t\t [open]="open" [position]="position"></m4-keypad>
+  <m4-file-input [(ngModel)]="model" [disabled]="disabled" [class]="accent" [multiple]="multiple" [prepend]="prepend"\l
+                 \t\t [button-title]="btnTitle" [drop]="drop"></m4-file-input>
 
   \i
   <hr>
 
   <div class="row">
     <div class="cell-md-4">
-      <m4-input prepend="Key size" [(ngModel)]="keySize" type="number"></m4-input>
+      <m4-input prepend="Prepend" [(ngModel)]="prepend"></m4-input>
     </div>
     <div class="cell-md-4">
-      <m4-input prepend="Star color" [(ngModel)]="starColor"></m4-input>
-    </div>
-    <div class="cell-md-4">
-      <m4-select prepend="Keys"
-                 [options]="{ 'a': 'a', 'b': 'b', 'c': 'c', 'd': 'd', 'e': 'e' }"
-                 [(ngModel)]="keys" [multiple]="true"></m4-select>
-    </div>
-    <div class="cell-md-4">
-      <m4-select prepend="Type"
-                 [options]="inputDictionary"
-                 [(ngModel)]="type"></m4-select>
-    </div>
-    <div class="cell-md-4">
-      <m4-select prepend="Type"
-                 [options]="positionDictionary"
-                 [(ngModel)]="position"></m4-select>
+      <m4-input prepend="Button title" [(ngModel)]="btnTitle"></m4-input>
     </div>
     <div class="cell-md-4">
       <m4-select prepend="Accent class"
@@ -40,10 +24,8 @@
 
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
-      <m4-checkbox [(ngModel)]="shuffle" caption="Shuffle"></m4-checkbox>
-      <m4-checkbox [(ngModel)]="serviceBtn" caption="Service buttons"></m4-checkbox>
-      <m4-checkbox [(ngModel)]="showValue" caption="Show value"></m4-checkbox>
-      <m4-checkbox [(ngModel)]="open" caption="Open"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="multiple" caption="Multiple"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="drop" caption="Drop"></m4-checkbox>
     </div>
   </div>
   ]]>
@@ -79,4 +61,25 @@
   <m4-file-input [(ngModel)]="model" [drop]="true"></m4-file-input>\n
   <m4-file-input [(ngModel)]="model" [drop]="true" [multiple]="true"></m4-file-input>
   ]]>
+</app-doc-component>
+
+<app-doc-component title="Read file content" [values]="{ model: null, openFile: openFile }" [showModel]="true">
+  <![CDATA[
+  <m4-file-input [(ngModel)]="model" (ngModelChange)="openFile($event)" [drop]="true"></m4-file-input>
+  ]]>
+
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    openFile(file) {\n
+      \tconst reader = new FileReader();\n\n
+
+      \treader.onload = (e) => {\n
+        \t\talert(reader.result);\n
+      \t};\n\n
+
+      \treader.readAsText(file);\n
+    }
+    ]]>
+  </div>
 </app-doc-component>
