@@ -1,17 +1,19 @@
 <h1 *ngIf="title">{{title}}</h1>
-<p class="text-leader" *ngIf="description">{{description}}</p>
+<p class="text-leader mb-5" *ngIf="description">{{description}}</p>
 
-<ng-container *ngIf="formGroup.errors">
+<ng-content></ng-content>
+
+<ng-container *ngIf="showErrors && formGroup.errors && formGroup.dirty">
   <hr>
 
-<!--  <ul class="fg-red text-small m-1">-->
-<!--    <li *ngFor="let error of control.errors | errorDisplay: formControlPath">-->
-<!--      <ng-container *ngIf="errorTemplate">-->
-<!--        <ng-container *ngTemplateOutlet="errorTemplate;context:{ error: error }"></ng-container>-->
-<!--      </ng-container>-->
-<!--      <ng-container *ngIf="!errorTemplate">-->
-<!--        {{error}}-->
-<!--      </ng-container>-->
-<!--    </li>-->
-<!--  </ul>-->
+  <ul class="fg-red text-small m-2">
+    <li *ngFor="let error of formGroup.errors | errorDisplay: formPath">
+      <ng-container *ngIf="errorTemplate">
+        <ng-container *ngTemplateOutlet="errorTemplate;context:{ error: error }"></ng-container>
+      </ng-container>
+      <ng-container *ngIf="!errorTemplate">
+        {{error}}
+      </ng-container>
+    </li>
+  </ul>
 </ng-container>

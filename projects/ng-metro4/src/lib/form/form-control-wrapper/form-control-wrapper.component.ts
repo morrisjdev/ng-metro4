@@ -13,13 +13,14 @@ import {M4FormGroup} from '../m4-form-group';
 export class FormControlWrapperComponent implements AfterContentInit {
   @Input('label') label: string;
   @Input('description') description: string;
+  @Input('show-errors') showErrors = true;
 
   public formGroup: M4FormGroup;
 
   @ContentChild(ControlBase, { static: true })
   public formControl: ControlBase<any>;
 
-  @ContentChild('error', { static: true }) errorTemplate: TemplateRef<any>;
+  @ContentChild('controlError', { static: true }) errorTemplate: TemplateRef<any>;
 
   public control: AbstractControl;
 
@@ -27,6 +28,7 @@ export class FormControlWrapperComponent implements AfterContentInit {
   public formName: string;
   public formPath: string;
   public formControlPath: string;
+  public marginTop = false;
 
   private statusChangeSubscription: Subscription;
 
@@ -34,8 +36,10 @@ export class FormControlWrapperComponent implements AfterContentInit {
 
   ngAfterContentInit(): void {
     const directives: FormControlName[] = (<any>this.controlContainer).directives;
-    const formControlNameDirective = directives.find(d => d.valueAccessor === this.formControl);
+    const controlIndex = directives.findIndex(d => d.valueAccessor === this.formControl);
+    const formControlNameDirective = directives[controlIndex];
 
+    this.marginTop = controlIndex > 0;
     this.formControlName = formControlNameDirective.name;
     this.formGroup = <M4FormGroup>this.controlContainer.control;
     this.formName = this.formGroup.name;

@@ -1,9 +1,9 @@
-<div class="form-group">
+<div class="form-group" [class.mt-1]="marginTop">
   <label *ngIf="label">{{label}}</label>
   <ng-content></ng-content>
   <small class="text-muted" *ngIf="description">{{description}}</small>
 
-  <ng-container *ngIf="control.errors">
+  <ng-container *ngIf="showErrors && control.errors && control.dirty">
     <ul class="fg-red text-small m-1">
       <li *ngFor="let error of control.errors | errorDisplay: formControlPath">
         <ng-container *ngIf="errorTemplate">

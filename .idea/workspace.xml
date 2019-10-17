@@ -3,44 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/keypad/keypad.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/keypad/keypad.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/keypad/keypad.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/keypad/keypad.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/form-control-wrapper/form-control-wrapper.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/form-control-wrapper/form-control-wrapper.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/form-control-wrapper/form-control-wrapper.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/form-control-wrapper/form-control-wrapper.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/form-wrapper/form-wrapper.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/form-wrapper/form-wrapper.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/form-wrapper/form-wrapper.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/form-wrapper/form-wrapper.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/ng-metro4-forms.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/ng-metro4-forms.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/slider/slider.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/slider/slider.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/spinner/spinner.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/spinner/spinner.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/spinner/spinner.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/spinner/spinner.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/lists.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/lists.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/pipes/is-array.pipe.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/pipes/is-array.pipe.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/pipes/is-array.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/pipes/is-array.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/public_api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/public_api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/form/form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form/form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/form/form.component.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form/form.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/form/form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form/form.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/form/form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form/form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/calendar/calendar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/calendar/calendar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/input/input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/input/input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/keypad/keypad.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/keypad/keypad.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/keypad/keypad.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/keypad/keypad.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/radio/radio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/radio/radio.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/rating/rating.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/rating/rating.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/rating/rating.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/rating/rating.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/slider/slider.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/slider/slider.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/slider/slider.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/slider/slider.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/spinner/spinner.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/spinner/spinner.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/spinner/spinner.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/spinner/spinner.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/tag-input/tag-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/tag-input/tag-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/helper/doc-component/doc-component.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/doc-component/doc-component.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/helper/doc-component/doc-component.component.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/doc-component/doc-component.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/helper/doc-component/doc-component.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/doc-component/doc-component.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/helper/doc-component/doc-component.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/doc-component/doc-component.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/form/form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form/form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/form/form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form/form.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -206,6 +175,7 @@
       <workItem from="1571149170007" duration="12641000" />
       <workItem from="1571205904193" duration="4900000" />
       <workItem from="1571228728472" duration="15640000" />
+      <workItem from="1571319397782" duration="3119000" />
     </task>
     <task id="LOCAL-00001" summary="added timepicker&#10;fixed calendar&#10;fixed input">
       <created>1549009089576</created>

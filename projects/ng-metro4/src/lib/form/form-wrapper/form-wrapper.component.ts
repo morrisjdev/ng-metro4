@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, ContentChild, Host, Input, Optional, SkipSelf, TemplateRef} from '@angular/core';
+import {AfterContentInit, Component, ContentChild, Host, Input, OnInit, Optional, SkipSelf, TemplateRef} from '@angular/core';
 import {M4FormGroup} from '../m4-form-group';
 import {ControlContainer} from '@angular/forms';
 
@@ -7,21 +7,21 @@ import {ControlContainer} from '@angular/forms';
   templateUrl: './form-wrapper.component.html',
   styleUrls: ['./form-wrapper.component.css']
 })
-export class FormWrapperComponent implements AfterContentInit {
+export class FormWrapperComponent implements OnInit {
   @Input('title') title: string;
   @Input('description') description: string;
+  @Input('show-errors') showErrors = true;
 
-  public formGroup: M4FormGroup;
+  @Input() formGroup: M4FormGroup;
 
-  @ContentChild('error', { static: true }) errorTemplate: TemplateRef<any>;
+  @ContentChild('formError', { static: true }) errorTemplate: TemplateRef<any>;
 
   public formName: string;
   public formPath: string;
 
-  constructor(@Optional() @Host() @SkipSelf() private controlContainer: ControlContainer) { }
+  constructor() { }
 
-  ngAfterContentInit(): void {
-    this.formGroup = <M4FormGroup>this.controlContainer.control;
+  ngOnInit(): void {
     this.formName = this.formGroup.name;
     this.formPath = `form.${this.formName}.`;
   }

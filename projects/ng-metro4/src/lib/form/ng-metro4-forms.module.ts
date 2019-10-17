@@ -47,6 +47,7 @@ const declarations = [
   DatePickerComponent,
   TimePickerComponent,
   FormControlWrapperComponent,
+  FormWrapperComponent,
 ];
 
 @NgModule({
@@ -58,10 +59,9 @@ const declarations = [
     IsArrayPipe,
     ErrorDisplayPipe,
     ...declarations,
-    FormWrapperComponent,
   ],
   exports: [
-    ...declarations
+    ...declarations,
   ]
 })
 export class NgMetro4FormsModule { }

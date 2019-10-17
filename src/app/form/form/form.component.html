@@ -1,29 +1,38 @@
-<form [formGroup]="formGroup">
-  <m4-form-control-wrapper label="Email" description="This is a test">
+<m4-form-wrapper title="Login" description="This a form with a description" [formGroup]="formGroup">
+  <m4-form-control-wrapper label="Email">
     <m4-input type="email" formControlName="name"></m4-input>
 
-    <ng-template #error let-error="error">
+    <ng-template #controlError let-error="error">
       <span class="mif-power"></span> {{error}}
     </ng-template>
   </m4-form-control-wrapper>
 
-  <div class="form-group">
-    <label>Email address</label>
+  <m4-form-control-wrapper label="Email">
     <m4-input type="email" formControlName="name" placeholder="Email"></m4-input>
-    <small class="text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <m4-input type="password" placeholder="Enter password" formControlName="password"></m4-input>
-  </div>
-  <div class="form-group">
-    <m4-checkbox caption="Remember me" formControlName="remember"></m4-checkbox>
-  </div>
-  <div class="form-group">
-    <button btn-style="success" m4-button>Submit data</button>
-    <button m4-button type="reset">Cancel</button>
-  </div>
-</form>
+  </m4-form-control-wrapper>
 
+  <m4-form-control-wrapper label="Password">
+    <m4-input type="password" placeholder="Enter password" formControlName="password"></m4-input>
+  </m4-form-control-wrapper>
+
+  <m4-form-control-wrapper label="Repeat password">
+    <m4-input type="password" placeholder="Enter password" formControlName="password_confirm"></m4-input>
+  </m4-form-control-wrapper>
+
+  <m4-form-control-wrapper>
+    <m4-checkbox caption="Remember me" formControlName="remember"></m4-checkbox>
+  </m4-form-control-wrapper>
+
+  <ng-template #formError let-error="error">
+    <span class="mif-home"></span> {{error}}
+  </ng-template>
+</m4-form-wrapper>
+
+<div class="form-group">
+  <button btn-style="success" m4-button>Submit data</button>
+  <button m4-button type="reset">Cancel</button>
+</div>
+
+{{ formGroup.errors | json }}
 {{ formGroup.value | json }}
 {{ formGroup.valid | json }}
