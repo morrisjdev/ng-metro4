@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="">
+    <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="added info in form-wrapper">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Build_Schematics.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Publish.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls/activity/activity.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls/activity/activity.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls/ng-metro4-controls.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls/ng-metro4-controls.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/dialog/dialog.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/dialog/dialog.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/ng-metro4-information.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/ng-metro4-information.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/notify/notify.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/notify/notify.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/toast/toast.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/toast/toast.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/form/form-control-wrapper/form-control-wrapper.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form-control-wrapper/form-control-wrapper.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/form/form-wrapper/form-wrapper.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form-wrapper/form-wrapper.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/home/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home/home.component.html" afterDir="false" />
@@ -43,7 +54,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551441071083" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../temp/HelloWorld" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/testMetro4" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/node_modules/tslint" />
@@ -57,16 +68,16 @@
     <property name="ts.external.directory.path" value="C:\Users\morri\Documents\Projects\productive\ng-metro4\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\lib\helper" />
-      <recent name="C:\Users\mjanatzek\Documents\Projects\private\ng-metro4\projects\ng-metro4" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\schematics" />
       <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\lib\form\pipes" />
       <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\src\app\form" />
       <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\src\app\helper" />
       <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\lib\base\animation" />
-      <recent name="C:\Users\mjanatzek\Documents\Projects\private\ng-metro4\projects\ng-metro4\src\lib\base\loading" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\lib\helper" />
+      <recent name="C:\Users\mjanatzek\Documents\Projects\private\ng-metro4\projects\ng-metro4" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -81,7 +92,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.Publish">
     <configuration name="Run" type="CompoundRunConfigurationType">
       <toRun name="Angular CLI Server" type="js.build_tools.npm" />
       <toRun name="Build" type="js.build_tools.npm" />
@@ -102,6 +113,8 @@
     <list>
       <item itemvalue="Compound.Run" />
       <item itemvalue="JavaScript Debug.Angular Application" />
+      <item itemvalue="npm.Build Schematics" />
+      <item itemvalue="npm.Publish" />
       <item itemvalue="npm.Build" />
       <item itemvalue="npm.Angular CLI Server" />
       <item itemvalue="Protractor.E2E Tests" />
@@ -174,7 +187,7 @@
       <workItem from="1571319397782" duration="3263000" />
       <workItem from="1571322766735" duration="8390000" />
       <workItem from="1571483252425" duration="173000" />
-      <workItem from="1571483462040" duration="4524000" />
+      <workItem from="1571483462040" duration="10742000" />
     </task>
     <task id="LOCAL-00001" summary="added timepicker&#10;fixed calendar&#10;fixed input">
       <created>1549009089576</created>
@@ -260,11 +273,25 @@
       <option name="project" value="LOCAL" />
       <updated>1571483498052</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added info in form-wrapper">
+      <created>1571488613668</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1571488613668</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.js.map" />
+        <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.js" />
+        <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.d.ts" />
+      </list>
+    </option>
     <option name="additionalRoots">
       <list>
         <option value="$PROJECT_DIR$/dist/ng-metro4" />
@@ -321,6 +348,7 @@
     <MESSAGE value="added demo for form wrapper" />
     <MESSAGE value="added docs for wrapper" />
     <MESSAGE value="fixed launch settings for demo-app" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed launch settings for demo-app" />
+    <MESSAGE value="added info in form-wrapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="added info in form-wrapper" />
   </component>
 </project>

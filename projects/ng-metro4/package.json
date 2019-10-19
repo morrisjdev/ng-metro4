@@ -1,7 +1,7 @@
 {
   "name": "ng-metro4",
   "description": "ng-metro4 is an implementation of the beautiful metro4 components",
-  "version": "0.0.12",
+  "version": "0.0.18",
   "peerDependencies": {
     "@angular/common": "~8.1.0",
     "@angular/core": "~8.1.0",
@@ -10,6 +10,7 @@
     "linq4js": "^2.2.2",
     "rxjs": "~6.5.2"
   },
+  "schematics": "./schematics/collection.json",
   "keywords": [
     "metro4",
     "ui",

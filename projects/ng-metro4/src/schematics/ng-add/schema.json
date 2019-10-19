@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "ng-metro4/ng-add",
+  "title": "Add ng-metro4 to the project",
+  "description": "NOTE: Does not work in the --dry-run mode",
+  "type": "object",
+  "properties": {
+    "skipInstall": {
+      "type": "boolean",
+      "description": "Skip installing after adding dependencies",
+      "default": false
+    },
+    "project": {
+      "type": "string",
+      "description": "Specify project for install",
+      "default": false
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

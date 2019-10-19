@@ -11,9 +11,7 @@ interface ToastOptions {
   };
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ToastService {
 
   constructor() { }

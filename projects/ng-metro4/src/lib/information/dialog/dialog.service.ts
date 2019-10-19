@@ -40,9 +40,7 @@ interface InfoboxOptions {
   clsOverlay?: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DialogService {
 
   constructor() { }

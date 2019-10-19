@@ -8,6 +8,7 @@ import {PopoverDirective} from './popover/popover.directive';
 import { PanelComponent } from './panel/panel.component';
 import { HotkeyDirective } from './hotkey/hotkey.directive';
 import { PopoverComponent } from './popover/popover.component';
+import {ActivityService} from './activity/activity.service';
 
 const declarations = [
   GravatarComponent,
@@ -29,6 +30,9 @@ const declarations = [
   ],
   exports: [
     ...declarations,
+  ],
+  providers: [
+    ActivityService
   ]
 })
 export class NgMetro4ControlsModule {

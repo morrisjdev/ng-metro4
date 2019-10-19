@@ -17,9 +17,7 @@ export interface NotifyOptions {
   width?: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NotifyService {
 
   constructor() { }

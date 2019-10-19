@@ -11,9 +11,7 @@ interface ActivityOptions {
   text?: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ActivityService {
 
   constructor() { }
