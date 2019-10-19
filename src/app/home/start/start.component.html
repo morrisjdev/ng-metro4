@@ -1,31 +1,37 @@
 <h1>Quick Start</h1>
 
-<h2>Install package</h2>
+<h2>Install</h2>
 
-<p class="mb-5">
-  To install ng-metro4 in your angular application first execute this command:
-</p>
+<div class="remark info">
+  To install <code>ng-metro4</code> in your angular application just run: <br>
+  <span class="text-leader text-bold"><code>ng add ng-metro4</code></span><br><br>
+  To generate the layout with an appbar run:<br>
+  <span class="text-leader text-bold"><code>ng g ng-metro4:layout --force</code></span><br>
+  <span class="text-muted text-small">This will overwrite your <code>app.component.html</code> so be careful if you already made some changes</span>
+</div>
 
-<code>npm install -S ng-metro4 metro4</code>
-
-<h2>Add styles</h2>
-
-<p class="mb-5">
-  After installing you have to reference the styles and scripts. Modify your <code>angular.json</code> like this:
-</p>
-
-<pre><code [highlight]="angularJsonContent" [languages]="['ts']"></code></pre>
-
-Instead of adding the css file in your <code>angular.json</code> you could also add
-<code>@import '~metro4/build/css/metro-all.min.css';</code> at the top of your <code>styles.less</code> file.
+<div data-role="panel" class="primary"
+     data-title-caption="Using Angular for the first time?"
+     data-collapsed="true"
+     data-collapsible="true">
+  If you haven't created an application yet you can create one using: <br>
+  <span class="text-bold"><code>npm install -g @angular/cli</code></span><br>
+  and<br>
+  <span class="text-bold"><code>ng new &lt;AppName&gt;</code></span><br><br>
+  You can then start using the application:<br>
+  <span class="text-bold"><code>ng serve</code></span><br><br>
+  For more information see: <a href="https://angular.io/guide/setup-local" target="_blank">Angular setup</a>
+</div>
 
 <h2>Include metro4-module</h2>
 
-<p class="mb-5">
-  As a last step you have to include the <code>NgMetro4Module</code> in your module:
-</p>
+<div class="remark info">
+  <p class="mb-5">
+    As a last step you have to include the <code>NgMetro4Module</code> in your module:
+  </p>
 
-<pre><code [highlight]="moduleImport" [languages]="['ts']"></code></pre>
+  <pre><code [highlight]="moduleImport" [languages]="['ts']"></code></pre>
+</div>
 
 <h2>Start using</h2>
 
@@ -33,3 +39,41 @@ Instead of adding the css file in your <code>angular.json</code> you could also 
   You are now ready to use ng-metro4.<br>
   You can start browsing the components to get an image of what is possible.
 </p>
+
+<h2>Manual setup</h2>
+
+<div class="remark secondary">
+  If you don't want to use the method above you can also install all dependencies by yourself.
+</div>
+
+<div data-role="panel"
+     data-title-caption="Manual setup"
+     data-collapsed="true"
+     data-collapsible="true">
+  <h3>Add dependencies</h3>
+  <p class="mb-5">
+    To install ng-metro4 in your angular application first execute this command:
+  </p>
+
+  <code>npm install -S ng-metro4 metro4 linq4js</code>
+
+  <h3>Add styles</h3>
+
+  <p class="mb-5">
+    After installing you have to reference the styles and scripts. Modify your <code>angular.json</code> like this:
+  </p>
+
+  <pre><code [highlight]="angularJsonContent" [languages]="['ts']"></code></pre>
+
+  Instead of adding the css file in your <code>angular.json</code> you could also add
+  <code>@import '~metro4/build/css/metro-all.min.css';</code> at the top of your <code>styles.less</code> file.
+
+  <h3>Include metro4-module</h3>
+
+  <p class="mb-5">
+    As a last step you have to include the <code>NgMetro4Module</code> in your module:
+  </p>
+
+  <pre><code [highlight]="moduleImport" [languages]="['ts']"></code></pre>
+
+</div>

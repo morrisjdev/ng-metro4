@@ -6,6 +6,11 @@
       "factory": "./ng-add",
       "schema": "./ng-add/schema.json",
       "hidden": true
+    },
+    "layout": {
+      "description": "Create a basic layout",
+      "factory": "./layout",
+      "schema": "./layout/schema.json"
     }
   }
 }

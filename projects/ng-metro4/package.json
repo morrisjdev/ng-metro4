@@ -1,7 +1,7 @@
 {
   "name": "ng-metro4",
   "description": "ng-metro4 is an implementation of the beautiful metro4 components",
-  "version": "0.0.18",
+  "version": "0.0.22",
   "peerDependencies": {
     "@angular/common": "~8.1.0",
     "@angular/core": "~8.1.0",

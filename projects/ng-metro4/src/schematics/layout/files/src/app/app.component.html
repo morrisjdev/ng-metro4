@@ -1,0 +1,55 @@
+<header class="app-bar bg-<%= color %> fg-white" data-role="appbar" data-expand-point="md">
+  <a href="" class="d-block brand fg-white no-hover">
+    <span class="border bd-white border-radius p-2"><%= title %></span>
+  </a>
+  <ul class="app-bar-menu ml-auto">
+    <li><a href="home">Home</a></li>
+
+
+    <li>
+      <a href="#" class="dropdown-toggle">More</a>
+      <ul class="d-menu" data-role="dropdown">
+        <li><a href="">Dropdown link 1</a></li>
+        <li><a href="">Dropdown link 2</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="https://github.com/morrisjdev/ng-metro4" target="_blank">
+        <span class="mif-github mif-2x d-none d-block-md"></span>
+        <span class="d-block d-none-md">Github</span>
+      </a>
+    </li>
+  </ul>
+</header>
+
+<div class="hero hero-bg text-center">
+
+  <div class="display4 fg-<%= color %>"><span class="reduce-3 enlarge-3-md"><%= title %></span></div>
+
+  <h4 class="text-center fg-<%= color %> text-upper text-light">Welcome in your app</h4>
+</div>
+
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <!-- Content goes here -->
+    <!-- <router-outlet></router-outlet> -->
+
+    <div class="cell-md-10 cell-xl-8 pr-1-sx pl-1-sx pr-5-md pl-5-md offset-md-1 offset-xl-2">
+      <div class="feature-table row mt-10">
+        <div class="offset-md-4 cell-md-4">
+          <div class="info-panel rounded no-overflow shadow-3">
+            <div class="info-panel-header bg-steel fg-white">Welcome</div>
+            <div class="info-panel-content">
+              <div class="mx-10 my-6"><span class="mif-rocket mif-8x fg-steel"></span></div>
+              <span class="text-leader2">Welcome in your new metro4 app</span>
+            </div>
+            <div class="info-panel-footer">
+              <a href="https://morrisjdev.github.io/ng-metro4/#/" target="_blank" class="button large outline secondary rounded">Get started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

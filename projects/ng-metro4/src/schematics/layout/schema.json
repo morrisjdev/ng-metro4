@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "ng-metro4/layout",
+  "title": "Create a basic layout",
+  "description": "NOTE: Does not work in the --dry-run mode",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "The title of your application",
+      "default": "ng-metro4",
+      "x-prompt": "What is the title of your app?"
+    },
+    "color": {
+      "type": "string",
+      "description": "The color of the appbar",
+      "default": "red",
+      "x-prompt": "What color should the appbar have?"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

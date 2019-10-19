@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HighlightModule} from 'ngx-highlightjs';
 import {SharedModule} from './shared/shared.module';
+import {NgMetro4Module} from 'ng-metro4';
 
 export function hljsLanguages() {
   return [
@@ -30,6 +31,7 @@ export function hljsLanguages() {
     BrowserModule,
     SharedModule,
     AppRoutingModule,
+    NgMetro4Module,
     HighlightModule.forRoot({
       languages: hljsLanguages
     })

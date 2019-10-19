@@ -21,7 +21,6 @@ import {LetComponent} from './let/let.component';
     LetComponent,
   ],
   imports: [
-    CommonModule,
     SharedModule,
     BaseRoutingModule
   ]
