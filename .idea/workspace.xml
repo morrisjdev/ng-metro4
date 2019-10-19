@@ -3,25 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/textarea/textarea.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/textarea/textarea.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/textarea/textarea.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/textarea/textarea.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/file-input/file-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/form-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/form.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/form/form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form/form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/form/form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form/form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/input/input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/input/input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/select/select.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/select/select.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/select/select.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/select/select.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/textarea/textarea.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/textarea/textarea.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/textarea/textarea.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/textarea/textarea.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/start/start.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/start/start.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/doc-component/doc-component.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/doc-component/doc-component.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/doc-component/doc-component.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/doc-component/doc-component.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/form-control-wrapper/form-control-wrapper.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/form-control-wrapper/form-control-wrapper.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +14,36 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projects/ng-metro4/src/lib/information/dialog/dialog.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1224">
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/app/form/form-control-wrapper/form-control-wrapper.component.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="41" />
+    <option name="y" value="-11" />
+    <option name="width" value="2576" />
+    <option name="height" value="1416" />
   </component>
   <component name="ProjectId" id="1QeZOnLzsq3FNpH4Q1OIFLLZRsK" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -53,6 +63,105 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="projects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="projects" type="462c0819:PsiDirectoryNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="projects" type="462c0819:PsiDirectoryNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="projects" type="462c0819:PsiDirectoryNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="projects" type="462c0819:PsiDirectoryNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="information" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="projects" type="462c0819:PsiDirectoryNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="information" type="462c0819:PsiDirectoryNode" />
+              <item name="dialog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="form" type="462c0819:PsiDirectoryNode" />
+              <item name="form-control-wrapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-metro4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-metro4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="form" type="462c0819:PsiDirectoryNode" />
+              <item name="form-wrapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -70,7 +179,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="show.migrate.to.gradle.popup" value="false" />
-    <property name="ts.external.directory.path" value="C:\Users\morri\Documents\Projects\productive\ng-metro4\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\mjanatzek\Documents\Projects\private\ng-metro4\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -189,6 +298,7 @@
       <workItem from="1571228728472" duration="15640000" />
       <workItem from="1571319397782" duration="3263000" />
       <workItem from="1571322766735" duration="7898000" />
+      <workItem from="1571397616001" duration="886000" />
     </task>
     <task id="LOCAL-00001" summary="added timepicker&#10;fixed calendar&#10;fixed input">
       <created>1549009089576</created>
@@ -263,13 +373,50 @@
     <option name="localTasksCounter" value="11" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="886000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Capture Tool" />
+      <window_info id="UI Designer" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15620032" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30319563" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Flutter Inspector" />
+      <window_info anchor="right" id="Flutter Outline" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-    <option name="additionalRoots">
-      <list>
-        <option value="$PROJECT_DIR$/dist/ng-metro4" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -287,6 +434,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -320,5 +473,30 @@
     <MESSAGE value="started work on model display for doc component" />
     <MESSAGE value="added demo for form wrapper" />
     <option name="LAST_COMMIT_MESSAGE" value="added demo for form wrapper" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/app/form/form-wrapper/form-wrapper.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="31" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/form-control-wrapper/form-control-wrapper.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/ng-metro4/src/lib/information/dialog/dialog.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1224">
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

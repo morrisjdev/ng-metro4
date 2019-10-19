@@ -13,6 +13,18 @@
     \t</m4-form-control-wrapper>\l
   </div>
   ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    public formGroup: FormGroup;\n\n
+
+    constructor() {\n
+    \tthis.formGroup = new M4FormGroup('reactive_demo', {\n
+    \t\tpassword: new FormControl('', [Validators.required]),\n
+    \t});\n
+    }
+    ]]>
+  </div>
 </app-doc-component>
 
 <app-doc-component title="Define custom error template" [values]="{ formGroup: formGroup }">
