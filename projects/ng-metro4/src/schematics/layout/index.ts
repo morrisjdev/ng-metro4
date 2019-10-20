@@ -1,5 +1,5 @@
-import { Rule, SchematicContext, Tree, url, apply, template, mergeWith } from '@angular-devkit/schematics';
-import { Schema as LayoutOptions } from './schema';
+import {apply, MergeStrategy, mergeWith, Rule, SchematicContext, template, Tree, url} from '@angular-devkit/schematics';
+import {Schema as LayoutOptions} from './schema';
 
 export default function(options: LayoutOptions): Rule {
   return (host: Tree, context: SchematicContext) => {
@@ -11,6 +11,6 @@ export default function(options: LayoutOptions): Rule {
       })
     ]);
 
-    return mergeWith(sourceParametrizedTemplate)(host, context);
+    return mergeWith(sourceParametrizedTemplate, MergeStrategy.Overwrite)(host, context);
   };
 }

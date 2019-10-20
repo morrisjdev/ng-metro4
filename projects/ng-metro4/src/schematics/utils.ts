@@ -8,6 +8,13 @@ export function getLibraryVersion() {
   ).version;
 }
 
+export function getDependencyVersion(dependency: string,
+                                     collection: 'dependencies'|'devDependencies'|'peerDependencies' = 'peerDependencies') {
+  return JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8')
+  )[collection][dependency];
+}
+
 export function addPackageToPackageJson(
   host: Tree,
   pkg: string,
