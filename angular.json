@@ -106,6 +106,12 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://morrisjdev.github.io/ng-metro4/"
+          }
         }
       }
     },

@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-schematics": "tsc -p projects/ng-metro4/tsconfig.schematics.json --outDir dist/ng-metro4/schematics && cpx dist/ng-metro4/schematics/src/schematics/** dist/ng-metro4/schematics && cpx projects/ng-metro4/src/schematics/**/{collection.json,schema.json,files/**} dist/ng-metro4/schematics",
-    "publish": "npm run build -- ng-metro4 && npm run build-schematics && cd ./dist/ng-metro4 && npm publish --tag=alpha"
+    "publish": "npm run build -- ng-metro4 && npm run build-schematics && cd ./dist/ng-metro4 && npm publish --tag=alpha",
+    "publish-doc": "npm run build -- ng-metro4 && ng run metro4-demo:deploy"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +39,7 @@
     "@angular/language-service": "~8.1.0",
     "@angularclass/hmr": "^2.1.3",
     "@babel/core": "^7.6.0",
+    "angular-cli-ghpages": "^0.6.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/jquery": "^3.3.22",
