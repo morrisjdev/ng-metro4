@@ -1,6 +1,6 @@
 # ng-metro4
 
-ng-metro4 is an implementation of the beautiful metro4 components.
+Angular UI components in modern ui style.
 
 [Documentation](https://morrisjdev.github.io/ng-metro4/#/)
 

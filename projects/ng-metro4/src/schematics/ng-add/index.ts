@@ -11,13 +11,11 @@ export default function(options: NgAddOptions): Rule {
     addPackageToPackageJson(host, 'ng-metro4', `^${version}`);
     const metro4Version = getDependencyVersion('metro4');
     addPackageToPackageJson(host, 'metro4', `${metro4Version}`);
-    const linq4jsVersion = getDependencyVersion('linq4js');
-    addPackageToPackageJson(host, 'linq4js', `${linq4jsVersion}`);
     const momentVersion = getDependencyVersion('moment');
     addPackageToPackageJson(host, 'moment', `${momentVersion}`);
     context.logger.log('info',
       `✅ Added "ng-metro4@^${version}", "metro4@${metro4Version}", ` +
-      `"linq4js@${linq4jsVersion}" and "moment@${momentVersion}" into dependencies`);
+      `and "moment@${momentVersion}" into dependencies`);
 
     if (options.skipInstall) {
       context.logger.log(

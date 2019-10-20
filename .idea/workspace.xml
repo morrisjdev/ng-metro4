@@ -2,55 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="added info in form-wrapper">
-      <change afterPath="$PROJECT_DIR$/projects/ng-metro4/ng-metro4 screenshot.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/ng-metro4/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls/activity/activity.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls/activity/activity.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls/panel/panel.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls/panel/panel.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls/popover/popover.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls/popover/popover.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/array-helper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/array-helper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/attribute-helper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/attribute-helper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/compare-helper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/compare-helper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/object-helper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/object-helper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/string-helper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/string-helper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/hint/hint.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/hint/hint.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/notify/notify.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/notify/notify.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/toast/toast.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/toast/toast.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/base-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/base-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/base.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/base.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/icon/icon.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/icon/icon.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/icon/icon.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/icon/icon.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/let/let.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/let/let.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/let/let.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/let/let.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/loading/loading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/loading/loading.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/loading/loading.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/loading/loading.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/controls-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/controls-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/controls.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/controls.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/donut/donut.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/donut/donut.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/donut/donut.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/donut/donut.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/gravatar/gravatar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/gravatar/gravatar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/gravatar/gravatar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/gravatar/gravatar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/hotkey/hotkey.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/hotkey/hotkey.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/hotkey/hotkey.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/hotkey/hotkey.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/panel/panel.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/panel/panel.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/panel/panel.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/panel/panel.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/popover/popover.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/popover/popover.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/popover/popover.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/popover/popover.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/progress/progress.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/progress/progress.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controls/progress/progress.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controls/progress/progress.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/information/dialog-service/dialog-service.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/dialog-service/dialog-service.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/information/dialog/dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/dialog/dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/information/hint/hint.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/hint/hint.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/information/hint/hint.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/hint/hint.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/information/notify/notify.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/notify/notify.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/information/notify/notify.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/notify/notify.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/information/toast/toast.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/toast/toast.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/information/toast/toast.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/toast/toast.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/button/button.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/button/button.directive.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/ng-metro4.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/ng-metro4.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/schematics/ng-add/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/schematics/ng-add/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/start/start.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/start/start.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -67,10 +67,10 @@ export class ButtonDirective implements OnInit, OnChanges {
       newClasses.push('flat-button');
     }
 
-    this.oldClasses.ForEach(c => {
+    this.oldClasses.forEach(c => {
       this.jElement.removeClass(c);
     });
-    newClasses.ForEach(c => {
+    newClasses.forEach(c => {
       this.jElement.addClass(c);
     });
     this.oldClasses = newClasses;
