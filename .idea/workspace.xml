@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="added info in form-wrapper">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/button/button.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/button/button.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/ng-metro4.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/ng-metro4.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/schematics/ng-add/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/schematics/ng-add/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/start/start.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/start/start.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/pipes/error-display.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/pipes/error-display.pipe.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +96,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.Publish doc">
     <configuration name="Run" type="CompoundRunConfigurationType">
       <toRun name="Angular CLI Server" type="js.build_tools.npm" />
       <toRun name="Build" type="js.build_tools.npm" />
@@ -312,11 +307,6 @@
         <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.js.map" />
         <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.js" />
         <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.d.ts" />
-      </list>
-    </option>
-    <option name="additionalRoots">
-      <list>
-        <option value="$PROJECT_DIR$/dist/ng-metro4" />
       </list>
     </option>
   </component>

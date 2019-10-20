@@ -12,7 +12,7 @@ export class ErrorDisplayPipe implements PipeTransform {
     }
 
     const errorKeys = Object.keys(errors);
-    return errorKeys.Select(key => `${formControlPath}errors.${key}`);
+    return errorKeys.map(key => `${formControlPath}errors.${key}`);
   }
 
 }
