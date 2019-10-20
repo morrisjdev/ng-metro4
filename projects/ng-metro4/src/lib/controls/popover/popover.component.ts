@@ -28,7 +28,9 @@ export class PopoverComponent implements AfterViewInit {
 
       this.popover.popoverObj.options.onPopoverHide = () => {
         asapScheduler.schedule(() => {
-          this.popover.popoverObj.popover.find('.popover-content').children().appendTo($(this.content.nativeElement));
+          if (this.popover.popoverObj && this.popover.popoverObj.popover) {
+            this.popover.popoverObj.popover.find('.popover-content').children().appendTo($(this.content.nativeElement));
+          }
         }, 300);
       };
     }, 1);

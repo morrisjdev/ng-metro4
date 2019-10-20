@@ -7,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HintComponent implements OnInit {
 
-  hint = 'test';
-  position = 'bottom';
-
   constructor() { }
 
   ngOnInit() {

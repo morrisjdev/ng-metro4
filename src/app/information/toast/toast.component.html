@@ -1,9 +1,55 @@
-<m4-radio-group [(ngModel)]="color">
-  <m4-radio value="success" caption="Success"></m4-radio>
-  <m4-radio value="alert" caption="Alert"></m4-radio>
+<h1>Toast service</h1>
+<a href="https://metroui.org.ua/toast.html" target="_blank">Toast in Metro 4 docs</a>
 
-</m4-radio-group>
+<div class="remark info">
+  The <code>ToastService</code> provides methods to simply create toast-notifications in your application.
+</div>
 
-<m4-input prepend="Toast: " [(ngModel)]="message"></m4-input>
+<app-doc-component title="Basic usage" [values]="{ toastService: toastService, toast: toast }">
+  <![CDATA[
+  <button m4-button (click)="toast()">Create toast</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    @Component({\n
+      \tselector: 'app-toast',\n
+      \ttemplateUrl: './toast.component.html',\n
+      \tstyleUrls: ['./toast.component.less']\n
+    })\n
+    export class ToastComponent {\n
+      \tconstructor(private toastService: ToastService) { }\n\n
 
-<button m4-button (click)="send()">Send</button>
+      \ttoast() {\n
+        \t\tthis.toastService.create('This is a toast');\n
+      \t}\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Wait for result" description="The create method returns an observables that you can use to wait for the toast to be closed/clicked"
+                   [values]="{ toastService: toastService, toast: toastWait }">
+  <![CDATA[
+  <button m4-button (click)="toast()">Create toast</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.toastService.create('This is a toast').subscribe(() => alert('closed'));
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Customize"
+                   [values]="{ toastService: toastService, toast: toastCustom }">
+  <![CDATA[
+  <button m4-button (click)="toast()">Create toast</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.toastService.create('This is a toast', { additional: { distance: 0, showTop: true }, cls: 'alert', timeout: 1000 });
+    ]]>
+  </div>
+</app-doc-component>

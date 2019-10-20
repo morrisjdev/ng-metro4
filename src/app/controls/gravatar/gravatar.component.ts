@@ -7,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GravatarComponent implements OnInit {
 
-  email: string;
-  size = 80;
-
   constructor() { }
 
   ngOnInit() {

@@ -1,6 +1,89 @@
-<m4-input prepend="Message" [(ngModel)]="message"></m4-input>
-<m4-input prepend="Title" [(ngModel)]="title"></m4-input>
+<h1>Notify service</h1>
+<a href="https://metroui.org.ua/notify.html" target="_blank">Notify in Metro 4 docs</a>
 
-<div style="height: 500px; width: 300px;" id="test123"></div>
+<div class="remark info">
+  The <code>NotifyService</code> provides methods to simply create notifications in your application.
+</div>
 
-<button m4-button (click)="send()">Send</button>
+<app-doc-component title="Basic usage" [values]="{ notifyService: notifyService, notify: notify }">
+  <![CDATA[
+  <button m4-button (click)="notify()">Notify</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    @Component({\n
+      \tselector: 'app-notify',\n
+      \ttemplateUrl: './notify.component.html',\n
+      \tstyleUrls: ['./notify.component.less']\n
+    })\n
+    export class NotifyComponent {\n\n
+
+      \tconstructor(public notifyService: NotifyService) { }\n\n
+
+      \tnotify() {\n
+        \t\tthis.notifyService.create('Notify message');\n
+        \t\tthis.notifyService.create('Notify message', 'Notify title');\n
+      \t}\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Wait for result" description="The create method returns an observables that you can use to wait for the notification to be closed/clicked"
+                   [values]="{ notifyService: notifyService, notify: notifyWait }">
+  <![CDATA[
+  <button m4-button (click)="notify()">Notify</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.notifyService.create('Notify message', 'Notify title').subscribe(() => alert('closed'));
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Keep open"
+                   [values]="{ notifyService: notifyService, notify: notifyOpen }">
+  <![CDATA[
+  <button m4-button (click)="notify()">Notify</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.notifyService.create('Notify message', 'Notify title', { keepOpen: true });
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Customize"
+                   [values]="{ notifyService: notifyService, notify: notifyCustom }">
+  <![CDATA[
+  <button m4-button (click)="notify()">Notify</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.notifyService.create('Notify message', 'Notify title', { keepOpen: true, cls: 'success', width: '400px' });
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Setup" description="You can setup the notify system on startup for all notfications"
+                   [values]="{ notifyService: notifyService, notify: notifySetup }">
+  <![CDATA[
+  <button m4-button (click)="notify()">Notify</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.notifyService.setup({\n
+      \tduration: 2000,\n
+      \tanimation: 'easeInBounce',\n
+      \tdistance: '50px',\n
+      \ttimeout: 700,\n
+      \twidth: '400px'\n
+    });
+    ]]>
+  </div>
+</app-doc-component>

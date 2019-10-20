@@ -1,31 +1,12 @@
-<m4-slider [(ngModel)]="value"></m4-slider>
-<m4-slider [(ngModel)]="buffer"></m4-slider>
-<m4-switch [(ngModel)]="small" caption="Small"></m4-switch>
+<h1>Progress</h1>
+<a href="https://metroui.org.ua/progress.html" target="_blank">Progress in Metro 4 docs</a>
 
-<m4-progress [value]="value" [buffer]="buffer" type="buffer"></m4-progress>
-<br>
-<br>
-
-<m4-progress [value]="value" [buffer]="buffer" type="buffer" [small]="small"></m4-progress>
-
-<br>
-
-<m4-progress [value]="value" [buffer]="buffer" type="load" [small]="small"></m4-progress>
-<br>
-
-<m4-progress [value]="value" [buffer]="buffer" type="line" [small]="small"></m4-progress>
-
-<h1>Activity</h1>
-
-<m4-select [options]="{'cycle': 'cycle', 'ring': 'ring', 'metro': 'metro', 'square': 'square', 'simple': 'simple'}"
-           [(ngModel)]="type"></m4-select>
-
-<m4-radio-group [(ngModel)]="style">
-  <m4-radio [value]="'dark'" caption="Dark"></m4-radio>
-  <m4-radio [value]="'color'" caption="Color"></m4-radio>
-  <m4-radio [value]="''" caption="Default"></m4-radio>
-</m4-radio-group>
-
-<m4-activity [type]="type" [activity-style]="style"></m4-activity>
-
-<button m4-button (click)="showActivity()">Show activity</button>
+<app-doc-component title="Usage">
+  <![CDATA[
+  <m4-progress [value]="50"></m4-progress>\n
+  <m4-progress [value]="60" [buffer]="80" type="buffer"></m4-progress>\n
+  <m4-progress type="line"></m4-progress>\n
+  <m4-progress [value]="20" [buffer]="40" type="load"></m4-progress>\n
+  <m4-progress [value]="50" [buffer]="70" [small]="true" type="buffer"></m4-progress>
+  ]]>
+</app-doc-component>

@@ -1,25 +1,47 @@
 <h1>Popover</h1>
+<a href="https://metroui.org.ua/popovers.html" target="_blank">Popover in Metro 4 docs</a>
 
-<m4-radio-group [(ngModel)]="position">
-  <m4-radio caption="Left" value="left"></m4-radio>
-  <m4-radio caption="Right" value="right"></m4-radio>
-  <m4-radio caption="Top" value="top"></m4-radio>
-  <m4-radio caption="Bottom" value="bottom"></m4-radio>
-</m4-radio-group>
+<app-doc-component title="Basic usage">
+  <![CDATA[
+  <button m4-button m4-popover="Popover content" popover-hide="2000">Only text</button>\n\l
 
-<m4-input prepend="Text" [(ngModel)]="text"></m4-input>
+  <m4-popover>\l
+    \t<button m4-button m4-popover popover-hide="2000">Complex popover</button>\l\l
 
-<button m4-button [m4-popover]="text" [popover-position]="position" [popover-hide]="0" popover-trigger="click">
-  TestBtn</button>
+    \t<div content>\l
+      \t\t<h1>This can be anything</h1>\l
+      \t\t<m4-activity activity-style="color" type="square"></m4-activity>\l
+    \t</div>\l
+  </m4-popover>
+  ]]>
+</app-doc-component>
 
-<m4-popover>
-  <button m4-button m4-popover [popover-position]="position" [popover-hide]="0" [popover-close-button]="true" popover-trigger="click">TestBtn</button>
+<app-doc-component title="Position">
+  <![CDATA[
+  <button m4-button m4-popover="Popover content" popover-hide="2000" popover-position="left">Left</button>\n
+  <button m4-button m4-popover="Popover content" popover-hide="2000" popover-position="bottom">Bottom</button>\n
+  <button m4-button m4-popover="Popover content" popover-hide="2000" popover-position="top">Top</button>\n
+  <button m4-button m4-popover="Popover content" popover-hide="2000" popover-position="right">Right</button>
+  ]]>
+</app-doc-component>
 
-  <div content>
-    <h1>Das ist ein test</h1>
-    <m4-input prepend="Text" [(ngModel)]="text"></m4-input>
-    <m4-select [options]="{test: 'test', test2: 'test2'}" [(ngModel)]="select" [multiple]="true"></m4-select>
-    <h1>{{text}}</h1>
-    {{select | json}}
-  </div>
-</m4-popover>
+<app-doc-component title="Trigger type">
+  <![CDATA[
+  <button m4-button m4-popover="Popover content" popover-hide="2000" popover-trigger="click">Click</button>\n
+  <button m4-button m4-popover="Popover content" popover-hide="2000" popover-trigger="focus">Focus</button>\n
+  <button m4-button m4-popover="Popover content" popover-hide="2000" popover-trigger="hover">Hover</button>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Close button">
+  <![CDATA[
+  <button m4-button m4-popover="Popover content" [popover-hide]="0" [popover-close-button]="true">Close button</button>\n
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Auto hide">
+  <![CDATA[
+  <button m4-button m4-popover="Popover content" popover-hide="2000">Autohide</button>\n
+  <button m4-button m4-popover="Popover content (click to hide)" popover-hide="0">No autohide</button>
+  ]]>
+</app-doc-component>

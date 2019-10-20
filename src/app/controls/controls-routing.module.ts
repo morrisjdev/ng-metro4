@@ -1,11 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {GravatarComponent} from './gravatar/gravatar.component';
 import {DonutComponent} from './donut/donut.component';
 import {ProgressComponent} from './progress/progress.component';
 import {PopoverComponent} from './popover/popover.component';
 import {PanelComponent} from './panel/panel.component';
 import {HotkeyComponent} from './hotkey/hotkey.component';
+import {ActivityComponent} from './activity/activity.component';
+import {ActivityServiceComponent} from './activity-service/activity-service.component';
 
 
 const routes: Routes = [
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'popover', component: PopoverComponent },
   { path: 'panel', component: PanelComponent },
   { path: 'hotkey', component: HotkeyComponent },
+  { path: 'activity', component: ActivityComponent },
+  { path: 'activity-service', component: ActivityServiceComponent },
 ];
 
 @NgModule({

@@ -9,20 +9,12 @@ import {Lists} from 'ng-metro4';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IconComponent implements OnInit {
-  colorArrForSelect: any[];
   icons: any[];
   icon = 'home';
 
   color: string;
 
   constructor() {
-    this.colorArrForSelect = Lists.colors().map(c => {
-      return {
-        title: c,
-        value: c
-      };
-    });
-
     this.icons = Lists.icons().GroupBy(v => v.category).Select(g => {
       return {
         groupName: g[0].category,

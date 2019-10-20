@@ -1,24 +1,48 @@
-<m4-slider [(ngModel)]="width" [max]="700"></m4-slider>
-<m4-slider [(ngModel)]="height" [max]="700"></m4-slider>
+<h1>Panel</h1>
+<a href="https://metroui.org.ua/panels.html" target="_blank">Panel in Metro 4 docs</a>
 
-<m4-switch caption="Draggable" [(ngModel)]="draggable"></m4-switch>
-<m4-switch caption="Collapsible" [(ngModel)]="collapsible"></m4-switch>
-<m4-switch caption="Collapsed" [(ngModel)]="collapsed"></m4-switch>
-
-<m4-input prepend="Title" [(ngModel)]="title"></m4-input>
-<m4-input prepend="Icon" [(ngModel)]="icon"></m4-input>
-
-<div style="height: 300px; width: 300px">
-  <m4-panel [width]="width" [height]="height" [draggable]="draggable" [collapsed]="collapsed"
-            [collapsible]="collapsible" [title]="title" [title-icon]="icon">
-    <h1>Das ist ein test</h1>
+<app-doc-component title="Basic usage">
+  <![CDATA[
+  <m4-panel>\l
+    \t<h1>Basic panel</h1>\l
   </m4-panel>
+  ]]>
+</app-doc-component>
 
-  <br>
-  <br>
-
-  <m4-panel [draggable]="draggable" [collapsed]="collapsed"
-            [collapsible]="collapsible" [title]="title" [title-icon]="icon">
-    <h1>Das ist ein test</h1>
+<app-doc-component title="Width/Height">
+  <![CDATA[
+  <m4-panel width="200" height="200">\l
+    \t<h1>Basic panel</h1>\l
   </m4-panel>
-</div>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Title">
+  <![CDATA[
+  <m4-panel title="Panel title">\l
+    \t<h1>Basic panel</h1>\l
+  </m4-panel>\l\n
+  <m4-panel title="Panel with icon" title-icon="<span class='mif-home'></span>">\l
+    \t<h1>Basic panel</h1>\l
+  </m4-panel>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Collapsible">
+  <![CDATA[
+  <m4-panel title="Panel title" [collapsible]="true">\l
+    \t<h1>Basic panel</h1>\l
+  </m4-panel>\l\n
+  <m4-panel title="Panel title" [collapsible]="true" [collapsed]="true">\l
+    \t<h1>Basic panel</h1>\l
+  </m4-panel>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Draggable">
+  <![CDATA[
+  <m4-panel [draggable]="true">\l
+    \t<h1>Basic panel</h1>\l
+  </m4-panel>
+  ]]>
+</app-doc-component>

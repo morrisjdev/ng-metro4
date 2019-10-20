@@ -1,12 +1,24 @@
-<m4-input prepend="Hint Text: " [(ngModel)]="hint"></m4-input>
+<h1>Hint</h1>
+<a href="https://metroui.org.ua/hints.html" target="_blank">Hint in Metro 4 docs</a>
 
-<m4-radio-group [(ngModel)]="position">
-  <m4-radio caption="Left" value="left"></m4-radio>
-  <m4-radio caption="Top" value="top"></m4-radio>
-  <m4-radio caption="Right" value="right"></m4-radio>
-  <m4-radio caption="Bottom" value="bottom"></m4-radio>
-</m4-radio-group>
+<app-doc-component title="Basic usage">
+  <![CDATA[
+  <button m4-button m4-hint="Hint content">Button with hint</button>
+  ]]>
+</app-doc-component>
 
-<br>
+<app-doc-component title="Position">
+  <![CDATA[
+  <button m4-button m4-hint="Left" hint-position="left">Hint left</button>\n
+  <button m4-button m4-hint="Top" hint-position="top">Hint top</button>\n
+  <button m4-button m4-hint="Bottom" hint-position="bottom">Hint bottom</button>\n
+  <button m4-button m4-hint="Right" hint-position="right">Hint right</button>
+  ]]>
+</app-doc-component>
 
-<button m4-button [m4-hint]="hint" [hint-position]="position" [hint-offset]="6"></button>
+<app-doc-component title="Customize">
+  <![CDATA[
+  <button m4-button m4-hint="Content" hint-offset="0">Custom offset</button>\n
+  <button m4-button m4-hint="Content" hint-hide="1000">Hide after timeout</button>
+  ]]>
+</app-doc-component>

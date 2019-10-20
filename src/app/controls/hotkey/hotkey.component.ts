@@ -12,7 +12,7 @@ export class HotkeyComponent implements OnInit {
   ngOnInit() {
   }
 
-  click() {
+  alert() {
     alert('hotkey clicked');
   }
 

@@ -6,16 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./panel.component.less']
 })
 export class PanelComponent implements OnInit {
-
-  width: number;
-  height: number;
-  draggable: boolean;
-  collapsible: boolean;
-  collapsed: boolean;
-
-  title: string;
-  icon: string;
-
   constructor() { }
 
   ngOnInit() {

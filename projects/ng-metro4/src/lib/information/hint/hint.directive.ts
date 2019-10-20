@@ -10,10 +10,10 @@ declare var $: any;
 })
 export class HintDirective implements OnInit, OnChanges {
   @Input('m4-hint') hintText: string;
-  @Input('hint-position') hintPosition: PositionBaseType;
+  @Input('hint-position') hintPosition: PositionBaseType = 'top';
   @Input('hint-hide') hintHide: number;
   @Input('cls-hint') clsHint: string;
-  @Input('hint-offset') hintOffset: number;
+  @Input('hint-offset') hintOffset = 6;
 
   hintObj: any;
 

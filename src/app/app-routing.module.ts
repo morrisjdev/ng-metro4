@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'form', loadChildren: () => import('./form/form.module').then(m => m.FormModule) },
   { path: 'controls', loadChildren: () => import('./controls/controls.module').then(m => m.ControlsModule) },
   { path: 'information', loadChildren: () => import('./information/information.module').then(m => m.InformationModule) },
+  { path: 'more', loadChildren: () => import('./more/more.module').then(m => m.MoreModule) },
 ];
 
 @NgModule({

@@ -6,20 +6,18 @@ import {ToastService} from 'ng-metro4';
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.less']
 })
-export class ToastComponent implements OnInit {
-
-  color = 'success';
-  message: string;
-
+export class ToastComponent {
   constructor(private toastService: ToastService) { }
 
-  ngOnInit() {
-
+  toast() {
+    this.toastService.create('This is a toast');
   }
 
-  send() {
-    this.toastService.create(this.message, {
-      cls: this.color
-    });
+  toastWait() {
+    this.toastService.create('This is a toast').subscribe(() => alert('closed'));
+  }
+
+  toastCustom() {
+    this.toastService.create('This is a toast', { additional: { distance: 0, showTop: true }, cls: 'alert', timeout: 1000 });
   }
 }

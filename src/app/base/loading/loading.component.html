@@ -1,23 +1,47 @@
-<m4-switch [(ngModel)]="disabled"></m4-switch>
-<m4-switch [(ngModel)]="hover" caption="Hover"></m4-switch>
-<m4-switch [(ngModel)]="load" caption="Show loading"></m4-switch>
-<m4-input [(ngModel)]="animation"></m4-input>
+<h1>Loading</h1>
 
-<button m4-button [m4-loading]="neverEnding" [disabled]="disabled">
-  This always loads
-  <m4-icon *loading icon="spinner" [m4-animation]="animation" [animation-hover]="hover"></m4-icon>
-</button>
+<div class="remark info">
+  The <code>m4-loading</code> directive provides a simple solution to display a loading.<br>
+  It supports subscriptions and generates its state depending on the state of the subscription.
+</div>
 
-<button m4-button [m4-loading]="loading" (click)="startLoading()" [disabled]="disabled">
-  This loads on click
-  <m4-icon *loading icon="spinner" [m4-animation]="animation"></m4-icon>
-</button><br>
-<button m4-button (click)="startLoading()">Start loading</button>
+<app-doc-component title="Usage" [values]="{ startLoading: startLoading }">
+  <![CDATA[
+  <button m4-button (click)="startLoading()" [m4-loading]="loading">\l
+    \tStart loading\l
+    \t<m4-icon *loading="showSpinner" icon="spinner" m4-animation="spin"></m4-icon>\l
+  </button>
 
-<br><br>
+  \i
+  <hr>
+  <m4-switch caption="Show spinner" [(ngModel)]="showSpinner"></m4-switch>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    @Component({\n
+      \tselector: 'app-loading',\n
+      \ttemplateUrl: './loading.component.html',\n
+      \tstyleUrls: ['./loading.component.less']\n
+    })\n
+    export class LoadingComponent {\n
+      \tloading: Subscription;\n\n
 
-<button m4-button [m4-loading]="loading2" (click)="startLoading2()" [disabled]="disabled">
-  This loads on click
-  <m4-icon *loading="load" icon="spinner" class="ani-spin"></m4-icon>
-</button><br>
-<button m4-button (click)="startLoading2()">Start loading</button>
+      \tstartLoading() {\n
+        \t\tthis.loading = timer(1000).subscribe();\n
+      \t}\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<div class="remark info">
+  The state of the object using <code>m4-loading</code> gets set to disabled if an active subscription is provided.<br>
+  When the subscription completes the disabled state is removed<br>
+  When using <code>m4-loading</code> you can use <code>*loading</code> for the children of the object. They will be rendered if the subscription is active.
+</div>
+
+<div class="remark success">
+  <code>*loading</code> works like <code>*ngIf</code>. It renders the content if a truthy value is provided.
+  But it will also render the content if the parent <code>m4-loading</code> is active, no matter if a falsy value is provided or not.
+</div>

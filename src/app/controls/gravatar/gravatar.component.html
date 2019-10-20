@@ -1,5 +1,20 @@
-<m4-input prepend="Data Email: " [(ngModel)]="email"></m4-input>
-<m4-spinner [min-value]="1" [max-value]="2048" [(ngModel)]="size"></m4-spinner>
+<h1>Gravatar</h1>
+<a href="https://metroui.org.ua/gravatar.html" target="_blank">Gravatar in Metro 4 docs</a>
 
+<app-doc-component title="Usage">
+  <![CDATA[
+  <m4-gravatar email="morrisj@live.de"></m4-gravatar>\n
+  <m4-gravatar email="morrisj@live.de" [size]="300"></m4-gravatar>
+  ]]>
+</app-doc-component>
 
-<m4-gravatar [email]="email" [size]="size" default="mm"></m4-gravatar>
+<app-doc-component title="Defaults" description="If no gravatar for email was found it falls back to default. Here are some default gravatars.">
+  <![CDATA[
+  <m4-gravatar email="notGiven" default="identicon"></m4-gravatar>\n
+  <m4-gravatar email="notGiven" default="mm"></m4-gravatar>\n
+  <m4-gravatar email="notGiven" default="monsterid"></m4-gravatar>\n
+  <m4-gravatar email="notGiven" default="wavatar"></m4-gravatar>\n
+  <m4-gravatar email="notGiven" default="retro"></m4-gravatar>\n
+  <m4-gravatar email="notGiven" default="robohash"></m4-gravatar>
+  ]]>
+</app-doc-component>

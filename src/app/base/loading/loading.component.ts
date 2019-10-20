@@ -7,26 +7,14 @@ import {NEVER, Subscription, timer} from 'rxjs';
   styleUrls: ['./loading.component.less']
 })
 export class LoadingComponent implements OnInit {
-  disabled = false;
-  hover = false;
-  animation = 'spin';
-  neverEnding: Subscription;
   loading: Subscription;
-  loading2: Subscription;
-  load = false;
 
-  constructor() {
-    this.neverEnding = NEVER.subscribe();
-  }
+  constructor() { }
 
   ngOnInit() {
   }
 
   startLoading() {
     this.loading = timer(1000).subscribe();
-  }
-
-  startLoading2() {
-    this.loading2 = timer(1000).subscribe();
   }
 }

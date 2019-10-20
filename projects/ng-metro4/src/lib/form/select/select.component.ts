@@ -7,7 +7,7 @@ import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
-interface Option {
+export interface Option {
   title: string;
   dataTemplate: string;
   value: any;
@@ -50,6 +50,7 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
       ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
+        this.clonedElement.children().appendTo(originalElement);
         this.clonedElement.parent().remove();
       }
 
@@ -57,7 +58,7 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
       ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
-      this.clonedElement.html(originalElement.html());
+      originalElement.children().appendTo(this.clonedElement);
       this.select = this.clonedElement.select().data('select');
 
       this.clonedElement.parent().on('mousedown', (ev: MouseEvent) => {

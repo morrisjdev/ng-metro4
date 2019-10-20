@@ -1,1 +1,8 @@
-<button m4-button m4-hotkey="alt+2" (hotkeyClick)="click()">This is a hotkey button (Press alt+2)</button>
+<h1>Hotkey</h1>
+<a href="https://metroui.org.ua/hotkeys.html" target="_blank">Hotkey in Metro 4 docs</a>
+
+<app-doc-component title="Basic usage" [values]="{ alert: alert }">
+  <![CDATA[
+  <button m4-button m4-hotkey="alt+2" (hotkeyClick)="alert()">Hotkey alt + 2</button>
+  ]]>
+</app-doc-component>

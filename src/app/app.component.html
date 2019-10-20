@@ -14,11 +14,13 @@
       <a href="#" class="dropdown-toggle">Base</a>
       <ul class="d-menu" data-role="dropdown">
         <li><a [routerLink]="['base', 'button']">Button</a></li>
-        <li><a [routerLink]="['base', 'container']">Container</a></li>
-        <li><a [routerLink]="['base', 'grid']">Grid</a></li>
+<!--        <li><a [routerLink]="['base', 'container']">Container</a></li>-->
+<!--        <li><a [routerLink]="['base', 'grid']">Grid</a></li>-->
         <li><a [routerLink]="['base', 'icon']">Icon</a></li>
         <li><a [routerLink]="['base', 'loading']">Loading</a></li>
         <li><a [routerLink]="['base', 'let']">Let</a></li>
+        <li><a [routerLink]="['base', 'ripple']">Ripple</a></li>
+        <li><a [routerLink]="['base', 'animation']">Animation</a></li>
       </ul>
     </li>
 
@@ -52,12 +54,14 @@
     <li>
       <a href="#" class="dropdown-toggle">Controls</a>
       <ul class="d-menu" data-role="dropdown">
-        <li><a [routerLink]="['controls', 'donut']">Donut</a></li>
-        <li><a [routerLink]="['controls', 'gravatar']">Gravatar</a></li>
-        <li><a [routerLink]="['controls', 'panel']">Panel</a></li>
-        <li><a [routerLink]="['controls', 'popover']">Popover</a></li>
+        <li><a [routerLink]="['controls', 'activity']">Activity</a></li>
+        <li><a [routerLink]="['controls', 'activity-service']">Activity service</a></li>
         <li><a [routerLink]="['controls', 'progress']">Progress</a></li>
+        <li><a [routerLink]="['controls', 'popover']">Popover</a></li>
         <li><a [routerLink]="['controls', 'hotkey']">Hotkey</a></li>
+        <li><a [routerLink]="['controls', 'donut']">Donut</a></li>
+        <li><a [routerLink]="['controls', 'panel']">Panel</a></li>
+        <li><a [routerLink]="['controls', 'gravatar']">Gravatar</a></li>
       </ul>
     </li>
     <li>
@@ -68,6 +72,14 @@
         <li><a [routerLink]="['information', 'hint']">Hint</a></li>
         <li><a [routerLink]="['information', 'notify']">Notify</a></li>
         <li><a [routerLink]="['information', 'toast']">Toast</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#" class="dropdown-toggle">More</a>
+      <ul class="d-menu" data-role="dropdown">
+        <li><a [routerLink]="['more', 'get-controls']">Get controls</a></li>
+        <li><a [routerLink]="['more', 'lists']">Lists</a></li>
       </ul>
     </li>
 

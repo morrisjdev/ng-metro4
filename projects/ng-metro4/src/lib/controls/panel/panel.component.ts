@@ -1,4 +1,14 @@
-import {ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {
+  AfterContentInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {asapScheduler} from 'rxjs';
 import {ObjectHelper} from '../../helper/object-helper';
 
@@ -38,10 +48,12 @@ export class PanelComponent implements OnInit, OnChanges {
       ObjectHelper.hide(originalElement);
 
       if (this.clonedElement) {
+        this.clonedElement.children().appendTo(originalElement);
         this.clonedElement.parent().remove();
       }
 
       this.clonedElement = originalElement.clone();
+      originalElement.children().appendTo(this.clonedElement);
       ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 

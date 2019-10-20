@@ -17,4 +17,7 @@ export class LetComponent implements OnInit {
   ngOnInit() {
   }
 
+  increase() {
+    (<any>this).model++;
+  }
 }

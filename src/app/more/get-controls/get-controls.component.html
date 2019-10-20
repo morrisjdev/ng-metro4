@@ -1,0 +1,23 @@
+<h1>Get controls</h1>
+
+<app-doc-component title="Example"
+                   description="If you ever have the need to query the form-controls of your form for example, you can do this with the following method.">
+  <![CDATA[
+  <m4-input></m4-input>\n
+  <m4-spinner></m4-spinner>\n
+  <m4-slider></m4-slider>\n
+  <m4-checkbox></m4-checkbox>\n
+  <m4-switch></m4-switch>\n
+  <m4-file-input></m4-file-input>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    @ViewChildren(ControlBase) controls: QueryList<ControlBase<any>>;
+    ]]>
+  </div>
+</app-doc-component>
+
+<div class="remark info">
+  ng-metro4 provides a type alias <code>ControlBase</code> for all form-control elements to give you this option.
+</div>

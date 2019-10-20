@@ -6,10 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./donut.component.less']
 })
 export class DonutComponent implements OnInit {
-
-  value = 10;
-  hole = 10;
-
   constructor() { }
 
   ngOnInit() {

@@ -1,5 +1,8 @@
 // @dynamic
 export class StringHelper {
+  /**
+   * Creates a GUID
+   */
   public static guid() {
     const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
       /[xy]/g,

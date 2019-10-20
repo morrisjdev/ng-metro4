@@ -1,10 +1,19 @@
-<m4-select [options]="colorArrForSelect" [(ngModel)]="color"></m4-select>
-<m4-select [options]="icons" [(ngModel)]="icon"></m4-select>
+<h1>Icon</h1>
+<a href="https://metroui.org.ua/icons.html" target="_blank">Icons in Metro 4 docs</a>
 
-<m4-icon [icon]="icon" [color]="color"></m4-icon>
-<m4-icon [icon]="icon" [color]="color" [size]="0"></m4-icon>
-<m4-icon [icon]="icon" [color]="color" [size]="1"></m4-icon>
-<m4-icon [icon]="icon" [color]="color" [size]="2"></m4-icon>
-<m4-icon [icon]="icon" [color]="color" [size]="3"></m4-icon>
-<m4-icon [icon]="icon" [color]="color" [size]="4"></m4-icon>
-<m4-icon [icon]="icon" [color]="color" [size]="5"></m4-icon>
+<app-doc-component title="Playground" [values]="{ icon: 'home', icons: icons }">
+  <![CDATA[
+  <m4-icon [icon]="icon" [color]="color" size="4"></m4-icon>
+
+  \i
+  <hr>
+  <div class="row">
+    <div class="cell-md-6">
+      <m4-select prepend="Icon" [(ngModel)]="icon" [options]="icons"></m4-select>
+    </div>
+    <div class="cell-md-6">
+      <m4-select prepend="Color" [(ngModel)]="color" [options]="colorDictionary"></m4-select>
+    </div>
+  </div>
+  ]]>
+</app-doc-component>

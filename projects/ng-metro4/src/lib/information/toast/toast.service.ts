@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {AccentType} from '../../helper/types';
 import {Observable, Subject} from 'rxjs';
 
-interface ToastOptions {
+export interface ToastOptions {
   timeout?: number;
   cls?: string|AccentType;
   additional?: {
@@ -16,6 +16,11 @@ export class ToastService {
 
   constructor() { }
 
+  /**
+   * Create a toast message
+   * @param message The message
+   * @param options The options of the toast
+   */
   public create(message: string, options: ToastOptions = {}): Observable<void> {
     const closeSubject$ = new Subject<void>();
 

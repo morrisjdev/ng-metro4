@@ -1,0 +1,111 @@
+<h1>Activity service</h1>
+<a href="https://metroui.org.ua/progress.html" target="_blank">Activity in Metro 4 docs</a>
+
+<div class="remark info">
+  The <code>ActivityService</code> provides methods to simply create loading animations etc.
+</div>
+
+<app-doc-component title="Basic usage" [values]="{ activityService: activityService, showActivity: showActivity }">
+  <![CDATA[
+  <button m4-button (click)="showActivity('square')">Show square</button>\n
+  <button m4-button (click)="showActivity('metro')">Show metro</button>\n
+  <button m4-button (click)="showActivity('simple')">Show simple</button>\n
+  <button m4-button (click)="showActivity('ring')">Show ring</button>\n
+  <button m4-button (click)="showActivity('cycle')">Show cycle</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    @Component({\n
+      \tselector: 'app-activity-service',\n
+      \ttemplateUrl: './activity-service.component.html',\n
+      \tstyleUrls: ['./activity-service.component.less']\n
+    })\n
+    export class ActivityServiceComponent {\n\n
+
+      \tconstructor(public activityService: ActivityService) { }\n\n
+
+      \tshowActivity(type: ActivityType) {\n
+        \t\tthis.activityService.open({\n
+          \t\t\tstyle: 'color',\n
+          \t\t\ttext: 'Loading ...',\n
+          \t\t\ttype: type,\n
+          \t\t\tautoHide: 2000\n
+        \t\t});\n
+      \t}\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Overlay" [values]="{ activityService: activityService, showActivity: showActivityOverlay }">
+  <![CDATA[
+  <button m4-button (click)="showActivity('square')">Show square</button>\n
+  <button m4-button (click)="showActivity('metro')">Show metro</button>\n
+  <button m4-button (click)="showActivity('simple')">Show simple</button>\n
+  <button m4-button (click)="showActivity('ring')">Show ring</button>\n
+  <button m4-button (click)="showActivity('cycle')">Show cycle</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    showActivity(type: ActivityType) {\n
+      \tthis.activityService.open({\n
+        \t\tstyle: 'color',\n
+        \t\ttext: 'Loading ...',\n
+        \t\ttype: type,\n
+        \t\tautoHide: 2000,\n
+        \t\toverlayAlpha: 0.1,\n
+        \t\toverlayColor: '#ff0000',\n
+        \t\toverlayClickClose: true\n
+      \t});\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Page loading animation" description="If you want to display a loading animation when the page changes use this code:">
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    @Component({\n
+      selector: 'app-root',\n
+      templateUrl: './app.component.html',\n
+      styleUrls: ['./app.component.less']\n
+    })\n
+    export class AppComponent {\n
+      \tconstructor(private router: Router, private activityService: ActivityService) {\n
+        \t\tlet activity;\n\n
+
+        \t\tthis.router.events.pipe(\n
+          \t\t\tfilter(v => v instanceof NavigationStart || v instanceof NavigationEnd ||\n
+            \t\t\t\tv instanceof NavigationError || v instanceof NavigationCancel), debounceTime(50))\n
+          \t\t\t.subscribe((event) => {\n
+            \t\t\t\tif (event instanceof NavigationStart) {\n
+              \t\t\t\t\tif (activity) {\n
+                \t\t\t\t\t\treturn;\n
+              \t\t\t\t\t}\n\n
+
+              \t\t\t\t\tactivity = this.activityService.open({\n
+                \t\t\t\t\t\ttype: 'square',\n
+                \t\t\t\t\t\tstyle: 'color',\n
+                \t\t\t\t\t\toverlayColor: '#fff',\n
+                \t\t\t\t\t\toverlayAlpha: .1,\n
+                \t\t\t\t\t\tautoHide: 0,\n
+                \t\t\t\t\t\ttext: '<div class="mt-2 text-small">Loading ...</div>'\n
+              \t\t\t\t\t});\n
+            \t\t\t\t} else {\n
+              \t\t\t\t\twindow.scroll(0, 0);\n\n
+
+              \t\t\t\t\tif (activity) {\n
+                \t\t\t\t\t\tthis.activityService.close(activity);\n
+                \t\t\t\t\t\tactivity = null;\n
+              \t\t\t\t\t}\n
+            \t\t\t\t}\n
+          \t\t\t}\n
+        \t\t);\n
+      \t}\n
+    }
+    ]]>
+  </div>
+</app-doc-component>

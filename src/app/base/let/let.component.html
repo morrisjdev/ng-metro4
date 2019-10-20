@@ -1,7 +1,33 @@
-<p *ngIf="content$ | async; let content">
-  <b>This is displayed after content has truthy value: {{content}}</b>
-</p>
+<h1>Let</h1>
 
-<p *m4Let="content$ | async; let content">
-  <b>This is always displayed: {{content}}</b>
-</p>
+<div class="remark info">
+  The <code>*m4Let</code> directive provides a simple solution to declare variables in templates.
+</div>
+
+<app-doc-component title="Basic usage" [values]="{ model: 0, increase: increase }" [showModel]="true"
+                   description="When using ngIf all falsy values are hidden. m4Let is always visible. If you only want to map the value to another value use m4Let">
+  <![CDATA[
+  <p *ngIf="model; let value">With ngIf: <span [innerText]="value"></span></p>\n
+  <p *m4Let="model; let value">With m4Let: <span [innerText]="value"></span></p>\n
+  <button m4-button (click)="increase()">Increase</button>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Practical example" [values]="{ content$: content$ }"
+                   description="When using ngIf all falsy values are hidden. m4Let is always visible. If you only want to map the value to another value use m4Let">
+  <![CDATA[
+  <p *ngIf="content$ | async; let content">\l
+    \t<b>This is displayed after content has truthy value: <span [innerText]="content"></span></b>\l
+  </p>\n\l
+
+  <p *m4Let="content$ | async; let content">\l
+    \t<b>This is always displayed: <span [innerText]="content"></span></b>\l
+  </p>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.content$ = timer(1000, 1000);
+    ]]>
+  </div>
+</app-doc-component>

@@ -1,0 +1,40 @@
+<h1>Lists</h1>
+
+<div class="remark success">
+  ng-metro4 provides dictionaries for all type of data. You can simply query information if you need them.
+</div>
+
+<h2>Available lists</h2>
+
+<ul>
+  <li>iconDictionary</li>
+  <li>iconCategoryDictionary</li>
+  <li>colorDictionary</li>
+  <li>animationDictionary</li>
+  <li>accentDictionary</li>
+  <li>inputDictionary</li>
+  <li>calendarButtonDictionary</li>
+  <li>widePointDictionary</li>
+  <li>positionHorizontalDictionary</li>
+  <li>spinnerButtonPositionDictionary</li>
+  <li>positionVerticalDictionary</li>
+  <li>positionBaseDictionary</li>
+  <li>positionDictionary</li>
+  <li>sizeDictionary</li>
+  <li>gravatarDictionary</li>
+  <li>activityDictionary</li>
+  <li>activityStyleDictionary</li>
+  <li>buttonShapeDictionary</li>
+  <li>buttonSpecialDictionary</li>
+  <li>popoverTriggerDictionary</li>
+  <li>progressTypeDictionary</li>
+  <li>roundTypeDictionary</li>
+  <li>thinDictionary</li>
+  <li>easingDictionary</li>
+</ul>
+
+<app-doc-component title="Example usage" [values]="{ lists: lists }">
+  <![CDATA[
+  <span [innerHTML]="lists.colors() | json"></span>
+  ]]>
+</app-doc-component>

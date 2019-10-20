@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivityService} from 'ng-metro4';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-progress',
@@ -8,25 +7,8 @@ import {ActivityService} from 'ng-metro4';
 })
 export class ProgressComponent implements OnInit {
 
-  small = false;
-  value = 10;
-  buffer = 20;
-
-  style = '';
-  type = 'cycle';
-
-  constructor(private activityService: ActivityService) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  showActivity() {
-    this.activityService.open({
-      autoHide: 2000,
-      overlayAlpha: 0.1,
-      style: <any>this.style,
-      type: <any>this.type
-    });
-
   }
 }
