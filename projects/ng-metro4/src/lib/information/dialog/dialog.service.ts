@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
+import {finalize} from 'rxjs/operators';
 
 declare var $: any;
 
-interface DialogOptions {
+export interface DialogOptions {
   title?: string;
   content?: string;
   actions?: { caption: string, cls: string, onclick: () => void }[];
@@ -25,7 +26,7 @@ interface DialogOptions {
   show?: boolean;
 }
 
-interface InfoboxOptions {
+export interface InfoboxOptions {
   type?: 'default'|'success'|'info'|'alert'|'warning';
   width?: number;
   height?: number;
@@ -45,10 +46,30 @@ export class DialogService {
 
   constructor() { }
 
+  /**
+   * Create a custom dialog
+   * @param options The options of the dialog
+   */
   public create(options: DialogOptions): any {
     return (<any>window).Metro.dialog.create(options);
   }
 
+  /**
+   * Close a created dialog
+   * @param dialogObj The object returned by the create method
+   */
+  public close(dialogObj: any): any {
+    return (<any>window).Metro.dialog.close(dialogObj);
+  }
+
+  /**
+   * Shows an alert dialog
+   * @param title The title of the dialog
+   * @param message The message of the dialog
+   * @param cls Optional css classes
+   * @param okBtnText The text of the OK-Button
+   * @param okBtnCls An optional css class for the OK-Button
+   */
   public alert(title: string, message: string, cls?: string, okBtnText?: string, okBtnCls?: string): Observable<void> {
     const subject$ = new Subject<void>();
 
@@ -70,11 +91,25 @@ export class DialogService {
       }];
     }
 
-    this.create(options);
+    const alertObj = this.create(options);
 
-    return subject$.asObservable();
+    return subject$.asObservable().pipe(
+      finalize(() => {
+        this.close(alertObj);
+      })
+    );
   }
 
+  /**
+   * Shows a confirm dialog
+   * @param title The title of the confirm
+   * @param message The message of the confirm
+   * @param yesBtnText The text for the Yes-Button
+   * @param noBtnText The text for the No-Button
+   * @param cls An optional css class for the dialog
+   * @param yesBtnCls An optional css class for the Yes-Button
+   * @param noBtnCls An optional css class for the No-Button
+   */
   public confirm(title: string, message: string, yesBtnText?: string, noBtnText?: string,
                  cls?: string, yesBtnCls?: string, noBtnCls?: string): Observable<boolean> {
     const subject$ = new Subject<boolean>();
@@ -103,19 +138,33 @@ export class DialogService {
       clsDialog: cls
     };
 
-    this.create(options);
+    const confirmObj = this.create(options);
 
-    return subject$.asObservable();
+    return subject$.asObservable().pipe(
+      finalize(() => {
+        this.close(confirmObj);
+      })
+    );
   }
 
+  /**
+   * Show a prompt dialog
+   * @param title The title of the prompt
+   * @param message The message of the prompt
+   * @param submitBtnText The text of the Submit-Button
+   * @param placeholder The placeholder of the input
+   * @param cls An optional css class for the dialog
+   * @param submitBtnCls An optional css class for Submit-Button
+   * @param inputCls An optional css class for the input
+   */
   public prompt(title: string, message: string, submitBtnText?: string, placeholder?: string,
-                cls?: string, submitBtnCls?: string): Observable<string> {
+                cls?: string, submitBtnCls?: string, inputCls?: string): Observable<string> {
     const subject$ = new Subject<string>();
 
     const options: DialogOptions = {
       title: title,
       content: (message ? message : '') +
-                `<br><br><input data-role="input" type="text" placeholder="${placeholder ? placeholder : ''}" />`,
+                `<br><br><input data-role="input" type="text" class="${inputCls}" placeholder="${placeholder ? placeholder : ''}" />`,
       actions: [
         {
           caption: submitBtnText ? submitBtnText : 'Submit',
@@ -137,9 +186,18 @@ export class DialogService {
       value = input.val();
     });
 
-    return subject$.asObservable();
+    return subject$.asObservable().pipe(
+      finalize(() => {
+        this.close(promptObj);
+      })
+    );
   }
 
+  /**
+   * Show an info dialog
+   * @param content The content of the info
+   * @param options Options for info
+   */
   public info(content: string, options?: InfoboxOptions): { setContent: (content: string) => void;
     setType: (type: 'default'|'success'|'info'|'alert'|'warning') => void; close: () => void } {
     return (<any>window).Metro.infobox.create(content, '', options).data('infobox');

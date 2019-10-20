@@ -2,15 +2,15 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
+  ElementRef, EventEmitter,
   Input,
   OnChanges,
-  OnDestroy,
+  OnDestroy, Output,
   SimpleChanges,
   ViewChild
 } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {take} from 'rxjs/operators';
+import {finalize, take} from 'rxjs/operators';
 
 declare var $: any;
 
@@ -31,6 +31,9 @@ export class DialogComponent implements OnChanges, AfterViewInit, OnDestroy {
   @Input('data') data: any;
 
   @ViewChild('dialog', { static: true }) private dialog: ElementRef;
+  @Output('close-event') closeEvent = new EventEmitter<void>();
+
+
   dialogObj: any;
 
   private closeSubject$ = new Subject<any>();
@@ -40,11 +43,13 @@ export class DialogComponent implements OnChanges, AfterViewInit, OnDestroy {
 
   public open(): Observable<any> {
     this.dialogObj.open();
-    return this.closeSubject$.pipe(take(1));
+    return this.closeSubject$.pipe(take(1), finalize(() => this.close()));
   }
 
   public close() {
-    this.dialogObj.close();
+    if (this.dialogObj) {
+      this.dialogObj.close();
+    }
   }
 
   ngAfterViewInit(): void {
@@ -65,6 +70,7 @@ export class DialogComponent implements OnChanges, AfterViewInit, OnDestroy {
 
     this.dialogObj = $(this.dialog.nativeElement).dialog(dialogOptions).data('dialog');
     this.dialogObj.options.onClose = () => {
+      this.closeEvent.emit();
       this.closeSubject$.next(this.data);
     };
 
@@ -110,7 +116,13 @@ export class DialogComponent implements OnChanges, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.dialogObj.element.remove();
-    this.classObserver.disconnect();
+    if (this.dialogObj) {
+      this.close();
+      this.dialogObj.element.remove();
+    }
+
+    if (this.classObserver) {
+      this.classObserver.disconnect();
+    }
   }
 }

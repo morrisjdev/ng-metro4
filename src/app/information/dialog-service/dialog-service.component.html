@@ -1,0 +1,73 @@
+<h1>Dialog service</h1>
+<a href="https://metroui.org.ua/dialog.html#sidenav" target="_blank">Dialog in Metro 4 docs</a>
+
+<div class="remark info">
+  The <code>DialogService</code> provides methods to simply create common dialogs like alerts, prompts etc.
+</div>
+
+<app-doc-component title="Basic usage" [values]="{ dialogService: dialogService, alert: alert, confirm: confirm, prompt: prompt, info: info }">
+  <![CDATA[
+  <button m4-button (click)="alert()">Alert</button>\n
+  <button m4-button (click)="confirm()">Confirm</button>\n
+  <button m4-button (click)="prompt()">Prompt</button>\n
+  <button m4-button (click)="info()">Info</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    @Component({\n
+      \tselector: 'app-dialog-service',\n
+      \ttemplateUrl: './dialog-service.component.html',\n
+      \tstyleUrls: ['./dialog-service.component.less']\n
+    })\n
+    export class DialogServiceComponent {\n\n
+
+      \tconstructor(private dialogService: DialogService) { }\n\n
+
+      \talert() {\n
+        \t\tthis.dialogService.alert('Basic alert', 'Warning!');\n
+      \t}\n\n
+
+      \tconfirm() {\n
+        \t\tthis.dialogService.confirm('Basic confirm', 'Are you sure?');\n
+      \t}\n\n
+
+      \tprompt() {\n
+        \t\tthis.dialogService.prompt('Basic prompt', 'Enter value');\n
+      \t}\n\n
+
+      \tinfo() {\n
+        \t\tthis.dialogService.info('Basic info');\n
+      \t}\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Wait for result" description="All dialog methods return observables that you can use to wait for the result of the dialog"
+                                       [values]="{ dialogService: dialogService, confirm: confirmWait, prompt: promptWait }">
+  <![CDATA[
+  <button m4-button (click)="confirm()">Confirm</button>\n
+  <button m4-button (click)="prompt()">Prompt</button>\n
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.dialogService.confirm('Confirm wait', 'Are you sure?').subscribe((result) => alert(result));\n
+    this.dialogService.prompt('Prompt wait', 'Input').subscribe((result) => alert(result));\n
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component title="Close"
+                   [values]="{ dialogService: dialogService, alert: alertClose }">
+  <![CDATA[
+  <button m4-button (click)="alert()">Alert</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.dialogService.alert('Alert close', 'Content').pipe(takeUntil(timer(2000))).subscribe();
+    ]]>
+  </div>
+</app-doc-component>

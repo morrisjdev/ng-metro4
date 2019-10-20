@@ -15,7 +15,7 @@ export class DialogComponent implements OnInit {
   message: string;
   test: string;
 
-  dialogOpen = true;
+  dialogOpen = false;
   overlay = true;
   primary = true;
   width = 900;
@@ -31,30 +31,5 @@ export class DialogComponent implements OnInit {
     setTimeout(() => {
       this.dialog.close();
     }, 5000);
-  }
-
-  showAlert() {
-    this.dialogService.alert(this.title, this.message, 'bg-red', 'Oki doki');
-  }
-
-  showConfirm() {
-    this.dialogService.confirm(this.title, this.message, 'Ja', 'Nein').subscribe(console.warn);
-  }
-
-  showPrompt() {
-    this.dialogService.prompt(this.title, this.message, 'Speichern', 'Text').subscribe(console.warn);
-  }
-
-  showInfo() {
-    const result = this.dialogService.info(this.message, { type: 'alert' });
-    setTimeout(() => {
-      result.setContent('Das ist ein test');
-      setTimeout(() => {
-        result.setType('success');
-        setTimeout(() => {
-          result.close();
-        }, 1000);
-      }, 500);
-    }, 500);
   }
 }

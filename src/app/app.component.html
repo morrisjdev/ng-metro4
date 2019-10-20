@@ -3,8 +3,12 @@
     <span class="border bd-white border-radius p-2">ng m<sup>4</sup></span>
   </a>
   <ul class="app-bar-menu ml-auto">
-    <li><a [routerLink]="['start']">Getting started</a></li>
-
+    <li>
+      <a href="#" class="dropdown-toggle">Getting started</a>
+      <ul class="d-menu" data-role="dropdown">
+        <li><a [routerLink]="['start']">Quick start</a></li>
+      </ul>
+    </li>
 
     <li>
       <a href="#" class="dropdown-toggle">Base</a>
@@ -60,6 +64,7 @@
       <a href="#" class="dropdown-toggle">Information</a>
       <ul class="d-menu" data-role="dropdown">
         <li><a [routerLink]="['information', 'dialog']">Dialog</a></li>
+        <li><a [routerLink]="['information', 'dialog-service']">Dialog service</a></li>
         <li><a [routerLink]="['information', 'hint']">Hint</a></li>
         <li><a [routerLink]="['information', 'notify']">Notify</a></li>
         <li><a [routerLink]="['information', 'toast']">Toast</a></li>

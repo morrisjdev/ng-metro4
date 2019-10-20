@@ -7,6 +7,7 @@ import {HintComponent} from './hint/hint.component';
 import {ToastComponent} from './toast/toast.component';
 import {NotifyComponent} from './notify/notify.component';
 import {DialogComponent} from './dialog/dialog.component';
+import { DialogServiceComponent } from './dialog-service/dialog-service.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {DialogComponent} from './dialog/dialog.component';
     ToastComponent,
     NotifyComponent,
     DialogComponent,
+    DialogServiceComponent,
   ],
   imports: [
     CommonModule,

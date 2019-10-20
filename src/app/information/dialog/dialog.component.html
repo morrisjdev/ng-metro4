@@ -1,34 +1,99 @@
-<m4-dialog #dialog [open]="dialogOpen" data="12345" [width]="width" [overlay]="overlay" [class.primary]="primary">
-  <div dialog-title>Das ist ein test</div>
-  <div dialog-content>
-    <h2>Das ist der Inhalt</h2>
-    <h5>Das ist Inhalt</h5>
+<h1>Dialog</h1>
+<a href="https://metroui.org.ua/dialog.html#sidenav" target="_blank">Dialog in Metro 4 docs</a>
 
-    <m4-checkbox [(ngModel)]="dialogOpen" caption="Dialog open"></m4-checkbox>
-    <m4-slider [(ngModel)]="width" min="50" max="900"></m4-slider>
-    <m4-checkbox [(ngModel)]="primary" caption="Primary"></m4-checkbox>
+<app-doc-component title="Basic usage">
+  <![CDATA[
+  <m4-dialog #dialog>\l
+    \t<div dialog-title>dialog title</div>\l
+    \t<div dialog-content>dialog content</div>\l
+  </m4-dialog>\n
+  <button m4-button (click)="dialog.open()">Open</button>
+  ]]>
+</app-doc-component>
 
-    <m4-input prepend="Test" [(ngModel)]="test"></m4-input>
+<div class="remark primary">
+  The dialog element has three content sections:<br>
+  <ol>
+    <li>
+      <b>Title:</b><br>
+      <code>&lt;div dialog-title&gt;&lt;/div&gt;</code><br>
+      Contains the title of the dialog
+    </li>
+    <li>
+      <b>Content:</b><br>
+      <code>&lt;div dialog-content&gt;&lt;/div&gt;</code><br>
+      Contains the content of the dialog
+    </li>
+    <li>
+      <b>Actions:</b><br>
+      <code>&lt;div dialog-actions&gt;&lt;/div&gt;</code><br>
+      Contains custom actions of the dialog. (If not given the dialog has a default Ok-button in this section)
+    </li>
+  </ol>
+</div>
+
+<app-doc-component title="Control open-state">
+  <![CDATA[
+  <m4-dialog [open]="isOpen" (close-event)="isOpen = false">\l
+    \t<div dialog-title>dialog title</div>\l
+    \t<div dialog-content>dialog content</div>\l
+    \t<div dialog-actions>no actions</div>\l
+  </m4-dialog>\n
+  <m4-checkbox caption="Dialog open" [(ngModel)]="isOpen"></m4-checkbox>
+  ]]>
+</app-doc-component>
+
+
+<app-doc-component title="Width">
+  <![CDATA[
+  <m4-dialog #dialog width="50%">\l
+    \t<div dialog-title>dialog title</div>\l
+    \t<div dialog-content>dialog content</div>\l
+  </m4-dialog>\n
+  <button m4-button (click)="dialog.open()">Open (static width)</button>\n\n
+  <m4-dialog #dialog2 class="w-75 w-25-md">\l
+    \t<div dialog-title>dialog title</div>\l
+    \t<div dialog-content>dialog content</div>\l
+  </m4-dialog>\n
+  <button m4-button (click)="dialog2.open()">Open (set with css)</button>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Style">
+  <![CDATA[
+  <m4-dialog #dialog [class]="style">\l
+    \t<div dialog-title>dialog title</div>\l
+    \t<div dialog-content>dialog content</div>\l
+  </m4-dialog>\n
+  <button m4-button (click)="dialog.open()">Open</button>\n
+
+  \i
+  <m4-select class="mt-5" [(ngModel)]="style" [options]="accentDictionary" prepend="Style"></m4-select>\n
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Overlay">
+  <![CDATA[
+  <m4-dialog #dialog [overlay]="true" overlay-color="#ff0000" [overlay-alpha]="0.1">\l
+    \t<div dialog-title>dialog title</div>\l
+    \t<div dialog-content>dialog content</div>\l
+  </m4-dialog>\n
+  <button m4-button (click)="dialog.open()">Open</button>
+  ]]>
+</app-doc-component>
+
+<app-doc-component title="Access from code">
+  <![CDATA[
+  <m4-dialog #dialog>\l
+    \t<div dialog-title>dialog title</div>\l
+    \t<div dialog-content>dialog content</div>\l
+  </m4-dialog>\n
+  <button m4-button (click)="dialog.open()">Open</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    @ViewChild('dialog', { static: true }) dialog: metro4.DialogComponent;
+    ]]>
   </div>
-  <div dialog-actions>
-    <button m4-button btn-style="success" (click)="dialog.close()">Yes</button>
-  </div>
-</m4-dialog>
-
-{{test}}<br>
-
-<button m4-button (click)="showDialog()">Open</button>
-<m4-checkbox [(ngModel)]="dialogOpen" caption="Dialog open"></m4-checkbox>
-<m4-checkbox [(ngModel)]="overlay" caption="Overlay"></m4-checkbox>
-<m4-checkbox [(ngModel)]="primary" caption="Primary"></m4-checkbox>
-<m4-slider [(ngModel)]="width" min="50" max="900"></m4-slider>
-
-<br><br>
-
-<m4-input prepend="Title" [(ngModel)]="title"></m4-input>
-<m4-input prepend="Message" [(ngModel)]="message"></m4-input>
-
-<button m4-button (click)="showAlert()">Alert</button>
-<button m4-button (click)="showConfirm()">Confirm</button>
-<button m4-button (click)="showPrompt()">Prompt</button>
-<button m4-button (click)="showInfo()">Info</button>
+</app-doc-component>
