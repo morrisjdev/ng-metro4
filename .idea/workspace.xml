@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="added info in form-wrapper">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/pipes/error-display.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/pipes/error-display.pipe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/schematics/layout/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/schematics/layout/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/checkbox/checkbox.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +101,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Publish doc">
+  <component name="RunManager" selected="npm.Publish">
     <configuration name="Run" type="CompoundRunConfigurationType">
       <toRun name="Angular CLI Server" type="js.build_tools.npm" />
       <toRun name="Build" type="js.build_tools.npm" />
@@ -205,6 +210,7 @@
       <workItem from="1571500114608" duration="2294000" />
       <workItem from="1571561030440" duration="965000" />
       <workItem from="1571568737955" duration="6076000" />
+      <workItem from="1571673929348" duration="1641000" />
     </task>
     <task id="LOCAL-00001" summary="added timepicker&#10;fixed calendar&#10;fixed input">
       <created>1549009089576</created>
@@ -307,6 +313,11 @@
         <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.js.map" />
         <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.js" />
         <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.d.ts" />
+      </list>
+    </option>
+    <option name="additionalRoots">
+      <list>
+        <option value="$PROJECT_DIR$/dist/ng-metro4" />
       </list>
     </option>
   </component>

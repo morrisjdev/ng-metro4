@@ -1,19 +1,25 @@
 {
   "name": "ng-metro4",
-  "description": "ng-metro4 is an implementation of the beautiful metro4 components",
-  "version": "1.0.0",
+  "description": "Angular components for Metro4 UI library in modern ui style.",
+  "version": "1.0.3",
   "peerDependencies": {
     "@angular/common": "~8.1.0",
     "@angular/core": "~8.1.0",
     "moment": "^2.24.0",
-	  "metro4": "^4.3.1",
+	  "metro4": "^4.3.2",
     "rxjs": "~6.5.2"
   },
   "schematics": "./schematics/collection.json",
   "keywords": [
+    "angular",
     "metro4",
     "ui",
-    "angular"
+    "typescript",
+    "javascript",
+    "ng-metro4",
+    "css",
+    "less",
+    "mobile"
   ],
   "author": {
     "name": "Morris Janatzek"

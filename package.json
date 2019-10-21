@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-schematics": "tsc -p projects/ng-metro4/tsconfig.schematics.json --outDir dist/ng-metro4/schematics && cpx dist/ng-metro4/schematics/src/schematics/** dist/ng-metro4/schematics && cpx projects/ng-metro4/src/schematics/**/{collection.json,schema.json,files/**} dist/ng-metro4/schematics",
-    "publish": "npm run build -- ng-metro4 && npm run build-schematics && cd ./dist/ng-metro4 && npm publish",
+    "publish": "npm run build -- ng-metro4 && npm run build-schematics && cpx ./README.md ./dist/ng-metro4  && cd ./dist/ng-metro4 && npm publish",
     "publish-doc": "npm run build -- ng-metro4 && ng run metro4-demo:deploy"
   },
   "private": true,
@@ -25,7 +25,7 @@
     "core-js": "^2.5.4",
     "highlight.js": "^9.15.10",
     "linq4js": "^2.2.2",
-    "metro4": "^4.3.1",
+    "metro4": "^4.3.2",
     "moment": "^2.24.0",
     "ngx-highlightjs": "^3.0.3",
     "rxjs": "~6.5.2",

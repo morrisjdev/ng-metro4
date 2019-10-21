@@ -4,20 +4,23 @@ Angular UI components in modern ui style.
 
 [Documentation](https://morrisjdev.github.io/ng-metro4/#/)
 
-![Screenshot](projects/ng-metro4/ng-metro4%20screenshot.PNG)
+![Screenshot](https://raw.githubusercontent.com/morrisjdev/ng-metro4/master/projects/ng-metro4/ng-metro4%20screenshot.PNG)
 
 See metro4 for more details:
 [Metro4](https://metroui.org.ua/)
 
+ng-metro4 on npm: 
+[ng-metro4](https://www.npmjs.com/package/ng-metro4)
+
 ## Installation
 
-1. Install using Angular CLI:
+### Install using Angular CLI:
 
 ````
 ng add ng-metro4
 ````
 
-3. Import modules:
+### Import module:
 
 Add NgMetro4Module to your imports:
 
@@ -30,6 +33,13 @@ imports: [
   ...
 ]
 ````
+
+### Generate layout
+
+````
+ng g ng-metro4:layout
+````
+
 
 ## Usage
 
