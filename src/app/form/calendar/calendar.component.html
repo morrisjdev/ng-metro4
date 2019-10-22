@@ -1,11 +1,6 @@
 <h1>Calendar</h1>
 <a href="https://metroui.org.ua/calendar.html" target="_blank">Calendar in Metro 4 docs</a>
 
-<div class="remark info">
-  This library uses <a href="https://momentjs.com/" target="_blank">Moment.js</a> for date computations.<br>
-  Run <code>npm install -S moment</code> to use date-components.
-</div>
-
 <app-doc-component title="Playground" [values]="{ model: today, locale: 'de-DE', header: true, footer: true }" [showModel]="true">
   <![CDATA[
   <m4-calendar [(ngModel)]="model" [disabled]="disabled" [class]="accent" [wide]="wide" [locale]="locale"\l

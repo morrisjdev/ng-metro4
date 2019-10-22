@@ -1,11 +1,6 @@
 <h1>Date picker</h1>
 <a href="https://metroui.org.ua/datepicker.html" target="_blank">Date picker in Metro 4 docs</a>
 
-<div class="remark info">
-  This library uses <a href="https://momentjs.com/" target="_blank">Moment.js</a> for date computations.<br>
-  Run <code>npm install -S moment</code> to use date-components.
-</div>
-
 <app-doc-component title="Playground" [values]="{ model: today, locale: 'de-DE', year: true, month: true, day: true, distance: 0 }" [showModel]="true">
   <![CDATA[
   <m4-date-picker [(ngModel)]="model" [disabled]="disabled" [class]="accent" [locale]="locale" [month]="month"\l

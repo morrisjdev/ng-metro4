@@ -1,14 +1,9 @@
 <h1>Time picker</h1>
 <a href="https://metroui.org.ua/timepicker.html" target="_blank">Time picker in Metro 4 docs</a>
 
-<div class="remark info">
-  This library uses <a href="https://momentjs.com/" target="_blank">Moment.js</a> for date computations.<br>
-  Run <code>npm install -S moment</code> to use date-components.
-</div>
-
 <app-doc-component title="Playground" [values]="{ model: duration, locale: 'de-DE', hours: true, minutes: true, seconds: true, labels: true }" [showModel]="true">
   <![CDATA[
-  <m4-time-picker [(ngModel)]="model" [disabled]="disabled" [class]="class" [locale]="locale" [hours]="hours"\l
+  <m4-time-picker [(ngModel)]="model" [disabled]="disabled" [class]="accent" [locale]="locale" [hours]="hours"\l
                   \t\t [minutes]="minutes" [seconds]="seconds" [show-labels]="labels"></m4-time-picker>
 
   \i
