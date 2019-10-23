@@ -1,7 +1,7 @@
 <h1>Calendar picker</h1>
 <a href="https://metroui.org.ua/calendarpicker.html" target="_blank">Calendar picker in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: today, format: '%d.%m.%Y', locale: 'de-DE', size: '100%', clearBtnIcon: '<span class=\'mif-add\'></span>', icon: '<span class=\'mif-calendar\'></span>' }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: today, format: '%d.%m.%Y', locale: 'de-DE', size: '100%', clearBtnIcon: '<span class=\'mif-add\'></span>', icon: '<span class=\'mif-calendar\'></span>' }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [disabled]="disabled" [class]="accent" [calendar-wide]="wide"\l
                       \t\t [dialog-mode]="dialog" [locale]="locale" [format]="format" [size]="size"\l
@@ -50,21 +50,21 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model"></m4-calendar-picker>\n
   <m4-calendar-picker [(ngModel)]="model" cls-calendar="compact"></m4-calendar-picker>\n
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Control width" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Control width" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [calendar-wide]="true"></m4-calendar-picker>\n
   <m4-calendar-picker [(ngModel)]="model" calendar-wide-point="md"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Dialog mode" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Dialog mode" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [dialog-mode]="true"></m4-calendar-picker>\n
   <m4-calendar-picker [(ngModel)]="model" [dialog-mode]="true" [dialog-overlay]="false"></m4-calendar-picker>\n
@@ -73,7 +73,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Locale" [values]="{ model: today, locale: 'de-DE' }" [showModel]="true">
+<app-doc-component header="Locale" [values]="{ model: today, locale: 'de-DE' }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [locale]="locale"></m4-calendar-picker>\n
 
@@ -88,7 +88,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Format" [values]="{ model: today, format: '%d.%m.%Y' }" [showModel]="true">
+<app-doc-component header="Format" [values]="{ model: today, format: '%d.%m.%Y' }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [format]="format"></m4-calendar-picker>\n
 
@@ -97,66 +97,66 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Size" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Size" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" size="50%"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Clear button" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Clear button" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [clear-button]="true"></m4-calendar-picker>\n
   <m4-calendar-picker [(ngModel)]="model" [clear-button]="true" clear-button-icon="<span class='mif-power'></span>"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Icon" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Icon" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" calendar-button-icon="<span class='mif-search'></span>"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Min/Max" [values]="{ model: today, today: today }" [showModel]="true">
+<app-doc-component header="Min/Max" [values]="{ model: today, today: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [min-date]="today"></m4-calendar-picker>\n
   <m4-calendar-picker [(ngModel)]="model" [max-date]="today"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Exclude/Include dates" [values]="{ model: today, array: dateArray }" [showModel]="true">
+<app-doc-component header="Exclude/Include dates" [values]="{ model: today, array: dateArray }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [exclude]="array"></m4-calendar-picker>\n
   <m4-calendar-picker [(ngModel)]="model" [include]="array"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Week start" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Week start" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [week-start]="0"></m4-calendar-picker>\n
   <m4-calendar-picker [(ngModel)]="model" [week-start]="1"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Selectable years" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Selectable years" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [years-before]="0"></m4-calendar-picker>\n
   <m4-calendar-picker [(ngModel)]="model" [years-after]="0"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Show header" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Show header" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [show-header]="false"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Outside" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Outside" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [outside]="true"></m4-calendar-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Ripple" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Ripple" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-calendar-picker [(ngModel)]="model" [ripple]="true"></m4-calendar-picker>\n
   <m4-calendar-picker [(ngModel)]="model" [ripple]="true" ripple-color="#ff0000"></m4-calendar-picker>

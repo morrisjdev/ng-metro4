@@ -4,7 +4,7 @@
   <small class="text-muted" *ngIf="description">{{description}}</small>
 
   <ng-container *ngIf="showErrors && control.errors && control.dirty">
-    <ul class="fg-red text-small m-1">
+    <ul class="unstyled-list fg-red text-small m-1">
       <li *ngFor="let error of control.errors | errorDisplay: formControlPath">
         <ng-container *ngIf="errorTemplate">
           <ng-container *ngTemplateOutlet="errorTemplate;context:{ error: error }"></ng-container>

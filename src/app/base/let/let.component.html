@@ -4,7 +4,7 @@
   The <code>*m4Let</code> directive provides a simple solution to declare variables in templates.
 </div>
 
-<app-doc-component title="Basic usage" [values]="{ model: 0, increase: increase }" [showModel]="true"
+<app-doc-component header="Basic usage" [values]="{ model: 0, increase: increase }" [showModel]="true"
                    description="When using ngIf all falsy values are hidden. m4Let is always visible. If you only want to map the value to another value use m4Let">
   <![CDATA[
   <p *ngIf="model; let value">With ngIf: <span [innerText]="value"></span></p>\n
@@ -13,7 +13,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Practical example" [values]="{ content$: content$ }"
+<app-doc-component header="Practical example" [values]="{ content$: content$ }"
                    description="When using ngIf all falsy values are hidden. m4Let is always visible. If you only want to map the value to another value use m4Let">
   <![CDATA[
   <p *ngIf="content$ | async; let content">\l

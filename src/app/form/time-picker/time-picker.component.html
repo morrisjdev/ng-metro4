@@ -1,7 +1,7 @@
 <h1>Time picker</h1>
 <a href="https://metroui.org.ua/timepicker.html" target="_blank">Time picker in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: duration, locale: 'de-DE', hours: true, minutes: true, seconds: true, labels: true }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: duration, locale: 'de-DE', hours: true, minutes: true, seconds: true, labels: true }" [showModel]="true">
   <![CDATA[
   <m4-time-picker [(ngModel)]="model" [disabled]="disabled" [class]="accent" [locale]="locale" [hours]="hours"\l
                   \t\t [minutes]="minutes" [seconds]="seconds" [show-labels]="labels"></m4-time-picker>
@@ -36,13 +36,13 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: duration }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: duration }" [showModel]="true">
   <![CDATA[
   <m4-time-picker [(ngModel)]="model"></m4-time-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Locale" [values]="{ model: duration, locale: 'de-DE' }" [showModel]="true">
+<app-doc-component header="Locale" [values]="{ model: duration, locale: 'de-DE' }" [showModel]="true">
   <![CDATA[
   <m4-time-picker [(ngModel)]="model" [locale]="locale"></m4-time-picker>\n
 
@@ -57,7 +57,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Picker parts" [values]="{ model: duration }" [showModel]="true">
+<app-doc-component header="Picker parts" [values]="{ model: duration }" [showModel]="true">
   <![CDATA[
   <m4-time-picker [(ngModel)]="model" [minutes]="false"></m4-time-picker>\n
   <m4-time-picker [(ngModel)]="model" [hours]="false"></m4-time-picker>\n
@@ -65,7 +65,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Labels" [values]="{ model: duration }" [showModel]="true">
+<app-doc-component header="Labels" [values]="{ model: duration }" [showModel]="true">
   <![CDATA[
   <m4-time-picker [(ngModel)]="model" [show-labels]="false"></m4-time-picker>
   ]]>

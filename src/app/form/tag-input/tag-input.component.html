@@ -1,7 +1,7 @@
 <h1>Tag input</h1>
 <a href="https://metroui.org.ua/tag-input.html" target="_blank">Tag input in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: [ 'first value', 'second' ], trigger: ['13', '188'] }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: [ 'first value', 'second' ], trigger: ['13', '188'] }" [showModel]="true">
   <![CDATA[
   <m4-tag-input [(ngModel)]="model" [disabled]="disabled" [max-tags]="limit" [random-color]="randomColor"\l
                 \t\t [class]="accent" [tag-trigger]="trigger"></m4-tag-input>
@@ -32,25 +32,25 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: ['first value', 'second'] }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: ['first value', 'second'] }" [showModel]="true">
   <![CDATA[
   <m4-tag-input [(ngModel)]="model"></m4-tag-input>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Random color" [values]="{ model: ['first value', 'second'] }" [showModel]="true">
+<app-doc-component header="Random color" [values]="{ model: ['first value', 'second'] }" [showModel]="true">
   <![CDATA[
   <m4-tag-input [(ngModel)]="model" [random-color]="true"></m4-tag-input>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Tag limit" [values]="{ model: ['first value', 'second'] }" [showModel]="true">
+<app-doc-component header="Tag limit" [values]="{ model: ['first value', 'second'] }" [showModel]="true">
   <![CDATA[
   <m4-tag-input [(ngModel)]="model" [max-tags]="5"></m4-tag-input>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Trigger" [values]="{ model: ['first value', 'second'] }" [showModel]="true">
+<app-doc-component header="Trigger" [values]="{ model: ['first value', 'second'] }" [showModel]="true">
   <![CDATA[
   <m4-tag-input [(ngModel)]="model" [tag-trigger]="[13]"></m4-tag-input>
   ]]>

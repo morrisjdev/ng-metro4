@@ -80,14 +80,24 @@ export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]
         });
       });
 
-      this.calendar.options.onDone = (sel) => {
-        const dates = sel.map(s => _moment(s));
+      const selectDays = (selection) => {
+        const dates = selection.map(s => _moment(s));
 
         if (this.multiSelect) {
           this.changeValue(dates);
         } else {
           this.changeValue(dates.length > 0 ? dates[0] : null);
         }
+      };
+
+      this.calendar.options.onDayClick = (selection) => {
+        if (this.pickerMode) {
+          selectDays(selection);
+        }
+      };
+
+      this.calendar.options.onDone = (selection) => {
+        selectDays(selection);
       };
 
       complete();

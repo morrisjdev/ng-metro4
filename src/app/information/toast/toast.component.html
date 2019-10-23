@@ -5,7 +5,7 @@
   The <code>ToastService</code> provides methods to simply create toast-notifications in your application.
 </div>
 
-<app-doc-component title="Basic usage" [values]="{ toastService: toastService, toast: toast }">
+<app-doc-component header="Basic usage" [values]="{ toastService: toastService, toast: toast }">
   <![CDATA[
   <button m4-button (click)="toast()">Create toast</button>
   ]]>
@@ -28,7 +28,7 @@
   </div>
 </app-doc-component>
 
-<app-doc-component title="Wait for result" description="The create method returns an observables that you can use to wait for the toast to be closed/clicked"
+<app-doc-component header="Wait for result" description="The create method returns an observables that you can use to wait for the toast to be closed/clicked"
                    [values]="{ toastService: toastService, toast: toastWait }">
   <![CDATA[
   <button m4-button (click)="toast()">Create toast</button>
@@ -41,7 +41,7 @@
   </div>
 </app-doc-component>
 
-<app-doc-component title="Customize"
+<app-doc-component header="Customize"
                    [values]="{ toastService: toastService, toast: toastCustom }">
   <![CDATA[
   <button m4-button (click)="toast()">Create toast</button>

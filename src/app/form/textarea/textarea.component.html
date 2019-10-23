@@ -1,7 +1,7 @@
 <h1>Textarea</h1>
 <a href="https://metroui.org.ua/textarea.html" target="_blank">Textarea in Metro 4 docs</a>
 
-<app-doc-component title="Playground"
+<app-doc-component header="Playground"
                    [values]="{ model: 'value', clearBtn: true, clearBtnIcon: '<span class=\'mif-cross\'></span>', autoSize: true }"
                    [showModel]="true">
   <![CDATA[
@@ -43,19 +43,19 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: 'value' }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: 'value' }" [showModel]="true">
   <![CDATA[
   <m4-textarea [(ngModel)]="model"></m4-textarea>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Placeholder" [values]="{ model: '' }" [showModel]="true">
+<app-doc-component header="Placeholder" [values]="{ model: '' }" [showModel]="true">
   <![CDATA[
   <m4-textarea [(ngModel)]="model" placeholder="Placeholder"></m4-textarea>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Prepend/Append" [showModel]="true"
+<app-doc-component header="Prepend/Append" [showModel]="true"
                    [values]="{ model: 'value', prepend: 'Example Description' }">
   <![CDATA[
   <m4-textarea [(ngModel)]="prepend" prepend="Change prepend value"></m4-textarea>
@@ -67,7 +67,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Clear button">
+<app-doc-component header="Clear button">
   <![CDATA[
   <!-- Default -->\l
   <m4-textarea [ngModel]="'value'"></m4-textarea>
@@ -86,7 +86,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Auto size" [values]="{ model: 'password' }" [showModel]="true">
+<app-doc-component header="Auto size" [values]="{ model: 'password' }" [showModel]="true">
   <![CDATA[
   <m4-textarea [(ngModel)]="model" [auto-size]="true"></m4-textarea>
   ]]>

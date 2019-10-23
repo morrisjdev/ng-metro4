@@ -1,7 +1,7 @@
 <h1>Keypad</h1>
 <a href="https://metroui.org.ua/keypad.html" target="_blank">Keypad in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: '', showValue: true, serviceBtn: true, position: 'bottom' }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: '', showValue: true, serviceBtn: true, position: 'bottom' }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model" [disabled]="disabled" [class]="accent" [keys]="keys" [key-size]="keySize"\l
              \t\t [type]="type" [shuffle]="shuffle" [show-value]="showValue" [service-buttons]="serviceBtn"\l
@@ -49,25 +49,25 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: '' }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: '' }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model"></m4-keypad>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Keys" [values]="{ model: 'ab' }" [showModel]="true">
+<app-doc-component header="Keys" [values]="{ model: 'ab' }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model" [keys]="['a', 'b', 'c', 'd', 'e']"></m4-keypad>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Key size" [values]="{ model: '' }" [showModel]="true">
+<app-doc-component header="Key size" [values]="{ model: '' }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model" [key-size]="30"></m4-keypad>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Custom key length" [values]="{ model: '' }" [showModel]="true">
+<app-doc-component header="Custom key length" [values]="{ model: '' }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model" [key-length]="3" [keys]="['aa', 'bb', 'cc']"></m4-keypad>
   ]]>
@@ -77,39 +77,39 @@
   The key length is an internal contraint and has to be greater than the longest key-value.
 </div>
 
-<app-doc-component title="Shuffle" [values]="{ model: '' }" [showModel]="true">
+<app-doc-component header="Shuffle" [values]="{ model: '' }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model" [shuffle]="true"></m4-keypad>\n
   <m4-keypad [(ngModel)]="model" [shuffle]="true" [shuffle-count]="4"></m4-keypad>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Position" [values]="{ model: '' }" [showModel]="true">
+<app-doc-component header="Position" [values]="{ model: '' }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model" position="top"></m4-keypad>\n
   <m4-keypad [(ngModel)]="model" [dynamic-position]="true"></m4-keypad>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Disable service buttons" [values]="{ model: '' }" [showModel]="true">
+<app-doc-component header="Disable service buttons" [values]="{ model: '' }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model" [service-buttons]="false"></m4-keypad>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Hide value" [values]="{ model: '' }" [showModel]="true">
+<app-doc-component header="Hide value" [values]="{ model: '' }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model" [show-value]="false"></m4-keypad>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Always open" [values]="{ model: '' }" [showModel]="true">
+<app-doc-component header="Always open" [values]="{ model: '' }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model" [open]="true" position="right"></m4-keypad>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="As number input" [values]="{ model: 4 }" [showModel]="true">
+<app-doc-component header="As number input" [values]="{ model: 4 }" [showModel]="true">
   <![CDATA[
   <m4-keypad [(ngModel)]="model" type="number"></m4-keypad>
   ]]>

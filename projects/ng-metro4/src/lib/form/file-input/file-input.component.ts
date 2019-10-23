@@ -6,6 +6,11 @@ import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
 
+export interface FileEntry {
+  file: File;
+  content: string;
+}
+
 @Component({
   selector: 'm4-file-input',
   templateUrl: './file-input.component.html',
@@ -13,8 +18,9 @@ declare var $: any;
   providers: [DefaultValueAccessor.get(FileInputComponent), TypeAlias.get(FileInputComponent)],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FileInputComponent extends ControlBase<File | File[]> {
+export class FileInputComponent extends ControlBase<File | File[] | FileEntry | FileEntry[]> {
   @Input('multiple') multiple = false;
+  @Input('read') read = false;
 
   @Input('prepend') prepend: string;
   @Input('button-title') buttonTitle: string;
@@ -52,9 +58,17 @@ export class FileInputComponent extends ControlBase<File | File[]> {
             result.push(files[i]);
           }
 
-          this.changeValue(result);
+          if (this.read) {
+            this.readFiles(files);
+          } else {
+            this.changeValue(result);
+          }
         } else {
-          this.changeValue(files[0]);
+          if (this.read) {
+            this.readFiles(files);
+          } else {
+            this.changeValue(files[0]);
+          }
         }
       };
 
@@ -67,6 +81,34 @@ export class FileInputComponent extends ControlBase<File | File[]> {
 
   }
 
+  readFiles(files: File[]) {
+    const fileLoadPromises = [];
+
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+
+      const loadPromise = new Promise<FileEntry>((resolve) => {
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+          resolve({ content: <string>reader.result, file: file });
+        };
+
+        reader.readAsText(file);
+      });
+
+      fileLoadPromises.push(loadPromise);
+    }
+
+    Promise.all(fileLoadPromises).then((fileEntries: FileEntry[]) => {
+      if (this.multiple) {
+        this.changeValue(fileEntries);
+      } else {
+        this.changeValue(fileEntries[0]);
+      }
+    });
+  }
+
   disable(disabled: boolean): void {
     if (disabled) {
       this.fileInput.disable();
@@ -76,12 +118,23 @@ export class FileInputComponent extends ControlBase<File | File[]> {
   }
 
   newValue(): void {
-    if (!this.fileInput || this.drop) {
+    if (!this.fileInput || this.drop || this.read || !this.innerValue) {
       return;
     }
 
-    const name = this.innerValue instanceof Array ? (<File[]>this.innerValue).map(v => v.name).join(', ')
-      : this.innerValue ? (<File>this.innerValue).name : '';
+    let name;
+
+    if (this.innerValue instanceof Array) {
+      name = (<any>this.innerValue).map((v: File|FileEntry) => {
+        if (v instanceof File) {
+          return v.name;
+        } else {
+          return v.file.name;
+        }
+      }).join(', ');
+    } else {
+      name = this.innerValue instanceof File ? this.innerValue.name : this.innerValue.file.name;
+    }
 
     this.clonedElement.parent().find('span.caption').html(name);
   }

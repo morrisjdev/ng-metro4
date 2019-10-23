@@ -5,7 +5,7 @@
   The <code>NotifyService</code> provides methods to simply create notifications in your application.
 </div>
 
-<app-doc-component title="Basic usage" [values]="{ notifyService: notifyService, notify: notify }">
+<app-doc-component header="Basic usage" [values]="{ notifyService: notifyService, notify: notify }">
   <![CDATA[
   <button m4-button (click)="notify()">Notify</button>
   ]]>
@@ -30,7 +30,7 @@
   </div>
 </app-doc-component>
 
-<app-doc-component title="Wait for result" description="The create method returns an observables that you can use to wait for the notification to be closed/clicked"
+<app-doc-component header="Wait for result" description="The create method returns an observables that you can use to wait for the notification to be closed/clicked"
                    [values]="{ notifyService: notifyService, notify: notifyWait }">
   <![CDATA[
   <button m4-button (click)="notify()">Notify</button>
@@ -43,7 +43,7 @@
   </div>
 </app-doc-component>
 
-<app-doc-component title="Keep open"
+<app-doc-component header="Keep open"
                    [values]="{ notifyService: notifyService, notify: notifyOpen }">
   <![CDATA[
   <button m4-button (click)="notify()">Notify</button>
@@ -56,7 +56,7 @@
   </div>
 </app-doc-component>
 
-<app-doc-component title="Customize"
+<app-doc-component header="Customize"
                    [values]="{ notifyService: notifyService, notify: notifyCustom }">
   <![CDATA[
   <button m4-button (click)="notify()">Notify</button>
@@ -69,7 +69,7 @@
   </div>
 </app-doc-component>
 
-<app-doc-component title="Setup" description="You can setup the notify system on startup for all notfications"
+<app-doc-component header="Setup" description="You can setup the notify system on startup for all notfications"
                    [values]="{ notifyService: notifyService, notify: notifySetup }">
   <![CDATA[
   <button m4-button (click)="notify()">Notify</button>

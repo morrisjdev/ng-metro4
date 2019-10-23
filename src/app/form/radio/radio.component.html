@@ -1,13 +1,13 @@
 <h1>Radio</h1>
 <a href="https://metroui.org.ua/radio.html" target="_blank">Radio in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: 1, style: 1 }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: 1, style: 1 }" [showModel]="true">
   <![CDATA[
   <m4-radio name="radio_playground" [(ngModel)]="model" [value]="1" [disabled]="disabled" [caption]="caption" [caption-position]="captionPosition" \l
-               \t\t [style]="style"></m4-radio>\n
+               \t\t [style]="style" [class]="accent"></m4-radio>\n
 
   <m4-radio name="radio_playground" [(ngModel)]="model" [value]="2" [disabled]="disabled" [caption]="caption" [caption-position]="captionPosition" \l
-            \t\t [style]="style"></m4-radio>
+            \t\t [style]="style" [class]="accent"></m4-radio>
   \i
   <hr>
 
@@ -23,6 +23,11 @@
       <m4-select prepend="Style" [(ngModel)]="style"
                  [options]="{'1': 1, '2': 2}"></m4-select>
     </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
 
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
@@ -36,7 +41,7 @@
   For simplicity you should better use the <code>m4-radio-group</code>
 </div>
 
-<app-doc-component title="Basic usage" [values]="{ model: 1 }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: 1 }" [showModel]="true">
   <![CDATA[
   <m4-radio name="radio_basic" [(ngModel)]="model" [value]="1"></m4-radio>\n
   <m4-radio name="radio_basic" [(ngModel)]="model" [value]="2"></m4-radio>\n
@@ -45,7 +50,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Radio group" [values]="{ model: 1 }" [showModel]="true">
+<app-doc-component header="Radio group" [values]="{ model: 1 }" [showModel]="true">
   <![CDATA[
   <m4-radio-group [(ngModel)]="model" [disabled]="disabled">\l
     \t
@@ -74,7 +79,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Style" [values]="{ model: 1 }" [showModel]="true">
+<app-doc-component header="Style" [values]="{ model: 1 }" [showModel]="true">
   <![CDATA[
   <m4-radio name="radio_style" [value]="1" [(ngModel)]="model"></m4-radio>\n
   <m4-radio name="radio_style" [value]="2" [(ngModel)]="model"></m4-radio>\n
@@ -83,7 +88,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Caption" [values]="{ model: 1 }" [showModel]="true">
+<app-doc-component header="Caption" [values]="{ model: 1 }" [showModel]="true">
   <![CDATA[
   <m4-radio name="radio_caption" [value]="1" [(ngModel)]="model" caption="Description"></m4-radio>
   \n

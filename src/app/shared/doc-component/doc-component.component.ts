@@ -36,7 +36,7 @@ import {
   styleUrls: ['./doc-component.component.less']
 })
 export class DocComponentComponent implements OnInit, OnChanges {
-  @Input() title: string;
+  @Input() header: string;
   @Input() description: string;
   @Input() showModel: boolean;
 
@@ -82,7 +82,7 @@ export class DocComponentComponent implements OnInit, OnChanges {
         .split('\\i').filter((v, i) => i % 2 === 0).join('');
 
       const metadata = {
-        selector: `runtime-component-sample`,
+        selector: `doc-runtime-component`,
         template: html
       };
 

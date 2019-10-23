@@ -1,10 +1,10 @@
 <h1>File</h1>
 <a href="https://metroui.org.ua/file.html" target="_blank">File in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model" [disabled]="disabled" [class]="accent" [multiple]="multiple" [prepend]="prepend"\l
-                 \t\t [button-title]="btnTitle" [drop]="drop"></m4-file-input>
+                 \t\t [button-title]="btnTitle" [drop]="drop" [read]="read"></m4-file-input>
 
   \i
   <hr>
@@ -26,44 +26,53 @@
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
       <m4-checkbox [(ngModel)]="multiple" caption="Multiple"></m4-checkbox>
       <m4-checkbox [(ngModel)]="drop" caption="Drop"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="read" caption="Read"></m4-checkbox>
     </div>
   </div>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: null }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: null }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model"></m4-file-input>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Multiple files" [values]="{ model: null }" [showModel]="true">
+<app-doc-component header="Multiple files" [values]="{ model: null }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model" [multiple]="true"></m4-file-input>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Prepend" [values]="{ model: null }" [showModel]="true">
+<app-doc-component header="Prepend" [values]="{ model: null }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model" prepend="Prepend"></m4-file-input>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Button title" [values]="{ model: null }" [showModel]="true">
+<app-doc-component header="Button title" [values]="{ model: null }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model" button-title="Custom title"></m4-file-input>\n
   <m4-file-input [(ngModel)]="model" button-title="<span class='mif-folder'></span>"></m4-file-input>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Drop zone" [values]="{ model: null }" [showModel]="true">
+<app-doc-component header="Drop zone" [values]="{ model: null }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model" [drop]="true"></m4-file-input>\n
   <m4-file-input [(ngModel)]="model" [drop]="true" [multiple]="true"></m4-file-input>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Read file content" [values]="{ model: null, openFile: openFile }" [showModel]="true">
+<app-doc-component header="Read mode" [values]="{ model: null }" [showModel]="true">
+  <![CDATA[
+  <m4-file-input [(ngModel)]="model" [read]="true"></m4-file-input>\n
+  <m4-file-input [(ngModel)]="model" [read]="true" [multiple]="true"></m4-file-input>
+  ]]>
+</app-doc-component>
+
+
+<app-doc-component header="Read file content" [values]="{ model: null, openFile: openFile }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model" (ngModelChange)="openFile($event)" [drop]="true"></m4-file-input>
   ]]>

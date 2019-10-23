@@ -1,7 +1,7 @@
 <h1>Slider</h1>
 <a href="https://metroui.org.ua/slider.html" target="_blank">Slider in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: 'value', min: 0, max: 100, accuracy: 1, hintPosition: 'top' }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: 'value', min: 0, max: 100, accuracy: 1, hintPosition: 'top' }" [showModel]="true">
   <![CDATA[
   <m4-slider [(ngModel)]="model" [disabled]="disabled" [min]="min" [max]="max" [accuracy]="accuracy" [buffer]="buffer"\l
              \t\t [hint]="hint" [hint-always]="hintAlways" [hint-position]="hintPosition" [class]="accent"\l
@@ -56,32 +56,32 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: 30 }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: 30 }" [showModel]="true">
   <![CDATA[
   <m4-slider [(ngModel)]="model"></m4-slider>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Min/Max" [values]="{ model: 30 }" [showModel]="true">
+<app-doc-component header="Min/Max" [values]="{ model: 30 }" [showModel]="true">
   <![CDATA[
   <m4-slider [(ngModel)]="model" [min]="-10" [max]="40"></m4-slider>\n
   <m4-slider [(ngModel)]="model" [min]="-10" [max]="40" [show-min-max]="true"></m4-slider>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Accuracy" [values]="{ model: 30 }" [showModel]="true">
+<app-doc-component header="Accuracy" [values]="{ model: 30 }" [showModel]="true">
   <![CDATA[
   <m4-slider [(ngModel)]="model" [accuracy]="5"></m4-slider>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Buffer" [values]="{ model: 30 }" [showModel]="true">
+<app-doc-component header="Buffer" [values]="{ model: 30 }" [showModel]="true">
   <![CDATA[
   <m4-slider [(ngModel)]="model" [buffer]="70"></m4-slider>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Hint" [values]="{ model: 30 }" [showModel]="true">
+<app-doc-component header="Hint" [values]="{ model: 30 }" [showModel]="true">
   <![CDATA[
   <m4-slider [(ngModel)]="model" [hint]="true"></m4-slider>\n
   <m4-slider [(ngModel)]="model" [hint]="true" [hint-always]="true"></m4-slider>\n
@@ -94,26 +94,26 @@
   When using hint-mask <code>$1</code> gets replaced with the acutal value and <code>$2</code> with the current percentage.
 </div>
 
-<app-doc-component title="Vertical" [values]="{ model: 30 }" [showModel]="true">
+<app-doc-component header="Vertical" [values]="{ model: 30 }" [showModel]="true">
   <![CDATA[
   <m4-slider [(ngModel)]="model" [vertical]="true"></m4-slider>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Size" [values]="{ model: 30 }" [showModel]="true">
+<app-doc-component header="Size" [values]="{ model: 30 }" [showModel]="true">
   <![CDATA[
   <m4-slider [(ngModel)]="model" [size]="300"></m4-slider>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Thin" [values]="{ model: 30 }" [showModel]="true">
+<app-doc-component header="Thin" [values]="{ model: 30 }" [showModel]="true">
   <![CDATA[
   <m4-slider [(ngModel)]="model" thin="thin"></m4-slider>\n
   <m4-slider [(ngModel)]="model" thin="ultra-thin"></m4-slider>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Cycle marker" [values]="{ model: 30 }" [showModel]="true">
+<app-doc-component header="Cycle marker" [values]="{ model: 30 }" [showModel]="true">
   <![CDATA[
   <m4-slider [(ngModel)]="model" [cycle-marker]="true"></m4-slider>
   ]]>

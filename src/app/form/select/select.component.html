@@ -1,7 +1,7 @@
 <h1>Select</h1>
 <a href="https://metroui.org.ua/select.html" target="_blank">Select in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: 'value', options: [], duration: 0, filter: true }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: 'value', options: [], duration: 0, filter: true }" [showModel]="true">
   <![CDATA[
   <m4-select [(ngModel)]="model" [prepend]="prepend" [append]="append" [options]="options" [disabled]="disabled"\l
              \t [multiple]="multiple" [duration]="duration" [filter-placeholder]="filterPlaceholder"\l
@@ -52,20 +52,20 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: 'value' }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: 'value' }" [showModel]="true">
   <![CDATA[
   <m4-select [(ngModel)]="model" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Using an object as options" [values]="{ model: 'value' }" [showModel]="true">
+<app-doc-component header="Using an object as options" [values]="{ model: 'value' }" [showModel]="true">
   <![CDATA[
   <m4-select [(ngModel)]="model" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>\n
   <m4-select [(ngModel)]="model" [options]="{ 'group title': { 'value': 'title' },  'second group title': { 'value': 'title' } }"></m4-select>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Using an array as options" [values]="{ model: 'value', options: options }" [showModel]="true">
+<app-doc-component header="Using an array as options" [values]="{ model: 'value', options: options }" [showModel]="true">
   <![CDATA[
   <m4-select [(ngModel)]="model" [options]="options"></m4-select>
   ]]>
@@ -85,7 +85,7 @@
   </div>
 </app-doc-component>
 
-<app-doc-component title="Defining options in html" [values]="{ model: 'mini' }" [showModel]="true">
+<app-doc-component header="Defining options in html" [values]="{ model: 'mini' }" [showModel]="true">
   <![CDATA[
   <m4-select [(ngModel)]="model">\l
     \t<optgroup label="Physical servers">\l
@@ -111,32 +111,32 @@
   <code>$1</code> gets replaced by options title
 </div>
 
-<app-doc-component title="Prepend/Append" [values]="{ model: 'value' }" [showModel]="true">
+<app-doc-component header="Prepend/Append" [values]="{ model: 'value' }" [showModel]="true">
   <![CDATA[
   <m4-select [(ngModel)]="model" prepend="Select" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>\n
   <m4-select [(ngModel)]="model" append="Select" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Multi select" [values]="{ model: ['1', '2'] }" [showModel]="true">
+<app-doc-component header="Multi select" [values]="{ model: ['1', '2'] }" [showModel]="true">
   <![CDATA[
   <m4-select [(ngModel)]="model" [multiple]="true" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Animation" [values]="{ model: 'value' }" [showModel]="true">
+<app-doc-component header="Animation" [values]="{ model: 'value' }" [showModel]="true">
   <![CDATA[
   <m4-select [(ngModel)]="model" [duration]="500" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Drop height" [values]="{ model: 'value' }" [showModel]="true">
+<app-doc-component header="Drop height" [values]="{ model: 'value' }" [showModel]="true">
   <![CDATA[
   <m4-select [(ngModel)]="model" [drop-height]="80" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Filter" [values]="{ model: 'value' }" [showModel]="true">
+<app-doc-component header="Filter" [values]="{ model: 'value' }" [showModel]="true">
   <![CDATA[
   <m4-select [(ngModel)]="model" [filter]="false" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>\n
   <m4-select [(ngModel)]="model" filter-placeholder="Custom filter placeholder" [options]="{ 'value': 'title', '1': '1', '2': '2' }"></m4-select>

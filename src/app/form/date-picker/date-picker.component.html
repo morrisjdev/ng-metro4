@@ -1,7 +1,7 @@
 <h1>Date picker</h1>
 <a href="https://metroui.org.ua/datepicker.html" target="_blank">Date picker in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: today, locale: 'de-DE', year: true, month: true, day: true, distance: 0 }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: today, locale: 'de-DE', year: true, month: true, day: true, distance: 0 }" [showModel]="true">
   <![CDATA[
   <m4-date-picker [(ngModel)]="model" [disabled]="disabled" [class]="accent" [locale]="locale" [month]="month"\l
                   \t\t [year]="year" [day]="day" [distance]="distance" [max-year]="maxYear" [min-year]="minYear"></m4-date-picker>
@@ -44,13 +44,13 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-date-picker [(ngModel)]="model"></m4-date-picker>\n
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Locale" [values]="{ model: today, locale: 'de-DE' }" [showModel]="true">
+<app-doc-component header="Locale" [values]="{ model: today, locale: 'de-DE' }" [showModel]="true">
   <![CDATA[
   <m4-date-picker [(ngModel)]="model" [locale]="locale"></m4-date-picker>\n
 
@@ -65,14 +65,14 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Min/Max" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Min/Max" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-date-picker [(ngModel)]="model" [min-year]="2018"></m4-date-picker>\n
   <m4-date-picker [(ngModel)]="model" [max-year]="2025"></m4-date-picker>
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Picker parts" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Picker parts" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-date-picker [(ngModel)]="model" [year]="false"></m4-date-picker>\n
   <m4-date-picker [(ngModel)]="model" [month]="false"></m4-date-picker>\n
@@ -80,7 +80,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Distance" [values]="{ model: today }" [showModel]="true">
+<app-doc-component header="Distance" [values]="{ model: today }" [showModel]="true">
   <![CDATA[
   <m4-date-picker [(ngModel)]="model" [distance]="2"></m4-date-picker>
   ]]>

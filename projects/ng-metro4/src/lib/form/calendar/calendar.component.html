@@ -3,7 +3,7 @@
      [attr.data-years-before]="yearsBefore"
      [attr.data-years-after]="yearsAfter"
      [attr.data-show]="show?.format('MM/DD/YYYY')"
-     [attr.data-picker-mode]="pickerMode"
+     [attr.data-picker-mode]="pickerMode && !multiSelect"
      [attr.data-locale]="locale"
      [attr.data-week-start]="weekStart"
      [attr.data-outside]="outside"

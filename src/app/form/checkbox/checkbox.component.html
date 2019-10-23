@@ -1,10 +1,10 @@
 <h1>Checkbox</h1>
 <a href="https://metroui.org.ua/checkbox.html" target="_blank">Checkbox in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: true, style: 1 }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: true, style: 1 }" [showModel]="true">
   <![CDATA[
   <m4-checkbox [(ngModel)]="model" [disabled]="disabled" [caption]="caption" [caption-position]="captionPosition" \l
-               \t\t[indeterminate]="indeterminate" [style]="style"></m4-checkbox>
+               \t\t[indeterminate]="indeterminate" [class]="accent" [style]="style"></m4-checkbox>
 
   \i
   <hr>
@@ -21,6 +21,11 @@
       <m4-select prepend="Style" [(ngModel)]="style"
                  [options]="{'1': 1, '2': 2}"></m4-select>
     </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
 
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="indeterminate" caption="Indeterminate"></m4-checkbox>
@@ -30,7 +35,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: true }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: true }" [showModel]="true">
   <![CDATA[
   <m4-checkbox [(ngModel)]="model"></m4-checkbox>
   \n
@@ -38,7 +43,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Checkbox group" [values]="{ model: [1, 2, 6] }" [showModel]="true">
+<app-doc-component header="Checkbox group" [values]="{ model: [1, 2, 6] }" [showModel]="true">
   <![CDATA[
   <m4-checkbox-group [(ngModel)]="model" [disabled]="disabled">\l
     \t
@@ -67,7 +72,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Style" [values]="{ model: true }" [showModel]="true">
+<app-doc-component header="Style" [values]="{ model: true }" [showModel]="true">
   <![CDATA[
   <m4-checkbox [(ngModel)]="model"></m4-checkbox>
   \n
@@ -75,7 +80,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Caption" [values]="{ model: true }" [showModel]="true">
+<app-doc-component header="Caption" [values]="{ model: true }" [showModel]="true">
   <![CDATA[
   <m4-checkbox [(ngModel)]="model" caption="Description"></m4-checkbox>
   \n
@@ -83,7 +88,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Indeterminate" [values]="{ model: true }" [showModel]="true">
+<app-doc-component header="Indeterminate" [values]="{ model: true }" [showModel]="true">
   <![CDATA[
   <m4-checkbox [(ngModel)]="model" [indeterminate]="true"></m4-checkbox>
   \n
@@ -91,7 +96,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Treeview" [values]="{ model: [1, 3, 5, 11] }" [showModel]="true">
+<app-doc-component header="Treeview" [values]="{ model: [1, 3, 5, 11] }" [showModel]="true">
   <![CDATA[
   <m4-checkbox-group [(ngModel)]="model">\l
     \t

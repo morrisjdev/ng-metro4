@@ -6,7 +6,7 @@
 <ng-container *ngIf="showErrors && formGroup.errors && formGroup.dirty">
   <hr>
 
-  <ul class="fg-red text-small m-2">
+  <ul class="unstyled-list fg-red text-small m-2">
     <li *ngFor="let error of formGroup.errors | errorDisplay: formPath">
       <ng-container *ngIf="errorTemplate">
         <ng-container *ngTemplateOutlet="errorTemplate;context:{ error: error }"></ng-container>

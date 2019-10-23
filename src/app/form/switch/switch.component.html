@@ -1,10 +1,10 @@
 <h1>Switch</h1>
 <a href="https://metroui.org.ua/switch.html" target="_blank">Switch in Metro 4 docs</a>
 
-<app-doc-component title="Playground" [values]="{ model: true, material: false }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: true, material: false }" [showModel]="true">
   <![CDATA[
   <m4-switch [(ngModel)]="model" [disabled]="disabled" [caption]="caption" [caption-position]="captionPosition" \l
-             \t\t[material]="material"></m4-switch>
+             \t\t[material]="material" [class]="accent"></m4-switch>
 
   \i
   <hr>
@@ -17,6 +17,11 @@
       <m4-select prepend="Caption position" [(ngModel)]="captionPosition"
                  [options]="positionHorizontalDictionary"></m4-select>
     </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Accent class"
+                 [options]="accentDictionary"
+                 [(ngModel)]="accent"></m4-select>
+    </div>
 
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
@@ -26,7 +31,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Basic usage" [values]="{ model: true }" [showModel]="true">
+<app-doc-component header="Basic usage" [values]="{ model: true }" [showModel]="true">
   <![CDATA[
   <m4-switch [(ngModel)]="model"></m4-switch>
   \n
@@ -34,7 +39,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Material design" [values]="{ model: true }" [showModel]="true">
+<app-doc-component header="Material design" [values]="{ model: true }" [showModel]="true">
   <![CDATA[
   <m4-switch [(ngModel)]="model" [material]="true"></m4-switch>
   \n
@@ -42,7 +47,7 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component title="Caption" [values]="{ model: true }" [showModel]="true">
+<app-doc-component header="Caption" [values]="{ model: true }" [showModel]="true">
   <![CDATA[
   <m4-switch [(ngModel)]="model" caption="Description"></m4-switch>
   \n

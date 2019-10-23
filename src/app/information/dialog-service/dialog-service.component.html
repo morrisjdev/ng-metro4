@@ -5,7 +5,7 @@
   The <code>DialogService</code> provides methods to simply create common dialogs like alerts, prompts etc.
 </div>
 
-<app-doc-component title="Basic usage" [values]="{ dialogService: dialogService, alert: alert, confirm: confirm, prompt: prompt, info: info }">
+<app-doc-component header="Basic usage" [values]="{ dialogService: dialogService, alert: alert, confirm: confirm, prompt: prompt, info: info }">
   <![CDATA[
   <button m4-button (click)="alert()">Alert</button>\n
   <button m4-button (click)="confirm()">Confirm</button>\n
@@ -44,8 +44,8 @@
   </div>
 </app-doc-component>
 
-<app-doc-component title="Wait for result" description="All dialog methods return observables that you can use to wait for the result of the dialog"
-                                       [values]="{ dialogService: dialogService, confirm: confirmWait, prompt: promptWait }">
+<app-doc-component header="Wait for result" description="All dialog methods return observables that you can use to wait for the result of the dialog"
+                   [values]="{ dialogService: dialogService, confirm: confirmWait, prompt: promptWait }">
   <![CDATA[
   <button m4-button (click)="confirm()">Confirm</button>\n
   <button m4-button (click)="prompt()">Prompt</button>\n
@@ -59,7 +59,7 @@
   </div>
 </app-doc-component>
 
-<app-doc-component title="Close"
+<app-doc-component header="Close"
                    [values]="{ dialogService: dialogService, alert: alertClose }">
   <![CDATA[
   <button m4-button (click)="alert()">Alert</button>
