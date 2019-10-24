@@ -3,12 +3,13 @@ import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {ObjectHelper} from '../../helper/object-helper';
+import {FileReadModeType} from '../../helper/types';
 
 declare var $: any;
 
 export interface FileEntry {
   file: File;
-  content: string;
+  content: any;
 }
 
 @Component({
@@ -20,7 +21,8 @@ export interface FileEntry {
 })
 export class FileInputComponent extends ControlBase<File | File[] | FileEntry | FileEntry[]> {
   @Input('multiple') multiple = false;
-  @Input('read') read = false;
+  @Input('accept') accept = '';
+  @Input('read') read: FileReadModeType = '';
 
   @Input('prepend') prepend: string;
   @Input('button-title') buttonTitle: string;
@@ -31,7 +33,7 @@ export class FileInputComponent extends ControlBase<File | File[] | FileEntry | 
   @Input('cls-prepend') clsPrepend: string;
   @Input('cls-button') clsButton: string;
 
-  @ViewChild('input', { static: true }) private input: ElementRef;
+  @ViewChild('input', {static: true}) private input: ElementRef;
   private fileInput: any;
   private clonedElement: any;
 
@@ -91,10 +93,24 @@ export class FileInputComponent extends ControlBase<File | File[] | FileEntry | 
         const reader = new FileReader();
 
         reader.onload = (e) => {
-          resolve({ content: <string>reader.result, file: file });
+          resolve({content: reader.result, file: file});
         };
 
-        reader.readAsText(file);
+        switch (this.read) {
+          case 'arrayBuffer':
+            reader.readAsArrayBuffer(file);
+            break;
+          case 'binaryString':
+            reader.readAsBinaryString(file);
+            break;
+          case 'dataUrl':
+            reader.readAsDataURL(file);
+            break;
+          case 'text':
+          default:
+            reader.readAsText(file);
+            break;
+        }
       });
 
       fileLoadPromises.push(loadPromise);
@@ -125,7 +141,7 @@ export class FileInputComponent extends ControlBase<File | File[] | FileEntry | 
     let name;
 
     if (this.innerValue instanceof Array) {
-      name = (<any>this.innerValue).map((v: File|FileEntry) => {
+      name = (<any>this.innerValue).map((v: File | FileEntry) => {
         if (v instanceof File) {
           return v.name;
         } else {

@@ -21,6 +21,11 @@
                  [options]="accentDictionary"
                  [(ngModel)]="accent"></m4-select>
     </div>
+    <div class="cell-md-4">
+      <m4-select prepend="Read mode"
+                 [options]="fileReadModeDictionary"
+                 [(ngModel)]="read"></m4-select>
+    </div>
 
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
@@ -35,6 +40,12 @@
 <app-doc-component header="Basic usage" [values]="{ model: null }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model"></m4-file-input>
+  ]]>
+</app-doc-component>
+
+<app-doc-component header="Specify file-type" [values]="{ model: null }" [showModel]="true">
+  <![CDATA[
+  <m4-file-input [(ngModel)]="model" accept=".txt,.png"></m4-file-input>
   ]]>
 </app-doc-component>
 
@@ -66,13 +77,24 @@
 
 <app-doc-component header="Read mode" [values]="{ model: null }" [showModel]="true">
   <![CDATA[
-  <m4-file-input [(ngModel)]="model" [read]="true"></m4-file-input>\n
-  <m4-file-input [(ngModel)]="model" [read]="true" [multiple]="true"></m4-file-input>
+  <m4-file-input [(ngModel)]="model" read="text"></m4-file-input>\n
+  <m4-file-input [(ngModel)]="model" read="text" [multiple]="true"></m4-file-input>\n
+  <m4-file-input [(ngModel)]="model" read="dataUrl"></m4-file-input>\n
+  <m4-file-input [(ngModel)]="model" read="arrayBuffer"></m4-file-input>\n
+  <m4-file-input [(ngModel)]="model" read="binaryString"></m4-file-input>
   ]]>
 </app-doc-component>
 
+<app-doc-component header="Image picker" [values]="{ model: null }" [showModel]="true">
+  <![CDATA[
+  <m4-file-input [(ngModel)]="model" [multiple]="true" read="dataUrl" accept=".png"></m4-file-input>\n
+  <ng-container *ngFor="let image of model">
+    <img [src]="image.content" />
+  </ng-container>
+  ]]>
+</app-doc-component>
 
-<app-doc-component header="Read file content" [values]="{ model: null, openFile: openFile }" [showModel]="true">
+<app-doc-component header="Read file content manually" [values]="{ model: null, openFile: openFile }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model" (ngModelChange)="openFile($event)" [drop]="true"></m4-file-input>
   ]]>

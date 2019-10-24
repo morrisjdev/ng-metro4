@@ -1,0 +1,21 @@
+<div class="form-group" [class.mt-1]="control.index > 0">
+  <label *ngIf="control?.controlStyle?.label">{{control.controlStyle.label | unwrapObservableOrValue }}</label>
+  <ng-template #container></ng-template>
+  <small class="text-muted" *ngIf="control?.controlStyle?.description">
+    {{control.controlStyle.description | unwrapObservableOrValue }}
+  </small>
+
+  <ng-container *ngIf="!(control?.controlStyle?.hideErrors) && control.errors && control.dirty">
+    <ul class="unstyled-list fg-red text-small m-1">
+      <li *ngFor="let error of control.errors | errorDisplay: control.fieldName + '.'">
+        <ng-container *ngIf="control?.controlStyle?.createError; else defaultErrorBlock">
+          {{ control.controlStyle.createError | executeFunctionOnce:error | unwrapObservableOrValue }}
+        </ng-container>
+
+        <ng-template #defaultErrorBlock>
+          {{error}}
+        </ng-template>
+      </li>
+    </ul>
+  </ng-container>
+</div>

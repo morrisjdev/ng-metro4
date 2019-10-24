@@ -1,6 +1,5 @@
-import {AfterContentInit, Component, ContentChild, Host, Input, OnInit, Optional, SkipSelf, TemplateRef} from '@angular/core';
+import {Component, ContentChild, Input, OnInit, TemplateRef} from '@angular/core';
 import {M4FormGroup} from '../m4-form-group';
-import {ControlContainer} from '@angular/forms';
 
 @Component({
   selector: 'm4-form-wrapper',

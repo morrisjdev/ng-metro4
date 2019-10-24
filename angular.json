@@ -31,7 +31,6 @@
               "src/styles.less"
             ],
             "scripts": [
-              "node_modules/metro4/build/js/metro.min.js"
             ]
           },
           "configurations": {

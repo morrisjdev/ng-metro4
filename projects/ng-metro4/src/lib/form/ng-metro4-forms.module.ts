@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import 'metro4';
 
 import { TagInputComponent } from './tag-input/tag-input.component';
 import { SelectComponent } from './select/select.component';
@@ -19,12 +20,16 @@ import { CalendarPickerComponent } from './calendar-picker/calendar-picker.compo
 import { CalendarComponent } from './calendar/calendar.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { TimePickerComponent } from './time-picker/time-picker.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CheckboxGroupComponent } from './checkbox-group/checkbox-group.component';
 import {IsArrayPipe} from './pipes/is-array.pipe';
 import { FormControlWrapperComponent } from './form-control-wrapper/form-control-wrapper.component';
 import { ErrorDisplayPipe } from './pipes/error-display.pipe';
 import { FormWrapperComponent } from './form-wrapper/form-wrapper.component';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { DynamicFormControlComponent } from './dynamic-form-control/dynamic-form-control.component';
+import { UnwrapObservableOrValuePipe } from './pipes/unwrap-observable-or-value.pipe';
+import { ExecuteFunctionOncePipe } from './pipes/execute-function-once.pipe';
 
 const declarations = [
   TagInputComponent,
@@ -48,20 +53,28 @@ const declarations = [
   TimePickerComponent,
   FormControlWrapperComponent,
   FormWrapperComponent,
+  FormBuilderComponent,
+  DynamicFormControlComponent,
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     IsArrayPipe,
     ErrorDisplayPipe,
+    UnwrapObservableOrValuePipe,
     ...declarations,
+    ExecuteFunctionOncePipe,
   ],
   exports: [
     ...declarations,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class NgMetro4FormsModule { }

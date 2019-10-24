@@ -28,7 +28,6 @@ export default function(options: NgAddOptions): Rule {
     }
 
     addAssetToProject(host, 'node_modules/metro4/build/css/metro-all.min.css', 'styles', options.project);
-    addAssetToProject(host, 'node_modules/metro4/build/js/metro.min.js', 'scripts', options.project);
     context.logger.log('info', '✅ Added assets to "angular.json"');
 
     return host;

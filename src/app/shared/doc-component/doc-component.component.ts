@@ -1,13 +1,16 @@
 import {
-  AfterContentInit,
-  AfterViewInit,
   Compiler,
   Component,
   ComponentFactory,
   ComponentFactoryResolver,
-  ComponentRef, ElementRef,
-  Input, ModuleWithComponentFactories, NgModule, OnChanges,
-  OnInit, SimpleChanges,
+  ComponentRef,
+  ElementRef,
+  Input,
+  ModuleWithComponentFactories,
+  NgModule,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
   ViewChild,
   ViewContainerRef
 } from '@angular/core';
@@ -16,19 +19,29 @@ import {NgMetro4Module} from 'ng-metro4';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
   accentDictionary,
-  activityDictionary, activityStyleDictionary,
+  activityDictionary,
+  activityStyleDictionary,
   animationDictionary,
   buttonShapeDictionary,
   buttonSpecialDictionary,
-  colorDictionary, easingDictionary, gravatarDictionary,
-  iconDictionary, inputDictionary, popoverTriggerDictionary,
+  colorDictionary,
+  easingDictionary,
+  fileReadModeDictionary,
+  gravatarDictionary,
+  iconDictionary,
+  inputDictionary,
+  popoverTriggerDictionary,
   positionBaseDictionary,
   positionDictionary,
   positionHorizontalDictionary,
-  positionVerticalDictionary, progressTypeDictionary, roundTypeDictionary,
-  sizeDictionary, spinnerButtonPositionDictionary, thinDictionary,
+  positionVerticalDictionary,
+  progressTypeDictionary,
+  roundTypeDictionary,
+  sizeDictionary,
+  spinnerButtonPositionDictionary,
+  thinDictionary,
   widePointDictionary
-} from '../../../../projects/ng-metro4/src/lib/helper/lists';
+} from 'ng-metro4';
 
 @Component({
   selector: 'app-doc-component',
@@ -132,6 +145,7 @@ export class DocComponentComponent implements OnInit, OnChanges {
       easingDictionary = easingDictionary;
       inputDictionary = inputDictionary;
       spinnerButtonPositionDictionary = spinnerButtonPositionDictionary;
+      fileReadModeDictionary = fileReadModeDictionary;
 
       constructor() {
         if (inputValues) {

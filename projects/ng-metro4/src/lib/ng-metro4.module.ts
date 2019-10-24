@@ -4,6 +4,7 @@ import {NgMetro4FormsModule} from './form/ng-metro4-forms.module';
 import {NgMetro4BaseModule} from './base/ng-metro4-base.module';
 import {NgMetro4ControlsModule} from './controls/ng-metro4-controls.module';
 import {NgMetro4InformationModule} from './information/ng-metro4-information.module';
+import 'metro4';
 
 const imports = [
   NgMetro4BaseModule,

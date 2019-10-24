@@ -22,6 +22,7 @@ import {TimePickerComponent} from './time-picker/time-picker.component';
 import {SharedModule} from '../shared/shared.module';
 import { FormWrapperComponent } from './form-wrapper/form-wrapper.component';
 import { FormControlWrapperComponent } from './form-control-wrapper/form-control-wrapper.component';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { FormControlWrapperComponent } from './form-control-wrapper/form-control
     TimePickerComponent,
     FormWrapperComponent,
     FormControlWrapperComponent,
+    FormBuilderComponent,
   ],
   imports: [
     SharedModule,

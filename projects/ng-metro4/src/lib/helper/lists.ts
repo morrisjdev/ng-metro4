@@ -1,3 +1,5 @@
+import {InputComponent} from '../form/input/input.component';
+
 export const observerClassExceptions = ['ng-valid', 'ng-dirty', 'ng-touched', 'ng-untouched', 'ng-pristine', 'ng-invalid'];
 
 export const iconDictionary = {
@@ -905,6 +907,33 @@ export const easingDictionary = {
   'easeInBounce': 'easeInBounce',
   'easeOutBounce': 'easeOutBounce',
   'easeInOutBounce': 'easeInOutBounce'
+};
+
+export const fileReadModeDictionary = {
+  '': '',
+  'text': 'text',
+  'arrayBuffer': 'arrayBuffer',
+  'binaryString': 'binaryString',
+  'dataUrl': 'dataUrl'
+};
+
+export const formControlDictionary = {
+  'input': 'input',
+  'calendar': 'calendar',
+  'checkbox': 'checkbox',
+  'date-picker': 'date-picker',
+  'file-input': 'file-input',
+  'keypad': 'keypad',
+  'material-input': 'material-input',
+  'radio': 'radio',
+  'rating': 'rating',
+  'select': 'select',
+  'slider': 'slider',
+  'spinner': 'spinner',
+  'switch': 'switch',
+  'tag-input': 'tag-input',
+  'textarea': 'textarea',
+  'time-picker': 'time-picker',
 };
 
 export class Lists {

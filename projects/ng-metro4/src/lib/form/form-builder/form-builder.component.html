@@ -1,0 +1,3 @@
+<m4-form-wrapper [formGroup]="formGroup" [title]="title" [description]="description">
+  <m4-dynamic-form-control *ngFor="let control of dynamicControls" [control]="control"></m4-dynamic-form-control>
+</m4-form-wrapper>

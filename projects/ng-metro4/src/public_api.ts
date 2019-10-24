@@ -35,6 +35,7 @@ export * from './lib/form/time-picker/time-picker.component';
 export * from './lib/form/form-control-wrapper/form-control-wrapper.component';
 export * from './lib/form/form-wrapper/form-wrapper.component';
 export * from './lib/form/m4-form-group';
+export * from './lib/form/m4-form-control';
 
 export * from './lib/controls/ng-metro4-controls.module';
 export * from './lib/controls/activity/activity.service';

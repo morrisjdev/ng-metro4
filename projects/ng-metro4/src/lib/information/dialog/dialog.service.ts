@@ -164,7 +164,7 @@ export class DialogService {
     const options: DialogOptions = {
       title: title,
       content: (message ? message : '') +
-                `<br><br><input data-role="input" type="text" class="${inputCls}" placeholder="${placeholder ? placeholder : ''}" />`,
+                `<br><input data-role="input" type="text" class="${inputCls}" placeholder="${placeholder ? placeholder : ''}" />`,
       actions: [
         {
           caption: submitBtnText ? submitBtnText : 'Submit',

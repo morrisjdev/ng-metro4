@@ -15,9 +15,6 @@ export class StartComponent implements OnInit {
       "node_modules/metro4/build/css/metro-all.min.css",
       "src/styles.less"
     ],
-    "scripts": [
-      "node_modules/metro4/build/js/metro.min.js"
-    ],
     ...
   },
 }`;

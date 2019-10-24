@@ -18,6 +18,6 @@ export class ToastComponent {
   }
 
   toastCustom() {
-    this.toastService.create('This is a toast', { additional: { distance: 0, showTop: true }, cls: 'alert', timeout: 1000 });
+    this.toastService.create('This is a toast', { additional: { distance: 0, showTop: true }, cls: 'alert', timeout: 20000 });
   }
 }
