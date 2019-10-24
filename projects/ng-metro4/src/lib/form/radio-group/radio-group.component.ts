@@ -1,4 +1,14 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, ElementRef, forwardRef, QueryList} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ContentChildren,
+  ElementRef,
+  forwardRef,
+  Input,
+  QueryList,
+  ViewChildren
+} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {RadioComponent} from '../radio/radio.component';
@@ -16,9 +26,14 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RadioGroupComponent extends ControlBase<any> {
-  @ContentChildren(forwardRef(() => RadioComponent), { descendants: true }) radios: QueryList<RadioComponent>;
+  @Input() options: { [title: string]: any };
 
-  private name: string;
+  @ContentChildren(forwardRef(() => RadioComponent), { descendants: true }) radiosContent: QueryList<RadioComponent>;
+  @ViewChildren(forwardRef(() => RadioComponent)) radiosView: QueryList<RadioComponent>;
+
+  private radios: QueryList<RadioComponent>;
+
+  public name: string;
 
   constructor(element: ElementRef, cdRef: ChangeDetectorRef) {
     super(element, cdRef);
@@ -28,6 +43,8 @@ export class RadioGroupComponent extends ControlBase<any> {
   createControl() {
     return new Promise<void>((complete) => {
       asapScheduler.schedule(() => {
+        this.radios = !!this.options ? this.radiosView : this.radiosContent;
+
         const radioCreations = this.radios.map((item) => {
           return new Promise<void>((radioComplete) => {
             item.name = this.name;
@@ -75,5 +92,11 @@ export class RadioGroupComponent extends ControlBase<any> {
     });
   }
 
-  newClassValue(newClasses: string[], oldClasses: string[]) {}
+  newClassValue(newClasses: string[], oldClasses: string[]) {
+    this.radios.forEach((item) => {
+      asapScheduler.schedule(() => {
+        item.newClassValue(newClasses, oldClasses);
+      }, 1);
+    });
+  }
 }

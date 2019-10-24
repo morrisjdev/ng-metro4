@@ -1,3 +1,13 @@
-<m4-form-wrapper [formGroup]="formGroup" [title]="title" [description]="description">
+<m4-form-wrapper [formGroup]="formGroup" [title]="formStyle?.title | unwrapObservableOrValue"
+                 [description]="formStyle?.description | unwrapObservableOrValue" [show-errors]="!formStyle?.hideErrors">
   <m4-dynamic-form-control *ngFor="let control of dynamicControls" [control]="control"></m4-dynamic-form-control>
+
+  <ng-template #formError let-error="error">
+    <span *ngIf="formStyle?.createError; else defaultError"
+                  [innerHTML]="formStyle.createError | executeFunctionOnce:error | unwrapObservableOrValue | trustHtml">
+    </span>
+    <ng-template #defaultError>
+      {{ error }}
+    </ng-template>
+  </ng-template>
 </m4-form-wrapper>

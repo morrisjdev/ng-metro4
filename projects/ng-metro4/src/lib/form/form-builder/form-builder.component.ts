@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {M4FormGroup} from '../m4-form-group';
+import {FormStyle, M4FormGroup} from '../m4-form-group';
 import {M4FormControl} from '../m4-form-control';
 import {AbstractControl} from '@angular/forms';
 
@@ -10,14 +10,15 @@ import {AbstractControl} from '@angular/forms';
 })
 export class FormBuilderComponent implements OnInit {
   @Input() formGroup: M4FormGroup;
-  @Input() title: string;
-  @Input() description: string;
 
+  formStyle: FormStyle;
   dynamicControls: M4FormControl[];
 
   constructor() { }
 
   ngOnInit() {
+    this.formStyle = this.formGroup.formStyle;
+
     this.dynamicControls = Object.keys(this.formGroup.controls)
       .map((key: string, index: number) => {
         const control: AbstractControl = this.formGroup.controls[key];

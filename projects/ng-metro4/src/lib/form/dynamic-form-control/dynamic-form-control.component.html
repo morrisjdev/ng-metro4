@@ -1,16 +1,18 @@
 <div class="form-group" [class.mt-1]="control.index > 0">
-  <label *ngIf="control?.controlStyle?.label">{{control.controlStyle.label | unwrapObservableOrValue }}</label>
+  <label *ngIf="control?.controlStyle?.label"
+         [innerHTML]="control.controlStyle.label | unwrapObservableOrValue | trustHtml"></label>
   <ng-template #container></ng-template>
-  <small class="text-muted" *ngIf="control?.controlStyle?.description">
-    {{control.controlStyle.description | unwrapObservableOrValue }}
+  <small class="text-muted" *ngIf="control?.controlStyle?.description"
+         [innerHTML]="control.controlStyle.description | unwrapObservableOrValue | trustHtml">
   </small>
 
   <ng-container *ngIf="!(control?.controlStyle?.hideErrors) && control.errors && control.dirty">
     <ul class="unstyled-list fg-red text-small m-1">
       <li *ngFor="let error of control.errors | errorDisplay: control.fieldName + '.'">
-        <ng-container *ngIf="control?.controlStyle?.createError; else defaultErrorBlock">
-          {{ control.controlStyle.createError | executeFunctionOnce:error | unwrapObservableOrValue }}
-        </ng-container>
+        <span *ngIf="control?.controlStyle?.createError; else defaultErrorBlock"
+              [innerHTML]="control.controlStyle.createError | executeFunctionOnce:error
+              | unwrapObservableOrValue | trustHtml">
+        </span>
 
         <ng-template #defaultErrorBlock>
           {{error}}

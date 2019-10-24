@@ -71,7 +71,12 @@
     \t
     <m4-radio caption="6" [value]="6"></m4-radio>
     \l
-  </m4-radio-group>
+  </m4-radio-group>\n
+
+  \i<br>\i\n
+
+  <m4-radio-group [(ngModel)]="model" [options]="{ '1': 1, '2': 2, '3': [1, 2, 3], '4': { test: 'value' }, '5': 5, '6': 6 }"\l
+                     \t\t[disabled]="disabled"></m4-radio-group>
 
   \i
   <hr>

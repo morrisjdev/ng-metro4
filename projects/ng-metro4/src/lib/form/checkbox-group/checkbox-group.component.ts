@@ -5,12 +5,11 @@ import {
   ContentChildren,
   ElementRef,
   forwardRef,
-  OnInit,
-  QueryList
+  Input,
+  QueryList, ViewChildren
 } from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
-import {RadioComponent} from '../radio/radio.component';
 import {CheckboxComponent} from '../checkbox/checkbox.component';
 import {ArrayHelper} from '../../helper/array-helper';
 import {TypeAlias} from '../../helper/type-alias';
@@ -24,7 +23,12 @@ import {asapScheduler} from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxGroupComponent extends ControlBase<any[]> {
-  @ContentChildren(forwardRef(() => CheckboxComponent), { descendants: true }) checkboxes: QueryList<CheckboxComponent>;
+  @Input() options: { [title: string]: any };
+
+  @ContentChildren(forwardRef(() => CheckboxComponent), { descendants: true }) checkboxesContent: QueryList<CheckboxComponent>;
+  @ViewChildren(forwardRef(() => CheckboxComponent)) checkboxesView: QueryList<CheckboxComponent>;
+
+  private checkboxes: QueryList<CheckboxComponent>;
 
   constructor(element: ElementRef, cdRef: ChangeDetectorRef) {
     super(element, cdRef);
@@ -33,6 +37,8 @@ export class CheckboxGroupComponent extends ControlBase<any[]> {
   createControl() {
     return new Promise<void>((complete) => {
       asapScheduler.schedule(() => {
+        this.checkboxes = !!this.options ? this.checkboxesView : this.checkboxesContent;
+
         const checkboxCreations = this.checkboxes.map((item) => {
           return new Promise<void>((checkboxComplete) => {
             item.registerOnChange((v) => {
@@ -83,5 +89,11 @@ export class CheckboxGroupComponent extends ControlBase<any[]> {
     });
   }
 
-  newClassValue(newClasses: string[], oldClasses: string[]) {}
+  newClassValue(newClasses: string[], oldClasses: string[]) {
+    this.checkboxes.forEach((item) => {
+      asapScheduler.schedule(() => {
+        item.newClassValue(newClasses, oldClasses);
+      }, 1);
+    });
+  }
 }

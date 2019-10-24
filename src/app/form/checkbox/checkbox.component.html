@@ -53,10 +53,10 @@
     <m4-checkbox caption="2" [value]="2"></m4-checkbox>
     \l
     \t
-    <m4-checkbox caption="3" [value]="3"></m4-checkbox>
+    <m4-checkbox caption="3" [value]="[1, 2, 3]"></m4-checkbox>
     \l
     \t
-    <m4-checkbox caption="4" [value]="4"></m4-checkbox>
+    <m4-checkbox caption="4" [value]="{ test: 'value' }"></m4-checkbox>
     \l
     \t
     <m4-checkbox caption="5" [value]="5"></m4-checkbox>
@@ -64,7 +64,12 @@
     \t
     <m4-checkbox caption="6" [value]="6"></m4-checkbox>
     \l
-  </m4-checkbox-group>
+  </m4-checkbox-group>\n
+
+  \i<br>\i\n
+
+  <m4-checkbox-group [(ngModel)]="model" [options]="{ '1': 1, '2': 2, '3': [1, 2, 3], '4': { test: 'value' }, '5': 5, '6': 6 }"\l
+                     \t\t[disabled]="disabled"></m4-checkbox-group>
 
   \i
   <hr>

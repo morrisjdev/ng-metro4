@@ -1,1 +1,6 @@
-<ng-content></ng-content>
+<ng-container *ngIf="options; else noOptions">
+  <m4-checkbox *ngFor="let option of options | objectKeys" [value]="options[option]" [caption]="option"></m4-checkbox>
+</ng-container>
+<ng-template #noOptions>
+  <ng-content></ng-content>
+</ng-template>

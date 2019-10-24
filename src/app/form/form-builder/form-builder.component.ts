@@ -12,17 +12,17 @@ import {CustomGroupValidator} from '../form/custom-group-validator';
 export class FormBuilderComponent implements OnInit {
   formGroup = new M4FormGroup('form_builder', {
     name: new M4FormControl('input', null, [ Validators.required ], null,
-      { prepend: 'Das ist ein test' }, { description: 'test123' }),
+      { prepend: 'Das ist ein test' }, { description: '<span class="mif-home"></span>', createError: (err) => `<span class="mif-home"></span> ${err}` }),
     name2: new M4FormControl('input', null, [ Validators.required ], null,
       { prepend: 'Das ist ein test' }, { description: 'test123' }),
     number: new M4FormControl('slider', null, [ Validators.min(30) ]),
     file: new M4FormControl('file-input', null, null, null, { read: 'text' }),
-    // name: new M4FormControl('input'),
-    // name: new M4FormControl('input'),
-    // name: new M4FormControl('input'),
-    // name: new M4FormControl('input'),
-    // name: new M4FormControl('input'),
-  }, [ CustomGroupValidator.sameValues('name', 'name2') ]);
+    name3: new M4FormControl('input'),
+    name4: new M4FormControl('input'),
+    name5: new M4FormControl('input'),
+    name6: new M4FormControl('input'),
+    name7: new M4FormControl('input'),
+  }, [ CustomGroupValidator.sameValues('name', 'name2') ], null, { description: of('Test Form'), title: 'Test form' });
 
   constructor() { }
 

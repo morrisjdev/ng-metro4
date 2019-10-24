@@ -30,6 +30,8 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { DynamicFormControlComponent } from './dynamic-form-control/dynamic-form-control.component';
 import { UnwrapObservableOrValuePipe } from './pipes/unwrap-observable-or-value.pipe';
 import { ExecuteFunctionOncePipe } from './pipes/execute-function-once.pipe';
+import { TrustHtmlPipe } from './pipes/trust-html.pipe';
+import { ObjectKeysPipe } from './pipes/object-keys.pipe';
 
 const declarations = [
   TagInputComponent,
@@ -67,8 +69,10 @@ const declarations = [
     IsArrayPipe,
     ErrorDisplayPipe,
     UnwrapObservableOrValuePipe,
-    ...declarations,
     ExecuteFunctionOncePipe,
+    TrustHtmlPipe,
+    ObjectKeysPipe,
+    ...declarations,
   ],
   exports: [
     ...declarations,
