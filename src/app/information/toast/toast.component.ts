@@ -7,7 +7,7 @@ import {ToastService} from 'ng-metro4';
   styleUrls: ['./toast.component.less']
 })
 export class ToastComponent {
-  constructor(private toastService: ToastService) { }
+  constructor(public toastService: ToastService) { }
 
   toast() {
     this.toastService.create('This is a toast');

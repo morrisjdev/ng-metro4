@@ -11,7 +11,7 @@ import {CustomGroupValidator} from '../form/custom-group-validator';
 })
 export class FormBuilderComponent implements OnInit {
   formGroup = new M4FormGroup('form_builder', {
-    name: new M4FormControl('input', null, [ Validators.required ], null,
+    name: new M4FormControl('input', { value: 'test123', disabled: false }, [ Validators.required ], null,
       { prepend: 'Das ist ein test' }, { description: '<span class="mif-home"></span>', createError: (err) => `<span class="mif-home"></span> ${err}` }),
     name2: new M4FormControl('input', null, [ Validators.required ], null,
       { prepend: 'Das ist ein test' }, { description: 'test123' }),

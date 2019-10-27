@@ -1,57 +1,109 @@
 import {
-  Compiler,
+  AfterContentInit,
+  AfterViewInit,
   Component,
-  ComponentFactory,
   ComponentFactoryResolver,
   ComponentRef,
   Host,
   Input,
-  ModuleWithComponentFactories,
-  NgModule, OnDestroy,
+  OnChanges,
+  OnDestroy,
   OnInit,
   Optional,
+  SimpleChanges,
   SkipSelf,
   ViewChild,
   ViewContainerRef
 } from '@angular/core';
-import {ControlOptions, M4FormControl} from '../m4-form-control';
-import {ControlContainer, FormGroup} from '@angular/forms';
-import {NgMetro4Module} from '../../ng-metro4.module';
+import {M4FormControl} from '../m4-form-control';
+import {ControlContainer, ControlValueAccessor} from '@angular/forms';
+import {filter, startWith, take} from 'rxjs/operators';
+import {asapScheduler, BehaviorSubject, Subscription} from 'rxjs';
+import {InputComponent} from '../input/input.component';
+import {CalendarComponent} from '../calendar/calendar.component';
+import {CheckboxComponent} from '../checkbox/checkbox.component';
+import {CheckboxGroupComponent} from '../checkbox-group/checkbox-group.component';
+import {DatePickerComponent} from '../date-picker/date-picker.component';
+import {FileInputComponent} from '../file-input/file-input.component';
+import {KeypadComponent} from '../keypad/keypad.component';
+import {MaterialInputComponent} from '../material-input/material-input.component';
+import {RadioComponent} from '../radio/radio.component';
+import {RadioGroupComponent} from '../radio-group/radio-group.component';
+import {RatingComponent} from '../rating/rating.component';
+import {SelectComponent} from '../select/select.component';
+import {SliderComponent} from '../slider/slider.component';
+import {SpinnerComponent} from '../spinner/spinner.component';
+import {SwitchComponent} from '../switch/switch.component';
+import {TagInputComponent} from '../tag-input/tag-input.component';
+import {TextareaComponent} from '../textarea/textarea.component';
+import {TimePickerComponent} from '../time-picker/time-picker.component';
+import {FormControlType} from '../../helper/types';
 import {ControlBase} from '../control-base';
-import {M4FormGroup} from '../m4-form-group';
-import {startWith} from 'rxjs/operators';
-import {Subscription} from 'rxjs';
+import {DefaultValueAccessor} from '../../helper/default-value-accessor';
+import {TypeAlias} from '../../helper/type-alias';
+
+export const formControlMapping: Record<FormControlType, any> = {
+  'input': InputComponent,
+  'calendar': CalendarComponent,
+  'checkbox': CheckboxComponent,
+  'checkbox-group': CheckboxGroupComponent,
+  'date-picker': DatePickerComponent,
+  'file-input': FileInputComponent,
+  'keypad': KeypadComponent,
+  'material-input': MaterialInputComponent,
+  'radio': RadioComponent,
+  'radio-group': RadioGroupComponent,
+  'rating': RatingComponent,
+  'select': SelectComponent,
+  'slider': SliderComponent,
+  'spinner': SpinnerComponent,
+  'switch': SwitchComponent,
+  'tag-input': TagInputComponent,
+  'textarea': TextareaComponent,
+  'time-picker': TimePickerComponent,
+};
 
 @Component({
   selector: 'm4-dynamic-form-control',
   templateUrl: './dynamic-form-control.component.html',
-  styleUrls: ['./dynamic-form-control.component.css']
+  styleUrls: ['./dynamic-form-control.component.css'],
+  providers: [DefaultValueAccessor.get(DynamicFormControlComponent), TypeAlias.get(DynamicFormControlComponent)],
 })
-export class DynamicFormControlComponent implements OnInit, OnDestroy {
-  @Input() control: M4FormControl;
+export class DynamicFormControlComponent implements AfterContentInit, OnDestroy, OnChanges, ControlValueAccessor {
+  @Input() formControl: M4FormControl;
 
   @ViewChild('container', {read: ViewContainerRef, static: true}) private container: ViewContainerRef;
-  private componentRef: ComponentRef<any>;
+  private componentRef: ComponentRef<ControlBase<any>>;
+  private componentInstance: ControlBase<any>;
+
+  private onChangeFunction: any;
+  private onTouchedFunction: any;
 
   private statusChangeSubscription: Subscription;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver,
-              private compiler: Compiler,
-              @Optional() @Host() @SkipSelf() private controlContainer: ControlContainer) { }
+  private componentReady$ = new BehaviorSubject<boolean>(false);
 
-  ngOnInit() {
-    const factory = this.createComponentFactorySync(this.compiler, this.control);
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
-    if (this.componentRef) {
-      this.componentRef.destroy();
-      this.componentRef = null;
+  ngAfterContentInit() {
+    this.ngOnDestroy();
+
+    const factory = this.componentFactoryResolver.resolveComponentFactory<ControlBase<any>>(formControlMapping[this.formControl.controlType]);
+    this.componentRef = this.container.createComponent<ControlBase<any>>(factory);
+    this.componentInstance = this.componentRef.instance;
+
+    this.componentInstance.registerOnChange(this.onChangeFunction);
+    this.componentInstance.registerOnTouched(this.onTouchedFunction);
+
+    if (this.formControl.controlOptions) {
+      Object.keys(this.formControl.controlOptions).forEach((key: any) => {
+        this.componentInstance.updateProperty(key, this.formControl.controlOptions[key]);
+      });
     }
 
-    this.componentRef = this.container.createComponent(factory);
-
-    this.statusChangeSubscription = this.control.statusChanges.pipe(startWith(this.control.status))
+    this.statusChangeSubscription = this.formControl.statusChanges.pipe(startWith(this.formControl.status))
       .subscribe((state) => {
-        if (this.control.pristine) {
+        if (this.formControl.pristine) {
           return;
         }
 
@@ -60,56 +112,53 @@ export class DynamicFormControlComponent implements OnInit, OnDestroy {
 
         const newClassValue = state === 'INVALID' ? invalidClasses : validClasses;
         const oldClassValue = state === 'INVALID' ? validClasses : invalidClasses;
-        this.componentRef.instance.newClassValue(newClassValue, oldClassValue);
+        this.componentInstance.newClassValue(newClassValue, oldClassValue);
       });
-  }
 
-  private createComponentFactorySync(compiler: Compiler, control: M4FormControl): ComponentFactory<any> {
-    const metadata = {
-      selector: `m4-dynamic-form-control-runtime-component`,
-      template: `<m4-${control.controlType} [formControl]="control" #dynamicFormComponent></m4-${control.controlType}>`
-    };
+    asapScheduler.schedule(() => {
+      this.componentReady$.next(true);
 
-    class DynamicFormControlRuntimeComponent implements OnInit {
-      // @ts-ignore
-      @ViewChild('dynamicFormComponent', { static: true }) dynamicFormComponent: ControlBase<any>;
-
-      control = control;
-
-      constructor() {}
-
-      ngOnInit(): void {
-        this.setControlOptions(this.control.controlOptions);
-      }
-
-      private setControlOptions(controlOptions: ControlOptions) {
-        if (controlOptions) {
-          Object.keys(controlOptions).forEach((key: any) => {
-            this.dynamicFormComponent.updateProperty(key, controlOptions[key]);
-          });
-        }
-      }
-
-      public newClassValue(newClassValue: string[], oldClassValue: string[]) {
-        this.dynamicFormComponent.newClassValue(newClassValue, oldClassValue);
-      }
-    }
-    const decoratedComponent = Component(metadata)(DynamicFormControlRuntimeComponent);
-
-    @NgModule({imports: [NgMetro4Module], declarations: [decoratedComponent]})
-    class RuntimeComponentModule { }
-
-    const module: ModuleWithComponentFactories<any> = compiler.compileModuleAndAllComponentsSync(RuntimeComponentModule);
-    return module.componentFactories.find(f => f.componentType === DynamicFormControlRuntimeComponent);
+      asapScheduler.schedule(() => {
+        this.formControl.markAsPristine();
+      });
+    });
   }
 
   ngOnDestroy(): void {
+    this.componentReady$.next(false);
+
     if (this.statusChangeSubscription) {
       this.statusChangeSubscription.unsubscribe();
     }
 
     if (this.componentRef) {
       this.componentRef.destroy();
+      this.componentRef = null;
+      this.componentInstance = null;
     }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.ngAfterContentInit();
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChangeFunction = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouchedFunction = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.componentReady$.pipe(filter(v => v), take(1)).subscribe(() => {
+      this.componentInstance.setDisabledState(isDisabled);
+    });
+  }
+
+  writeValue(obj: any): void {
+    this.componentReady$.pipe(filter(v => v), take(1)).subscribe(() => {
+      this.componentInstance.writeValue(obj);
+    });
   }
 }

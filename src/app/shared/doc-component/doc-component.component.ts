@@ -15,7 +15,7 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NgMetro4Module} from 'ng-metro4';
+import {formControlDictionary, NgMetro4Module} from 'ng-metro4';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
   accentDictionary,
@@ -146,6 +146,7 @@ export class DocComponentComponent implements OnInit, OnChanges {
       inputDictionary = inputDictionary;
       spinnerButtonPositionDictionary = spinnerButtonPositionDictionary;
       fileReadModeDictionary = fileReadModeDictionary;
+      formControlDictionary = formControlDictionary;
 
       constructor() {
         if (inputValues) {
@@ -157,7 +158,10 @@ export class DocComponentComponent implements OnInit, OnChanges {
     };
     const decoratedCmp = Component(metadata)(cmpClass);
 
-    @NgModule({imports: [CommonModule, NgMetro4Module, FormsModule, ReactiveFormsModule], declarations: [decoratedCmp]})
+    @NgModule({
+      imports: [CommonModule, NgMetro4Module, FormsModule, ReactiveFormsModule],
+      declarations: [decoratedCmp]
+    })
     class RuntimeComponentModule { }
 
     const module: ModuleWithComponentFactories<any> = compiler.compileModuleAndAllComponentsSync(RuntimeComponentModule);

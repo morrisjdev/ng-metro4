@@ -23,6 +23,9 @@ const imports = [
   ],
   exports: [
     ...imports
+  ],
+  providers: [
+
   ]
 })
 export class NgMetro4Module {
