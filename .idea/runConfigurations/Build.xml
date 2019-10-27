@@ -3,9 +3,8 @@
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="build" />
+      <script value="build-library" />
     </scripts>
-    <arguments value="-- ng-metro4 --watch" />
     <node-interpreter value="project" />
     <envs />
     <method v="2" />

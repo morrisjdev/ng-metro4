@@ -9,7 +9,7 @@ import { PanelComponent } from './panel/panel.component';
 import { HotkeyDirective } from './hotkey/hotkey.directive';
 import { PopoverComponent } from './popover/popover.component';
 import {ActivityService} from './activity/activity.service';
-import 'metro4';
+import 'ng-metro4-lib';
 
 const declarations = [
   GravatarComponent,

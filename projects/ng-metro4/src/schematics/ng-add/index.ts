@@ -9,8 +9,8 @@ export default function(options: NgAddOptions): Rule {
   return (host: Tree, context: SchematicContext) => {
     const version = getLibraryVersion();
     addPackageToPackageJson(host, 'ng-metro4', `^${version}`);
-    const metro4Version = getDependencyVersion('metro4');
-    addPackageToPackageJson(host, 'metro4', `${metro4Version}`);
+    const metro4Version = getDependencyVersion('ng-metro4-lib');
+    addPackageToPackageJson(host, 'ng-metro4-lib', `${metro4Version}`);
     const momentVersion = getDependencyVersion('moment');
     addPackageToPackageJson(host, 'moment', `${momentVersion}`);
     context.logger.log('info',

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import 'metro4';
+import 'ng-metro4-lib';
 
 import { TagInputComponent } from './tag-input/tag-input.component';
 import { SelectComponent } from './select/select.component';

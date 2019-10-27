@@ -5,7 +5,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import {DialogService} from './dialog/dialog.service';
 import {NotifyService} from './notify/notify.service';
 import {ToastService} from './toast/toast.service';
-import 'metro4';
+import 'ng-metro4-lib';
 
 const declarations = [
   HintDirective,
