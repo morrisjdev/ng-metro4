@@ -1,6 +1,10 @@
-import { Injectable } from '@angular/core';
+import {ApplicationRef, ComponentFactoryResolver, ComponentRef, EmbeddedViewRef, Injectable, Injector} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {finalize} from 'rxjs/operators';
+import {finalize, startWith} from 'rxjs/operators';
+import {FormBuilderComponent} from '../../form/form-builder/form-builder.component';
+import {M4FormGroup} from '../../form/m4-form-group';
+import {M4FormControl} from '../../form/m4-form-control';
+import {InputComponent} from '../../form/input/input.component';
 
 declare var $: any;
 
@@ -44,7 +48,9 @@ export interface InfoboxOptions {
 @Injectable()
 export class DialogService {
 
-  constructor() { }
+  constructor(private componentFactoryResolver: ComponentFactoryResolver,
+              private appRef: ApplicationRef,
+              private injector: Injector) { }
 
   /**
    * Create a custom dialog
@@ -189,6 +195,72 @@ export class DialogService {
     return subject$.asObservable().pipe(
       finalize(() => {
         this.close(promptObj);
+      })
+    );
+  }
+
+  /**
+   * Show a prompt dialog that contains a form
+   * @param title The title of the prompt
+   * @param form The form group
+   * @param submitBtnText The text of the Submit-Button
+   * @param abortBtnText The text of the Abort-Button
+   * @param placeholder The placeholder of the input
+   * @param cls An optional css class for the dialog
+   * @param submitBtnCls An optional css class for Submit-Button
+   * @param abortBtnCls An optional css class for Abort-Button
+   */
+  public formPrompt<T = string>(title: string, form: M4FormGroup, submitBtnText?: string, abortBtnText?: string, placeholder?: string,
+                cls?: string, submitBtnCls?: string, abortBtnCls?: string): Observable<T> {
+    const componentRef: ComponentRef<FormBuilderComponent> = this.componentFactoryResolver.resolveComponentFactory(FormBuilderComponent).create(this.injector);
+    componentRef.instance.formGroup = form;
+    this.appRef.attachView(componentRef.hostView);
+    const domElement = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
+
+    const subject$ = new Subject<T>();
+
+    const options: DialogOptions = {
+      title: title,
+      content: 'content',
+      actions: [
+        {
+          caption: abortBtnText ? abortBtnText : 'Abort',
+          cls: abortBtnCls ? abortBtnCls : 'warning',
+          onclick: () => {
+            subject$.next(null);
+            subject$.complete();
+          }
+        },
+        {
+          caption: submitBtnText ? submitBtnText : 'Submit',
+          cls: (submitBtnCls ? submitBtnCls : 'success') + ' submit-btn',
+          onclick: () => {
+            subject$.next(form.value);
+            subject$.complete();
+          }
+        }
+      ],
+      clsDialog: cls
+    };
+
+    const promptObj: any = this.create(options);
+    promptObj.find('.dialog-content').empty().append(domElement);
+
+    const formStateSubscription = form.statusChanges.pipe(startWith(form.status)).subscribe((valid: 'VALID'|'INVALID') => {
+      const submitBtn = promptObj.find('.dialog-actions button.submit-btn');
+
+      if (valid === 'VALID') {
+        submitBtn.removeAttr('disabled');
+      } else {
+        submitBtn.attr('disabled', 'disabled');
+      }
+    });
+
+    return subject$.asObservable().pipe(
+      finalize(() => {
+        this.close(promptObj);
+        componentRef.destroy();
+        formStateSubscription.unsubscribe();
       })
     );
   }

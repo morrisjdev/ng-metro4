@@ -1,67 +1,22 @@
 import {
   AfterContentInit,
-  AfterViewInit,
   Component,
   ComponentFactoryResolver,
   ComponentRef,
-  Host,
   Input,
   OnChanges,
   OnDestroy,
-  OnInit,
-  Optional,
   SimpleChanges,
-  SkipSelf,
   ViewChild,
   ViewContainerRef
 } from '@angular/core';
 import {M4FormControl} from '../m4-form-control';
-import {ControlContainer, ControlValueAccessor} from '@angular/forms';
+import {ControlValueAccessor} from '@angular/forms';
 import {filter, startWith, take} from 'rxjs/operators';
 import {asapScheduler, BehaviorSubject, Subscription} from 'rxjs';
-import {InputComponent} from '../input/input.component';
-import {CalendarComponent} from '../calendar/calendar.component';
-import {CheckboxComponent} from '../checkbox/checkbox.component';
-import {CheckboxGroupComponent} from '../checkbox-group/checkbox-group.component';
-import {DatePickerComponent} from '../date-picker/date-picker.component';
-import {FileInputComponent} from '../file-input/file-input.component';
-import {KeypadComponent} from '../keypad/keypad.component';
-import {MaterialInputComponent} from '../material-input/material-input.component';
-import {RadioComponent} from '../radio/radio.component';
-import {RadioGroupComponent} from '../radio-group/radio-group.component';
-import {RatingComponent} from '../rating/rating.component';
-import {SelectComponent} from '../select/select.component';
-import {SliderComponent} from '../slider/slider.component';
-import {SpinnerComponent} from '../spinner/spinner.component';
-import {SwitchComponent} from '../switch/switch.component';
-import {TagInputComponent} from '../tag-input/tag-input.component';
-import {TextareaComponent} from '../textarea/textarea.component';
-import {TimePickerComponent} from '../time-picker/time-picker.component';
-import {FormControlType} from '../../helper/types';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
-
-export const formControlMapping: Record<FormControlType, any> = {
-  'input': InputComponent,
-  'calendar': CalendarComponent,
-  'checkbox': CheckboxComponent,
-  'checkbox-group': CheckboxGroupComponent,
-  'date-picker': DatePickerComponent,
-  'file-input': FileInputComponent,
-  'keypad': KeypadComponent,
-  'material-input': MaterialInputComponent,
-  'radio': RadioComponent,
-  'radio-group': RadioGroupComponent,
-  'rating': RatingComponent,
-  'select': SelectComponent,
-  'slider': SliderComponent,
-  'spinner': SpinnerComponent,
-  'switch': SwitchComponent,
-  'tag-input': TagInputComponent,
-  'textarea': TextareaComponent,
-  'time-picker': TimePickerComponent,
-};
 
 @Component({
   selector: 'm4-dynamic-form-control',
@@ -70,7 +25,7 @@ export const formControlMapping: Record<FormControlType, any> = {
   providers: [DefaultValueAccessor.get(DynamicFormControlComponent), TypeAlias.get(DynamicFormControlComponent)],
 })
 export class DynamicFormControlComponent implements AfterContentInit, OnDestroy, OnChanges, ControlValueAccessor {
-  @Input() formControl: M4FormControl;
+  @Input() formControl: M4FormControl<ControlBase<any>>;
 
   @ViewChild('container', {read: ViewContainerRef, static: true}) private container: ViewContainerRef;
   private componentRef: ComponentRef<ControlBase<any>>;
@@ -88,7 +43,7 @@ export class DynamicFormControlComponent implements AfterContentInit, OnDestroy,
   ngAfterContentInit() {
     this.ngOnDestroy();
 
-    const factory = this.componentFactoryResolver.resolveComponentFactory<ControlBase<any>>(formControlMapping[this.formControl.controlType]);
+    const factory = this.componentFactoryResolver.resolveComponentFactory<ControlBase<any>>(this.formControl.controlType);
     this.componentRef = this.container.createComponent<ControlBase<any>>(factory);
     this.componentInstance = this.componentRef.instance;
 

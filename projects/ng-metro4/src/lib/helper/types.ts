@@ -5,7 +5,7 @@ import {
   animationDictionary,
   buttonShapeDictionary,
   buttonSpecialDictionary, calendarButtonDictionary,
-  colorDictionary, easingDictionary, fileReadModeDictionary, formControlDictionary,
+  colorDictionary, easingDictionary, fileReadModeDictionary,
   gravatarDictionary,
   iconCategoryDictionary,
   iconDictionary, inputDictionary,
@@ -64,5 +64,3 @@ export type ThinType = keyof typeof thinDictionary;
 export type EasingType = keyof typeof easingDictionary;
 
 export type FileReadModeType = keyof typeof fileReadModeDictionary;
-
-export type FormControlType = keyof typeof formControlDictionary;

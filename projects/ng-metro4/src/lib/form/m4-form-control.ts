@@ -1,6 +1,6 @@
 import {AbstractControlOptions, AsyncValidatorFn, FormControl, ValidatorFn} from '@angular/forms';
-import {FormControlType} from '../helper/types';
 import {Observable} from 'rxjs';
+import {ControlBase} from './control-base';
 
 export interface ControlStyle {
   label?: string|Observable<string>;
@@ -9,19 +9,15 @@ export interface ControlStyle {
   createError?: (error: string) => string|Observable<string>;
 }
 
-export interface ControlOptions {
-  [key: string]: any;
-}
-
-export class M4FormControl extends FormControl {
+export class M4FormControl<T extends ControlBase<any>> extends FormControl {
   public fieldName: string;
   public index: number;
 
-  constructor(public controlType: FormControlType,
+  constructor(public controlType: new (...args: any[]) => T,
               formState?: any,
               validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions | null,
               asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[] | null,
-              public controlOptions?: ControlOptions,
+              public controlOptions?: Partial<T>,
               public controlStyle?: ControlStyle) {
     super(formState, validatorOrOpts, asyncValidator);
   }

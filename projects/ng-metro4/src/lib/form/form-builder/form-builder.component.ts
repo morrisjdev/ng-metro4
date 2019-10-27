@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormStyle, M4FormGroup} from '../m4-form-group';
 import {M4FormControl} from '../m4-form-control';
 import {AbstractControl} from '@angular/forms';
+import {ControlBase} from '../control-base';
 
 @Component({
   selector: 'm4-form-builder',
@@ -12,7 +13,7 @@ export class FormBuilderComponent implements OnInit {
   @Input() formGroup: M4FormGroup;
 
   formStyle: FormStyle;
-  dynamicControls: M4FormControl[];
+  dynamicControls: M4FormControl<any>[];
 
   constructor() { }
 
@@ -29,7 +30,7 @@ export class FormBuilderComponent implements OnInit {
           return control;
         }
       })
-      .filter((control: M4FormControl) => !!control);
+      .filter((control: M4FormControl<any>) => !!control);
   }
 
 }

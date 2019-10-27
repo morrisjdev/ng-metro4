@@ -23,6 +23,7 @@ import {SharedModule} from '../shared/shared.module';
 import { FormWrapperComponent } from './form-wrapper/form-wrapper.component';
 import { FormControlWrapperComponent } from './form-control-wrapper/form-control-wrapper.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { DynamicFormControlComponent } from './dynamic-form-control/dynamic-form-control.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
     FormWrapperComponent,
     FormControlWrapperComponent,
     FormBuilderComponent,
+    DynamicFormControlComponent,
   ],
   imports: [
     SharedModule,

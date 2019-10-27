@@ -1,0 +1,114 @@
+<h1>Dynamic form control</h1>
+
+<div class="remark info">
+  The <code>m4-dynamic-form-control</code> is a component that renders a form control dynamically. You can completely control
+  its behavior and appearance on the code side. This enables easy development of complex code driven forms.
+</div>
+
+<app-doc-component header="Basic usage" [values]="{ formControl: formControl }">
+  <![CDATA[
+  <m4-dynamic-form-control [formControl]="formControl"></m4-dynamic-form-control>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    public formControl: M4FormControl<InputComponent>;\n\n
+
+    constructor() {\n
+      \tthis.formControl = new M4FormControl(InputComponent);\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<div class="remark success">
+  You can use any available control type as a control for the dynamic form control.
+  These are the controls available:
+  <ul>
+    <li><a routerLink="/form/input">Input</a></li>
+    <li><a routerLink="/form/material_input">Material Input</a></li>
+    <li><a routerLink="/form/textarea">Textarea</a></li>
+    <li><a routerLink="/form/checkbox">Checkbox</a></li>
+    <li><a routerLink="/form/switch">Switch</a></li>
+    <li><a routerLink="/form/radio">Radio</a></li>
+    <li><a routerLink="/form/calendar">Calendar</a></li>
+    <li><a routerLink="/form/calender_picker">Calendar Picker</a></li>
+    <li><a routerLink="/form/date_picker">Date Picker</a></li>
+    <li><a routerLink="/form/time_picker">Time Picker</a></li>
+    <li><a routerLink="/form/select">Select</a></li>
+    <li><a routerLink="/form/tag-input">Tag Input</a></li>
+    <li><a routerLink="/form/slider">Slider</a></li>
+    <li><a routerLink="/form/spinner">Spinner</a></li>
+    <li><a routerLink="/form/rating">Rating</a></li>
+    <li><a routerLink="/form/keypad">Keypad</a></li>
+    <li><a routerLink="/form/file-input">File</a></li>
+  </ul>
+</div>
+
+<app-doc-component header="Set inital value" [values]="{ formControl: formControlInital }">
+  <![CDATA[
+  <m4-dynamic-form-control [formControl]="formControl"></m4-dynamic-form-control>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    public formControl: M4FormControl<InputComponent>;\n\n
+
+    constructor() {\n
+      \tthis.formControl = new M4FormControl(InputComponent, 'This is the value');\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component header="Apply validators" [values]="{ formControl: formControlValidators }">
+  <![CDATA[
+  <m4-dynamic-form-control [formControl]="formControl"></m4-dynamic-form-control>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    public formControl: M4FormControl<InputComponent>;\n\n
+
+    constructor() {\n
+      \tthis.formControl = new M4FormControl(InputComponent, null, [ Validators.required ], [ /* Async validators */ ]);\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component header="Options" [values]="{ formControl: formControlOptions }"
+                   description="You can use any of the available template parameters of each component in the options object and control the appearance of the control">
+  <![CDATA[
+  <m4-dynamic-form-control [formControl]="formControl"></m4-dynamic-form-control>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    public formControl: M4FormControl<InputComponent>;\n\n
+
+    constructor() {\n
+      \tthis.formControl = new M4FormControl(InputComponent, null, null, null,\n
+        \t\t{ prepend: 'Prepend', append: 'Append' });\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component header="Appearance" [values]="{ formControl: formControlStyle }"
+                   description="By setting the style options you can control how the error display is rendered and also define a title and description for each control">
+  <![CDATA[
+  <m4-dynamic-form-control [formControl]="formControl"></m4-dynamic-form-control>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    public formControl: M4FormControl<InputComponent>;\n\n
+
+    constructor() {\n
+      \tthis.formControl = new M4FormControl(InputComponent, null, [ Validators.required ], null, null,\n
+        \t\t{ createError: (error: string) => 'Something missing?' });\n
+    }
+    ]]>
+  </div>
+</app-doc-component>

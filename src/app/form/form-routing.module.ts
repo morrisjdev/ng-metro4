@@ -21,6 +21,7 @@ import {FormComponent} from './form/form.component';
 import {FormWrapperComponent} from './form-wrapper/form-wrapper.component';
 import {FormControlWrapperComponent} from './form-control-wrapper/form-control-wrapper.component';
 import {FormBuilderComponent} from './form-builder/form-builder.component';
+import {DynamicFormControlComponent} from './dynamic-form-control/dynamic-form-control.component';
 
 const routes: Routes = [
   { path: 'tag-input', component: TagInputComponent },
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'form_wrapper', component: FormWrapperComponent },
   { path: 'form_control_wrapper', component: FormControlWrapperComponent },
   { path: 'form_builder', component: FormBuilderComponent },
+  { path: 'dynamic_form_control', component: DynamicFormControlComponent },
 ];
 
 @NgModule({

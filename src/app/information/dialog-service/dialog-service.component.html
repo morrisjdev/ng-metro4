@@ -59,8 +59,29 @@
   </div>
 </app-doc-component>
 
-<app-doc-component header="Close"
-                   [values]="{ dialogService: dialogService, alert: alertClose }">
+<app-doc-component header="Form prompt" description="You can create a complex form prompt using the M4FormGroup"
+                   [values]="{ dialogService: dialogService, prompt: promptForm }">
+  <![CDATA[
+  <button m4-button (click)="prompt()">Prompt</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.dialogService.formPrompt('Form prompt',\n
+      \tnew M4FormGroup('prompt',\n
+        \t\t{ name: new M4FormControl(FileInputComponent, null, [Validators.required], null,\n
+        \t\t{ read: 'text' }) }))\n
+      \t.subscribe((result) => alert(JSON.stringify(result)));
+    ]]>
+  </div>
+</app-doc-component>
+
+<div class="remark success">
+  You can use a custom complex form group as a value for the form group.
+  Check out <a routerLink="/form/form_builder"><code>m4-form-builder</code></a> for more information.
+</div>
+
+<app-doc-component header="Close" [values]="{ dialogService: dialogService, alert: alertClose }">
   <![CDATA[
   <button m4-button (click)="alert()">Alert</button>
   ]]>

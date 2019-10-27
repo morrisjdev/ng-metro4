@@ -15,21 +15,20 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {formControlDictionary, NgMetro4Module} from 'ng-metro4';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
   accentDictionary,
   activityDictionary,
   activityStyleDictionary,
   animationDictionary,
   buttonShapeDictionary,
-  buttonSpecialDictionary,
+  buttonSpecialDictionary, CheckboxGroupComponent,
   colorDictionary,
   easingDictionary,
   fileReadModeDictionary,
   gravatarDictionary,
-  iconDictionary,
-  inputDictionary,
+  iconDictionary, InputComponent,
+  inputDictionary, MaterialInputComponent,
+  NgMetro4Module,
   popoverTriggerDictionary,
   positionBaseDictionary,
   positionDictionary,
@@ -42,6 +41,7 @@ import {
   thinDictionary,
   widePointDictionary
 } from 'ng-metro4';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-doc-component',
@@ -146,7 +146,6 @@ export class DocComponentComponent implements OnInit, OnChanges {
       inputDictionary = inputDictionary;
       spinnerButtonPositionDictionary = spinnerButtonPositionDictionary;
       fileReadModeDictionary = fileReadModeDictionary;
-      formControlDictionary = formControlDictionary;
 
       constructor() {
         if (inputValues) {

@@ -917,27 +917,6 @@ export const fileReadModeDictionary = {
   'dataUrl': 'dataUrl'
 };
 
-export const formControlDictionary = {
-  'input': 'input',
-  'calendar': 'calendar',
-  'checkbox': 'checkbox',
-  'checkbox-group': 'checkbox-group',
-  'date-picker': 'date-picker',
-  'file-input': 'file-input',
-  'keypad': 'keypad',
-  'material-input': 'material-input',
-  'radio': 'radio',
-  'radio-group': 'radio-group',
-  'rating': 'rating',
-  'select': 'select',
-  'slider': 'slider',
-  'spinner': 'spinner',
-  'switch': 'switch',
-  'tag-input': 'tag-input',
-  'textarea': 'textarea',
-  'time-picker': 'time-picker',
-};
-
 export class Lists {
   public static icons() {
     return Object.values(iconDictionary);

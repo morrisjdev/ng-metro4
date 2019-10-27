@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {DialogService} from 'ng-metro4';
+import {DialogService, M4FormGroup, M4FormControl, InputComponent, FileInputComponent} from 'ng-metro4';
 import {takeUntil} from 'rxjs/operators';
 import {timer} from 'rxjs';
+import {Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-dialog-service',
@@ -38,6 +39,14 @@ export class DialogServiceComponent implements OnInit {
   promptWait() {
     this.dialogService.prompt('Prompt wait', 'Input')
       .subscribe((result) => alert(result));
+  }
+
+  promptForm() {
+    this.dialogService.formPrompt('Form prompt',
+      new M4FormGroup('prompt',
+        { name: new M4FormControl(FileInputComponent, null, [Validators.required], null,
+            { read: 'text' }) }, null, null))
+      .subscribe((result) => alert(JSON.stringify(result)));
   }
 
   alertClose() {

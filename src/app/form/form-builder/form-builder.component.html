@@ -1,3 +1,75 @@
-<m4-form-builder [formGroup]="formGroup"></m4-form-builder>
+<h1>Form builder</h1>
 
-{{ formGroup.value | json }}
+<div class="remark info">
+  The <code>m4-form-builder</code> takes a collection of <code>M4FormControl</code>'s and creates a complete form of it.
+  Check out the <a routerLink="/form/dynamic_form_control"><code>m4-dynamic-form-control</code></a> for more information on how to define the controls.
+</div>
+
+<app-doc-component header="Basic usage" [values]="{ formGroup: formGroup }">
+  <![CDATA[
+  <m4-form-builder [formGroup]="formGroup"></m4-form-builder>
+
+  \i
+  <hr>
+  <span [innerHTML]="{ valid: formGroup.valid, pristine: formGroup.pristine, value: formGroup.value, errors: formGroup.errors } | json"></span>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    formGroup: M4FormGroup;\n\n
+
+    constructor() {\n
+      \tthis.formGroup = new M4FormGroup('form_name', {\n
+        \t\tname: new M4FormControl(InputComponent)\n
+      \t});\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component header="Validation" [values]="{ formGroup: formGroupValidation }">
+  <![CDATA[
+  <m4-form-builder [formGroup]="formGroup"></m4-form-builder>
+
+  \i
+  <hr>
+  <span [innerHTML]="{ valid: formGroup.valid, pristine: formGroup.pristine, value: formGroup.value, errors: formGroup.errors } | json"></span>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    formGroup: M4FormGroup;\n\n
+
+    constructor() {\n
+      \tthis.formGroup = new M4FormGroup('form_name', {\n
+        \t\tname: new M4FormControl(InputComponent, null, [ Validators.required ]),\n
+        \t\tnameConfirm: new M4FormControl(InputComponent, null, [ Validators.required ]),\n
+      \t}, [ CustomGroupValidator.sameValues('name', 'nameConfirm') ]);\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
+<app-doc-component header="Custom style" [values]="{ formGroup: formGroupStyle }">
+  <![CDATA[
+  <m4-form-builder [formGroup]="formGroup"></m4-form-builder>
+
+  \i
+  <hr>
+  <span [innerHTML]="{ valid: formGroup.valid, pristine: formGroup.pristine, value: formGroup.value, errors: formGroup.errors } | json"></span>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    formGroup: M4FormGroup;\n\n
+
+    constructor() {\n
+      \tthis.formGroup = new M4FormGroup('form_name', {\n
+          \t\t\tname: new M4FormControl(InputComponent, null, [ Validators.required ]),\n
+          \t\t\tnameConfirm: new M4FormControl(InputComponent, null, [ Validators.required ]),\n
+        \t\t}, [ CustomGroupValidator.sameValues('name', 'nameConfirm') ], null,\n
+        \t\t{ createError: (error: string) => 'Some errors occured', description: 'Custom form', title: 'Form title' });\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
