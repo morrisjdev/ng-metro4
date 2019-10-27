@@ -5,6 +5,7 @@ import {NgMetro4BaseModule} from './base/ng-metro4-base.module';
 import {NgMetro4ControlsModule} from './controls/ng-metro4-controls.module';
 import {NgMetro4InformationModule} from './information/ng-metro4-information.module';
 import 'ng-metro4-lib';
+import { AppComponent } from './helper/app/app.component';
 
 const imports = [
   NgMetro4BaseModule,
@@ -19,10 +20,11 @@ const imports = [
     ...imports
   ],
   declarations: [
-
+  AppComponent
   ],
   exports: [
-    ...imports
+    ...imports,
+    AppComponent
   ],
   providers: [
 

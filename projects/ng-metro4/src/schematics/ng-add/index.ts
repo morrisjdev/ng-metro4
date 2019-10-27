@@ -14,7 +14,7 @@ export default function(options: NgAddOptions): Rule {
     const momentVersion = getDependencyVersion('moment');
     addPackageToPackageJson(host, 'moment', `${momentVersion}`);
     context.logger.log('info',
-      `✅ Added "ng-metro4@^${version}", "metro4@${metro4Version}", ` +
+      `✅ Added "ng-metro4@^${version}", "ng-metro4-lib@${metro4Version}", ` +
       `and "moment@${momentVersion}" into dependencies`);
 
     if (options.skipInstall) {
@@ -27,7 +27,7 @@ export default function(options: NgAddOptions): Rule {
       context.addTask(new NodePackageInstallTask());
     }
 
-    addAssetToProject(host, 'node_modules/metro4/build/css/metro-all.min.css', 'styles', options.project);
+    addAssetToProject(host, 'node_modules/ng-metro4-lib/build/css/metro-all.min.css', 'styles', options.project);
     context.logger.log('info', '✅ Added assets to "angular.json"');
 
     return host;
