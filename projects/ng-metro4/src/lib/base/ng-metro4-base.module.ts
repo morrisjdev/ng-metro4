@@ -7,7 +7,7 @@ import { LoadingDirective } from './loading/loading.directive';
 import { LoadingDisplayDirective } from './loading/loading-display.directive';
 import { AnimationDirective } from './animation/animation.directive';
 import { LetDirective } from './let/let.directive';
-import 'ng-metro4-lib';
+import 'metro4';
 
 const declarations = [
   ButtonDirective,
