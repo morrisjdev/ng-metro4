@@ -42,10 +42,11 @@ export class DialogServiceComponent implements OnInit {
   }
 
   promptForm() {
-    this.dialogService.formPrompt('Form prompt',
-      new M4FormGroup('prompt',
-        { name: new M4FormControl(FileInputComponent, null, [Validators.required], null,
-            { read: 'text' }) }, null, null))
+    const formGroup = new M4FormGroup('prompt', {
+      name: new M4FormControl(FileInputComponent, null, [Validators.required], null, { read: 'text' })
+    }, null, null);
+
+    this.dialogService.formPrompt('Form prompt', formGroup)
       .subscribe((result) => alert(JSON.stringify(result)));
   }
 

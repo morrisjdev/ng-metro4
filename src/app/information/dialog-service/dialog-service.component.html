@@ -67,10 +67,11 @@
   <div lang>
     <![CDATA[
     \f:(ts)
-    this.dialogService.formPrompt('Form prompt',\n
-      \tnew M4FormGroup('prompt',\n
-        \t\t{ name: new M4FormControl(FileInputComponent, null, [Validators.required], null,\n
-        \t\t{ read: 'text' }) }))\n
+    const formGroup = new M4FormGroup('prompt', {\n
+      \tname: new M4FormControl(FileInputComponent, null, [Validators.required], null, { read: 'text' })\n
+    }, null, null);\n\n
+
+    this.dialogService.formPrompt('Form prompt', formGroup)\n
       \t.subscribe((result) => alert(JSON.stringify(result)));
     ]]>
   </div>
