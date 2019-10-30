@@ -46,6 +46,7 @@ export * from './lib/controls/popover/popover.directive';
 export * from './lib/controls/popover/popover.component';
 export * from './lib/controls/progress/progress.component';
 export * from './lib/controls/hotkey/hotkey.directive';
+export * from './lib/controls/draggable/draggable.directive';
 
 export * from './lib/information/ng-metro4-information.module';
 export * from './lib/information/toast/toast.service';

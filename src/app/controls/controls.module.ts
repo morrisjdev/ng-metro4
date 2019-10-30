@@ -11,6 +11,7 @@ import {PanelComponent} from './panel/panel.component';
 import {HotkeyComponent} from './hotkey/hotkey.component';
 import {ActivityComponent} from './activity/activity.component';
 import {ActivityServiceComponent} from './activity-service/activity-service.component';
+import { DraggableComponent } from './draggable/draggable.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {ActivityServiceComponent} from './activity-service/activity-service.comp
     PanelComponent,
     HotkeyComponent,
     ActivityComponent,
-    ActivityServiceComponent
+    ActivityServiceComponent,
+    DraggableComponent
   ],
   imports: [
     CommonModule,

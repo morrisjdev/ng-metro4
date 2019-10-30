@@ -12,7 +12,7 @@ export class StartComponent implements OnInit {
   "options": {
     ...
     "styles": [
-      "node_modules/ng-metro4-lib/build/css/metro-all.min.css",
+      "node_modules/metro4/build/css/metro-all.min.css",
       "src/styles.less"
     ],
     ...

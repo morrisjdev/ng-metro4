@@ -1,3 +1,4 @@
+import 'metro4';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {GravatarComponent} from './gravatar/gravatar.component';
@@ -9,7 +10,7 @@ import { PanelComponent } from './panel/panel.component';
 import { HotkeyDirective } from './hotkey/hotkey.directive';
 import { PopoverComponent } from './popover/popover.component';
 import {ActivityService} from './activity/activity.service';
-import 'metro4';
+import {DraggableDirective} from './draggable/draggable.directive';
 
 const declarations = [
   GravatarComponent,
@@ -20,6 +21,7 @@ const declarations = [
   PanelComponent,
   HotkeyDirective,
   PopoverComponent,
+  DraggableDirective
 ];
 
 @NgModule({

@@ -8,6 +8,7 @@ import {PanelComponent} from './panel/panel.component';
 import {HotkeyComponent} from './hotkey/hotkey.component';
 import {ActivityComponent} from './activity/activity.component';
 import {ActivityServiceComponent} from './activity-service/activity-service.component';
+import {DraggableComponent} from './draggable/draggable.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'popover', component: PopoverComponent },
   { path: 'panel', component: PanelComponent },
   { path: 'hotkey', component: HotkeyComponent },
+  { path: 'draggable', component: DraggableComponent },
   { path: 'activity', component: ActivityComponent },
   { path: 'activity-service', component: ActivityServiceComponent },
 ];
