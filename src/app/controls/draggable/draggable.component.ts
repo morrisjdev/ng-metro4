@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentInit, Component, OnInit, ViewChild} from '@angular/core';
+import {DraggableDirective} from 'ng-metro4';
 
 @Component({
   selector: 'app-draggable',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DraggableComponent implements OnInit {
 
+  @ViewChild(DraggableDirective, { static: true }) draggable: DraggableDirective;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

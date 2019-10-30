@@ -1,26 +1,55 @@
-<!--<div class="example" style="height: 300px ">-->
-<!--  <div data-role="draggable" style="width: 200px" data-drag-element=".drag-element">-->
-<!--    <div class="bg-cyan fg-white p-2 drag-element">Panel title</div>-->
-<!--    <div class="border bd-cyan p-2">-->
-<!--      Bursas sunt fidess de peritus verpa. All parallel therapists handle each other, only unbiased explosion.-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<h1>Draggable</h1>
+<a href="https://metroui.org.ua/draggable.html" target="_blank">Draggable in Metro 4 docs</a>
 
-<div style="height: 300px" class="border bd-blue">
-  <div style="width: 200px" m4-draggable=".drag-element">
-    <div class="bg-cyan fg-white p-2 drag-element">Panel title</div>
-    <div class="border bd-cyan p-2">
-      Bursas sunt fidess de peritus verpa. All parallel therapists handle each other, only unbiased explosion.
-    </div>
-  </div>
+<app-doc-component header="Basic usage">
+  <![CDATA[
+  \i<div style="height: 200px" class="border border-dashed bd-blue">\i
+  <div \istyle="width: 200px; height: 50px;" class="bg-green" \im4-draggable>Draggable</div>
+  \i</div>\i
+  ]]>
+</app-doc-component>
+
+<div class="remark info ml-2 mr-2">
+  Make sure to use a container around the draggable element
 </div>
 
+<app-doc-component header="Custom drag element">
+  <![CDATA[
+  \i<div style="height: 200px" class="border border-dashed bd-blue">\i
+  <div \istyle="width: 200px" \im4-draggable=".drag-element">\l
+    \t<div class="\ibg-cyan fg-white p-2 \idrag-element">Panel title</div>\l
+    \t<div\i class="border bd-cyan p-2"\i>\l
+      \t\tBursas sunt fidess de peritus verpa. All parallel therapists handle each other, only unbiased explosion.\l
+    \t</div>\l
+  </div>
+  \i</div>\i
+  ]]>
+</app-doc-component>
 
-<!--<div data-role="draggable"-->
-<!--     data-drag-element=".drag-element" class="w-25">-->
-<!--  <div class="bg-cyan fg-white p-2 drag-element">Panel title</div>-->
-<!--  <div class="border bd-cyan p-2">-->
-<!--    Bursas sunt fidess de peritus verpa...-->
-<!--  </div>-->
-<!--</div>-->
+<app-doc-component header="Custom drag area">
+  <![CDATA[
+  \i<div style="height: 200px">\i
+  <div \istyle="width: 200px; top: 300px; left: 300px" \im4-draggable=".drag-element" drag-area="body">\l
+    \t<div class="\ibg-cyan fg-white p-2 \idrag-element">Panel title</div>\l
+    \t<div\i class="border bd-cyan p-2"\i>\l
+    \t\tBursas sunt fidess de peritus verpa. All parallel therapists handle each other, only unbiased explosion.\l
+    \t</div>\l
+  </div>
+  \i</div>\i
+  ]]>
+</app-doc-component>
+
+<div class="remark warning">
+  When setting the drag area, the element is copied to the area. Therefor changing the drag-area at runtime is not recommended.
+</div>
+
+<app-doc-component header="Set position of drag element">
+  <div lang>
+  <![CDATA[
+  \f:(ts)
+  @ViewChild(DraggableDirective, { static: true }) draggable: DraggableDirective;\n\n
+
+  this.draggable.setPosition({ x: 500, y: 300 });
+  ]]>
+  </div>
+</app-doc-component>

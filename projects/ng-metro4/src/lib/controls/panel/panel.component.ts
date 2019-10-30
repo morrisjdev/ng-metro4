@@ -27,7 +27,7 @@ export class PanelComponent implements OnInit, OnChanges {
   @Input('title-icon') titleIcon: string;
   @Input() collapsible: boolean;
   @Input() collapsed: boolean;
-  @Input() draggable: boolean;
+  @Input('custom-buttons') customButtons: { html: string, cls: string, onclick: string }[] = [];
 
   @Input('cls-panel') clsPanel: string;
   @Input('cls-title') clsTitle: string;
@@ -57,7 +57,9 @@ export class PanelComponent implements OnInit, OnChanges {
       ObjectHelper.show(this.clonedElement);
       originalElement.parent().append(this.clonedElement);
 
-      this.panelObj = this.clonedElement.panel().data('panel');
+      this.panelObj = this.clonedElement.panel({
+        customButtons: this.customButtons
+      }).data('panel');
     });
   }
 
