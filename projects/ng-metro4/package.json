@@ -6,7 +6,7 @@
     "@angular/common": "~8.1.0",
     "@angular/core": "~8.1.0",
     "moment": "^2.24.0",
-	  "metro4": "^4.3.2",
+	"metro4": "^4.3.2",
     "rxjs": "~6.5.2"
   },
   "schematics": "./schematics/collection.json",
