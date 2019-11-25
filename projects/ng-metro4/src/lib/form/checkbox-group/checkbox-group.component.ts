@@ -23,6 +23,7 @@ import {asapScheduler} from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxGroupComponent extends ControlBase<any[]> {
+  @Input() readonly = false;
   @Input() options: { [title: string]: any };
 
   @ContentChildren(forwardRef(() => CheckboxComponent), { descendants: true }) checkboxesContent: QueryList<CheckboxComponent>;
@@ -41,6 +42,8 @@ export class CheckboxGroupComponent extends ControlBase<any[]> {
 
         const checkboxCreations = this.checkboxes.map((item) => {
           return new Promise<void>((checkboxComplete) => {
+            item.updateProperty('readonly', this.readonly);
+
             item.registerOnChange((v) => {
               this.computeInnerValue();
             });

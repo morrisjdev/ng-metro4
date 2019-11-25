@@ -10,5 +10,4 @@ export class CheckboxComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

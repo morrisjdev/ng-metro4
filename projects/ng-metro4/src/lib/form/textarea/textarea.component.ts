@@ -16,6 +16,7 @@ declare var $: any;
 })
 export class TextareaComponent extends ControlBase<string> {
   @Input('placeholder') placeholder = '';
+  @Input('readonly') readonly = false;
   @Input('default-value') defaultValue: string;
   @Input('prepend') prepend: string;
   @Input('append') append: string;

@@ -6,7 +6,7 @@
                    [showModel]="true">
   <![CDATA[
   <m4-material-input [type]="type" [(ngModel)]="model" [label]="label" [informer]="informer" [disabled]="disabled"\l
-            \t\t[placeholder]="placeholder" [icon]="icon"></m4-material-input>
+            \t\t[placeholder]="placeholder" [icon]="icon" [readonly]="readonly"></m4-material-input>
 
   \i
   <hr>
@@ -30,6 +30,7 @@
 
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="readonly" caption="Readonly"></m4-checkbox>
     </div>
   </div>
   ]]>

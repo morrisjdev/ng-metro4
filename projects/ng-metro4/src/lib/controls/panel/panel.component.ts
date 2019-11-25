@@ -1,14 +1,4 @@
-import {
-  AfterContentInit,
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-  ViewChild
-} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {asapScheduler} from 'rxjs';
 import {ObjectHelper} from '../../helper/object-helper';
 
@@ -27,7 +17,7 @@ export class PanelComponent implements OnInit, OnChanges {
   @Input('title-icon') titleIcon: string;
   @Input() collapsible: boolean;
   @Input() collapsed: boolean;
-  @Input('custom-buttons') customButtons: { html: string, cls: string, onclick: string }[] = [];
+  @Input('custom-buttons') customButtons: { html: string, cls: string, onclick: string }[];
 
   @Input('cls-panel') clsPanel: string;
   @Input('cls-title') clsTitle: string;

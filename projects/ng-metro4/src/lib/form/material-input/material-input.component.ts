@@ -18,6 +18,7 @@ declare var $: any;
 export class MaterialInputComponent extends ControlBase<string> {
   @Input('type') type: InputType = 'text';
   @Input('placeholder') placeholder = '';
+  @Input('readonly') readonly = false;
   @Input('label') label: string;
   @Input('informer') informer: string;
   @Input('icon') icon: string;

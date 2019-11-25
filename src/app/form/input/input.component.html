@@ -9,7 +9,7 @@
             \t\t[placeholder]="placeholder" [clear-button]="clearBtn" [clear-button-icon]="clearBtnIcon"\l
             \t\t[reveal-button]="revealBtn" [reveal-button-icon]="revealIcon" [search-button]="searchBtn"\l
             \t\t[search-button-icon]="searchIcon" [autocomplete]="autocomplete" [default-value]="defaultValue"\l
-            \t\t[custom-buttons]="customButtons" [class]="accent"></m4-input>
+            \t\t[custom-buttons]="customButtons" [class]="accent" [readonly]="readonly"></m4-input>
 
   \i
   <hr>
@@ -54,7 +54,8 @@
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
       <m4-checkbox [(ngModel)]="clearBtn" caption="Show clear button"></m4-checkbox>
       <m4-checkbox [(ngModel)]="revealBtn" caption="Show reveal button"></m4-checkbox>
-      <m4-checkbox [(ngModel)]="searchBtn" caption="Show search button"></m4-checkbox><br>
+      <m4-checkbox [(ngModel)]="searchBtn" caption="Show search button"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="readonly" caption="Readonly"></m4-checkbox><br>
 
       <m4-checkbox-group [(ngModel)]="customButtons">
         <m4-checkbox [value]="{ html: '<span class=\'mif-user\'></span>', cls: 'success' }" caption="Custom btn1"></m4-checkbox>

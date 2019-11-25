@@ -4,7 +4,7 @@
 <app-doc-component header="Playground" [values]="{ model: true, style: 1 }" [showModel]="true">
   <![CDATA[
   <m4-checkbox [(ngModel)]="model" [disabled]="disabled" [caption]="caption" [caption-position]="captionPosition" \l
-               \t\t[indeterminate]="indeterminate" [class]="accent" [style]="style"></m4-checkbox>
+               \t\t[indeterminate]="indeterminate" [class]="accent" [style]="style" [readonly]="readonly"></m4-checkbox>
 
   \i
   <hr>
@@ -30,6 +30,7 @@
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="indeterminate" caption="Indeterminate"></m4-checkbox>
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="readonly" caption="Readonly"></m4-checkbox>
     </div>
   </div>
   ]]>
@@ -45,7 +46,7 @@
 
 <app-doc-component header="Checkbox group" [values]="{ model: [1, 2, 6] }" [showModel]="true">
   <![CDATA[
-  <m4-checkbox-group [(ngModel)]="model" [disabled]="disabled">\l
+  <m4-checkbox-group [(ngModel)]="model" [disabled]="disabled" [readonly]="readonly">\l
     \t
     <m4-checkbox caption="1" [value]="1"></m4-checkbox>
     \l
@@ -69,11 +70,12 @@
   \i<br>\i\n
 
   <m4-checkbox-group [(ngModel)]="model" [options]="{ '1': 1, '2': 2, '3': [1, 2, 3], '4': { test: 'value' }, '5': 5, '6': 6 }"\l
-                     \t\t[disabled]="disabled"></m4-checkbox-group>
+                     \t\t[disabled]="disabled" [readonly]="readonly"></m4-checkbox-group>
 
   \i
   <hr>
   <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+  <m4-checkbox [(ngModel)]="readonly" caption="Readonly"></m4-checkbox>
   ]]>
 </app-doc-component>
 

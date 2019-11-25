@@ -17,6 +17,7 @@ declare var $: any;
 })
 export class SwitchComponent extends ControlBase<boolean> {
   @Input('material') material: boolean;
+  @Input('readonly') readonly = false;
   @Input('caption') caption: string;
   @Input('caption-position') captionPosition: PositionHorizontalType;
 

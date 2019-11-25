@@ -7,7 +7,7 @@
   <![CDATA[
   <m4-textarea [(ngModel)]="model" [prepend]="prepend" [append]="append" [disabled]="disabled"\l
             \t\t[placeholder]="placeholder" [clear-button]="clearBtn" [clear-button-icon]="clearBtnIcon"\l
-            \t\t[default-value]="defaultValue" [auto-size]="autoSize" [class]="accent"></m4-textarea>
+            \t\t[default-value]="defaultValue" [auto-size]="autoSize" [class]="accent" [readonly]="readonly"></m4-textarea>
 
   \i
   <hr>
@@ -37,7 +37,8 @@
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
       <m4-checkbox [(ngModel)]="clearBtn" caption="Show clear button"></m4-checkbox>
-      <m4-checkbox [(ngModel)]="autoSize" caption="Autosize"></m4-checkbox><br>
+      <m4-checkbox [(ngModel)]="autoSize" caption="Autosize"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="readonly" caption="Readonly"></m4-checkbox>
     </div>
   </div>
   ]]>

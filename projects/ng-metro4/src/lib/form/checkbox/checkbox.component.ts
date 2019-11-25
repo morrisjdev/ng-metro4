@@ -18,6 +18,7 @@ declare var $: any;
 export class CheckboxComponent extends ControlBase<boolean> {
   @Input('value') value: any;
 
+  @Input('readonly') readonly = false;
   @Input('style') style: 1|2;
   @Input('caption') caption: string;
   @Input('caption-position') captionPosition: PositionHorizontalType;

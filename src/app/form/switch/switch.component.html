@@ -4,7 +4,7 @@
 <app-doc-component header="Playground" [values]="{ model: true, material: false }" [showModel]="true">
   <![CDATA[
   <m4-switch [(ngModel)]="model" [disabled]="disabled" [caption]="caption" [caption-position]="captionPosition" \l
-             \t\t[material]="material" [class]="accent"></m4-switch>
+             \t\t[material]="material" [class]="accent" [readonly]="readonly"></m4-switch>
 
   \i
   <hr>
@@ -25,6 +25,7 @@
 
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="readonly" caption="Readonly"></m4-checkbox>
       <m4-checkbox [(ngModel)]="material" caption="Material"></m4-checkbox>
     </div>
   </div>
