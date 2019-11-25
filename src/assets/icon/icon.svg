@@ -15,7 +15,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.0 r15299"
-   sodipodi:docname="icon.svg">
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="C:\Users\morri\Downloads\Rastergrafik.png"
+   inkscape:export-xdpi="1300.48"
+   inkscape:export-ydpi="1300.48">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -29,7 +32,7 @@
      inkscape:cx="29.621929"
      inkscape:cy="32.484527"
      inkscape:document-units="mm"
-     inkscape:current-layer="g4985"
+     inkscape:current-layer="layer2"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
@@ -53,9 +56,15 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Layer 1"
-     transform="translate(0,-277)"
-     style="display:inline" />
+     inkscape:label="Ebene 2">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect4504"
+       width="20.512936"
+       height="21.281336"
+       x="-0.26726952"
+       y="-0.44611898" />
+  </g>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
@@ -68,19 +77,6 @@
     <g
        id="g4985"
        transform="matrix(2.4674802,0,0,2.4674802,-15.15902,-422.47625)">
-      <g
-         transform="matrix(1.7758268,0,0,1.7758268,-7.1727988,-221.36277)"
-         id="g4530">
-        <g
-           id="g4972">
-          <path
-             style="fill:#fefefe;stroke-width:0.28546375"
-             d="m 7.5050373,286.5765 v -2.28371 h 2.28371 2.2837097 v 2.28371 2.28371 h -2.2837097 -2.28371 z m 1.9982462,1.14186 c 0,-0.76124 -0.095154,-0.8564 -0.8563912,-0.8564 -0.7612367,0 -0.8563913,0.0952 -0.8563913,0.8564 0,0.76123 0.095155,0.85639 0.8563913,0.85639 0.7612367,0 0.8563912,-0.0952 0.8563912,-0.85639 z m 2.2837105,0 c 0,-0.76124 -0.09516,-0.8564 -0.856392,-0.8564 -0.761236,0 -0.856391,0.0952 -0.856391,0.8564 0,0.76123 0.09516,0.85639 0.856391,0.85639 0.761237,0 0.856392,-0.0952 0.856392,-0.85639 z m -3.996493,-2.28371 c 0,0.76123 0.095155,0.85639 0.8563913,0.85639 2.4676377,-0.42232 -0.8433836,-3.05459 -0.8563913,-0.85639 z m 3.996493,0 c 0,-0.76124 -0.09516,-0.8564 -0.856392,-0.8564 -0.761236,0 -0.856391,0.0952 -0.856391,0.8564 0,0.76123 0.09516,0.85639 0.856391,0.85639 0.761237,0 0.856392,-0.0952 0.856392,-0.85639 z"
-             id="path4540"
-             inkscape:connector-curvature="0"
-             sodipodi:nodetypes="cccccccccsssssssssscccssscs" />
-        </g>
-      </g>
       <rect
          y="284.07254"
          x="10.624646"
@@ -111,9 +107,4 @@
          style="display:inline;fill:#fecf00;fill-opacity:1;stroke:none;stroke-width:50.99069977;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke" />
     </g>
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="Ebene 2"
-     style="display:inline" />
 </svg>
