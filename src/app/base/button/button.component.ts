@@ -10,4 +10,8 @@ export class ButtonComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  testClick() {
+    alert('Test 123');
+  }
 }

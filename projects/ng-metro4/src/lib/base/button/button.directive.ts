@@ -77,7 +77,7 @@ export class ButtonDirective implements OnInit, OnChanges {
   }
 
   @HostListener('click')
-  private clickEvent() {
+  clickEvent() {
     if (this.specialBtn === 'multi-action') {
       this.jElement.toggleClass('active');
     }
