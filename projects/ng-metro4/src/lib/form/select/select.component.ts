@@ -4,6 +4,7 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
 import {ObjectHelper} from '../../helper/object-helper';
+import {StringHelper} from '../../helper/string-helper';
 
 declare var $: any;
 
@@ -20,7 +21,7 @@ export interface Option {
   providers: [DefaultValueAccessor.get(SelectComponent), TypeAlias.get(SelectComponent)],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SelectComponent extends ControlBase<string|string[]> implements OnChanges {
+export class SelectComponent extends ControlBase<object|object[]> implements OnChanges {
   @Input('options') options: { [key: string]: (string | { [key: string]: string }) } |
     (Option | { groupName: string, options: Option[] })[];
   @Input('multiple') multiple = false;
@@ -69,6 +70,22 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
       });
 
       this.select.options.onChange = (val) => {
+        if (this.options instanceof Array) {
+          const allOptions: Option[] = [];
+
+          this.options.forEach((option: Option  | { options: Option[] }) => {
+            if (!!(<any>option).options) {
+              (<any>option).options.forEach((subOption: Option) => {
+                allOptions.push(subOption);
+              });
+            } else {
+              allOptions.push(<Option>option);
+            }
+          });
+
+          val = val.map(key => allOptions.find(option => StringHelper.createHash(option.value) === key)).filter(v => !!v).map(v => v.value);
+        }
+
         if (this.multiple) {
           this.changeValue(val.slice(0));
         } else {
@@ -98,12 +115,17 @@ export class SelectComponent extends ControlBase<string|string[]> implements OnC
       return;
     }
 
+    let selectValue: any[] = this.multiple ? <any[]>this.innerValue : [ this.innerValue ];
+
+    if (this.options instanceof Array) {
+      selectValue = selectValue.map(v => StringHelper.createHash(v));
+    }
+
     if (this.multiple) {
       this.select.reset();
-      this.select.val(this.innerValue);
-    } else {
-      this.select.val([this.innerValue]);
     }
+
+    this.select.val(selectValue);
   }
 
   newClassValue(newClasses: string[], oldClasses: string[]) {

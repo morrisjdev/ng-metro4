@@ -20,12 +20,12 @@
 
   <ng-container *ngIf="options | isArray">
     <ng-container *ngFor="let option of options">
-      <option *ngIf="!option.options" [value]="option.value" [attr.data-template]="option.dataTemplate">
+      <option *ngIf="!option.options" [value]="option.value | createHash" [attr.data-template]="option.dataTemplate">
         {{option.title}}
       </option>
 
       <optgroup *ngIf="option.options" [label]="option.groupName">
-        <option *ngFor="let childOption of option.options" [value]="childOption.value" [attr.data-template]="childOption.dataTemplate">
+        <option *ngFor="let childOption of option.options" [value]="childOption.value | createHash" [attr.data-template]="childOption.dataTemplate">
           {{childOption.title}}
         </option>
       </optgroup>

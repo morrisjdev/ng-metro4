@@ -7,11 +7,11 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SelectComponent implements OnInit {
   options = [
-    {title: 'Das ist ein test', value: 12, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1'},
+    {title: 'Test 1 with object', value: { test: 'This is the first test' }, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1'},
     {
       groupName: 'Test Gruppe',
       options: [
-        {title: 'Das ist ein test', value: 13, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1'}
+        {title: 'Test 2 only number', value: 28, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1'}
       ]
     }
   ];

@@ -65,19 +65,20 @@
   ]]>
 </app-doc-component>
 
-<app-doc-component header="Using an array as options" [values]="{ model: 'value', options: options }" [showModel]="true">
+<app-doc-component header="Using an array as options" [values]="{ model: 28, options: options }" [showModel]="true">
   <![CDATA[
+  <m4-select [(ngModel)]="model" [options]="options"></m4-select>\n
   <m4-select [(ngModel)]="model" [options]="options"></m4-select>
   ]]>
   <div lang>
     <![CDATA[
     \f:(ts)
     options = [\n
-      \t{title: 'Das ist ein test', value: 12, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1'},\n
+      \t{title: 'Das ist ein test', value: { test: 'This is the first test' }, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1'},\n
       \t{\n
         \t\tgroupName: 'Test Gruppe',\n
         \t\toptions: [\n
-          \t\t\t{title: 'Das ist ein test', value: 13, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1'}\n
+          \t\t\t{title: 'Das ist ein test', value: 28, dataTemplate: '<span class=\'mif-amazon icon\'></span> $1'}\n
         \t\t]\n
       \t}\n
     ];

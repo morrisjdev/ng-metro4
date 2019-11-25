@@ -3,7 +3,7 @@ export class StringHelper {
   /**
    * Creates a GUID
    */
-  public static guid() {
+  public static guid(): string {
     const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
       /[xy]/g,
       (c: string): string => {
@@ -14,5 +14,9 @@ export class StringHelper {
     );
 
     return uuid;
+  }
+
+  public static createHash(object: any): string {
+    return JSON.stringify(object || null);
   }
 }
