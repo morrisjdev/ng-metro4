@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
@@ -10,9 +10,10 @@ declare var $: any;
 @Component({
   selector: 'm4-time-picker',
   templateUrl: './time-picker.component.html',
-  styleUrls: ['./time-picker.component.css'],
+  styleUrls: ['./time-picker.component.less'],
   providers: [DefaultValueAccessor.get(TimePickerComponent), TypeAlias.get(TimePickerComponent)],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class TimePickerComponent extends ControlBase<moment.Duration> {
   @Input('hours') hours: boolean;

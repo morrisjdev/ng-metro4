@@ -1,0 +1,14 @@
+@import (once) '~metro4/source/include/vars';
+@import (once) '~metro4/source/include/mixins';
+
+.time-picker {
+  each(@accentColors, {
+    @color: "@{value}Color";
+
+    &.@{value} {
+      .time-wrapper {
+        border-color: @@color;
+      }
+    }
+  })
+}

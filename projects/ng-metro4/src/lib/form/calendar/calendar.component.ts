@@ -13,7 +13,7 @@ declare var $: any;
 @Component({
   selector: 'm4-calendar',
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css'],
+  styleUrls: ['./calendar.component.less'],
   providers: [DefaultValueAccessor.get(CalendarComponent), TypeAlias.get(CalendarComponent)],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush

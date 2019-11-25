@@ -11,7 +11,7 @@ declare var $: any;
 @Component({
   selector: 'm4-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css'],
+  styleUrls: ['./slider.component.less'],
   providers: [DefaultValueAccessor.get(SliderComponent), TypeAlias.get(SliderComponent)],
   encapsulation: ViewEncapsulation.None
 })

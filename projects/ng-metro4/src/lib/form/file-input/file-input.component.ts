@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
@@ -15,9 +15,10 @@ export interface FileEntry {
 @Component({
   selector: 'm4-file-input',
   templateUrl: './file-input.component.html',
-  styleUrls: ['./file-input.component.css'],
+  styleUrls: ['./file-input.component.less'],
   providers: [DefaultValueAccessor.get(FileInputComponent), TypeAlias.get(FileInputComponent)],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class FileInputComponent extends ControlBase<File | File[] | FileEntry | FileEntry[]> {
   @Input('multiple') multiple = false;

@@ -1,0 +1,29 @@
+@import (once) '~metro4/source/include/vars';
+@import (once) '~metro4/source/include/mixins';
+
+.switch {
+  each(@accentColors, {
+    @color: "@{value}Color";
+
+    &.@{value} {
+      input[type=checkbox]:checked ~ .check {
+        background-color: @@color;
+        border-color: @@color;
+
+        &::after {
+          background-color: @white;
+          border-color: @white;
+        }
+      }
+
+      .check {
+        border-color: @@color;
+
+        &::after {
+          background-color: @@color;
+          border-color: @@color;
+        }
+      }
+    }
+  })
+}

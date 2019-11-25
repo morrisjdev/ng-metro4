@@ -11,7 +11,7 @@ declare var $: any;
 @Component({
   selector: 'm4-rating',
   templateUrl: './rating.component.html',
-  styleUrls: ['./rating.component.css'],
+  styleUrls: ['./rating.component.less'],
   encapsulation: ViewEncapsulation.None,
   providers: [DefaultValueAccessor.get(RatingComponent), TypeAlias.get(RatingComponent)],
   changeDetection: ChangeDetectionStrategy.OnPush

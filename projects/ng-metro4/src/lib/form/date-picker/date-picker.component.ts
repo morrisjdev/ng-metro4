@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ControlBase} from '../control-base';
 import * as moment from 'moment';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
@@ -11,9 +11,10 @@ declare var $: any;
 @Component({
   selector: 'm4-date-picker',
   templateUrl: './date-picker.component.html',
-  styleUrls: ['./date-picker.component.css'],
+  styleUrls: ['./date-picker.component.less'],
   providers: [DefaultValueAccessor.get(DatePickerComponent), TypeAlias.get(DatePickerComponent)],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class DatePickerComponent extends ControlBase<moment.Moment> {
   @Input('month') month: boolean;

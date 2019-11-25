@@ -1,0 +1,22 @@
+@import (once) '~metro4/source/include/vars';
+@import (once) '~metro4/source/include/mixins';
+
+.rating {
+  each(@accentColors, {
+    @color: "@{value}Color";
+
+    &.@{value} {
+      .stars li {
+        color: desaturate(@@color, 50%);
+
+        &.on {
+          color: @@color;
+        }
+      }
+    }
+  })
+}
+
+.disabled .rating .stars li.on {
+  color: #e4e4e4!important;
+}
