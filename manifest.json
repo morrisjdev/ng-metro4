@@ -4,8 +4,8 @@
   "theme_color": "#8c004a",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "/ng-metro4",
-  "start_url": "/ng-metro4",
+  "scope": "/ng-metro4/",
+  "start_url": "/ng-metro4/",
   "icons": [
     {
       "src": "./assets/icon/android-icon-36x36.png",
