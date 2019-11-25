@@ -14,6 +14,8 @@ import {SharedModule} from './shared/shared.module';
 import {NgMetro4Module} from 'ng-metro4';
 import {LegalDisclosureComponent} from './shared/legal-disclosure/legal-disclosure.component';
 import {PrivacyComponent} from './shared/privacy/privacy.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 export function hljsLanguages() {
   return [
@@ -38,7 +40,8 @@ export function hljsLanguages() {
     NgMetro4Module,
     HighlightModule.forRoot({
       languages: hljsLanguages
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
