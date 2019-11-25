@@ -1,104 +1,136 @@
-<header class="app-bar bg-darkMagenta fg-white" data-role="appbar" data-expand-point="md">
-  <a routerLink="" class="d-block brand fg-white no-hover">
-    <span class="border bd-white border-radius p-2">ng m<sup>4</sup></span>
-  </a>
-  <ul class="app-bar-menu ml-auto">
-    <li>
-      <a href="#" class="dropdown-toggle">Getting started</a>
-      <ul class="d-menu" data-role="dropdown">
-        <li><a [routerLink]="['start']">Quick start</a></li>
-      </ul>
-    </li>
+<div class="page-container">
+  <header class="app-bar bg-darkMagenta fg-white" data-role="appbar" data-expand-point="md">
+    <a routerLink="" class="d-block brand fg-white no-hover">
+      <span class="border bd-white border-radius p-2">ng m<sup>4</sup></span>
+    </a>
+    <ul class="app-bar-menu ml-auto">
+      <li>
+        <a href="#" class="dropdown-toggle">Getting started</a>
+        <ul class="d-menu" data-role="dropdown">
+          <li><a [routerLink]="['start']">Quick start</a></li>
+        </ul>
+      </li>
 
-    <li>
-      <a href="#" class="dropdown-toggle">Base</a>
-      <ul class="d-menu" data-role="dropdown">
-        <li><a [routerLink]="['base', 'button']">Button</a></li>
-        <!--        <li><a [routerLink]="['base', 'container']">Container</a></li>-->
-        <!--        <li><a [routerLink]="['base', 'grid']">Grid</a></li>-->
-        <li><a [routerLink]="['base', 'icon']">Icon</a></li>
-        <li><a [routerLink]="['base', 'loading']">Loading</a></li>
-        <li><a [routerLink]="['base', 'let']">Let</a></li>
-        <li><a [routerLink]="['base', 'ripple']">Ripple</a></li>
-        <li><a [routerLink]="['base', 'animation']">Animation</a></li>
-      </ul>
-    </li>
+      <li>
+        <a href="#" class="dropdown-toggle">Base</a>
+        <ul class="d-menu" data-role="dropdown">
+          <li><a [routerLink]="['base', 'button']">Button</a></li>
+          <!--        <li><a [routerLink]="['base', 'container']">Container</a></li>-->
+          <!--        <li><a [routerLink]="['base', 'grid']">Grid</a></li>-->
+          <li><a [routerLink]="['base', 'icon']">Icon</a></li>
+          <li><a [routerLink]="['base', 'loading']">Loading</a></li>
+          <li><a [routerLink]="['base', 'let']">Let</a></li>
+          <li><a [routerLink]="['base', 'ripple']">Ripple</a></li>
+          <li><a [routerLink]="['base', 'animation']">Animation</a></li>
+        </ul>
+      </li>
 
-    <li>
-      <a href="#" class="dropdown-toggle">Form</a>
-      <ul class="d-menu" data-role="dropdown">
-        <li><a [routerLink]="['form', 'input']">Input</a></li>
-        <li><a [routerLink]="['form', 'material_input']">Material Input</a></li>
-        <li><a [routerLink]="['form', 'textarea']">Textarea</a></li>
-        <li><a [routerLink]="['form', 'checkbox']">Checkbox</a></li>
-        <li><a [routerLink]="['form', 'switch']">Switch</a></li>
-        <li><a [routerLink]="['form', 'radio']">Radio</a></li>
-        <li><a [routerLink]="['form', 'calendar']">Calendar</a></li>
-        <li><a [routerLink]="['form', 'calender_picker']">Calendar Picker</a></li>
-        <li><a [routerLink]="['form', 'date_picker']">Date Picker</a></li>
-        <li><a [routerLink]="['form', 'time_picker']">Time Picker</a></li>
-        <li><a [routerLink]="['form', 'select']">Select</a></li>
-        <li><a [routerLink]="['form', 'tag-input']">Tag Input</a></li>
-        <li><a [routerLink]="['form', 'slider']">Slider</a></li>
-        <li><a [routerLink]="['form', 'spinner']">Spinner</a></li>
-        <li><a [routerLink]="['form', 'rating']">Rating</a></li>
-        <li><a [routerLink]="['form', 'keypad']">Keypad</a></li>
-        <li><a [routerLink]="['form', 'file-input']">File</a></li>
-        <li class="divider bg-lightGray"></li>
-        <li><a [routerLink]="['form', 'form_control_wrapper']">Form control wrapper</a></li>
-        <li><a [routerLink]="['form', 'form_wrapper']">Form wrapper</a></li>
-        <li><a [routerLink]="['form', 'form']">Reactive form</a></li>
-        <li><a [routerLink]="['form', 'dynamic_form_control']">Dynamic form control</a></li>
-        <li><a [routerLink]="['form', 'form_builder']">Form builder</a></li>
-      </ul>
-    </li>
+      <li>
+        <a href="#" class="dropdown-toggle">Form</a>
+        <ul class="d-menu" data-role="dropdown">
+          <li><a [routerLink]="['form', 'input']">Input</a></li>
+          <li><a [routerLink]="['form', 'material_input']">Material Input</a></li>
+          <li><a [routerLink]="['form', 'textarea']">Textarea</a></li>
+          <li><a [routerLink]="['form', 'checkbox']">Checkbox</a></li>
+          <li><a [routerLink]="['form', 'switch']">Switch</a></li>
+          <li><a [routerLink]="['form', 'radio']">Radio</a></li>
+          <li><a [routerLink]="['form', 'calendar']">Calendar</a></li>
+          <li><a [routerLink]="['form', 'calender_picker']">Calendar Picker</a></li>
+          <li><a [routerLink]="['form', 'date_picker']">Date Picker</a></li>
+          <li><a [routerLink]="['form', 'time_picker']">Time Picker</a></li>
+          <li><a [routerLink]="['form', 'select']">Select</a></li>
+          <li><a [routerLink]="['form', 'tag-input']">Tag Input</a></li>
+          <li><a [routerLink]="['form', 'slider']">Slider</a></li>
+          <li><a [routerLink]="['form', 'spinner']">Spinner</a></li>
+          <li><a [routerLink]="['form', 'rating']">Rating</a></li>
+          <li><a [routerLink]="['form', 'keypad']">Keypad</a></li>
+          <li><a [routerLink]="['form', 'file-input']">File</a></li>
+          <li class="divider bg-lightGray"></li>
+          <li><a [routerLink]="['form', 'form_control_wrapper']">Form control wrapper</a></li>
+          <li><a [routerLink]="['form', 'form_wrapper']">Form wrapper</a></li>
+          <li><a [routerLink]="['form', 'form']">Reactive form</a></li>
+          <li><a [routerLink]="['form', 'dynamic_form_control']">Dynamic form control</a></li>
+          <li><a [routerLink]="['form', 'form_builder']">Form builder</a></li>
+        </ul>
+      </li>
 
-    <li>
-      <a href="#" class="dropdown-toggle">Controls</a>
-      <ul class="d-menu" data-role="dropdown">
-        <li><a [routerLink]="['controls', 'activity']">Activity</a></li>
-        <li><a [routerLink]="['controls', 'activity-service']">Activity service</a></li>
-        <li><a [routerLink]="['controls', 'progress']">Progress</a></li>
-        <li><a [routerLink]="['controls', 'popover']">Popover</a></li>
-        <li><a [routerLink]="['controls', 'hotkey']">Hotkey</a></li>
-        <li><a [routerLink]="['controls', 'draggable']">Draggable</a></li>
-        <li><a [routerLink]="['controls', 'donut']">Donut</a></li>
-        <li><a [routerLink]="['controls', 'panel']">Panel</a></li>
-        <li><a [routerLink]="['controls', 'gravatar']">Gravatar</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#" class="dropdown-toggle">Information</a>
-      <ul class="d-menu" data-role="dropdown">
-        <li><a [routerLink]="['information', 'dialog']">Dialog</a></li>
-        <li><a [routerLink]="['information', 'dialog-service']">Dialog service</a></li>
-        <li><a [routerLink]="['information', 'hint']">Hint</a></li>
-        <li><a [routerLink]="['information', 'notify']">Notify</a></li>
-        <li><a [routerLink]="['information', 'toast']">Toast</a></li>
-      </ul>
-    </li>
+      <li>
+        <a href="#" class="dropdown-toggle">Controls</a>
+        <ul class="d-menu" data-role="dropdown">
+          <li><a [routerLink]="['controls', 'activity']">Activity</a></li>
+          <li><a [routerLink]="['controls', 'activity-service']">Activity service</a></li>
+          <li><a [routerLink]="['controls', 'progress']">Progress</a></li>
+          <li><a [routerLink]="['controls', 'popover']">Popover</a></li>
+          <li><a [routerLink]="['controls', 'hotkey']">Hotkey</a></li>
+          <li><a [routerLink]="['controls', 'draggable']">Draggable</a></li>
+          <li><a [routerLink]="['controls', 'donut']">Donut</a></li>
+          <li><a [routerLink]="['controls', 'panel']">Panel</a></li>
+          <li><a [routerLink]="['controls', 'gravatar']">Gravatar</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="dropdown-toggle">Information</a>
+        <ul class="d-menu" data-role="dropdown">
+          <li><a [routerLink]="['information', 'dialog']">Dialog</a></li>
+          <li><a [routerLink]="['information', 'dialog-service']">Dialog service</a></li>
+          <li><a [routerLink]="['information', 'hint']">Hint</a></li>
+          <li><a [routerLink]="['information', 'notify']">Notify</a></li>
+          <li><a [routerLink]="['information', 'toast']">Toast</a></li>
+        </ul>
+      </li>
 
-    <li>
-      <a href="#" class="dropdown-toggle">More</a>
-      <ul class="d-menu" data-role="dropdown">
-        <li><a [routerLink]="['more', 'get-controls']">Get controls</a></li>
-        <li><a [routerLink]="['more', 'lists']">Lists</a></li>
-      </ul>
-    </li>
+      <li>
+        <a href="#" class="dropdown-toggle">More</a>
+        <ul class="d-menu" data-role="dropdown">
+          <li><a [routerLink]="['more', 'get-controls']">Get controls</a></li>
+          <li><a [routerLink]="['more', 'lists']">Lists</a></li>
+        </ul>
+      </li>
 
-    <li>
-      <a href="https://github.com/morrisjdev/ng-metro4" target="_blank">
-        <span class="mif-github mif-2x d-none d-block-md"></span>
-        <span class="d-block d-none-md">Github</span>
-      </a>
-    </li>
-  </ul>
-</header>
+      <li>
+        <a href="https://github.com/morrisjdev/ng-metro4" target="_blank">
+          <span class="mif-github mif-2x d-none d-block-md"></span>
+          <span class="d-block d-none-md">Github</span>
+        </a>
+      </li>
+    </ul>
+  </header>
 
-<div class="container-fluid">
-  <div class="row flex-xl-nowrap">
-    <div class="cell-md-10 cell-xl-8 pr-1-sx pl-1-sx pr-5-md pl-5-md offset-md-1 offset-xl-2">
-      <router-outlet></router-outlet>
+  <div class="container-fluid page-content">
+    <div class="row flex-xl-nowrap">
+      <div class="cell-md-10 cell-xl-8 pr-1-sx pl-1-sx pr-5-md pl-5-md offset-md-1 offset-xl-2">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
+
+  <footer class="bg-light footer-position">
+    <div class="container pt-4 pb-5">
+      <div class="text-center">
+        <ul class="inline-list reduce-1" id="social-menu">
+          <li><a href="https://github.com/morrisjdev/ng-metro4">ng-metro4 <span class="mif-github"></span></a></li>
+          <li><a href="https://github.com/olton/Metro-UI-CSS">Metro4 <span class="mif-github"></span></a></li>
+        </ul>
+      </div>
+
+      <div class="text-center mt-5">
+        <ul class="inline-list reduce-1 mb-0" id="footer-menu">
+          <li><a href="https://github.com/morrisjdev/ng-metro4/blob/master/LICENSE">License</a></li>
+          <li><a href="https://github.com/morrisjdev">Author</a></li>
+          <li><a href="https://github.com/morrisjdev/ng-metro4/issues">Issues</a></li>
+          <li><a href="https://github.com/morrisjdev/ng-metro4/releases">Releases</a></li>
+        </ul>
+        <ul class="inline-list reduce-1 mt-0">
+          <li><a routerLink="legal-details">Legal details</a></li>
+          <li><a routerLink="privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+
+      <div class="text-center mt-5 reduce-1">
+        ng-metro4 &copy; 2018-2019 by <a href="https://github.com/morrisjdev" class="no-wrap">morrisjdev</a><br>
+        Metro 4 (Metro UI CSS) &copy; 2012-2019 by <a href="mailto:sergey@pimenov.com.ua" class="no-wrap">Sergey Pimenov</a>
+      </div>
+    </div>
+  </footer>
 </div>

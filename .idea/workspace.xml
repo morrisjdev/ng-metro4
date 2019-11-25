@@ -3,28 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar/calendar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar/calendar.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar/calendar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/calendar/calendar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/checkbox/checkbox.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/checkbox/checkbox.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/checkbox/checkbox.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/checkbox/checkbox.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/date-picker/date-picker.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/date-picker/date-picker.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/date-picker/date-picker.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/date-picker/date-picker.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/file-input/file-input.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/file-input/file-input.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/file-input/file-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/file-input/file-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/radio/radio.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/rating/rating.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/rating/rating.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/rating/rating.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/rating/rating.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/slider/slider.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/slider/slider.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/slider/slider.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/slider/slider.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/switch/switch.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/switch/switch.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/switch/switch.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/switch/switch.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/time-picker/time-picker.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/time-picker/time-picker.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/time-picker/time-picker.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/time-picker/time-picker.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.less" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +232,7 @@
       <workItem from="1572426682854" duration="277000" />
       <workItem from="1572429450261" duration="2213000" />
       <workItem from="1572686478073" duration="207000" />
-      <workItem from="1574680361780" duration="1038000" />
+      <workItem from="1574680361780" duration="1685000" />
     </task>
     <task id="LOCAL-00001" summary="added timepicker&#10;fixed calendar&#10;fixed input">
       <created>1549009089576</created>
@@ -388,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572437395850</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="applied accent colors to object in library directly">
+      <created>1574681496809</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1574681496809</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,6 +391,11 @@
         <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.js.map" />
         <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.js" />
         <option value="$PROJECT_DIR$/../../temp/hello/src/hello/index.d.ts" />
+      </list>
+    </option>
+    <option name="additionalRoots">
+      <list>
+        <option value="$PROJECT_DIR$/dist/ng-metro4" />
       </list>
     </option>
   </component>
@@ -459,6 +457,7 @@
     <MESSAGE value="updated docs for dialog service" />
     <MESSAGE value="fixed schematics and build" />
     <MESSAGE value="fixed doc for panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed doc for panel" />
+    <MESSAGE value="applied accent colors to object in library directly" />
+    <option name="LAST_COMMIT_MESSAGE" value="applied accent colors to object in library directly" />
   </component>
 </project>

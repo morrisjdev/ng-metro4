@@ -12,6 +12,8 @@ import {AppComponent} from './app.component';
 import {HighlightModule} from 'ngx-highlightjs';
 import {SharedModule} from './shared/shared.module';
 import {NgMetro4Module} from 'ng-metro4';
+import {LegalDisclosureComponent} from './shared/legal-disclosure/legal-disclosure.component';
+import {PrivacyComponent} from './shared/privacy/privacy.component';
 
 export function hljsLanguages() {
   return [
@@ -26,6 +28,8 @@ export function hljsLanguages() {
 @NgModule({
   declarations: [
     AppComponent,
+    LegalDisclosureComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,
