@@ -161,8 +161,8 @@
           "options": {
             "tsConfig": "projects/ng-metro4/tsconfig.lib.json",
             "project": "projects/ng-metro4/ng-package.json"
-          }
-        ,          "configurations": {
+          },
+          "configurations": {
             "production": {
               "tsConfig": "projects/ng-metro4/tsconfig.lib.prod.json"
             }

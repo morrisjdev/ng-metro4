@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NEVER, Subscription, timer} from 'rxjs';
+import {Subscription, timer} from 'rxjs';
 
 @Component({
   selector: 'app-loading',

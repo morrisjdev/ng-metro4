@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {DialogService, M4FormGroup, M4FormControl, InputComponent, FileInputComponent} from 'ng-metro4';
+import {DialogService, M4FormGroup, M4FormControl, FileInputComponent} from 'ng-metro4';
 import {last, takeUntil} from 'rxjs/operators';
 import {Subscription, timer} from 'rxjs';
 import {Validators} from '@angular/forms';

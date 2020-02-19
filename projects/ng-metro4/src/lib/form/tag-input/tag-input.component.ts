@@ -3,7 +3,6 @@ import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {ControlBase} from '../control-base';
 import {TypeAlias} from '../../helper/type-alias';
 import {ObjectHelper} from '../../helper/object-helper';
-import {asapScheduler} from 'rxjs';
 
 declare var $: any;
 

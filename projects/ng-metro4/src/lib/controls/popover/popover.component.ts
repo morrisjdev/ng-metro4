@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, ContentChild, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, ContentChild, ElementRef, ViewChild} from '@angular/core';
 import {PopoverDirective} from './popover.directive';
 import {asapScheduler} from 'rxjs';
 

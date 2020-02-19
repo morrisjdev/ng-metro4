@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivityService, ActivityType} from 'ng-metro4';
 
 @Component({

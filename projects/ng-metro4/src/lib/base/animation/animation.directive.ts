@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
+import {Directive, ElementRef, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {AnimationType} from '../../helper/types';
 
 declare var $: any;

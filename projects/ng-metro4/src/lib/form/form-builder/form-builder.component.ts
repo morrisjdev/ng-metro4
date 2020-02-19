@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormStyle, M4FormGroup} from '../m4-form-group';
 import {M4FormControl} from '../m4-form-control';
 import {AbstractControl} from '@angular/forms';
-import {ControlBase} from '../control-base';
 
 @Component({
   selector: 'm4-form-builder',

@@ -1,4 +1,4 @@
-import {AfterContentInit, AfterViewInit, Component} from '@angular/core';
+import {Component} from '@angular/core';
 import {NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/router';
 import {debounceTime, filter} from 'rxjs/operators';
 import {ActivityService} from 'ng-metro4';

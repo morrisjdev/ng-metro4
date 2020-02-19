@@ -1,5 +1,5 @@
 import {ControlValueAccessor} from '@angular/forms';
-import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, OnChanges, OnDestroy, Optional, Output, SimpleChange, SimpleChanges, Directive } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnChanges, OnDestroy, Optional, SimpleChange, SimpleChanges, Directive } from '@angular/core';
 import {ObjectHelper} from '../helper/object-helper';
 import {asapScheduler} from 'rxjs';
 import {AttributeHelper} from '../helper/attribute-helper';

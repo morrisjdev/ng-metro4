@@ -1,5 +1,3 @@
-import {InputComponent} from '../form/input/input.component';
-
 export const observerClassExceptions = ['ng-valid', 'ng-dirty', 'ng-touched', 'ng-untouched', 'ng-pristine', 'ng-invalid'];
 
 export const iconDictionary = {

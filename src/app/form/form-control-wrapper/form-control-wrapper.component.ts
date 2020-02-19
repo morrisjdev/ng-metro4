@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {M4FormGroup} from 'ng-metro4';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {CustomGroupValidator} from '../form/custom-group-validator';
 
 @Component({
   selector: 'app-form-control-wrapper',

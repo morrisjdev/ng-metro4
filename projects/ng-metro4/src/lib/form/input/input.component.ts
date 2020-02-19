@@ -4,15 +4,13 @@ import {
   ElementRef,
   EventEmitter,
   Input,
-  Output, SimpleChange,
-  SimpleChanges,
-  ViewChild,
+  Output, ViewChild,
   ViewEncapsulation
 } from '@angular/core';
 import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
-import {asapScheduler, Observable} from 'rxjs';
+import {asapScheduler} from 'rxjs';
 import {ObjectHelper} from '../../helper/object-helper';
 import {InputType} from '../../helper/types';
 

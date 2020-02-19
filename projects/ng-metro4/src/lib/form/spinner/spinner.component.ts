@@ -3,7 +3,7 @@ import {ControlBase} from '../control-base';
 import {DefaultValueAccessor} from '../../helper/default-value-accessor';
 import {TypeAlias} from '../../helper/type-alias';
 import {asapScheduler} from 'rxjs';
-import {PositionHorizontalType, SpinnerButtonPositionType} from '../../helper/types';
+import {SpinnerButtonPositionType} from '../../helper/types';
 import {ObjectHelper} from '../../helper/object-helper';
 
 declare var $: any;
