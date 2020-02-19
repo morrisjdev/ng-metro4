@@ -1,7 +1,7 @@
 {
   "name": "ng-metro4",
   "description": "Angular components for Metro4 UI library in modern ui style.",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "peerDependencies": {
     "@angular/common": "~8.1.0",
     "@angular/core": "~8.1.0",
