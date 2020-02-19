@@ -17,7 +17,7 @@ export class HotkeyDirective implements OnInit, OnChanges, OnDestroy {
     this.unregister();
     this.previousKey = this.hotkey;
 
-    $(document).hotkey(this.hotkey, () => {
+    $('body').hotkey(this.hotkey, () => {
       this.hotkeyClick.emit();
     });
   }
@@ -32,7 +32,7 @@ export class HotkeyDirective implements OnInit, OnChanges, OnDestroy {
 
   private unregister() {
     if (this.previousKey) {
-      $(document).off('keyup', null, {ns: 'hotkey-method-' + this.previousKey});
+      $('body').off('keyup', null, {ns: 'hotkey-method-' + this.previousKey});
     }
   }
 
