@@ -3,3 +3,5 @@
 <m4-input prepend="Custom input" [(ngModel)]="model" (ngModelChange)="dialogDataEmitter.emit($event)"></m4-input>
 
 {{ model | json }}
+
+<button m4-button (click)="showDialog()">Show dialog</button>

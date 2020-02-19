@@ -273,7 +273,7 @@ export class DialogService {
    * @param cls Custom dialog class (accent, size etc.)
    * @param closeBtnCls Custom close button class
    */
-  public show<TOutput = null>(component: new () => any, dialogData?: any, title?: string, closeBtnText?: string, cls?: string, closeBtnCls?: string): Observable<TOutput> {
+  public show<TOutput = null>(component: new (...args: any[]) => any, dialogData?: any, title?: string, closeBtnText?: string, cls?: string, closeBtnCls?: string): Observable<TOutput> {
     const componentRef: ComponentRef<any> = this.componentFactoryResolver.resolveComponentFactory(component).create(this.injector);
 
     if (!!dialogData) {
