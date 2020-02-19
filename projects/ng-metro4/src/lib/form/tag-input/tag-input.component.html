@@ -1,9 +1,17 @@
 <input type="text" #input
 
+       [readonly]="readonly"
+
        [attr.data-random-color]="randomColor"
        [attr.data-max-tags]="maxTags"
        [attr.data-tag-trigger]="tagTrigger?.join(',')"
+       [attr.data-backspace]="backspace"
+       [attr.data-clear-button]="clearButton"
+       [attr.data-clear-button-icon]="clearButtonIcon"
 
        [attr.data-cls-tag]="clsTag"
        [attr.data-cls-tag-title]="clsTagTitle"
-       [attr.data-cls-tag-remover]="clsTagRemover">
+       [attr.data-cls-tag-remover]="clsTagRemover"
+       [attr.data-cls-component]="clsComponent"
+       [attr.data-cls-input]="clsInput"
+       [attr.data-cls-clear-button]="clsClearButton">

@@ -17,11 +17,18 @@ declare var $: any;
 export class TagInputComponent extends ControlBase<string[]> {
   @Input('random-color') randomColor: boolean;
   @Input('max-tags') maxTags: number;
-  @Input('tag-trigger') tagTrigger: number[];
+  @Input('tag-trigger') tagTrigger: string[];
+  @Input('clear-button') clearButton = true;
+  @Input('clear-button-icon') clearButtonIcon: string;
+  @Input('readonly') readonly = false;
+  @Input('backspace') backspace = true;
 
   @Input('cls-tag') clsTag: string;
   @Input('cls-tag-title') clsTagTitle: string;
   @Input('cls-tag-remover') clsTagRemover: string;
+  @Input('cls-clear-button') clsClearButton: string;
+  @Input('cls-component') clsComponent: string;
+  @Input('cls-input') clsInput: string;
 
   @ViewChild('input', { static: true }) private input: ElementRef;
   private tagInput: any;

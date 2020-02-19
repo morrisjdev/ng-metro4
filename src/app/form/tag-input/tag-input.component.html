@@ -1,10 +1,11 @@
 <h1>Tag input</h1>
 <a href="https://metroui.org.ua/tag-input.html" target="_blank">Tag input in Metro 4 docs</a>
 
-<app-doc-component header="Playground" [values]="{ model: [ 'first value', 'second' ], trigger: ['13', '188'] }" [showModel]="true">
+<app-doc-component header="Playground" [values]="{ model: [ 'first value', 'second' ], trigger: ['Enter', 'Space'], clearBtn: true, backspace: true }" [showModel]="true">
   <![CDATA[
   <m4-tag-input [(ngModel)]="model" [disabled]="disabled" [max-tags]="limit" [random-color]="randomColor"\l
-                \t\t [class]="accent" [tag-trigger]="trigger"></m4-tag-input>
+                \t\t [class]="accent" [tag-trigger]="trigger" [clear-button]="clearBtn" [clear-button-icon]="clearBtnIcon"\l
+                \t\t [readonly]="readonly" [backspace]="backspace"></m4-tag-input>
 
   \i
   <hr>
@@ -15,7 +16,7 @@
     </div>
     <div class="cell-md-4">
       <m4-select prepend="Trigger"
-                 [options]="{ '13': 'Enter', '188': 'Comma', '32': 'Space' }"
+                 [options]="{ 'Enter': 'Enter', 'Command': 'Comma', 'Space': 'Space' }"
                  [(ngModel)]="trigger" [multiple]="true"></m4-select>
     </div>
     <div class="cell-md-4">
@@ -23,10 +24,16 @@
                  [options]="accentDictionary"
                  [(ngModel)]="accent"></m4-select>
     </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Clear icon" [(ngModel)]="clearBtnIcon"></m4-input>
+    </div>
 
     <div class="cell-12">
       <m4-checkbox [(ngModel)]="disabled" caption="Disabled"></m4-checkbox>
       <m4-checkbox [(ngModel)]="randomColor" caption="Random color"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="clearBtn" caption="Show clear button"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="readonly" caption="Readonly"></m4-checkbox>
+      <m4-checkbox [(ngModel)]="backspace" caption="Backspace"></m4-checkbox>
     </div>
   </div>
   ]]>
@@ -52,6 +59,6 @@
 
 <app-doc-component header="Trigger" [values]="{ model: ['first value', 'second'] }" [showModel]="true">
   <![CDATA[
-  <m4-tag-input [(ngModel)]="model" [tag-trigger]="[13]"></m4-tag-input>
+  <m4-tag-input [(ngModel)]="model" [tag-trigger]="['Enter']"></m4-tag-input>
   ]]>
 </app-doc-component>

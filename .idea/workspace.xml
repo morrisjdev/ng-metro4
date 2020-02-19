@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/azureSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/ng-metro4-forms.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/ng-metro4-forms.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/select/select.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/string-helper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/helper/string-helper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/select/select.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/select/select.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/select/select.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/select/select.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/form/tag-input/tag-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/tag-input/tag-input.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -100,7 +106,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Publish Doc">
+  <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Run" type="CompoundRunConfigurationType">
       <toRun name="Angular CLI Server" type="js.build_tools.npm" />
       <toRun name="Build" type="js.build_tools.npm" />
@@ -224,7 +230,8 @@
       <workItem from="1572426682854" duration="277000" />
       <workItem from="1572429450261" duration="2213000" />
       <workItem from="1572686478073" duration="207000" />
-      <workItem from="1574680361780" duration="12390000" />
+      <workItem from="1574680361780" duration="13002000" />
+      <workItem from="1582127374872" duration="2245000" />
     </task>
     <task id="LOCAL-00001" summary="added timepicker&#10;fixed calendar&#10;fixed input">
       <created>1549009089576</created>
@@ -401,7 +408,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574688427852</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="added support for complex objects in select">
+      <created>1574693590376</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1574693590376</updated>
+    </task>
+    <task id="LOCAL-00027" summary="added support for complex objects in select">
+      <created>1574693636748</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1574693636748</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +478,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added timepicker&#10;fixed calendar&#10;fixed input" />
     <MESSAGE value="added new components" />
     <MESSAGE value="added panel, popover, ripple, dialog&#10;demo navigation" />
     <MESSAGE value="updated readme and public api.ts" />
@@ -482,6 +502,7 @@
     <MESSAGE value="added icon&#10;added pwa support" />
     <MESSAGE value="updated icon" />
     <MESSAGE value="added readonly for form components" />
-    <option name="LAST_COMMIT_MESSAGE" value="added readonly for form components" />
+    <MESSAGE value="added support for complex objects in select" />
+    <option name="LAST_COMMIT_MESSAGE" value="added support for complex objects in select" />
   </component>
 </project>
