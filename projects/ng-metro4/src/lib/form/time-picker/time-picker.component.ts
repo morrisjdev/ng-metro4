@@ -16,6 +16,7 @@ declare var $: any;
   encapsulation: ViewEncapsulation.None
 })
 export class TimePickerComponent extends ControlBase<moment.Duration> {
+  @Input('class') class: string;
   @Input('hours') hours: boolean;
   @Input('minutes') minutes: boolean;
   @Input('seconds') seconds: boolean;

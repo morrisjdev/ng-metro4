@@ -17,6 +17,7 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RatingComponent extends ControlBase<string|number> {
+  @Input('class') class: string;
   @Input('stars') stars: number;
   @Input('round-func') roundFunc: RoundTypeType;
   @Input('values') values: (string|number)[];

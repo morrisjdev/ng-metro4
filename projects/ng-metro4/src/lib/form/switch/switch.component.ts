@@ -16,6 +16,7 @@ declare var $: any;
   encapsulation: ViewEncapsulation.None
 })
 export class SwitchComponent extends ControlBase<boolean> {
+  @Input('class') class: string;
   @Input('material') material: boolean;
   @Input('readonly') readonly = false;
   @Input('caption') caption: string;

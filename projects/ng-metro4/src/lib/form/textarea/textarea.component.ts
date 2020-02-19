@@ -15,6 +15,7 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TextareaComponent extends ControlBase<string> {
+  @Input('class') class: string;
   @Input('placeholder') placeholder = '';
   @Input('readonly') readonly = false;
   @Input('default-value') defaultValue: string;

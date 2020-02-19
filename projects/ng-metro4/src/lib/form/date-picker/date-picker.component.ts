@@ -17,6 +17,7 @@ declare var $: any;
   encapsulation: ViewEncapsulation.None
 })
 export class DatePickerComponent extends ControlBase<moment.Moment> {
+  @Input('class') class: string;
   @Input('month') month: boolean;
   @Input('day') day: boolean;
   @Input('year') year: boolean;

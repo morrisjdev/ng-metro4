@@ -16,6 +16,7 @@ declare var $: any;
   encapsulation: ViewEncapsulation.None
 })
 export class CheckboxComponent extends ControlBase<boolean> {
+  @Input('class') class: string;
   @Input('value') value: any;
 
   @Input('readonly') readonly = false;

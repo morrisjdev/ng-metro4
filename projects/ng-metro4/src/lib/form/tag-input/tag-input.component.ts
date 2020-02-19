@@ -15,6 +15,7 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TagInputComponent extends ControlBase<string[]> {
+  @Input('class') class: string;
   @Input('random-color') randomColor: boolean;
   @Input('max-tags') maxTags: number;
   @Input('tag-trigger') tagTrigger: string[];
