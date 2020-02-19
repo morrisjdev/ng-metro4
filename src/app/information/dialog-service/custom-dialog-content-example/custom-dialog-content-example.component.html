@@ -1,0 +1,5 @@
+<h3>This is an example for a custom component that is rendered in a dialog</h3>
+
+<m4-input prepend="Custom input" [(ngModel)]="model" (ngModelChange)="dialogDataEmitter.emit($event)"></m4-input>
+
+{{ model | json }}
