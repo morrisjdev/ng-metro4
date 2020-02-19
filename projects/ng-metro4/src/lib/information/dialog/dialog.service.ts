@@ -1,10 +1,9 @@
 import {ApplicationRef, ComponentFactoryResolver, ComponentRef, EmbeddedViewRef, Injectable, Injector} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
+import {Observable, Subject, Subscription} from 'rxjs';
 import {finalize, startWith} from 'rxjs/operators';
 import {FormBuilderComponent} from '../../form/form-builder/form-builder.component';
 import {M4FormGroup} from '../../form/m4-form-group';
-import {M4FormControl} from '../../form/m4-form-control';
-import {InputComponent} from '../../form/input/input.component';
+import {M4DialogDataEmitter, M4DialogDataInput} from './dialog-interfaces';
 
 declare var $: any;
 
@@ -261,6 +260,65 @@ export class DialogService {
         this.close(promptObj);
         componentRef.destroy();
         formStateSubscription.unsubscribe();
+      })
+    );
+  }
+
+  /**
+   * Show a dialog that contains a component
+   * @param component The component class to render (add to entryComponents of a module)
+   * @param dialogData Data to pass to the new component instance
+   * @param title The title of the dialog
+   * @param closeBtnText Custom text for the close button
+   * @param cls Custom dialog class (accent, size etc.)
+   * @param closeBtnCls Custom close button class
+   */
+  public show<TOutput = null>(component: new () => any, dialogData?: any, title?: string, closeBtnText?: string, cls?: string, closeBtnCls?: string): Observable<TOutput> {
+    const componentRef: ComponentRef<any> = this.componentFactoryResolver.resolveComponentFactory(component).create(this.injector);
+
+    if (!!dialogData) {
+      (<M4DialogDataInput<TOutput>>componentRef.instance).dialogDataInput = dialogData;
+    }
+
+    this.appRef.attachView(componentRef.hostView);
+    const domElement = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
+
+    const subject$ = new Subject<TOutput>();
+
+    let dialogDataSubscription: Subscription;
+
+    if (!!(<M4DialogDataEmitter<TOutput>>componentRef.instance).dialogDataEmitter) {
+      dialogDataSubscription = (<M4DialogDataEmitter<TOutput>>componentRef.instance).dialogDataEmitter.subscribe((data) => {
+         subject$.next(data);
+      });
+    }
+
+    const options: DialogOptions = {
+      title: title,
+      content: 'content',
+      actions: [
+        {
+          caption: closeBtnText ? closeBtnText : 'Submit',
+          cls: (closeBtnCls ? closeBtnCls : 'success') + ' submit-btn',
+          onclick: () => {
+            subject$.complete();
+          }
+        }
+      ],
+      clsDialog: cls
+    };
+
+    const dialogObj: any = this.create(options);
+    dialogObj.find('.dialog-content').empty().append(domElement);
+
+    return subject$.asObservable().pipe(
+      finalize(() => {
+        if (dialogDataSubscription) {
+          dialogDataSubscription.unsubscribe();
+        }
+
+        this.close(dialogObj);
+        componentRef.destroy();
       })
     );
   }

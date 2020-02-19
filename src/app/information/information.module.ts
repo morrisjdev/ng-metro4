@@ -8,6 +8,7 @@ import {ToastComponent} from './toast/toast.component';
 import {NotifyComponent} from './notify/notify.component';
 import {DialogComponent} from './dialog/dialog.component';
 import { DialogServiceComponent } from './dialog-service/dialog-service.component';
+import { CustomDialogContentExampleComponent } from './dialog-service/custom-dialog-content-example/custom-dialog-content-example.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,15 @@ import { DialogServiceComponent } from './dialog-service/dialog-service.componen
     NotifyComponent,
     DialogComponent,
     DialogServiceComponent,
+    CustomDialogContentExampleComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     InformationRoutingModule
+  ],
+  entryComponents: [
+    CustomDialogContentExampleComponent
   ]
 })
 export class InformationModule { }

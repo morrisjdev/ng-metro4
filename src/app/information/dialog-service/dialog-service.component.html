@@ -59,6 +59,43 @@
   </div>
 </app-doc-component>
 
+<app-doc-component header="Render component in a dialog" description="You can render any component in a dialog"
+                   [values]="{ dialogService: dialogService, customDialog: customDialog, subscriptions: subscriptions }">
+  <![CDATA[
+  <button m4-button (click)="customDialog()">Show custom dialog</button>
+  ]]>
+  <div lang>
+    <![CDATA[
+    \f:(ts)
+    this.dialogService.show(CustomDialogContentExampleComponent, 'seeded with data', 'Custom dialog', 'Close', 'w-vw-75 alert')\n
+      \t.pipe(last())\n
+      \t.subscribe((data) => alert(data));
+
+    \f:(ts)
+    // Don't forget to add this component to entryComponents\n
+    @Component({\n
+      \tselector: 'app-custom-dialog-content-example',\n
+      \ttemplate: '<h3>This is an example for a custom component that is rendered in a dialog</h3>\n
+        \t\t<m4-input prepend="Custom input" [(ngModel)]="model" (ngModelChange)="dialogDataEmitter.emit($event)"></m4-input>',\n
+      \tstyleUrls: ['./custom-dialog-content-example.component.less']\n
+    })\n
+    export class CustomDialogContentExampleComponent implements OnInit, M4DialogDataEmitter<string>, M4DialogDataInput<string> {\n\n
+
+      \tconstructor() { }\n\n
+
+      \tmodel: string;\n\n
+
+      \tdialogDataEmitter = new EventEmitter<string>();\n
+      \tdialogDataInput: string;\n\n
+
+      \tngOnInit() {\n
+        \t\tthis.model = this.dialogDataInput;\n
+      \t}\n
+    }
+    ]]>
+  </div>
+</app-doc-component>
+
 <app-doc-component header="Form prompt" description="You can create a complex form prompt using the M4FormGroup"
                    [values]="{ dialogService: dialogService, prompt: promptForm }">
   <![CDATA[

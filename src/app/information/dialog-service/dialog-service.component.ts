@@ -1,15 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {DialogService, M4FormGroup, M4FormControl, InputComponent, FileInputComponent} from 'ng-metro4';
-import {takeUntil} from 'rxjs/operators';
-import {timer} from 'rxjs';
+import {last, takeUntil} from 'rxjs/operators';
+import {Subscription, timer} from 'rxjs';
 import {Validators} from '@angular/forms';
+import {CustomDialogContentExampleComponent} from './custom-dialog-content-example/custom-dialog-content-example.component';
 
 @Component({
   selector: 'app-dialog-service',
   templateUrl: './dialog-service.component.html',
   styleUrls: ['./dialog-service.component.less']
 })
-export class DialogServiceComponent implements OnInit {
+export class DialogServiceComponent implements OnInit, OnDestroy {
+
+  private subscriptions: Subscription[] = [];
 
   constructor(public dialogService: DialogService) { }
 
@@ -41,6 +44,12 @@ export class DialogServiceComponent implements OnInit {
       .subscribe((result) => alert(result));
   }
 
+  customDialog() {
+    this.subscriptions.push(this.dialogService.show(CustomDialogContentExampleComponent, 'seeded with data', 'Custom dialog', 'Close', 'w-vw-75 alert')
+      .pipe(last())
+      .subscribe((data) => alert(data)));
+  }
+
   promptForm() {
     const formGroup = new M4FormGroup('prompt', {
       name: new M4FormControl(FileInputComponent, null, [Validators.required], null, { read: 'text' })
@@ -52,5 +61,10 @@ export class DialogServiceComponent implements OnInit {
 
   alertClose() {
     this.dialogService.alert('Alert close', 'Content').pipe(takeUntil(timer(2000))).subscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(s => s.unsubscribe());
+    this.subscriptions = [];
   }
 }

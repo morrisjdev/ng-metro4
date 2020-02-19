@@ -53,6 +53,7 @@ export * from './lib/information/ng-metro4-information.module';
 export * from './lib/information/toast/toast.service';
 export * from './lib/information/notify/notify.service';
 export * from './lib/information/dialog/dialog.service';
+export * from './lib/information/dialog/dialog-interfaces';
 export * from './lib/information/hint/hint.directive';
 export * from './lib/information/dialog/dialog.component';
 

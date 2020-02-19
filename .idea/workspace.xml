@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/not-loading-display.directive.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/not-loading-display.directive.ts" afterDir="false" />
+    <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="added *notLoading to hide element if loading is active">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/loading-display.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/loading-display.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/loading.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/loading.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/ng-metro4-base.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/ng-metro4-base.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/dialog/dialog.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/information/dialog/dialog.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/public_api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/public_api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/base/loading/loading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/loading/loading.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/information/dialog-service/dialog-service.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/dialog-service/dialog-service.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/information/dialog-service/dialog-service.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/dialog-service/dialog-service.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/information/information.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/information/information.module.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +229,7 @@
       <workItem from="1572429450261" duration="2213000" />
       <workItem from="1572686478073" duration="207000" />
       <workItem from="1574680361780" duration="13002000" />
-      <workItem from="1582127374872" duration="3143000" />
+      <workItem from="1582127374872" duration="6673000" />
     </task>
     <task id="LOCAL-00001" summary="added timepicker&#10;fixed calendar&#10;fixed input">
       <created>1549009089576</created>
@@ -429,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582129893932</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="added *notLoading to hide element if loading is active">
+      <created>1582130659650</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1582130659650</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added panel, popover, ripple, dialog&#10;demo navigation" />
     <MESSAGE value="updated readme and public api.ts" />
     <MESSAGE value="migrated to newest version of metro4&#10;removed jquery" />
     <MESSAGE value="fixed dialog" />
@@ -510,6 +514,7 @@
     <MESSAGE value="added readonly for form components" />
     <MESSAGE value="added support for complex objects in select" />
     <MESSAGE value="added new properties to tag input&#10;updated to metro@4.3.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new properties to tag input&#10;updated to metro@4.3.5" />
+    <MESSAGE value="added *notLoading to hide element if loading is active" />
+    <option name="LAST_COMMIT_MESSAGE" value="added *notLoading to hide element if loading is active" />
   </component>
 </project>
