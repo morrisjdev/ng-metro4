@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8587814d-6944-40a1-95fa-9c6f32a1bdfe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/azureSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/not-loading-display.directive.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/not-loading-display.directive.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/form/tag-input/tag-input.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/form/tag-input/tag-input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/form/tag-input/tag-input.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/loading-display.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/loading-display.directive.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/loading.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading/loading.directive.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/ng-metro4-base.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/ng-metro4-base.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ng-metro4/src/public_api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ng-metro4/src/public_api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/base/loading/loading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/base/loading/loading.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +65,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551441071083" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/projects/ng-metro4/src/lib/controls" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/projects/ng-metro4/src/lib/base/loading" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/node_modules/tslint" />
@@ -79,19 +79,19 @@
     <property name="ts.external.directory.path" value="C:\Users\morri\Documents\Projects\productive\ng-metro4\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\mjanatzek\Documents\Projects\private\ng-metro4\projects\ng-metro4\src\lib\controls" />
-      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\lib\helper\mif" />
-      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4" />
-      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\schematics" />
-      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\lib\helper" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\src\assets\mif" />
       <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\src\assets" />
       <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src" />
       <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\lib" />
       <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\lib\base\loading" />
+      <recent name="C:\Users\mjanatzek\Documents\Projects\private\ng-metro4\projects\ng-metro4\src\lib\controls" />
+      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\lib\helper\mif" />
+      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4" />
+      <recent name="C:\Users\morri\Documents\Projects\productive\ng-metro4\projects\ng-metro4\src\schematics" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -231,7 +231,7 @@
       <workItem from="1572429450261" duration="2213000" />
       <workItem from="1572686478073" duration="207000" />
       <workItem from="1574680361780" duration="13002000" />
-      <workItem from="1582127374872" duration="2245000" />
+      <workItem from="1582127374872" duration="3143000" />
     </task>
     <task id="LOCAL-00001" summary="added timepicker&#10;fixed calendar&#10;fixed input">
       <created>1549009089576</created>
@@ -422,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574693636748</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="added new properties to tag input&#10;updated to metro@4.3.5">
+      <created>1582129893932</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1582129893932</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +485,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added new components" />
     <MESSAGE value="added panel, popover, ripple, dialog&#10;demo navigation" />
     <MESSAGE value="updated readme and public api.ts" />
     <MESSAGE value="migrated to newest version of metro4&#10;removed jquery" />
@@ -503,6 +509,7 @@
     <MESSAGE value="updated icon" />
     <MESSAGE value="added readonly for form components" />
     <MESSAGE value="added support for complex objects in select" />
-    <option name="LAST_COMMIT_MESSAGE" value="added support for complex objects in select" />
+    <MESSAGE value="added new properties to tag input&#10;updated to metro@4.3.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new properties to tag input&#10;updated to metro@4.3.5" />
   </component>
 </project>

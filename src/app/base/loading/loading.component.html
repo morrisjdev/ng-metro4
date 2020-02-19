@@ -10,11 +10,13 @@
   <button m4-button (click)="startLoading()" [m4-loading]="loading">\l
     \tStart loading\l
     \t<m4-icon *loading="showSpinner" icon="spinner" m4-animation="spin"></m4-icon>\l
+    \t<m4-icon *notLoading="showCheckmark" icon="checkmark"></m4-icon>\l
   </button>
 
   \i
   <hr>
   <m4-switch caption="Show spinner" [(ngModel)]="showSpinner"></m4-switch>
+  <m4-switch caption="Show checkmark" [(ngModel)]="showCheckmark"></m4-switch>
   ]]>
   <div lang>
     <![CDATA[
@@ -38,7 +40,8 @@
 <div class="remark info">
   The state of the object using <code>m4-loading</code> gets set to disabled if an active subscription is provided.<br>
   When the subscription completes the disabled state is removed<br>
-  When using <code>m4-loading</code> you can use <code>*loading</code> for the children of the object. They will be rendered if the subscription is active.
+  When using <code>m4-loading</code> you can use <code>*loading</code> for the children of the object. They will be rendered if the subscription is active.<br>
+  <code>*notLoading</code> will render the child if the subscription is not set or inactive/completed
 </div>
 
 <div class="remark success">

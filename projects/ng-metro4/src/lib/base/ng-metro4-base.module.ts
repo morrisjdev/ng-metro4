@@ -8,6 +8,7 @@ import { LoadingDisplayDirective } from './loading/loading-display.directive';
 import { AnimationDirective } from './animation/animation.directive';
 import { LetDirective } from './let/let.directive';
 import 'metro4';
+import {NotLoadingDisplayDirective} from './loading/not-loading-display.directive';
 
 const declarations = [
   ButtonDirective,
@@ -15,6 +16,7 @@ const declarations = [
   RippleDirective,
   LoadingDirective,
   LoadingDisplayDirective,
+  NotLoadingDisplayDirective,
   AnimationDirective,
   LetDirective,
 ];

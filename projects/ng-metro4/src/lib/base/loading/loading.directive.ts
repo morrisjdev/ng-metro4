@@ -11,19 +11,19 @@ export class LoadingDirective implements OnInit, OnChanges {
 
   public stateChange = new EventEmitter<boolean>();
 
-  private registeredTerdownLogic: Subscription;
+  private registeredTeardownLogic: Subscription;
 
   constructor(private element: ElementRef, private renderer: Renderer2) { }
 
   private createElement() {
-    if (this.registeredTerdownLogic) {
-      this.registeredTerdownLogic.unsubscribe();
+    if (this.registeredTeardownLogic) {
+      this.registeredTeardownLogic.unsubscribe();
     }
 
     if (this.subscription) {
       this.setDisabled(!this.subscription.closed);
 
-      this.registeredTerdownLogic = this.subscription.add(() => {
+      this.registeredTeardownLogic = this.subscription.add(() => {
         this.setDisabled(!this.subscription.closed);
       });
     } else {

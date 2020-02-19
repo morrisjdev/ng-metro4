@@ -1,17 +1,17 @@
-import {Directive, ElementRef, Input, OnDestroy, TemplateRef, ViewContainerRef} from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, Input, OnDestroy, TemplateRef, ViewContainerRef} from '@angular/core';
 import {LoadingDirective} from './loading.directive';
 import {Subscription} from 'rxjs';
 
 @Directive({
-  selector: '[loading]'
+  selector: '[notLoading]'
 })
-export class LoadingDisplayDirective implements OnDestroy {
+export class NotLoadingDisplayDirective implements OnDestroy {
   private subscription: Subscription;
   private loadingState: boolean;
   private conditionValue: any;
 
   @Input()
-  set loading(val) {
+  set notLoading(val) {
     this.conditionValue = val;
     this.updateView();
   }
@@ -29,7 +29,7 @@ export class LoadingDisplayDirective implements OnDestroy {
   private updateView() {
     this.viewContainer.clear();
 
-    if (this.loadingState || this.conditionValue) {
+    if (!this.loadingState || this.conditionValue) {
       this.viewContainer.createEmbeddedView(this.templateRef);
     }
   }
