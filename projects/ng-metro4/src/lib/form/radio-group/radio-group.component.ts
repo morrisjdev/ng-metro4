@@ -26,7 +26,7 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RadioGroupComponent extends ControlBase<any> {
-  @Input('class') class: string;
+
   @Input() options: { [title: string]: any };
 
   @ContentChildren(forwardRef(() => RadioComponent), { descendants: true }) radiosContent: QueryList<RadioComponent>;

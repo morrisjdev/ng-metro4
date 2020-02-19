@@ -266,7 +266,7 @@ export class DialogService {
 
   /**
    * Show a dialog that contains a component
-   * @param component The component class to render (add to entryComponents of a module)
+   * @param component The component class to render
    * @param dialogData Data to pass to the new component instance
    * @param title The title of the dialog
    * @param closeBtnText Custom text for the close button

@@ -6,11 +6,13 @@ export * from './lib/ng-metro4.module';
 
 export * from './lib/base/ng-metro4-base.module';
 export * from './lib/base/icon/icon.component';
+export * from './lib/base/let/let.directive';
 export * from './lib/base/button/button.directive';
 export * from './lib/base/ripple/ripple.directive';
 export * from './lib/base/loading/loading.directive';
 export * from './lib/base/loading/loading-display.directive';
 export * from './lib/base/loading/not-loading-display.directive';
+export * from './lib/base/animation/animation.directive';
 
 export * from './lib/form/ng-metro4-forms.module';
 export * from './lib/form/control-base';
@@ -35,11 +37,14 @@ export * from './lib/form/textarea/textarea.component';
 export * from './lib/form/time-picker/time-picker.component';
 export * from './lib/form/form-control-wrapper/form-control-wrapper.component';
 export * from './lib/form/form-wrapper/form-wrapper.component';
+export * from './lib/form/dynamic-form-control/dynamic-form-control.component';
+export * from './lib/form/form-builder/form-builder.component';
 export * from './lib/form/m4-form-group';
 export * from './lib/form/m4-form-control';
 
 export * from './lib/controls/ng-metro4-controls.module';
 export * from './lib/controls/activity/activity.service';
+export * from './lib/controls/activity/activity.component';
 export * from './lib/controls/donut/donut.component';
 export * from './lib/controls/gravatar/gravatar.component';
 export * from './lib/controls/panel/panel.component';

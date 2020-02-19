@@ -22,7 +22,7 @@ export interface Option {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectComponent extends ControlBase<object|object[]> implements OnChanges {
-  @Input('class') class: string;
+
   @Input('options') options: { [key: string]: (string | { [key: string]: string }) } |
     (Option | { groupName: string, options: Option[] })[];
   @Input('multiple') multiple = false;

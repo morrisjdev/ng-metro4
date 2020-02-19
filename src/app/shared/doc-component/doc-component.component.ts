@@ -1,3 +1,4 @@
+import '@angular/compiler';
 import {
   Compiler,
   Component,
@@ -94,12 +95,7 @@ export class DocComponentComponent implements OnInit, OnChanges {
           .split('\\t').join('  ')).join('\n')
         .split('\\i').filter((v, i) => i % 2 === 0).join('');
 
-      const metadata = {
-        selector: `doc-runtime-component`,
-        template: html
-      };
-
-      const factory = this.createComponentFactorySync(this.compiler, metadata, null);
+      const factory = this.createComponentFactorySync(this.compiler, html);
 
       if (this.componentRef) {
         this.componentRef.destroy();
@@ -119,10 +115,10 @@ export class DocComponentComponent implements OnInit, OnChanges {
     this.compileTemplate();
   }
 
-  private createComponentFactorySync(compiler: Compiler, metadata: Component, componentClass: any): ComponentFactory<any> {
+  private createComponentFactorySync(compiler: Compiler, template: string): ComponentFactory<any> {
     const inputValues = this.values;
 
-    const cmpClass = componentClass || class RuntimeComponent {
+    class RuntimeComponent {
       buttonShapeDictionary = buttonShapeDictionary;
       buttonSpecialDictionary = buttonSpecialDictionary;
       iconDictionary = iconDictionary;
@@ -154,16 +150,20 @@ export class DocComponentComponent implements OnInit, OnChanges {
           });
         }
       }
-    };
-    const decoratedCmp = Component(metadata)(cmpClass);
+    }
+    const decoratedComponent = Component({
+      selector: 'doc-runtime-component',
+      template: template
+    })(RuntimeComponent);
 
-    @NgModule({
-      imports: [CommonModule, NgMetro4Module, FormsModule, ReactiveFormsModule],
-      declarations: [decoratedCmp]
-    })
     class RuntimeComponentModule { }
 
-    const module: ModuleWithComponentFactories<any> = compiler.compileModuleAndAllComponentsSync(RuntimeComponentModule);
-    return module.componentFactories.find(f => f.componentType === decoratedCmp);
+    const decoratedModule = NgModule({
+      imports: [CommonModule, NgMetro4Module, FormsModule, ReactiveFormsModule],
+      declarations: [decoratedComponent]
+    })(RuntimeComponentModule);
+
+    const module: ModuleWithComponentFactories<any> = compiler.compileModuleAndAllComponentsSync(decoratedModule);
+    return module.componentFactories.find(f => f.componentType === decoratedComponent);
   }
 }

@@ -18,7 +18,7 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalendarPickerComponent extends ControlBase<moment.Moment> {
-  @Input('class') class: string;
+
   @Input('calendar-wide') calendarWide: boolean;
   @Input('calendar-wide-point') calendarWidePoint: WidePointType;
   @Input('dialog-mode') dialogMode: boolean;

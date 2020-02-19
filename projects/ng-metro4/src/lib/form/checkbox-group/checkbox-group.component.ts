@@ -23,7 +23,7 @@ import {asapScheduler} from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxGroupComponent extends ControlBase<any[]> {
-  @Input('class') class: string;
+
   @Input() readonly = false;
   @Input() options: { [title: string]: any };
 

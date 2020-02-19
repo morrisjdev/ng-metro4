@@ -16,7 +16,7 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MaterialInputComponent extends ControlBase<string> {
-  @Input('class') class: string;
+
   @Input('type') type: InputType = 'text';
   @Input('placeholder') placeholder = '';
   @Input('readonly') readonly = false;

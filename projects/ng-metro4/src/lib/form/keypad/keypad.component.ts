@@ -16,7 +16,7 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class KeypadComponent extends ControlBase<string|number> {
-  @Input('class') class: string;
+
   @Input('type') type: InputType = 'text';
   @Input('key-size') keySize: number;
   @Input('keys') keys: string[];

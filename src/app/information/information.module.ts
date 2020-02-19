@@ -23,9 +23,6 @@ import { CustomDialogContentExampleComponent } from './dialog-service/custom-dia
     CommonModule,
     SharedModule,
     InformationRoutingModule
-  ],
-  entryComponents: [
-    CustomDialogContentExampleComponent
   ]
 })
 export class InformationModule { }

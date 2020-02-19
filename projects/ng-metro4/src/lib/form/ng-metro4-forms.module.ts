@@ -81,9 +81,6 @@ const declarations = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule
-  ],
-  entryComponents: [
-    ...declarations
   ]
 })
 export class NgMetro4FormsModule { }

@@ -16,7 +16,7 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpinnerComponent extends ControlBase<number> {
-  @Input('class') class: string;
+
   @Input('step') step = 1;
   @Input('plus-icon') plusIcon: string;
   @Input('minus-icon') minusIcon: string;

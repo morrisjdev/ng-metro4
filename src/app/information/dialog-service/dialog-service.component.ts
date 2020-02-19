@@ -12,7 +12,7 @@ import {CustomDialogContentExampleComponent} from './custom-dialog-content-examp
 })
 export class DialogServiceComponent implements OnInit, OnDestroy {
 
-  private subscriptions: Subscription[] = [];
+  public subscriptions: Subscription[] = [];
 
   constructor(public dialogService: DialogService) { }
 

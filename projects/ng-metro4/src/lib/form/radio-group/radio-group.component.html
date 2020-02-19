@@ -1,6 +1,6 @@
 <ng-container *ngIf="options; else noOptions">
   <m4-radio *ngFor="let option of options | objectKeys" [value]="options[option]"
-            [caption]="option" [name]="name" [class]="class"></m4-radio>
+            [caption]="option" [name]="name"></m4-radio>
 </ng-container>
 <ng-template #noOptions>
   <ng-content></ng-content>

@@ -19,7 +19,7 @@ declare var $: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalendarComponent extends ControlBase<moment.Moment|moment.Moment[]> {
-  @Input('class') class: string;
+
   @Input('years-before') yearsBefore: number;
   @Input('years-after') yearsAfter: number;
   @Input('show') show: moment.Moment;

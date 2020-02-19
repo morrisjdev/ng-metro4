@@ -16,7 +16,7 @@ declare var $: any;
   encapsulation: ViewEncapsulation.None
 })
 export class SliderComponent extends ControlBase<number> {
-  @Input('class') class: string;
+
   @Input('min') min: number;
   @Input('max') max: number;
   @Input('show-min-max') showMinMax: boolean;

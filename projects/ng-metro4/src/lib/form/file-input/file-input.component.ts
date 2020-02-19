@@ -21,7 +21,7 @@ export interface FileEntry {
   encapsulation: ViewEncapsulation.None
 })
 export class FileInputComponent extends ControlBase<File | File[] | FileEntry | FileEntry[]> {
-  @Input('class') class: string;
+
   @Input('multiple') multiple = false;
   @Input('accept') accept = '';
   @Input('read') read: FileReadModeType = '';

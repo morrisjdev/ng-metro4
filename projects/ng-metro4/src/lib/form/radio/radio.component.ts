@@ -17,7 +17,7 @@ declare var $: any;
   encapsulation: ViewEncapsulation.None
 })
 export class RadioComponent extends ControlBase<any> {
-  @Input('class') class: string;
+
   @Input('name') name: string;
   @Input('value') value: any;
 

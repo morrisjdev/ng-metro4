@@ -40,7 +40,7 @@ export class FormControlWrapperComponent implements AfterContentInit {
     const formControlNameDirective = directives[controlIndex];
 
     this.marginTop = controlIndex > 0;
-    this.formControlName = formControlNameDirective.name;
+    this.formControlName = <string>formControlNameDirective.name;
     this.formGroup = <M4FormGroup>this.controlContainer.control;
     this.formName = this.formGroup.name;
     this.formPath = `form.${this.formName}.`;
