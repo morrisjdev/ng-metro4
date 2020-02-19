@@ -288,9 +288,12 @@ export class DialogService {
     let dialogDataSubscription: Subscription;
 
     if (!!(<M4DialogDataEmitter<TOutput>>componentRef.instance).dialogDataEmitter) {
-      dialogDataSubscription = (<M4DialogDataEmitter<TOutput>>componentRef.instance).dialogDataEmitter.subscribe((data) => {
-         subject$.next(data);
-      });
+      dialogDataSubscription = (<M4DialogDataEmitter<TOutput>>componentRef.instance).dialogDataEmitter
+        .pipe(finalize(() => {
+          subject$.complete();
+        })).subscribe((data) => {
+          subject$.next(data);
+        });
     }
 
     const options: DialogOptions = {
