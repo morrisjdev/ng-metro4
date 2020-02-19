@@ -12,7 +12,7 @@
     "build-schematics": "tsc -p projects/ng-metro4/tsconfig.schematics.json --outDir dist/ng-metro4/schematics && cpx dist/ng-metro4/schematics/src/schematics/** dist/ng-metro4/schematics && cpx projects/ng-metro4/src/schematics/**/{collection.json,schema.json,files/**} dist/ng-metro4/schematics",
     "build-lib": "npm run build -- ng-metro4 --prod && npm run build-schematics && cpx ./README.md ./dist/ng-metro4",
     "publish-lib": "npm run build-lib && cd ./dist/ng-metro4 && npm publish",
-    "publish-doc": "npm run build -- ng-metro4 && ng run metro4-demo:deploy"
+    "publish-doc": "ng run metro4-demo:deploy"
   },
   "private": true,
   "dependencies": {
