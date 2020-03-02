@@ -25,6 +25,10 @@ ng add ng-metro4
 Add NgMetro4Module to your imports:
 
 ````
+import { NgMetro4Module } from 'ng-metro4';
+
+````
+
 imports: [
   BrowserModule,
   FormsModule,
