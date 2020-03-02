@@ -18,7 +18,7 @@ ng-metro4 on npm:
 
 ````
 ng add ng-metro4
-
+````
 
 ### Import module:
 
