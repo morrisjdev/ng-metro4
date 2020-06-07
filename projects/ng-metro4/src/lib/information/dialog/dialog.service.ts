@@ -9,7 +9,7 @@ declare var $: any;
 
 export interface DialogOptions {
   title?: string;
-  content?: string;
+  content?: string|any;
   actions?: { caption: string, cls: string, onclick: () => void }[];
   actionsAlign?: 'left'|'right';
   defaultAction?: boolean;
@@ -298,7 +298,7 @@ export class DialogService {
 
     const options: DialogOptions = {
       title: title,
-      content: 'content',
+      content: $(domElement),
       actions: [
         {
           caption: closeBtnText ? closeBtnText : 'Submit',
@@ -312,7 +312,6 @@ export class DialogService {
     };
 
     const dialogObj: any = this.create(options);
-    dialogObj.find('.dialog-content').empty().append(domElement);
 
     return subject$.asObservable().pipe(
       finalize(() => {
