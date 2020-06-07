@@ -28,6 +28,7 @@ export class FileInputComponent extends ControlBase<File | File[] | FileEntry | 
 
   @Input('prepend') prepend: string;
   @Input('button-title') buttonTitle: string;
+  @Input('info-text') infoText: string;
   @Input('drop') drop = false;
 
   @Input('cls-component') clsComponent: string;
@@ -54,6 +55,17 @@ export class FileInputComponent extends ControlBase<File | File[] | FileEntry | 
 
       this.fileInput = this.clonedElement.file().data('file');
 
+      if (this.drop) {
+        if (this.buttonTitle) {
+          const captionElement = this.clonedElement.closest('label.drop-zone').find('span.caption');
+          captionElement.html(this.buttonTitle);
+        }
+
+        if (this.infoText) {
+          this.updateInfoText();
+        }
+      }
+
       this.fileInput.options.onSelect = (files) => {
         if (this.multiple) {
           const result: File[] = [];
@@ -73,6 +85,10 @@ export class FileInputComponent extends ControlBase<File | File[] | FileEntry | 
           } else {
             this.changeValue(files[0]);
           }
+        }
+
+        if (this.drop && this.infoText) {
+          this.updateInfoText();
         }
       };
 
@@ -169,6 +185,15 @@ export class FileInputComponent extends ControlBase<File | File[] | FileEntry | 
         target.addClass(cls);
       });
     }
+  }
+
+  private updateInfoText() {
+    const infoTextContent = this.infoText
+      .split('{0}')
+      .join(this.innerValue instanceof Array ? `${this.innerValue.length}` : this.innerValue ? '1' : '0');
+
+    const infoTextElement = this.clonedElement.closest('label.drop-zone').find('span.files');
+    infoTextElement.html(infoTextContent);
   }
 
 }

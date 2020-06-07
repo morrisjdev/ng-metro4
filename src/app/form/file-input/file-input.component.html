@@ -4,7 +4,7 @@
 <app-doc-component header="Playground" [values]="{ }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model" [disabled]="disabled" [class]="accent" [multiple]="multiple" [prepend]="prepend"\l
-                 \t\t [button-title]="btnTitle" [drop]="drop" [read]="read"></m4-file-input>
+                 \t\t [button-title]="btnTitle" [drop]="drop" [read]="read" [info-text]="infoText"></m4-file-input>
 
   \i
   <hr>
@@ -15,6 +15,9 @@
     </div>
     <div class="cell-md-4">
       <m4-input prepend="Button title" [(ngModel)]="btnTitle"></m4-input>
+    </div>
+    <div class="cell-md-4">
+      <m4-input prepend="Info text" [(ngModel)]="infoText"></m4-input>
     </div>
     <div class="cell-md-4">
       <m4-select prepend="Accent class"
@@ -64,7 +67,14 @@
 <app-doc-component header="Button title" [values]="{ model: null }" [showModel]="true">
   <![CDATA[
   <m4-file-input [(ngModel)]="model" button-title="Custom title"></m4-file-input>\n
-  <m4-file-input [(ngModel)]="model" button-title="<span class='mif-folder'></span>"></m4-file-input>
+  <m4-file-input [(ngModel)]="model" button-title="<span class='mif-folder'></span>"></m4-file-input>\n
+  <m4-file-input [(ngModel)]="model" button-title="Custom text for drop upload" [drop]="true"></m4-file-input>\n
+  ]]>
+</app-doc-component>
+
+<app-doc-component header="Info text (for drop mode)" [values]="{ model: null }" [showModel]="true">
+  <![CDATA[
+  <m4-file-input [(ngModel)]="model" info-text="Custom info: {0}" [drop]="true"></m4-file-input>
   ]]>
 </app-doc-component>
 
