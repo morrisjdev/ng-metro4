@@ -82,7 +82,7 @@ export class SpinnerComponent extends ControlBase<number> {
   }
 
   setValue(newValue: number) {
-    if (this.minValue && newValue < this.minValue) {
+    if (this.minValue !== undefined && this.minValue !== null && newValue < this.minValue) {
       newValue = this.minValue;
 
       asapScheduler.schedule(() => {
@@ -90,7 +90,7 @@ export class SpinnerComponent extends ControlBase<number> {
       });
     }
 
-    if (this.maxValue && newValue > this.maxValue) {
+    if (this.maxValue !== undefined && this.maxValue !== null && newValue > this.maxValue) {
       newValue = this.maxValue;
 
       asapScheduler.schedule(() => {

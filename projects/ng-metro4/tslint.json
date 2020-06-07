@@ -14,6 +14,7 @@
       "element",
       "m4",
       "kebab-case"
-    ]
+    ],
+    "strict-boolean-expressions": true
   }
 }
