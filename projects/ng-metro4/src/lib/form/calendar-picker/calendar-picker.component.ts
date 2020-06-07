@@ -77,8 +77,11 @@ export class CalendarPickerComponent extends ControlBase<moment.Moment> {
         this.touchCallback();
       });
 
-      this.calendarPicker.options.onChange = (val) => {
-        this.changeValue(_moment(val.toLocaleDateString('en'), 'MM/DD/YYYY'));
+      this.calendarPicker.options.onChange = () => {
+        asapScheduler.schedule(() => {
+          const val = this.calendarPicker.value;
+          this.changeValue(val ? _moment(val.toLocaleDateString('en'), 'MM/DD/YYYY') : null);
+        });
       };
 
       complete();
