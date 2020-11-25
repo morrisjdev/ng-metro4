@@ -26,7 +26,7 @@
     "@angular/router": "~9.0.1",
     "@angular/service-worker": "~9.0.1",
     "core-js": "^2.5.4",
-    "highlight.js": "^9.15.10",
+    "highlight.js": "^10.1.2",
     "linq4js": "^2.2.2",
     "metro4": "^4.3.7",
     "moment": "^2.24.0",
